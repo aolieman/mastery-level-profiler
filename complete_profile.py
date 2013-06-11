@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import pymongo, os, json
-import compare
+import compare, tudelft
 
 # set up annotation functions
 vocabulary = compare.readVocabulary('vocabulary_wsp.json')
@@ -31,8 +31,21 @@ class Profile(object):
     def annotateDocs(self):
         if hasattr(self, 'linkedin'):
             li_profile = LinkedInProfile(**db.document.find_one({"_id": self.linkedin}))
-            li_profile.annotate(header=False)
+            # check if the document has been annotated
+            if 'txt_ann' not in li_profile.content[0]:
+                li_profile.annotate()
+            else: print li_profile.title, "has already been annotated"
         else: print "!! "+self.signup['email']+" has not connected LinkedIn"
+        if self.tudelft == None:
+            print "!! %s has not connected TU Delft" % (self.signup['email'], )
+        else:
+            for course in self.tudelft:
+                course_doc = tudelft.courseDoc(course['cursusid'], course['collegejaar'])
+                if course_doc == None: continue
+                # check if the document has been annotated
+                if 'txt_ann' not in course_doc.content[0]:
+                    course_doc.annotate()
+                else: print course_doc.title, "has already been annotated"
         print "Annotations for "+self.signup['email']+" are done"
 
 class Document(object):
@@ -44,7 +57,7 @@ class Document(object):
     def toMongo(self):
         return db.document.save(self.__dict__)
 
-    def annotate(self, header=True):
+    def annotate(self, header=False):
         print "Annotations for " + self.title
         for section in self.content:
             if header:
