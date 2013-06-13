@@ -2,16 +2,20 @@
 from bs4 import BeautifulSoup
 import mechanize, socket, httplib
 import os, winsound, urllib2, json
+from compare import readVocabulary
+from SPARQLWrapper import SPARQLWrapper, JSON
 
-# Create a Browser
+# Create a browser
 b = mechanize.Browser()
 b.set_handle_robots(False)
 b.addheaders = [('User-Agent',
         'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0;)')]
 
-
 # list for failed skill pages
 failed = []
+
+# initialize NL SPARQL Wrapper
+sparql = SPARQLWrapper("http://nl.dbpedia.org/sparql")
 
 # get the links on this page from the directory list
 def getDirectoryLinks( url ):
@@ -99,12 +103,21 @@ def saveElements(indir, outfile, verbose=None):
             skill['more_wiki'] = urllib2.unquote(skill_links[len(skill_links)-1][20:-13])
             skill['skill_links'] = skill_links[:-1]
 
+        # find related skills
+        rel_a_list = soup.find_all('a', 'skills-list-skill')
+        rel_links = []
+        for rel_a in rel_a_list:
+            pagelink = rel_a.get('href').split('/')[-1]
+            rel_links.append(urllib2.unquote(pagelink.split('?')[0]))
+        skill['related_skills'] = rel_links
+
         vocabulary.append(skill)
 
         if verbose:
             print '\n'+skill['name']
-            print skill['growth_rate']
-            print skill['primary_industry']
+            if 'growth_rate' in skill: print skill['growth_rate']
+            if 'primary_industry' in skill: print skill['primary_industry']
+            if 'related_skills' in skill: print skill['related_skills']
             if skill['summary']:
                 print skill['summary']
                 if len(skill['skill_links']) > 0: print skill['skill_links']
@@ -114,7 +127,34 @@ def saveElements(indir, outfile, verbose=None):
     json.dump(vocabulary, ofile, indent=4, separators=(',', ': '))
     ofile.close()
 
+def interlanguageWiki(vocab_dict, verbose=0):
+    for (count, term) in enumerate(vocab_dict):
+        if u'more_wiki' in term:
+            term_id = term[u'more_wiki'].split('wiki/')[-1]
+            sparql.setQuery("""
+                SELECT ?nluri
+                WHERE {?nluri owl:sameAs <http://dbpedia.org/resource/%s> .}
+            """ % (term_id, ))
+            sparql.setReturnFormat(JSON)
+            results = sparql.query().convert()
+            res_bindings = results['results']['bindings']
+            if verbose > 1:
+                print len(res_bindings), term_id
+            if len(res_bindings) == 0: continue
+            elif len(res_bindings) > 1:
+                raise Exception("More than one interlanguage link!")
+            nl_uri = res_bindings[0]['nluri']['value']
+            term[u'nl_uri'] = nl_uri
+            if verbose > 0: print count, nl_uri
+    return vocab_dict
+        
+
 if __name__ == '__main__' :
 
-    saveElements('vocabulary/', 'vocabulary_wsp.json')
+    #saveElements('vocabulary/', 'vocabulary_rel.json', verbose='y')
+    vocabulary = readVocabulary('vocabulary_rel.json')
+    vocab_dutch = interlanguageWiki(vocabulary, verbose=1)
+    ofile = open('vocabulary_nl.json', 'wb')
+    json.dump(vocab_dutch, ofile, indent=4, separators=(',', ': '))
+    ofile.close()
 

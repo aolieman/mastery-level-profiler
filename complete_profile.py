@@ -3,8 +3,17 @@ import pymongo, os, json
 import compare, tudelft
 
 # set up annotation functions
-vocabulary = compare.readVocabulary('vocabulary_wsp.json')
+vocabulary = compare.readVocabulary('vocabulary_nl.json')
 term_ids = compare.getTermIDs(vocabulary)
+confidence = 0.0
+support = 0
+parameter_str = '_c%s_s%s' % (str(confidence).replace('.', '_'), support)
+title_ann = 'title_ann' + parameter_str
+title_resp = 'title_resp' + parameter_str
+header_ann = 'h_ann' + parameter_str
+header_resp = 'h_resp' + parameter_str
+text_ann = 'txt_ann' + parameter_str
+text_resp = 'txt_resp' + parameter_str
 
 # establish a connection to the MongoDB
 db = pymongo.Connection('localhost', 27017)['mastery_level_profiler']
@@ -32,7 +41,7 @@ class Profile(object):
         if hasattr(self, 'linkedin'):
             li_profile = LinkedInProfile(**db.document.find_one({"_id": self.linkedin}))
             # check if the document has been annotated
-            if 'txt_ann' not in li_profile.content[0]:
+            if text_ann not in li_profile.content[0]:
                 li_profile.annotate()
             else: print li_profile.title, "has already been annotated"
         else: print "!! "+self.signup['email']+" has not connected LinkedIn"
@@ -43,8 +52,8 @@ class Profile(object):
                 course_doc = tudelft.courseDoc(course['cursusid'], course['collegejaar'])
                 if course_doc == None: continue
                 # check if the document has been annotated
-                if 'txt_ann' not in course_doc.content[0]:
-                    course_doc.annotate()
+                if text_ann not in course_doc.content[0]:
+                    course_doc.annotate(title=True)
                 else: print course_doc.title, "has already been annotated"
         print "Annotations for "+self.signup['email']+" are done"
 
@@ -57,18 +66,35 @@ class Document(object):
     def toMongo(self):
         return db.document.save(self.__dict__)
 
-    def annotate(self, header=False):
+    def annotate(self, header=False, text=True, title=False):
         print "Annotations for " + self.title
+        if title:
+            sp_tuple = compare.throughSpotlight(self.title, confidence, support, 'en')
+            if sp_tuple == None:
+                pass
+            else:
+                setattr(self, title_ann, sorted(list(set(sp_tuple[0]).intersection(term_ids))))
+                print getattr(self, title_ann)
+                setattr(self, title_resp, sp_tuple[1])
         for section in self.content:
             if header:
                 if len(section['header']) > 3:
-                    h_ids = compare.throughSpotlight(section['header'])
-                    section['h_ann'] = sorted(list(set(h_ids).intersection(term_ids)))
-                    print section['h_ann']
-            if len(section['text']) > 3: #quickfix for empty strings
-                txt_ids = compare.throughSpotlight(section['text'])
-                section['txt_ann'] = sorted(list(set(txt_ids).intersection(term_ids)))
-                print section['txt_ann']
+                    sp_tuple = compare.throughSpotlight(section['header'], confidence, support, self.language)
+                    if sp_tuple == None:
+                        pass
+                    else:
+                        section[header_ann] = sorted(list(set(sp_tuple[0]).intersection(term_ids)))
+                        print section[header_ann]
+                        section[header_resp] = sp_tuple[1]
+            if text:
+                if len(section['text']) > 3: #quickfix for empty strings
+                    sp_tuple = compare.throughSpotlight(section['text'], confidence, support, self.language)
+                    if sp_tuple == None:
+                        continue
+                    else:
+                        section[text_ann] = sorted(list(set(sp_tuple[0]).intersection(term_ids)))
+                        print section[text_ann]
+                        section[text_resp] = sp_tuple[1]
         self.toMongo()
 
 class UnequalIDsException(pymongo.errors.InvalidId):
