@@ -3,8 +3,8 @@ import pymongo, os, json
 import compare, tudelft
 
 # set up annotation functions
-vocabulary = compare.readVocabulary('vocabulary_nl.json')
-term_ids = compare.getTermIDs(vocabulary)
+vocabulary = compare.readVocabulary('vocabulary_man.json')
+term_ids, trans_dict = compare.getTermIDs(vocabulary)
 confidence = 0.0
 support = 0
 parameter_str = '_c%s_s%s' % (str(confidence).replace('.', '_'), support)
@@ -68,6 +68,7 @@ class Document(object):
 
     def annotate(self, header=False, text=True, title=False):
         print "Annotations for " + self.title
+        ## todo? Add translation for Dutch annotations
         if title:
             sp_tuple = compare.throughSpotlight(self.title, confidence, support, 'en')
             if sp_tuple == None:
@@ -93,6 +94,8 @@ class Document(object):
                         continue
                     else:
                         section[text_ann] = sorted(list(set(sp_tuple[0]).intersection(term_ids)))
+                        if self.language == 'nl': # translate Dutch IDs
+                            section[text_ann] = [trans_dict[ann][0] for ann in section[text_ann]]
                         print section[text_ann]
                         section[text_resp] = sp_tuple[1]
         self.toMongo()
@@ -219,6 +222,14 @@ if __name__ == '__main__' :
     signup_path = "../Phase B/connector/app/db"
     readSignups(signup_path)
     profiles = loadProfiles()
+
+    ## spotter test
+    testdocnl = Document(language='nl', title='NL')
+    testdocnl.content.append({'text':"risico verzuim gitaarspelen Griekse glastuinbouw R&D operationeel onderzoek"})
+    testdocen = Document(title='EN')
+    testdocen.content.append({'text':"risky business BoP participatory design contextual analysis of multi-agent system"})
+    testdocnl.annotate()
+    testdocen.annotate()
 
     # disconnect from mongo
     db.connection.disconnect()

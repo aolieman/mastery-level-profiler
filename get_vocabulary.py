@@ -17,6 +17,12 @@ failed = []
 # initialize NL SPARQL Wrapper
 sparql = SPARQLWrapper("http://nl.dbpedia.org/sparql")
 
+# dictionary for manually added URIs
+manually_added = {u"name": "uri",
+                  u"Audio System Design": "http://en.wikipedia.org/wiki/Sound_recording_and_reproduction",
+                  u"Interaction Design": "http://en.wikipedia.org/wiki/Interaction_design",
+                  u"Interior Design": "http://en.wikipedia.org/wiki/Interior_design"}
+
 # get the links on this page from the directory list
 def getDirectoryLinks( url ):
     b.open(url)
@@ -91,6 +97,8 @@ def saveElements(indir, outfile, verbose=None):
         # find the name and summary
         wiki_blurb = soup.find('div', 'wiki-blurb')
         skill['name'] = wiki_blurb.find('h2').string.strip()
+        if skill['name'] in manually_added: #Note: not tested!
+            skill['more_wiki'] = manually_added[skill['name']]
         growth_rate = wiki_blurb.find('span', 'growth-rate')
         if growth_rate: skill['growth_rate'] = growth_rate.string.strip()
         skill['primary_industry'] = wiki_blurb.find('p', 'primary-industry').string.strip()
@@ -151,10 +159,10 @@ def interlanguageWiki(vocab_dict, verbose=0):
 
 if __name__ == '__main__' :
 
-    #saveElements('vocabulary/', 'vocabulary_rel.json', verbose='y')
-    vocabulary = readVocabulary('vocabulary_rel.json')
-    vocab_dutch = interlanguageWiki(vocabulary, verbose=1)
-    ofile = open('vocabulary_nl.json', 'wb')
-    json.dump(vocab_dutch, ofile, indent=4, separators=(',', ': '))
-    ofile.close()
-
+##    saveElements('vocabulary/', 'vocabulary_rel.json', verbose='y')
+##    vocabulary = readVocabulary('vocabulary_rel.json')
+##    vocab_dutch = interlanguageWiki(vocabulary, verbose=1)
+##    ofile = open('vocabulary_nl.json', 'wb')
+##    json.dump(vocab_dutch, ofile, indent=4, separators=(',', ': '))
+##    ofile.close()
+    pass
