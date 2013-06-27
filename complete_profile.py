@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import pymongo, os, json
-import compare, tudelft
+import compare, tudelft, shareworks
 
 # set up annotation functions
 vocabulary = compare.readVocabulary('vocabulary_man.json')
@@ -68,7 +68,6 @@ class Document(object):
 
     def annotate(self, header=False, text=True, title=False):
         print "Annotations for " + self.title
-        ## todo? Add translation for Dutch annotations
         if title:
             sp_tuple = compare.throughSpotlight(self.title, confidence, support, 'en')
             if sp_tuple == None:
@@ -218,18 +217,57 @@ def linkedinToDoc(linkedin_dict, existing_doc=None):
 
     return linkedin_profile_oid
 
+def associatePortfoliosWithProfiles(portfolios_dir):
+    docdict_list = shareworks.readPortfolios(portfolios_dir)
+    print "\nAssociating portfolios with profiles:"
+    for doc_dict in docdict_list:
+        portfolio_doc = Document(**doc_dict)
+        for email in portfolio_doc.student_email:
+            try:
+                result = db.profile.find_one({"signup.email": email})
+                profile = Profile(**result)
+            except TypeError:
+                print "!?! No profile found for: %s" % email
+            else:
+                doc_id = portfolio_doc.toMongo()
+                if hasattr(profile, 'portfolio'):
+                    profile.portfolio.append(doc_id)
+                else: profile.portfolio = [doc_id]
+                print profile.toMongo(), email, profile.portfolio
+
+def associateWebsitesWithProfiles(websites_dir):
+    # this function assumes the indir contains files only
+    filelist = os.listdir(websites_dir)
+    print "\nAssociating websites with profiles:"
+    for fpath in filelist:
+        with open(os.path.join(websites_dir, fpath), 'rb') as f:
+            doc_dict = json.load(f)
+            website_doc = Document(**doc_dict)
+            for email in website_doc.student_email:
+                result = db.profile.find_one({"signup.email": email})
+                profile = Profile(**result)
+                doc_id = website_doc.toMongo()
+                if hasattr(profile, 'website'):
+                    profile.website.append(doc_id)
+                else: profile.website = [doc_id]
+                print profile.toMongo(), profile.signup['website'], profile.website
+
 if __name__ == '__main__' :
     signup_path = "../Phase B/connector/app/db"
-    readSignups(signup_path)
-    profiles = loadProfiles()
+    portfolios_path = "../Phase B/sw_portfolios"
+    websites_path = "../Phase B/websites"
 
-    ## spotter test
-    testdocnl = Document(language='nl', title='NL', _id='nl_test')
-    testdocnl.content.append({'text':"risico verzuim gitaarspelen Griekse glastuinbouw R&D operationeel onderzoek"})
-    testdocen = Document(title='EN', _id='en_test')
-    testdocen.content.append({'text':"risky business BoP participatory design contextual analysis of multi-agent system"})
-    testdocnl.annotate()
-    testdocen.annotate()
+    try:
+        readSignups(signup_path)
+        profiles = loadProfiles()
 
-    # disconnect from mongo
-    db.connection.disconnect()
+        ## spotter test
+        testdocnl = Document(language='nl', title='NL', _id='nl_test')
+        testdocnl.content.append({'text':"risico verzuim gitaarspelen Griekse glastuinbouw R&D operationeel onderzoek"})
+        testdocen = Document(title='EN', _id='en_test')
+        testdocen.content.append({'text':"risky business BoP participatory design contextual analysis of multi-agent system"})
+        testdocnl.annotate()
+        testdocen.annotate()
+    finally:
+        # disconnect from mongo
+        db.connection.disconnect()

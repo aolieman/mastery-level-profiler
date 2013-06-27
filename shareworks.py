@@ -37,11 +37,12 @@ def readPortfolios(portfolios_dir, verbose=0):
 
     return dictlist
 
-def convPdf(portfolios_dir, f):
+def convPdf(portfolios_dir, f, verbose=0):
     pdf_filepath = os.path.join(portfolios_dir, f)
     toc=layout_scanner.get_toc(pdf_filepath)
-    print "TOC -- not currently used for dict"
-    for e in toc: print e
+    if verbose > 0: print "TOC -- not currently used for dict"
+    if verbose > 0:
+        for e in toc: print e
     pages=layout_scanner.get_pages(pdf_filepath)
     doc_dict = {'doctype': "report", 'origin': "shareworks"}
     doc_dict['_id'] = f
