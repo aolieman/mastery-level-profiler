@@ -23,11 +23,14 @@ def getTermIDs(vocabulary):
 def throughSpotlight(text, conf=0.0, supp=0, lang='en'):
     en_sztaki = 'http://spotlight.sztaki.hu:2222/rest/annotate'
     en_default = 'http://spotlight.dbpedia.org/rest/annotate' #try KeyphraseSpotter
+    en_local = 'http://localhost:2222/rest/annotate'
+    nl_default = 'http://nl.dbpedia.org/spotlight/rest/annotate'
+    nl_local = 'http://localhost:2223/rest/annotate'
     api = partial(annotate, en_sztaki,
                   confidence=conf, support=supp,
                   spotter='Default')
     if lang == 'nl':
-        api = partial(annotate, 'http://nl.dbpedia.org/spotlight/rest/annotate',
+        api = partial(annotate, nl_local,
                   confidence=conf, support=supp,
                   spotter='Default')
     try:

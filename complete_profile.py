@@ -132,7 +132,7 @@ def readSignups(signup_dir):
             signup['linkedin'] = linkedin
         if 'website' in signup_dict:
             signup['website'] = signup_dict['website']
-        signup_file.close
+        signup_file.close()
         # make object, make linkedin doc, and insert to mongo
         new_profile = Profile(signup=signup, tudelft=tudelft)
         new_profile.updateLinkedInDoc()
@@ -224,9 +224,9 @@ if __name__ == '__main__' :
     profiles = loadProfiles()
 
     ## spotter test
-    testdocnl = Document(language='nl', title='NL')
+    testdocnl = Document(language='nl', title='NL', _id='nl_test')
     testdocnl.content.append({'text':"risico verzuim gitaarspelen Griekse glastuinbouw R&D operationeel onderzoek"})
-    testdocen = Document(title='EN')
+    testdocen = Document(title='EN', _id='en_test')
     testdocen.content.append({'text':"risky business BoP participatory design contextual analysis of multi-agent system"})
     testdocnl.annotate()
     testdocen.annotate()
