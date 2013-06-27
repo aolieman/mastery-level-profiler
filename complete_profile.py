@@ -55,6 +55,23 @@ class Profile(object):
                 if text_ann not in course_doc.content[0]:
                     course_doc.annotate(title=True)
                 else: print course_doc.title, "has already been annotated"
+        if hasattr(self, 'website'):
+            for webpage in self.website:
+                page = Document(**db.document.find_one({"_id": page}))
+                # check if the document has been annotated
+                if text_ann not in page.content[0]:
+                    page.annotate()
+                else: print page.title, "has already been annotated"
+        else: print "!! "+self.signup['email']+" doesn't have a website"
+        if hasattr(self, 'portfolio'):
+            for sw_doc in self.portfolio:
+                doc = Document(**db.document.find_one({"_id": sw_doc}))
+                # check if the document has been annotated
+                if text_ann not in doc.content[0]:
+                    doc.annotate()
+                else: print doc._id, "has already been annotated"
+        else: print "!! "+self.signup['email']+" doesn't have a portfolio"
+
         print "Annotations for "+self.signup['email']+" are done"
 
 class Document(object):
