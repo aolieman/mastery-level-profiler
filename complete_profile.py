@@ -7,7 +7,9 @@ vocabulary = compare.readVocabulary('vocabulary_man.json')
 term_ids, trans_dict = compare.getTermIDs(vocabulary)
 confidence = 0.0
 support = 0
-parameter_str = '_c%s_s%s' % (str(confidence).replace('.', '_'), support)
+misc_params = "t10p4"
+parameter_str = '_%s_c%s_s%s' % (misc_params, confidence, support)
+parameter_str = str(parameter_str).replace('.', '_')
 title_ann = 'title_ann' + parameter_str
 title_resp = 'title_resp' + parameter_str
 header_ann = 'h_ann' + parameter_str
@@ -57,7 +59,7 @@ class Profile(object):
                 else: print course_doc.title, "has already been annotated"
         if hasattr(self, 'website'):
             for webpage in self.website:
-                page = Document(**db.document.find_one({"_id": page}))
+                page = Document(**db.document.find_one({"_id": webpage}))
                 # check if the document has been annotated
                 if text_ann not in page.content[0]:
                     page.annotate()
@@ -84,7 +86,9 @@ class Document(object):
         return db.document.save(self.__dict__)
 
     def annotate(self, header=False, text=True, title=False):
-        print "Annotations for " + self.title
+        if hasattr(self, "title"):
+            print "\nAnnotations for " + self.title
+        else: print "\nAnnotations for", self._id
         if title:
             sp_tuple = compare.throughSpotlight(self.title, confidence, support, 'en')
             if sp_tuple == None:
@@ -95,7 +99,7 @@ class Document(object):
                 setattr(self, title_resp, sp_tuple[1])
         for section in self.content:
             if header:
-                if len(section['header']) > 3:
+                if len(section['header'].strip()) > 3:
                     sp_tuple = compare.throughSpotlight(section['header'], confidence, support, self.language)
                     if sp_tuple == None:
                         pass
@@ -104,14 +108,18 @@ class Document(object):
                         print section[header_ann]
                         section[header_resp] = sp_tuple[1]
             if text:
-                if len(section['text']) > 3: #quickfix for empty strings
+                if len(section['text'].strip()) > 3: #quickfix for empty strings
                     sp_tuple = compare.throughSpotlight(section['text'], confidence, support, self.language)
                     if sp_tuple == None:
                         continue
                     else:
                         section[text_ann] = sorted(list(set(sp_tuple[0]).intersection(term_ids)))
                         if self.language == 'nl': # translate Dutch IDs
-                            section[text_ann] = [trans_dict[ann][0] for ann in section[text_ann]]
+                            try:
+                                section[text_ann] = [trans_dict[ann][0] for ann in section[text_ann]]
+                            except KeyError, e:
+                                # Dutch term is not in the vocabulary, but the English analog is.
+                                print e, "is not in the Dutch vocabulary"
                         print section[text_ann]
                         section[text_resp] = sp_tuple[1]
         self.toMongo()

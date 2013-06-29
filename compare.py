@@ -26,7 +26,7 @@ def throughSpotlight(text, conf=0.0, supp=0, lang='en'):
     en_local = 'http://localhost:2222/rest/annotate'
     nl_default = 'http://nl.dbpedia.org/spotlight/rest/annotate'
     nl_local = 'http://localhost:2223/rest/annotate'
-    api = partial(annotate, en_sztaki,
+    api = partial(annotate, en_local,
                   confidence=conf, support=supp,
                   spotter='Default')
     if lang == 'nl':
