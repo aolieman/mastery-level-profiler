@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 import json
-from spotlight import annotate, SpotlightException
+from spotlight import annotate, candidates, SpotlightException
 from functools import partial
 
 def readVocabulary(infile):
@@ -20,17 +20,24 @@ def getTermIDs(vocabulary):
             translations[term_nlid] = (term_id, term['name'])
     return term_ids, translations
 
-def throughSpotlight(text, conf=0.0, supp=0, lang='en'):
-    en_sztaki = 'http://spotlight.sztaki.hu:2222/rest/annotate'
-    en_default = 'http://spotlight.dbpedia.org/rest/annotate' #try KeyphraseSpotter
-    en_local = 'http://localhost:2222/rest/annotate'
-    nl_default = 'http://nl.dbpedia.org/spotlight/rest/annotate'
-    nl_local = 'http://localhost:2223/rest/annotate'
-    api = partial(annotate, en_local,
+def throughSpotlight(text, cand_param, conf=0.0, supp=0, lang='en'):
+    if cand_param == "single":
+        cand_uri = "annotate"
+        cand_function = annotate
+    elif cand_param == "multi":
+        cand_uri = "candidates"
+        cand_function = candidates
+    else: raise Exception("Incorrect cand_param provided")
+    en_sztaki = 'http://spotlight.sztaki.hu:2222/rest/%s' % cand_uri
+    en_default = 'http://spotlight.dbpedia.org/rest/%s' % cand_uri #try KeyphraseSpotter
+    en_local = 'http://localhost:2222/rest/%s' % cand_uri
+    nl_default = 'http://nl.dbpedia.org/spotlight/rest/%s' % cand_uri
+    nl_local = 'http://localhost:2223/rest/%s' % cand_uri
+    api = partial(cand_function, en_sztaki,
                   confidence=conf, support=supp,
                   spotter='Default')
     if lang == 'nl':
-        api = partial(annotate, nl_local,
+        api = partial(cand_function, nl_local,
                   confidence=conf, support=supp,
                   spotter='Default')
     try:
@@ -39,8 +46,17 @@ def throughSpotlight(text, conf=0.0, supp=0, lang='en'):
         print err
         return None
     annotation_ids = []
-    for ann in spotlight_response:
-        annotation_ids.append(ann[u'URI'].split('resource/')[-1])
+    if cand_param == "single":
+        for ann in spotlight_response:
+            annotation_ids.append(ann[u'URI'].split('resource/')[-1])
+    elif cand_param == "multi":
+        for ann in spotlight_response:
+            if u'resource' in ann:
+                if isinstance(ann[u'resource'], dict):
+                    annotation_ids.append([ann[u'resource'][u'uri']])
+                else:
+                    annotation_ids.append([cand[u'uri'] for cand
+                                           in ann[u'resource']])
     return annotation_ids, spotlight_response
 
 if __name__ == '__main__' :

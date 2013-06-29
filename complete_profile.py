@@ -5,10 +5,11 @@ import compare, tudelft, shareworks
 # set up annotation functions
 vocabulary = compare.readVocabulary('vocabulary_man.json')
 term_ids, trans_dict = compare.getTermIDs(vocabulary)
+candidate_param = "multi" # 'single' for /annotate, 'multi' for /candidates
 confidence = 0.0
 support = 0
-misc_params = "t10p4"
-parameter_str = '_%s_c%s_s%s' % (misc_params, confidence, support)
+misc_params = "szt_p4"
+parameter_str = '_%s_%s_c%s_s%s' % (candidate_param, misc_params, confidence, support)
 parameter_str = str(parameter_str).replace('.', '_')
 title_ann = 'title_ann' + parameter_str
 title_resp = 'title_resp' + parameter_str
@@ -90,36 +91,50 @@ class Document(object):
             print "\nAnnotations for " + self.title
         else: print "\nAnnotations for", self._id
         if title:
-            sp_tuple = compare.throughSpotlight(self.title, confidence, support, 'en')
+            sp_tuple = compare.throughSpotlight(self.title, candidate_param,
+                                                confidence, support, 'en')
             if sp_tuple == None:
                 pass
             else:
-                setattr(self, title_ann, sorted(list(set(sp_tuple[0]).intersection(term_ids))))
+                if candidate_param == "single":
+                    setattr(self, title_ann, sorted(list(set(sp_tuple[0]).intersection(term_ids))))
+                elif candidate_param == "multi":
+                    title_ann_ids = unwrapCandidates(sp_tuple[0])
+                    setattr(self, title_ann, title_ann_ids)
+                else: raise Exception("Incorrect candidate_param provided")
                 print getattr(self, title_ann)
                 setattr(self, title_resp, sp_tuple[1])
         for section in self.content:
             if header:
                 if len(section['header'].strip()) > 3:
-                    sp_tuple = compare.throughSpotlight(section['header'], confidence, support, self.language)
+                    sp_tuple = compare.throughSpotlight(section['header'], candidate_param,
+                                                        confidence, support, self.language)
                     if sp_tuple == None:
                         pass
                     else:
-                        section[header_ann] = sorted(list(set(sp_tuple[0]).intersection(term_ids)))
+                        if candidate_param == "single":
+                            section[header_ann] = sorted(list(set(sp_tuple[0]).intersection(term_ids)))
+                        elif candidate_param == "multi":
+                            section[header_ann] = unwrapCandidates(sp_tuple[0])
+                        else: raise Exception("Incorrect candidate_param provided")
+                        if self.language == 'nl': # translate Dutch IDs
+                            section[text_ann] = translateDutchIDs(section[text_ann])
                         print section[header_ann]
                         section[header_resp] = sp_tuple[1]
             if text:
                 if len(section['text'].strip()) > 3: #quickfix for empty strings
-                    sp_tuple = compare.throughSpotlight(section['text'], confidence, support, self.language)
+                    sp_tuple = compare.throughSpotlight(section['text'], candidate_param,
+                                                        confidence, support, self.language)
                     if sp_tuple == None:
                         continue
                     else:
-                        section[text_ann] = sorted(list(set(sp_tuple[0]).intersection(term_ids)))
+                        if candidate_param == "single":
+                            section[text_ann] = sorted(list(set(sp_tuple[0]).intersection(term_ids)))
+                        elif candidate_param == "multi":
+                            section[text_ann] = unwrapCandidates(sp_tuple[0])
+                        else: raise Exception("Incorrect candidate_param provided")
                         if self.language == 'nl': # translate Dutch IDs
-                            try:
-                                section[text_ann] = [trans_dict[ann][0] for ann in section[text_ann]]
-                            except KeyError, e:
-                                # Dutch term is not in the vocabulary, but the English analog is.
-                                print e, "is not in the Dutch vocabulary"
+                            section[text_ann] = translateDutchIDs(section[text_ann])
                         print section[text_ann]
                         section[text_resp] = sp_tuple[1]
         self.toMongo()
@@ -129,6 +144,28 @@ class UnequalIDsException(pymongo.errors.InvalidId):
 
 class LinkedInProfile(Document):
     pass
+
+def unwrapCandidates(annotation_ids):
+    """Takes candidate lists (as provided by compare.throughSpotlight)
+       and adds the top candidate that is in the term vocabulary
+       to the output list (if it is not in the output list yet).
+    """
+    selected_candidates = []
+    for candidates in annotation_ids:
+        for c in candidates:
+            if c not in selected_candidates and c in term_ids:
+                selected_candidates.append(c)
+                break
+    return sorted(selected_candidates)
+
+def translateDutchIDs(ann_ids):
+    for i in xrange(len(ann_ids)):
+        try:
+            ann_ids[i] = trans_dict[ann_ids[i]][0]
+        except KeyError, e:
+            # Dutch term is not in the vocabulary, but the English homolog is.
+            print e, "is not in the Dutch vocabulary"
+    return sorted(ann_ids)
 
 def readSignups(signup_dir):
     # this function assumes the indir contains files only
@@ -166,6 +203,13 @@ def loadProfiles(): #from mongo
     result = db.profile.find()
     profiles = [Profile(**res) for res in result]
     return profiles
+
+def loadDocuments(filter_lang=None): #from mongo
+    if filter_lang != None:
+        result = db.document.find({'language': filter_lang})
+    else: result = db.profile.find()
+    documents = [Document(**res) for res in result]
+    return documents
 
 def linkedinToDoc(linkedin_dict, existing_doc=None):
     # remove irrelevant keys from dict
@@ -283,12 +327,12 @@ if __name__ == '__main__' :
     websites_path = "../Phase B/websites"
 
     try:
-        readSignups(signup_path)
-        profiles = loadProfiles()
+        #readSignups(signup_path)
+        #profiles = loadProfiles()
 
         ## spotter test
         testdocnl = Document(language='nl', title='NL', _id='nl_test')
-        testdocnl.content.append({'text':"risico verzuim gitaarspelen Griekse glastuinbouw R&D operationeel onderzoek"})
+        testdocnl.content.append({'text':"kunt u met een joint gitaarspelen Griekse glastuinbouw R&D operationeel onderzoek"})
         testdocen = Document(title='EN', _id='en_test')
         testdocen.content.append({'text':"risky business BoP participatory design contextual analysis of multi-agent system"})
         testdocnl.annotate()
