@@ -8,7 +8,7 @@ term_ids, trans_dict = compare.getTermIDs(vocabulary)
 candidate_param = "multi" # 'single' for /annotate, 'multi' for /candidates
 confidence = 0.0
 support = 0
-misc_params = "szt_p4"
+misc_params = "t10_nl"
 parameter_str = '_%s_%s_c%s_s%s' % (candidate_param, misc_params, confidence, support)
 parameter_str = str(parameter_str).replace('.', '_')
 title_ann = 'title_ann' + parameter_str
@@ -41,6 +41,7 @@ class Profile(object):
         else: print "!! "+self.signup['email']+" has not connected LinkedIn"
 
     def annotateDocs(self):
+        print "\n\n", self.signup['email']
         if hasattr(self, 'linkedin'):
             li_profile = LinkedInProfile(**db.document.find_one({"_id": self.linkedin}))
             # check if the document has been annotated
@@ -139,17 +140,63 @@ class Document(object):
                         section[text_resp] = sp_tuple[1]
         self.toMongo()
 
+    def makeStatements(self):
+        pass
+
 class UnequalIDsException(pymongo.errors.InvalidId):
     pass
 
 class LinkedInProfile(Document):
-    pass
-
-def unwrapCandidates(annotation_ids):
-    """Takes candidate lists (as provided by compare.throughSpotlight)
-       and adds the top candidate that is in the term vocabulary
-       to the output list (if it is not in the output list yet).
     """
+    Makes statements from underlying annotations.
+    For now only extracted statements, from all runs.
+    """
+    def makeStatements(self):
+        extracted = [] #rather dict([(ann_id1, lvl_dict), (ann_id2, ...)])
+        for s in self.content:
+            all_ann_ids = set()
+            for key in s.keys(): # Here I add all annotations; later filter!
+                if key[:7] == "txt_ann" or key[:5] == "h_ann":
+                    all_ann_ids.update(s[key])                    
+            print all_ann_ids
+            if s['header'] in {"Headline", "Summary", "Specialties"}:
+                for ann_id in all_ann_ids:
+                    extracted.append(Statement(ann_id, 2, 1, 1))
+            elif s['header'] in {"Honors", "Certifications"}:
+                for ann_id in all_ann_ids:
+                    extracted.append(Statement(ann_id, 2, 1, 0))
+            elif s['header'] == "Interests":
+                for ann_id in all_ann_ids:
+                    extracted.append(Statement(ann_id, 0, 0, 2))
+            elif s['header'] == "Volunteer Experience":
+                for ann_id in all_ann_ids:
+                    extracted.append(Statement(ann_id, 1, 1, 2))
+            elif s['header'] in {"Volunteer Causes", "Volunteer Support"}:
+                for ann_id in all_ann_ids:
+                    extracted.append(Statement(ann_id, 0, 1, 2))
+            elif s['header'] in {"Education", "Courses"}:
+                for ann_id in all_ann_ids:
+                    extracted.append(Statement(ann_id, 1, 2, 0))
+            elif s['header'] == "Position":
+                for ann_id in all_ann_ids:
+                    extracted.append(Statement(ann_id, 2, 1, 0))
+            elif s['header'] == "Recommendation":
+                for ann_id in all_ann_ids:
+                    extracted.append(Statement(ann_id, 2, 1, 1))
+            else:
+                print "! Header %s not recognized !" % s['header']
+        print extracted
+
+class Statement(dict):
+    def __init__(self, ann_id, skill=0, knowledge=0, interest=0):
+        self[ann_id] = {'skill': skill, 'knowledge': knowledge, 'interest':interest}
+
+"""
+Takes candidate lists (as provided by compare.throughSpotlight)
+and adds the top candidate that is in the term vocabulary
+to the output list (if it is not in the output list yet).
+"""
+def unwrapCandidates(annotation_ids):
     selected_candidates = []
     for candidates in annotation_ids:
         for c in candidates:
@@ -204,11 +251,11 @@ def loadProfiles(): #from mongo
     profiles = [Profile(**res) for res in result]
     return profiles
 
-def loadDocuments(filter_lang=None): #from mongo
-    if filter_lang != None:
-        result = db.document.find({'language': filter_lang})
+def loadDocuments(filter_dict=None, into_class=Document): #from mongo
+    if filter_dict != None:
+        result = db.document.find(filter_dict)
     else: result = db.profile.find()
-    documents = [Document(**res) for res in result]
+    documents = [into_class(**res) for res in result]
     return documents
 
 def linkedinToDoc(linkedin_dict, existing_doc=None):
@@ -258,7 +305,7 @@ def linkedinToDoc(linkedin_dict, existing_doc=None):
     if linkedin_dict['recommendations']['_total'] > 0:
         for recommendation in linkedin_dict['recommendations']['values']:
             recommendation_text = recommendation['recommendationText']
-            profile_doc.content.append({'header': 'Recommedation', 'text': recommendation_text})
+            profile_doc.content.append({'header': 'Recommendation', 'text': recommendation_text})
     if 'volunteer' in linkedin_dict:
         if linkedin_dict['volunteer']['volunteerExperiences']['_total'] > 0:
             volexp_text = ""
@@ -328,7 +375,7 @@ if __name__ == '__main__' :
 
     try:
         #readSignups(signup_path)
-        #profiles = loadProfiles()
+        profiles = loadProfiles()
 
         ## spotter test
         testdocnl = Document(language='nl', title='NL', _id='nl_test')

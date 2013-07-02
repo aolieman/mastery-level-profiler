@@ -21,7 +21,9 @@ sparql = SPARQLWrapper("http://nl.dbpedia.org/sparql")
 manually_added = {u"name": "uri",
                   u"Audio System Design": "http://en.wikipedia.org/wiki/Sound_recording_and_reproduction",
                   u"Interaction Design": "http://en.wikipedia.org/wiki/Interaction_design",
-                  u"Interior Design": "http://en.wikipedia.org/wiki/Interior_design"}
+                  u"Interior Design": "http://en.wikipedia.org/wiki/Interior_design",
+                  u"Photography": "http://en.wikipedia.org/wiki/Photography",
+                  u"Media": "http://en.wikipedia.org/wiki/Media_(communication)"}
 
 # get the links on this page from the directory list
 def getDirectoryLinks( url ):

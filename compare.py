@@ -33,11 +33,11 @@ def throughSpotlight(text, cand_param, conf=0.0, supp=0, lang='en'):
     en_local = 'http://localhost:2222/rest/%s' % cand_uri
     nl_default = 'http://nl.dbpedia.org/spotlight/rest/%s' % cand_uri
     nl_local = 'http://localhost:2223/rest/%s' % cand_uri
-    api = partial(cand_function, en_sztaki,
+    api = partial(cand_function, en_local,
                   confidence=conf, support=supp,
                   spotter='Default')
     if lang == 'nl':
-        api = partial(cand_function, nl_local,
+        api = partial(cand_function, nl_default,
                   confidence=conf, support=supp,
                   spotter='Default')
     try:
@@ -66,7 +66,7 @@ if __name__ == '__main__' :
     print len(term_ids)
 
     text = 'Librio is a service in the form of a web application which started out with the aim to make lending and trading books attractive to students. In the summer of 2011 a pilot study was conducted with students at the Delft University of Technology. This pilot led to the decision to aim for a broader audience of readers. Our plan for the coming year is to focus on "Librio Labs", a series of experiments that will be conducted with prototype versions of a new social cataloging application.'
-    ann_ids, resp = throughSpotlight(text)
+    ann_ids, resp = throughSpotlight(text, "multi")
     print resp
     print ann_ids, '\nIntersecting with vocabulary...'
     print set(ann_ids).intersection(term_ids)
