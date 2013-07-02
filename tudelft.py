@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import json, urllib2, time
 import pymongo
+import complete_profile
 
 # establish a connection to the MongoDB
 db = pymongo.Connection('localhost', 27017)['mastery_level_profiler']
@@ -46,12 +47,12 @@ def getCourse(course_id, year):
 def courseDoc(course_id, year):
     doc_in_mongo = db.document.find_one({"_id": "%sy%s" % (course_id, year)})
     if doc_in_mongo:
-        return Document(**doc_in_mongo)
+        return complete_profile.Document(**doc_in_mongo)
     else:
         course_info = getCourse(course_id, year)
         if course_info == None: return None
         title, info = course_info
-        course_doc = Document(doctype="course", origin="tudelft")
+        course_doc = complete_profile.Document(doctype="course", origin="tudelft")
         course_doc._id = "%sy%s" % (course_id, year)
         course_doc.title = title
         for field in info:
@@ -63,8 +64,8 @@ def courseDoc(course_id, year):
         course_description_oid = course_doc.toMongo()
         return course_doc
 
-#circular import
-from complete_profile import Document
+# Old solution for circular import (new solution untested!)
+#from complete_profile import Document
 
 if __name__ == '__main__' :
 

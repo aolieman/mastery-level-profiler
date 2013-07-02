@@ -33,11 +33,11 @@ def throughSpotlight(text, cand_param, conf=0.0, supp=0, lang='en'):
     en_local = 'http://localhost:2222/rest/%s' % cand_uri
     nl_default = 'http://nl.dbpedia.org/spotlight/rest/%s' % cand_uri
     nl_local = 'http://localhost:2223/rest/%s' % cand_uri
-    api = partial(cand_function, en_local,
+    api = partial(cand_function, en_default,
                   confidence=conf, support=supp,
                   spotter='Default')
     if lang == 'nl':
-        api = partial(cand_function, nl_default,
+        api = partial(cand_function, nl_local,
                   confidence=conf, support=supp,
                   spotter='Default')
     try:

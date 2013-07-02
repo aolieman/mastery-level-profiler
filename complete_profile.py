@@ -8,7 +8,7 @@ term_ids, trans_dict = compare.getTermIDs(vocabulary)
 candidate_param = "multi" # 'single' for /annotate, 'multi' for /candidates
 confidence = 0.0
 support = 0
-misc_params = "t10_nl"
+misc_params = "p8"
 parameter_str = '_%s_%s_c%s_s%s' % (candidate_param, misc_params, confidence, support)
 parameter_str = str(parameter_str).replace('.', '_')
 title_ann = 'title_ann' + parameter_str
@@ -152,44 +152,64 @@ class LinkedInProfile(Document):
     For now only extracted statements, from all runs.
     """
     def makeStatements(self):
-        extracted = [] #rather dict([(ann_id1, lvl_dict), (ann_id2, ...)])
+        extracted = StatementDict()
         for s in self.content:
             all_ann_ids = set()
             for key in s.keys(): # Here I add all annotations; later filter!
                 if key[:7] == "txt_ann" or key[:5] == "h_ann":
                     all_ann_ids.update(s[key])                    
             print all_ann_ids
+            for ann_id in all_ann_ids:
+                if "." in ann_id: # replacement hack for forbidden Mongo char
+                    mongo_escaped = ann_id.replace(".", "~")
+                    all_ann_ids.remove(ann_id)
+                    all_ann_ids.add(mongo_escaped)
+                    print "%s was replaced with %s" % (ann_id, mongo_escaped)
             if s['header'] in {"Headline", "Summary", "Specialties"}:
                 for ann_id in all_ann_ids:
-                    extracted.append(Statement(ann_id, 2, 1, 1))
+                    extracted.add(statement(ann_id, 2, 1, 1))
             elif s['header'] in {"Honors", "Certifications"}:
                 for ann_id in all_ann_ids:
-                    extracted.append(Statement(ann_id, 2, 1, 0))
+                    extracted.add(statement(ann_id, 2, 1, 0))
             elif s['header'] == "Interests":
                 for ann_id in all_ann_ids:
-                    extracted.append(Statement(ann_id, 0, 0, 2))
+                    extracted.add(statement(ann_id, 0, 0, 2))
             elif s['header'] == "Volunteer Experience":
                 for ann_id in all_ann_ids:
-                    extracted.append(Statement(ann_id, 1, 1, 2))
+                    extracted.add(statement(ann_id, 1, 1, 2))
             elif s['header'] in {"Volunteer Causes", "Volunteer Support"}:
                 for ann_id in all_ann_ids:
-                    extracted.append(Statement(ann_id, 0, 1, 2))
+                    extracted.add(statement(ann_id, 0, 1, 2))
             elif s['header'] in {"Education", "Courses"}:
                 for ann_id in all_ann_ids:
-                    extracted.append(Statement(ann_id, 1, 2, 0))
+                    extracted.add(statement(ann_id, 1, 2, 0))
             elif s['header'] == "Position":
                 for ann_id in all_ann_ids:
-                    extracted.append(Statement(ann_id, 2, 1, 0))
+                    extracted.add(statement(ann_id, 2, 1, 0))
             elif s['header'] == "Recommendation":
                 for ann_id in all_ann_ids:
-                    extracted.append(Statement(ann_id, 2, 1, 1))
+                    extracted.add(statement(ann_id, 2, 1, 1))
             else:
                 print "! Header %s not recognized !" % s['header']
-        print extracted
 
-class Statement(dict):
-    def __init__(self, ann_id, skill=0, knowledge=0, interest=0):
-        self[ann_id] = {'skill': skill, 'knowledge': knowledge, 'interest':interest}
+        # Save extracted statements to self.dev_truth for now
+        self.dev_truth['extracted'] = extracted
+        self.toMongo()
+
+def statement(ann_id, skill=0, knowledge=0, interest=0):
+    lvl_dict = {'skill': skill, 'knowledge': knowledge, 'interest':interest}
+    return (ann_id, lvl_dict)
+
+class StatementDict(dict):
+    def add(self, statement):
+        ann_id = statement[0]
+        lvl_dict = statement[1]
+        if ann_id in self:
+            self[ann_id]['skill'] += lvl_dict['skill']
+            self[ann_id]['knowledge'] += lvl_dict['knowledge']
+            self[ann_id]['interest'] += lvl_dict['interest']
+        else:
+            self[ann_id] = lvl_dict
 
 """
 Takes candidate lists (as provided by compare.throughSpotlight)
