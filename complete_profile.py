@@ -4,7 +4,7 @@ import compare, tudelft, shareworks
 
 # set up annotation functions
 vocabulary = compare.readVocabulary('vocabulary_man.json')
-term_ids, trans_dict = compare.getTermIDs(vocabulary)
+term_ids, nl_dict, en_dict = compare.getTermIDs(vocabulary)
 candidate_param = "multi" # 'single' for /annotate, 'multi' for /candidates
 confidence = 0.0
 support = 0
@@ -20,6 +20,13 @@ text_resp = 'txt_resp' + parameter_str
 
 # establish a connection to the MongoDB
 db = pymongo.Connection('localhost', 27017)['mastery_level_profiler']
+
+# set of ann_ids that are too general and are thus ignored
+ignored_ann_ids = {"Academic_term", "Consideration", "Course_(education)",
+                   "Diploma", "Human", "Job_(role)", "Life", "Laborer",
+                   "Privately_held_company", "Professor", "School",
+                   "Secondary_education", "Solution", "Student", "Supervisor",
+                   "Tutorial", "University", "Vocational_education"}
 
 class Profile(object):
     def __init__(self, **entries):
@@ -157,7 +164,8 @@ class LinkedInProfile(Document):
             all_ann_ids = set()
             for key in s.keys(): # Here I add all annotations; later filter!
                 if key[:7] == "txt_ann" or key[:5] == "h_ann":
-                    all_ann_ids.update(s[key])                    
+                    all_ann_ids.update(s[key])
+            all_ann_ids.difference_update(ignored_ann_ids)
             print all_ann_ids
             for ann_id in all_ann_ids:
                 if "." in ann_id: # replacement hack for forbidden Mongo char
@@ -192,9 +200,9 @@ class LinkedInProfile(Document):
             else:
                 print "! Header %s not recognized !" % s['header']
 
-        # Save extracted statements to self.dev_truth for now
-        self.dev_truth['extracted'] = extracted
-        self.toMongo()
+        # Statements are not saved for now
+        print extracted.keys()
+        #self.toMongo()
 
 def statement(ann_id, skill=0, knowledge=0, interest=0):
     lvl_dict = {'skill': skill, 'knowledge': knowledge, 'interest':interest}
@@ -228,7 +236,7 @@ def unwrapCandidates(annotation_ids):
 def translateDutchIDs(ann_ids):
     for i in xrange(len(ann_ids)):
         try:
-            ann_ids[i] = trans_dict[ann_ids[i]][0]
+            ann_ids[i] = nl_dict[ann_ids[i]][0]
         except KeyError, e:
             # Dutch term is not in the vocabulary, but the English homolog is.
             print e, "is not in the Dutch vocabulary"

@@ -9,16 +9,20 @@ def readVocabulary(infile):
 
 def getTermIDs(vocabulary):
     term_ids = set()
-    translations = dict()
+    nlid_enid = dict()
+    enid_name = {None: []} # Dict with None key: empty list
     for term in vocabulary:
         if u'more_wiki' in term:
             term_id = term[u'more_wiki'].split('wiki/')[-1]
             term_ids.add(term_id)
+            enid_name[term_id] = term[u'name']
+        else:
+            enid_name[None].append(term[u'name'])
         if u'nl_uri' in term:
             term_nlid = term[u'nl_uri'].split('resource/')[-1]
             term_ids.add(term_nlid)
-            translations[term_nlid] = (term_id, term['name'])
-    return term_ids, translations
+            nlid_enid[term_nlid] = (term_id, term[u'name'])
+    return term_ids, nlid_enid, enid_name
 
 def throughSpotlight(text, cand_param, conf=0.0, supp=0, lang='en'):
     if cand_param == "single":
@@ -62,7 +66,7 @@ def throughSpotlight(text, cand_param, conf=0.0, supp=0, lang='en'):
 if __name__ == '__main__' :
 
     vocabulary = readVocabulary('vocabulary_man.json')
-    term_ids, trans_dict = getTermIDs(vocabulary)
+    term_ids, nl_dict, en_dict = getTermIDs(vocabulary)
     print len(term_ids)
 
     text = 'Librio is a service in the form of a web application which started out with the aim to make lending and trading books attractive to students. In the summer of 2011 a pilot study was conducted with students at the Delft University of Technology. This pilot led to the decision to aim for a broader audience of readers. Our plan for the coming year is to focus on "Librio Labs", a series of experiments that will be conducted with prototype versions of a new social cataloging application.'

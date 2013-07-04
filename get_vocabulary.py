@@ -17,13 +17,28 @@ failed = []
 # initialize NL SPARQL Wrapper
 sparql = SPARQLWrapper("http://nl.dbpedia.org/sparql")
 
-# dictionary for manually added URIs
+# dictionary for manually added URIs (for incorrect URIs, value=good URI or None)
 manually_added = {u"name": "uri",
                   u"Audio System Design": "http://en.wikipedia.org/wiki/Sound_recording_and_reproduction",
                   u"Interaction Design": "http://en.wikipedia.org/wiki/Interaction_design",
                   u"Interior Design": "http://en.wikipedia.org/wiki/Interior_design",
                   u"Photography": "http://en.wikipedia.org/wiki/Photography",
-                  u"Media": "http://en.wikipedia.org/wiki/Media_(communication)"}
+                  u"Budgets": "http://en.wikipedia.org/wiki/Budget",
+                  u"Wikipedia": "http://en.wikipedia.org/wiki/Wikipedia",
+                  u"Overall Wellness": None,
+                  u"Product Offerings": None,
+                  u"Site Documentation": "http://en.wikipedia.org/wiki/Site_survey",
+                  u"Media": "http://en.wikipedia.org/wiki/Media_(communication)",}
+
+# dictionary for manually corrected names
+#   (URI is relevant, but name and related skills are misleading)
+manually_corrected = {u"Billing Systems": u"Systems",
+                      u"Adolescent Psychiatry": u"Adolescence",
+                      u"China Business Development", u"China",
+                      u"International", u"International Experience",
+                      u"Internal Mobility", u"Physical Motion",
+                      u"Natural Lighting", u"Sunshine",
+                      u"Statistical Tools": u"Tools"}
 
 # get the links on this page from the directory list
 def getDirectoryLinks( url ):
@@ -96,30 +111,37 @@ def saveElements(indir, outfile, verbose=None):
         skillpage = open(os.path.join(indir, f), "r")
         soup = BeautifulSoup(skillpage, "lxml")
         skill = {}
+        process_summary = True
         # find the name and summary
         wiki_blurb = soup.find('div', 'wiki-blurb')
         skill['name'] = wiki_blurb.find('h2').string.strip()
         if skill['name'] in manually_added: #Note: not tested!
             skill['more_wiki'] = manually_added[skill['name']]
+            if skill['more_wiki'] == None:
+                del skill['more_wiki'] # the uri was incorrect, so delete the key
+                process_summary = False # and make sure it isn't set again
         growth_rate = wiki_blurb.find('span', 'growth-rate')
         if growth_rate: skill['growth_rate'] = growth_rate.string.strip()
         skill['primary_industry'] = wiki_blurb.find('p', 'primary-industry').string.strip()
         skill_summary = wiki_blurb.find('p', 'skill-summary')
         skill['summary'] = None
-        if skill_summary:
+        if skill_summary and process_summary:
             skill['summary'] = " ".join([string for string in skill_summary.stripped_strings]).split(u'\u2026', 1)[0]
             skill_links = skill_summary.find_all('a')
             skill_links = [link.get('href') for link in skill_links]
             skill['more_wiki'] = urllib2.unquote(skill_links[len(skill_links)-1][20:-13])
             skill['skill_links'] = skill_links[:-1]
 
-        # find related skills
-        rel_a_list = soup.find_all('a', 'skills-list-skill')
-        rel_links = []
-        for rel_a in rel_a_list:
-            pagelink = rel_a.get('href').split('/')[-1]
-            rel_links.append(urllib2.unquote(pagelink.split('?')[0]))
-        skill['related_skills'] = rel_links
+        if skill['name'] in manually_corrected: #Note: not tested!
+            skill['name'] = manually_corrected[skill['name']]
+        else:
+            # find related skills
+            rel_a_list = soup.find_all('a', 'skills-list-skill')
+            rel_links = []
+            for rel_a in rel_a_list:
+                pagelink = rel_a.get('href').split('/')[-1]
+                rel_links.append(urllib2.unquote(pagelink.split('?')[0]))
+            skill['related_skills'] = rel_links
 
         vocabulary.append(skill)
 
