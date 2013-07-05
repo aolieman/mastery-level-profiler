@@ -13,13 +13,19 @@ By taking the union of document annotations for different runs
 and judging for each annotation if it is correct for this document.
 '''
 def interactiveGroundTruth(document):
-    print '\n\n', doc.title
+    print document.title
     extracted_statements = document.dev_truth['extracted']
     init_length = countStatements(document, key='extracted')
     print "For each ann_id: Correct? Yes ENTER | No SPACE"
     for st in sorted(extracted_statements):
         st_id = st.replace("~", ".") # mongo unescape
-        print en_dict[st_id].ljust(35) + st_id
+        try:
+            print en_dict[st_id].ljust(35) + st_id
+        except KeyError:
+            del extracted_statements[st]
+            print "*%s is not in current vocabulary*" % st_id
+            print "**%s REMOVED**\n" % st_id
+            continue
         correct = getch()
         if correct == "\x03": #catch control-c
             print "Skipping to next document\n"
@@ -63,12 +69,13 @@ def edit_ratio(str1, str2):
 def judgeLinkedIn():
     # Load LinkedIn Documents from Mongo
     li_docs = cpr.loadDocuments({'origin': 'linkedin'}, cpr.LinkedInProfile)
+    # TODO: docs need statements in dev_truth['extracted']
     # Select the two docs with most extracted statements
     two_most = heapq.nlargest(2, li_docs, key=countStatements)
-##    for doc in two_most:
-##        if countStatements(doc, key='extracted') > 0:
-##            interactiveGroundTruth(doc)
-##        else: print "Max statements is 0; Check documents!"
+    for doc in two_most:
+        if countStatements(doc, key='extracted') > 0:
+            interactiveGroundTruth(doc)
+        else: print "Max statements is 0; Check documents!"
     # Remove 'dev_truth' from the non-judged documents (prompt to be sure)
     for doc in li_docs:
         if doc not in two_most:
@@ -79,10 +86,64 @@ def judgeLinkedIn():
                 doc.toMongo()
             else: print doc.title, "skipped"
 
+def judgeCourseDescriptions():
+    # Which courses were taken by many students?
+    c_dict, top = countCourseAttendance()
+    (top_nl, top_en) = [], []
+    for c_id, count in top:
+        doc = cpr.loadDocuments({'_id': c_id})[0]
+        if doc.language == 'en':
+            top_en.append(doc)
+        elif doc.language == 'nl':
+            top_nl.append(doc)
+        if min(len(top_en), len(top_nl)) >= 3:
+            break # 3 top docs per language is enough
+    # Make statements and judge selected docs
+    for sel_doc in (top_en[0], top_nl[0]):
+        print "\n\n", sel_doc._id
+        if hasattr(sel_doc, 'dev_truth'):
+            print "Overwrite dev_truth for %s? YES or NO" % doc._id
+            overwrite = raw_input('Overwrite?-> ')
+            if overwrite == "YES": pass
+            else:
+                print doc._id, "skipped"
+                continue
+        
+        sel_doc.dev_truth = {}
+        sel_doc.makeStatements()
+        interactiveGroundTruth(sel_doc)
+
+def countCourseAttendance():
+    count_dict = {}
+    year_dict = {u'total': 0}
+    for y in xrange(2004, 2013):
+        year_dict[unicode(y)] = 0
+    profiles = cpr.loadProfiles()
+    for p in profiles:
+        if p.tudelft == None: continue
+        for c in p.tudelft:
+            c_code = c['cursusid']
+            c_year = c['collegejaar']
+            if c_code not in count_dict:
+                count_dict[c_code] = year_dict.copy()
+            count_dict[c_code][c_year] += 1
+            count_dict[c_code][u'total'] += 1
+    top = sorted([("%sy%s" % (key, maxYear(value)), value[u'total'])
+                  for key, value in count_dict.iteritems()
+                  if value[u'total'] > 5],
+                  key=lambda tup: tup[1], reverse=True)
+    return count_dict, top
+
+def maxYear(y_dict):
+    for y in xrange(2012, 2004, -1):
+        if (y_dict[unicode(y)] > 0
+        and y_dict[unicode(y)] >= y_dict[unicode(y-1)]):
+            return unicode(y)
 
 if __name__ == '__main__' :
 
     #judgeLinkedIn()
+    judgeCourseDescriptions()
 
     # Some is_candidate tests
     is_candidate("Design") # should be in en_dict

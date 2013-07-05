@@ -30,15 +30,19 @@ manually_added = {u"name": "uri",
                   u"Site Documentation": "http://en.wikipedia.org/wiki/Site_survey",
                   u"Media": "http://en.wikipedia.org/wiki/Media_(communication)",}
 
-# dictionary for manually corrected names
-#   (URI is relevant, but name and related skills are misleading)
-manually_corrected = {u"Billing Systems": u"Systems",
-                      u"Adolescent Psychiatry": u"Adolescence",
-                      u"China Business Development", u"China",
-                      u"International", u"International Experience",
-                      u"Internal Mobility", u"Physical Motion",
-                      u"Natural Lighting", u"Sunshine",
-                      u"Statistical Tools": u"Tools"}
+# dictionary for manually corrected names (value[1]: get related skills?)
+#   (URI is relevant, but name (and related skills) are misleading)
+manually_corrected = {u"Billing Systems": (u"Systems", False),
+                      u"Adolescent Psychiatry": (u"Adolescence", False),
+                      u"China Business Development": (u"China", False),
+                      u"Designs": (u"Design", True),
+                      u"International": (u"International Experience", False),
+                      u"Internal Mobility": (u"Physical Motion", False),
+                      u"Natural Lighting": (u"Sunshine", False),
+                      u"Opportunity Mapping": (u"Opportunity Cost", False),
+                      u"Modelling Tools": (u"Scientific Modelling", True),
+                      u"Statistical Tools": (u"Tools", False),
+                      u"Dollar Universe": (u"Universe", False)}
 
 # get the links on this page from the directory list
 def getDirectoryLinks( url ):
@@ -133,15 +137,11 @@ def saveElements(indir, outfile, verbose=None):
             skill['skill_links'] = skill_links[:-1]
 
         if skill['name'] in manually_corrected: #Note: not tested!
-            skill['name'] = manually_corrected[skill['name']]
+            skill['name'] = manually_corrected[skill['name']][0]
+            if manually_corrected[skill['name']][1]: # rel skills are applicable
+                skill['related_skills'] = findRelSkills(soup)
         else:
-            # find related skills
-            rel_a_list = soup.find_all('a', 'skills-list-skill')
-            rel_links = []
-            for rel_a in rel_a_list:
-                pagelink = rel_a.get('href').split('/')[-1]
-                rel_links.append(urllib2.unquote(pagelink.split('?')[0]))
-            skill['related_skills'] = rel_links
+            skill['related_skills'] = findRelSkills(soup)
 
         vocabulary.append(skill)
 
@@ -158,6 +158,15 @@ def saveElements(indir, outfile, verbose=None):
     ofile = open(outfile, 'wb')
     json.dump(vocabulary, ofile, indent=4, separators=(',', ': '))
     ofile.close()
+
+# Find related skills from a skill page
+def findRelSkills(soup):
+    rel_a_list = soup.find_all('a', 'skills-list-skill')
+    rel_links = []
+    for rel_a in rel_a_list:
+        pagelink = rel_a.get('href').split('/')[-1]
+        rel_links.append(urllib2.unquote(pagelink.split('?')[0]))
+    return rel_links
 
 def interlanguageWiki(vocab_dict, verbose=0):
     for (count, term) in enumerate(vocab_dict):
