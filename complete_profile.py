@@ -23,16 +23,20 @@ db = pymongo.Connection('localhost', 27017)['mastery_level_profiler']
 
 # set of ann_ids that are too general and are thus ignored
 ignored_ann_ids = {"Academic_term", "Code", "Consideration", "Course_(education)",
-                   "College", "Diploma", "Human", "Job_(role)", "Life", "Laborer",
-                   "Privately_held_company", "Professor", "School",
+                   "College", "Diploma", "Further_education", "Hobby", "Home",
+                   "Human", "Job_(role)", "Life", "Laborer", "Privately_held_company",
+                   "Printing", "Professor", "Safe", "School",
                    "Secondary_education", "Solution", "Student", "Supervisor",
                    "Theory", "Tutorial", "University", "Van", "Vocational_education"}
 # set of ann_ids that occur in course descriptions, but don't say much about the course
 ignored_tudelft = {"Blackboard_Learning_System", "Education", "Blackboard_Inc~",
-                   "Demand_(economics)", "Epistemology", "Feedback",
+                   "Deliverable", "Demand_(economics)", "Epistemology", "Feedback",
                    "Higher_education", "Lecture", "Literature", "Material",
                    "Print_on_demand", "Reference", "Summary",
                    "Email", "Homework", "Training"}
+# set of ann_ids that occur in portfolios, but don't say much about the project
+ignored_shworks = {"Deliverable", "Education", "Female", "Image", "Male", "Output",
+                   "Project", "Woman"}
 
 class Profile(object):
     def __init__(self, **entries):
@@ -159,9 +163,10 @@ class Document(object):
             all_ann_ids = set()
             for key in s.keys(): # Here I add all annotations; later filter!
                 if key[:7] == "txt_ann" or key[:5] == "h_ann":
-                    all_ann_ids.update(s[key])
+                    try: all_ann_ids.update(s[key])
+                    except TypeError, e:
+                        print key, e
             all_ann_ids.difference_update(ignored_ann_ids)
-            print all_ann_ids
             for ann_id in all_ann_ids:
                 if "." in ann_id: # replacement hack for forbidden Mongo char
                     mongo_escaped = ann_id.replace(".", "~")
@@ -173,6 +178,10 @@ class Document(object):
                 all_ann_ids.difference_update(ignored_tudelft)
                 for ann_id in all_ann_ids:
                     extracted.add(statement(ann_id, 2, 2, 0))
+            elif self.origin == 'shareworks':
+                all_ann_ids.difference_update(ignored_shworks)
+                for ann_id in all_ann_ids:
+                    extracted.add(statement(ann_id, 1, 1, 1))
 
         # Statements are saved to dev_truth for now
         self.dev_truth['extracted'] = extracted

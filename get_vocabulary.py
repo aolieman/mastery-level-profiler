@@ -25,23 +25,35 @@ manually_added = {u"name": "uri",
                   u"Photography": "http://en.wikipedia.org/wiki/Photography",
                   u"Budgets": "http://en.wikipedia.org/wiki/Budget",
                   u"Wikipedia": "http://en.wikipedia.org/wiki/Wikipedia",
+                  u"Databases": "http://en.wikipedia.org/wiki/Database",
+                  u"Data Maintenance": None,
+                  u"Faculty Training": None,
+                  u"Large Volume": None,
                   u"Overall Wellness": None,
                   u"Product Offerings": None,
+                  u"Valuable Articles": None,
                   u"Site Documentation": "http://en.wikipedia.org/wiki/Site_survey",
                   u"Media": "http://en.wikipedia.org/wiki/Media_(communication)",}
 
 # dictionary for manually corrected names (value[1]: get related skills?)
 #   (URI is relevant, but name (and related skills) are misleading)
-manually_corrected = {u"Billing Systems": (u"Systems", False),
+manually_corrected = {u"Art Selection": (u"Sunshine", False),
+                      u"Billing Systems": (u"Systems", False),
                       u"Adolescent Psychiatry": (u"Adolescence", False),
                       u"China Business Development": (u"China", False),
+                      u"Simplifying the Complex": (u"Complex Systems", False),
                       u"Designs": (u"Design", True),
+                      u"Emotional": (u"Emotions", True),
+                      u"Game Audio Implementation": (u"Games", True),
                       u"International": (u"International Experience", False),
+                      u"Leaf Removal": (u"Leaves", True),
                       u"Internal Mobility": (u"Physical Motion", False),
-                      u"Natural Lighting": (u"Sunshine", False),
+                      u"Natural Lighting": (u"Natural Selection", False),
                       u"Opportunity Mapping": (u"Opportunity Cost", False),
                       u"Modelling Tools": (u"Scientific Modelling", True),
+                      u"Reasoning Skills": (u"Reasoning", True),
                       u"Statistical Tools": (u"Tools", False),
+                      u"Tree Manager": (u"Tree Structures", False),
                       u"Dollar Universe": (u"Universe", False)}
 
 # get the links on this page from the directory list

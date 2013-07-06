@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import complete_profile as cpr
 import compare
-import nltk, heapq
+import nltk, heapq, numpy
 from msvcrt import getch #Only runs in Win, and only in cmd.exe
 
 # Load the en_uri -> topic_name translation dict
@@ -13,7 +13,10 @@ By taking the union of document annotations for different runs
 and judging for each annotation if it is correct for this document.
 '''
 def interactiveGroundTruth(document):
-    print document.title
+    try:
+        print document.title
+    except AttributeError:
+        print document._id
     extracted_statements = document.dev_truth['extracted']
     init_length = countStatements(document, key='extracted')
     print "For each ann_id: Correct? Yes ENTER | No SPACE"
@@ -26,6 +29,16 @@ def interactiveGroundTruth(document):
             print "*%s is not in current vocabulary*" % st_id
             print "**%s REMOVED**\n" % st_id
             continue
+        except UnicodeEncodeError:
+            try:
+                old_st_id = st_id
+                st_id = st_id.encode('cp850', errors='replace')
+                #TODO: encoding works in test, but gets messed by concat?
+                print en_dict[st_id].ljust(35) + st_id
+            except:
+                st_id = repr(st_id)                
+                print "*%s or %s cannot be printed*" % (st_id,
+                                                        repr(en_dict[old_st_id]))
         correct = getch()
         if correct == "\x03": #catch control-c
             print "Skipping to next document\n"
@@ -40,7 +53,7 @@ def interactiveGroundTruth(document):
             print "**%s CORRECT**\n" % st_id
     # Done; save document to mongo
     final_length = countStatements(document, key='extracted')
-    print "\n %i incorrect statements were removed" % (init_length - final_length,)
+    print "\n %i incorrect statements were removed\n" % (init_length - final_length,)
     document.toMongo()
 
 # Compute length of a statements dict of a document
@@ -70,11 +83,11 @@ def judgeLinkedIn():
     # Load LinkedIn Documents from Mongo
     li_docs = cpr.loadDocuments({'origin': 'linkedin'}, cpr.LinkedInProfile)
     # TODO: docs need statements in dev_truth['extracted']
-    # Select the two docs with most extracted statements
+    # Select the two docs with most extracted statements and judge them
     two_most = heapq.nlargest(2, li_docs, key=countStatements)
-    for doc in two_most:
-        if countStatements(doc, key='extracted') > 0:
-            interactiveGroundTruth(doc)
+    for sel_doc in two_most:
+        if countStatements(sel_doc, key='extracted') > 0:
+            interactiveGroundTruth(sel_doc)
         else: print "Max statements is 0; Check documents!"
     # Remove 'dev_truth' from the non-judged documents (prompt to be sure)
     for doc in li_docs:
@@ -102,11 +115,11 @@ def judgeCourseDescriptions():
     for sel_doc in (top_en[0], top_nl[0]):
         print "\n\n", sel_doc._id
         if hasattr(sel_doc, 'dev_truth'):
-            print "Overwrite dev_truth for %s? YES or NO" % doc._id
+            print "Overwrite dev_truth for %s? YES or NO" % sel_doc._id
             overwrite = raw_input('Overwrite?-> ')
             if overwrite == "YES": pass
             else:
-                print doc._id, "skipped"
+                print sel_doc._id, "skipped"
                 continue
         
         sel_doc.dev_truth = {}
@@ -140,10 +153,75 @@ def maxYear(y_dict):
         and y_dict[unicode(y)] >= y_dict[unicode(y-1)]):
             return unicode(y)
 
+# Judge three Shareworks docs and remove dev_truth from non-judged docs
+def judgeShareworksPortfolio():
+    # Load Shareworks Documents from Mongo
+    posts = cpr.loadDocuments({'doctype': 'posts'})
+    reports = cpr.loadDocuments({'doctype': 'report'})
+    slides = cpr.loadDocuments({'doctype': 'slides'})
+    # Make statements for all sw_docs
+    has_dev_truth_count = 0
+    overwrite = False
+    while True: # this loop is a strange hack and needs refactoring
+        print "\nMaking statements for sw_docs (overwrite=%s)" % overwrite
+        if has_dev_truth_count < 0:
+            has_dev_truth_count = -67
+        for doc in (posts + reports + slides):
+            # threshold for overwriting dev_truths
+            if has_dev_truth_count > 10:
+                print "\nAssuming docs are not judged; overwrite everything"
+                overwrite = True
+                has_dev_truth_count = -1
+                break                
+            if hasattr(doc, 'dev_truth') and not overwrite:
+                has_dev_truth_count += 1
+                print "!!%s already has a dev_truth; skipping" % doc._id
+                continue # don't overwrite; might be judged already
+            doc.dev_truth = {}
+            doc.makeStatements()
+        if not overwrite or has_dev_truth_count < -10:
+            print "\nDone making statements!"
+            break
+    # Select the post closest to 15th percentile # of extracted statements
+    post_counts = map(countStatements, posts)
+    perc_15 = 1/numpy.percentile(post_counts, 15.0)
+    sel_post = min(posts,
+	       key=lambda d: abs(countStatements(d)*perc_15-1))
+    print "\nPost %s selected (%i statements)" % (sel_post._id,
+                                                  countStatements(sel_post))
+    # Select the report closest to median # of extracted statements
+    report_counts = map(countStatements, reports)
+    perc_50 = 1/numpy.percentile(report_counts, 50.0)
+    sel_report = min(reports,
+	       key=lambda d: abs(countStatements(d)*perc_50-1))
+    print "\nReport %s selected (%i statements)" % (sel_report._id,
+                                                  countStatements(sel_report))
+    # Select the slides closest to median # of extracted statements
+    # (use a sort here, because there aren't too many slides docs)
+    sel_slides = sorted(slides, key=countStatements)[len(slides)/2]
+    print "\nSlides %s selected (%i statements)" % (sel_slides._id,
+                                                  countStatements(sel_slides))
+
+    # Judge the selected documents
+    for sel_doc in (sel_post, sel_report, sel_slides):
+        if countStatements(sel_doc, key='extracted') > 0:
+            interactiveGroundTruth(sel_doc)
+        else: print "Can't judge a doc with 0 statements; Check documents!"
+
+    # Remove 'dev_truth' from the non-judged documents
+    for doc in (posts + reports + slides):
+        if doc not in (sel_post, sel_report, sel_slides):
+            #print "Delete dev_truth for %s" % doc._id
+            del doc.dev_truth
+            doc.toMongo()
+        else: print doc._id, "dev_truth kept!"
+    print "\nAll dev_truths deleted for non-judged documents"
+            
 if __name__ == '__main__' :
 
     #judgeLinkedIn()
-    judgeCourseDescriptions()
+    #judgeCourseDescriptions()
+    judgeShareworksPortfolio()
 
     # Some is_candidate tests
     is_candidate("Design") # should be in en_dict
