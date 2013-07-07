@@ -22,18 +22,19 @@ text_resp = 'txt_resp' + parameter_str
 db = pymongo.Connection('localhost', 27017)['mastery_level_profiler']
 
 # set of ann_ids that are too general and are thus ignored
+# "Prostitution" was added because it can be offensive
 ignored_ann_ids = {"Academic_term", "Code", "Consideration", "Course_(education)",
                    "College", "Diploma", "Further_education", "Hobby", "Home",
                    "Human", "Job_(role)", "Life", "Laborer", "Privately_held_company",
-                   "Printing", "Professor", "Safe", "School",
+                   "Printing", "Professor", "Safe", "School", "Prostitution",
                    "Secondary_education", "Solution", "Student", "Supervisor",
                    "Theory", "Tutorial", "University", "Van", "Vocational_education"}
 # set of ann_ids that occur in course descriptions, but don't say much about the course
 ignored_tudelft = {"Blackboard_Learning_System", "Education", "Blackboard_Inc~",
                    "Deliverable", "Demand_(economics)", "Epistemology", "Feedback",
                    "Higher_education", "Lecture", "Literature", "Material",
-                   "Print_on_demand", "Reference", "Summary",
-                   "Email", "Homework", "Training"}
+                   "Master_class", "Print_on_demand", "Reference", "Summary",
+                   "Email", "Homework", "Training", "Symposium", "Engineer"}
 # set of ann_ids that occur in portfolios/websites, but don't say much about the project/student
 ignored_shw_web = {"Deliverable", "Education", "Female", "Graduation",
                    "Image", "Male", "Output", "Project", "Woman"}
@@ -168,7 +169,9 @@ class Document(object):
             all_ann_ids = set()
             for key in s.keys():
                 if key[:7] == "txt_ann" or key[:5] == "h_ann":
-                    if param_str in key:
+                    if param_str == "dev_truth":
+                        all_ann_ids.update(s[key])
+                    elif param_str in key:
                         try: all_ann_ids.update(s[key])
                         except TypeError, e:
                             print key, e
@@ -208,15 +211,15 @@ class LinkedInProfile(Document):
     Makes statements from underlying annotations.
     For now only extracted statements, from all runs.
     """
-    def makeStatements(self):
+    def makeStatements(self, param_str):
         extracted = StatementDict()
         for s in self.content:
             all_ann_ids = set()
             for key in s.keys(): # Here I add all annotations; later filter!
                 if key[:7] == "txt_ann" or key[:5] == "h_ann":
-                    all_ann_ids.update(s[key])
+                    if param_str in key:
+                        all_ann_ids.update(s[key])
             all_ann_ids.difference_update(ignored_ann_ids)
-            print all_ann_ids
             for ann_id in all_ann_ids:
                 if "." in ann_id: # replacement hack for forbidden Mongo char
                     mongo_escaped = ann_id.replace(".", "~")
@@ -253,9 +256,9 @@ class LinkedInProfile(Document):
             else:
                 print "! Header %s not recognized !" % s['header']
 
-        # Statements are not saved for now
-        print extracted.keys()
-        #self.toMongo()
+        # Statements are saved to a param_str attribute
+        setattr(self, param_str, {'extracted': extracted})
+        self.toMongo()
 
 def statement(ann_id, skill=0, knowledge=0, interest=0):
     lvl_dict = {'skill': skill, 'knowledge': knowledge, 'interest':interest}

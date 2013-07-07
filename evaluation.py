@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import complete_profile as cpr
+import dev_format as ft
 import compare
 import nltk, heapq, numpy
 from msvcrt import getch #Only runs in Win, and only in cmd.exe
@@ -113,7 +114,7 @@ def judgeCourseDescriptions():
         if min(len(top_en), len(top_nl)) >= 3:
             break # 3 top docs per language is enough
     # Make statements and judge selected docs
-    for sel_doc in (top_en[0], top_nl[0]):
+    for sel_doc in (top_nl[0], top_nl[0]):
         print "\n\n", sel_doc._id
         if hasattr(sel_doc, 'dev_truth'):
             print "Overwrite dev_truth for %s? YES or NO" % sel_doc._id
@@ -124,7 +125,7 @@ def judgeCourseDescriptions():
                 continue
         
         sel_doc.dev_truth = {}
-        sel_doc.makeStatements()
+        sel_doc.makeStatements("dev_truth") # should work, but verify
         interactiveGroundTruth(sel_doc)
 
 def countCourseAttendance():
@@ -253,13 +254,99 @@ def judgeWebsites():
                     print "**Dev_truth DELETED**\n"
         else: print "Max statements is 0; Check documents!"
 
+# Make statements for docs with dev_truth
+def devStatements(verbose=0):
+    dev_docs = cpr.loadDocuments(
+        {'dev_truth': {'$exists': 1}, 'origin': {'$ne': 'linkedin'}})
+    dev_docs += cpr.loadDocuments(
+        {'dev_truth': {'$exists': 1}, 'origin': 'linkedin'}, cpr.LinkedInProfile)
+    dev_runs = ["multi_p8_c0_0_s0", "multi_szt_p4_c0_0_s0",
+                "multi_t10_nl_c0_0_s0", "t10p4_c0_0_s0"]
+    for doc in dev_docs:
+        for run_str in dev_runs:
+            if verbose > 0:
+                print "\nStatements for doc %s, run %s:" % (doc._id, run_str)
+            doc.makeStatements(run_str)
+            run_stmts = getattr(doc, run_str)
+            if verbose > 0: print run_stmts['extracted'].keys()
+    return dev_docs, dev_runs
+
+# Precision: fraction of correct generated statements
+# Recall: fraction of statements in truth that have been generated
+# inputs: statements produced by run, statements in truth
+def performance(generated, truth):
+    correct = set(truth).intersection(set(generated))
+    incorrect = set(generated).difference(set(truth))
+    missing = set(truth).difference(set(generated))
+
+    try:
+        precision = len(correct) / float(len(generated))
+    except ZeroDivisionError:
+        precision = 0 # no statments were generated in this run
+    recall = len(correct) / float(len(truth))
+
+    results = {'correct': correct,
+               'incorrect': incorrect,
+               'missing': missing,
+               'precision': precision,
+               'recall': recall}
+    
+    return results
+
+def devEvalTables(dev_docs, dev_runs):
+    # Print table of performance per document / run
+    rows = []
+    header = ["Doc_ID", "lang"] + dev_runs
+    for doc in dev_docs:
+        row = [doc._id, doc.language]
+        for runstr in dev_runs:
+            run = getattr(doc, runstr)
+            extracted = run['extracted']
+            truth = doc.dev_truth['extracted']
+            res = performance(extracted, truth)
+            resstr = "p %.2f, r %.2f" % (res['precision'], res['recall'])
+            row.append(resstr)
+        rows.append(row)
+    print ft.matrix_to_string(rows, header)
+
+    # Print table of performance per run / language
+    rows = []
+    header = ["Run", "Dutch", "English"]
+    nl_truth, en_truth = set(), set()
+    nl_docs, en_docs = [], []
+    for doc in dev_docs:
+        if doc.language == 'nl':
+            nl_truth.update(doc.dev_truth['extracted'])
+            nl_docs.append(doc)
+        elif doc.language == 'en':
+            en_truth.update(doc.dev_truth['extracted'])
+            en_docs.append(doc)
+    for runstr in dev_runs:
+        row = [runstr]
+        extracted_nl, extracted_en = set(), set()
+        for doc in nl_docs:
+            run = getattr(doc, runstr)
+            extracted_nl.update(run['extracted'])
+        for doc in en_docs:
+            run = getattr(doc, runstr)
+            extracted_en.update(run['extracted'])
+        nl_res = performance(extracted_nl, nl_truth)
+        en_res = performance(extracted_en, en_truth)
+        row.append("p %.2f, r %.2f" % (nl_res['precision'], nl_res['recall']))
+        row.append("p %.2f, r %.2f" % (en_res['precision'], en_res['recall']))
+        rows.append(row)
+    print ft.matrix_to_string(rows, header)
+    
             
 if __name__ == '__main__' :
 
     #judgeLinkedIn()
     #judgeCourseDescriptions()
     #judgeShareworksPortfolio()
-    judgeWebsites()
+    #judgeWebsites()
+
+    docs, runs = devStatements()
+    devEvalTables(docs, runs)
 
     # Some is_candidate tests
     is_candidate("Design") # should be in en_dict
