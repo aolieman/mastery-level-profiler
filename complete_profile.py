@@ -34,9 +34,13 @@ ignored_tudelft = {"Blackboard_Learning_System", "Education", "Blackboard_Inc~",
                    "Higher_education", "Lecture", "Literature", "Material",
                    "Print_on_demand", "Reference", "Summary",
                    "Email", "Homework", "Training"}
-# set of ann_ids that occur in portfolios, but don't say much about the project
-ignored_shworks = {"Deliverable", "Education", "Female", "Image", "Male", "Output",
-                   "Project", "Woman"}
+# set of ann_ids that occur in portfolios/websites, but don't say much about the project/student
+ignored_shw_web = {"Deliverable", "Education", "Female", "Graduation",
+                   "Image", "Male", "Output", "Project", "Woman"}
+
+# Translation dict (ann_id->ann_id) for domain-specific abbreviations
+ide_abbr = {"Integrated_development_environment": "Product_design",
+            "Very_Important_Person": "Vision_in_Product_Design"}
 
 class Profile(object):
     def __init__(self, **entries):
@@ -157,15 +161,17 @@ class Document(object):
                         section[text_resp] = sp_tuple[1]
         self.toMongo()
 
-    def makeStatements(self):
+    def makeStatements(self, param_str):
         extracted = StatementDict()
+        # TODO: Title annotations
         for s in self.content:
             all_ann_ids = set()
-            for key in s.keys(): # Here I add all annotations; later filter!
+            for key in s.keys():
                 if key[:7] == "txt_ann" or key[:5] == "h_ann":
-                    try: all_ann_ids.update(s[key])
-                    except TypeError, e:
-                        print key, e
+                    if param_str in key:
+                        try: all_ann_ids.update(s[key])
+                        except TypeError, e:
+                            print key, e
             all_ann_ids.difference_update(ignored_ann_ids)
             for ann_id in all_ann_ids:
                 if "." in ann_id: # replacement hack for forbidden Mongo char
@@ -173,18 +179,25 @@ class Document(object):
                     all_ann_ids.remove(ann_id)
                     all_ann_ids.add(mongo_escaped)
                     print "%s was replaced with %s" % (ann_id, mongo_escaped)
+                if ann_id in ide_abbr: # Domain-specific abbreviations
+                    all_ann_ids.remove(ann_id)
+                    all_ann_ids.add(ide_abbr[ann_id])
             if self.origin == 'tudelft':
                 # TODO: incorporate course grades for lvl
                 all_ann_ids.difference_update(ignored_tudelft)
                 for ann_id in all_ann_ids:
                     extracted.add(statement(ann_id, 2, 2, 0))
             elif self.origin == 'shareworks':
-                all_ann_ids.difference_update(ignored_shworks)
+                all_ann_ids.difference_update(ignored_shw_web)
                 for ann_id in all_ann_ids:
                     extracted.add(statement(ann_id, 1, 1, 1))
+            elif self.origin == 'website':
+                all_ann_ids.difference_update(ignored_shw_web)
+                for ann_id in all_ann_ids:
+                    extracted.add(statement(ann_id, 2, 2, 2))
 
-        # Statements are saved to dev_truth for now
-        self.dev_truth['extracted'] = extracted
+        # Statements are saved to a param_str attribute
+        setattr(self, param_str, {'extracted': extracted})
         self.toMongo()
 
 class UnequalIDsException(pymongo.errors.InvalidId):
@@ -210,6 +223,9 @@ class LinkedInProfile(Document):
                     all_ann_ids.remove(ann_id)
                     all_ann_ids.add(mongo_escaped)
                     print "%s was replaced with %s" % (ann_id, mongo_escaped)
+                if ann_id in ide_abbr: # Domain-specific abbreviations
+                    all_ann_ids.remove(ann_id)
+                    all_ann_ids.add(ide_abbr[ann_id])
             if s['header'] in {"Headline", "Summary", "Specialties"}:
                 for ann_id in all_ann_ids:
                     extracted.add(statement(ann_id, 2, 1, 1))

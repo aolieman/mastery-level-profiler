@@ -55,6 +55,7 @@ def interactiveGroundTruth(document):
     final_length = countStatements(document, key='extracted')
     print "\n %i incorrect statements were removed\n" % (init_length - final_length,)
     document.toMongo()
+    return init_length - final_length
 
 # Compute length of a statements dict of a document
 def countStatements(document, key='extracted'):
@@ -216,12 +217,49 @@ def judgeShareworksPortfolio():
             doc.toMongo()
         else: print doc._id, "dev_truth kept!"
     print "\nAll dev_truths deleted for non-judged documents"
+
+# Judge three website docs (and remove dev_truth from non-judged docs)
+def judgeWebsites():
+    # Load website Documents from Mongo
+    ws_docs = cpr.loadDocuments({'origin': 'website'})
+    # Make statements for all ws_docs
+    for doc in ws_docs:
+        if hasattr(doc, 'dev_truth'):
+            print "Not making statements for %s; already has dev_truth" % doc.title
+        else:
+            doc.dev_truth = {}
+            doc.makeStatements()
+    # Select two docs with most statements
+    two_most = heapq.nlargest(2, ws_docs, key=countStatements)
+    # Remove dev_truth for non-selected docs
+    for doc in ws_docs:
+        if doc not in two_most:
+            print "Delete dev_truth for %s" % doc.title
+            del doc.dev_truth
+            doc.toMongo()
+    # Judge selected docs
+    for sel_doc in two_most:
+        if countStatements(sel_doc, key='extracted') > 0:
+            rm_count = interactiveGroundTruth(sel_doc)
+            if rm_count < 1:
+                print("No statements removed: default behavior DELETE.\n"
+                      "Press Enter or Space to KEEP dev_truth,"
+                      " or another key to delete ...")
+                delete = getch()
+                if delete in (" ", "\r"):
+                    print "**Dev_truth KEPT**\n"
+                else:
+                    del sel_doc.dev_truth
+                    print "**Dev_truth DELETED**\n"
+        else: print "Max statements is 0; Check documents!"
+
             
 if __name__ == '__main__' :
 
     #judgeLinkedIn()
     #judgeCourseDescriptions()
-    judgeShareworksPortfolio()
+    #judgeShareworksPortfolio()
+    judgeWebsites()
 
     # Some is_candidate tests
     is_candidate("Design") # should be in en_dict
