@@ -74,11 +74,28 @@ def is_candidate(term):
         print None, term
     else: print "nope"
 
+def is_candidateTests():
+    # Some is_candidate tests
+    is_candidate("Design") # should be in en_dict
+    is_candidate("Architecting") # should be in en_dict[None]
+    is_candidate("Arab-Israeli_Conflict") # not linked
+    is_candidate("Food Photography") # should be in en_dict.values
+
 # Computes the Edit Ratio [0-1] metric between two strings
 # Can perhaps also be used to find missing URIs in the vocabulary
 def edit_ratio(str1, str2):
     distance = nltk.metrics.edit_distance(str1, str2)
     return float(distance) / max(len(str1), len(str2))
+
+def edit_ratioTests():
+    # Some edit_ratio tests
+    print "AP", "APV", edit_ratio("AP", "APV")
+    print "XML", "APV", edit_ratio("XML", "APV")
+    print "Architecting", "Architecting", edit_ratio("Architecting", "Architecting")
+    # Easy matching
+    print 'Food Photography', 'Food_photography', edit_ratio('Food Photography', 'Food_photography')
+    # Disamgiguation suffix needs to be stripped?
+    print "Python", "Python_(programming_language)", edit_ratio("Python", "Python_(programming_language)")
 
 # Judge two LinkedIn docs and remove dev_truth from non-judged docs
 def judgeLinkedIn():
@@ -255,20 +272,14 @@ def judgeWebsites():
         else: print "Max statements is 0; Check documents!"
 
 # Make statements for docs with dev_truth
-def devStatements(verbose=0):
-    dev_docs = cpr.loadDocuments(
-        {'dev_truth': {'$exists': 1}, 'origin': {'$ne': 'linkedin'}})
-    dev_docs += cpr.loadDocuments(
-        {'dev_truth': {'$exists': 1}, 'origin': 'linkedin'}, cpr.LinkedInProfile)
-    dev_runs = ["multi_p8_c0_0_s0", "multi_szt_p4_c0_0_s0",
-                "multi_t10_nl_c0_0_s0", "t10p4_c0_0_s0"]
+def devStatements(dev_docs, dev_runs, verbose=0):
     for doc in dev_docs:
         for run_str in dev_runs:
             if verbose > 0:
                 print "\nStatements for doc %s, run %s:" % (doc._id, run_str)
-            doc.makeStatements(run_str)
+            doc.makeStatements(run_str, del_resp=True)
             run_stmts = getattr(doc, run_str)
-            if verbose > 0: print run_stmts['extracted'].keys()
+            if verbose > 1: print run_stmts['extracted'].keys()
     return dev_docs, dev_runs
 
 # Precision: fraction of correct generated statements
@@ -293,7 +304,7 @@ def performance(generated, truth):
     
     return results
 
-def devEvalTables(dev_docs, dev_runs):
+def docRunEvalTable(dev_docs, dev_runs):
     # Print table of performance per document / run
     rows = []
     header = ["Doc_ID", "lang"] + dev_runs
@@ -309,6 +320,7 @@ def devEvalTables(dev_docs, dev_runs):
         rows.append(row)
     print ft.matrix_to_string(rows, header)
 
+def runLangEvalTable(dev_docs, dev_runs):
     # Print table of performance per run / language
     rows = []
     header = ["Run", "Dutch", "English"]
@@ -330,13 +342,32 @@ def devEvalTables(dev_docs, dev_runs):
         for doc in en_docs:
             run = getattr(doc, runstr)
             extracted_en.update(run['extracted'])
-        nl_res = performance(extracted_nl, nl_truth)
-        en_res = performance(extracted_en, en_truth)
-        row.append("p %.2f, r %.2f" % (nl_res['precision'], nl_res['recall']))
-        row.append("p %.2f, r %.2f" % (en_res['precision'], en_res['recall']))
+        if len(nl_truth) > 0:
+            nl_res = performance(extracted_nl, nl_truth)
+            row.append("p %.2f, r %.2f" % (nl_res['precision'], nl_res['recall']))
+        else: row.append("none")
+        if len(en_truth) > 0:
+            en_res = performance(extracted_en, en_truth)
+            row.append("p %.2f, r %.2f" % (en_res['precision'], en_res['recall']))
+        else: row.append("none")
         rows.append(row)
     print ft.matrix_to_string(rows, header)
     
+def loadDevDocs():
+    #read dev_truth docs from Mongo
+    dev_docs_en = cpr.loadDocuments(
+        {'dev_truth': {'$exists': 1}, 'origin': {'$ne': 'linkedin'},
+         'language': 'en'})
+    dev_docs_en += cpr.loadDocuments(
+        {'dev_truth': {'$exists': 1}, 'origin': 'linkedin',
+         'language': 'en'}, cpr.LinkedInProfile)
+    dev_docs_nl = cpr.loadDocuments(
+        {'dev_truth': {'$exists': 1}, 'language': 'nl'})
+
+    print "EN:", [doc._id for doc in dev_docs_en]
+    print "NL:", [doc._id for doc in dev_docs_nl]
+
+    return dev_docs_en, dev_docs_nl
             
 if __name__ == '__main__' :
 
@@ -345,20 +376,14 @@ if __name__ == '__main__' :
     #judgeShareworksPortfolio()
     #judgeWebsites()
 
-    docs, runs = devStatements()
-    devEvalTables(docs, runs)
-
-    # Some is_candidate tests
-    is_candidate("Design") # should be in en_dict
-    is_candidate("Architecting") # should be in en_dict[None]
-    is_candidate("Arab-Israeli_Conflict") # not linked
-    is_candidate("Food Photography") # should be in en_dict.values
+    dev_docs_en, dev_docs_nl = loadDevDocs()
     
-    # Some edit_ratio tests
-    print "AP", "APV", edit_ratio("AP", "APV")
-    print "XML", "APV", edit_ratio("XML", "APV")
-    print "Architecting", "Architecting", edit_ratio("Architecting", "Architecting")
-    # Easy matching
-    print 'Food Photography', 'Food_photography', edit_ratio('Food Photography', 'Food_photography')
-    # Disamgiguation suffix needs to be stripped?
-    print "Python", "Python_(programming_language)", edit_ratio("Python", "Python_(programming_language)")
+    new_runs = cpr.devParamSweep(dev_docs_nl, "p8")
+    old_runs = ["multi_szt_p4_c0_0_s0", "multi_t10_nl_c0_0_s0", "t10p4_c0_0_s0"]
+    
+    print "\n\n", new_runs    
+    devStatements(dev_docs_nl, new_runs, verbose=1)
+
+    runs = new_runs + old_runs
+    dev_docs = dev_docs_nl + dev_docs_en
+    runLangEvalTable(dev_docs, runs)

@@ -5,18 +5,28 @@ import compare, tudelft, shareworks
 # set up annotation functions
 vocabulary = compare.readVocabulary('vocabulary_man.json')
 term_ids, nl_dict, en_dict = compare.getTermIDs(vocabulary)
-candidate_param = "multi" # 'single' for /annotate, 'multi' for /candidates
-confidence = 0.0
-support = 0
-misc_params = "p8"
-parameter_str = '_%s_%s_c%s_s%s' % (candidate_param, misc_params, confidence, support)
-parameter_str = str(parameter_str).replace('.', '_')
-title_ann = 'title_ann' + parameter_str
-title_resp = 'title_resp' + parameter_str
-header_ann = 'h_ann' + parameter_str
-header_resp = 'h_resp' + parameter_str
-text_ann = 'txt_ann' + parameter_str
-text_resp = 'txt_resp' + parameter_str
+
+def initializeParameters(cand, misc, con, sup):
+    global candidate_param, confidence, support
+    global parameter_str, title_ann, title_resp
+    global header_ann, header_resp, text_ann, text_resp
+    candidate_param = cand # 'single' for /annotate, 'multi' for /candidates
+    confidence = con
+    support = sup
+    misc_params = misc
+    parameter_str = '_%s_%s_c%s_s%s' % (candidate_param, misc_params, confidence, support)
+    parameter_str = str(parameter_str).replace('.', '_')
+    title_ann = 'title_ann' + parameter_str
+    title_resp = 'title_resp' + parameter_str
+    header_ann = 'h_ann' + parameter_str
+    header_resp = 'h_resp' + parameter_str
+    text_ann = 'txt_ann' + parameter_str
+    text_resp = 'txt_resp' + parameter_str
+    print "Parameters set to:", parameter_str[1:]
+    return parameter_str[1:]
+
+# Initialize parameters to high-recall settings
+initializeParameters("multi", "p8", 0.0, 0)
 
 # establish a connection to the MongoDB
 db = pymongo.Connection('localhost', 27017)['mastery_level_profiler']
@@ -109,7 +119,7 @@ class Document(object):
     def toMongo(self):
         return db.document.save(self.__dict__)
 
-    def annotate(self, header=False, text=True, title=False):
+    def annotate(self, header=False, text=True, title=False, mongo=True):
         if hasattr(self, "title"):
             print "\nAnnotations for " + self.title
         else: print "\nAnnotations for", self._id
@@ -160,9 +170,10 @@ class Document(object):
                             section[text_ann] = translateDutchIDs(section[text_ann])
                         print section[text_ann]
                         section[text_resp] = sp_tuple[1]
-        self.toMongo()
+        # if the mongo boolean is set, save to MongoDB
+        if mongo: self.toMongo()
 
-    def makeStatements(self, param_str):
+    def makeStatements(self, param_str, del_resp=False):
         extracted = StatementDict()
         # TODO: Title annotations
         for s in self.content:
@@ -175,6 +186,11 @@ class Document(object):
                         try: all_ann_ids.update(s[key])
                         except TypeError, e:
                             print key, e
+                        if del_resp: # mainly for use with devParamSweep()
+                            try:
+                                del s[key.replace("ann", "resp")] # del response
+                            except KeyError:
+                                pass
             all_ann_ids.difference_update(ignored_ann_ids)
             for ann_id in all_ann_ids:
                 if "." in ann_id: # replacement hack for forbidden Mongo char
@@ -200,8 +216,16 @@ class Document(object):
                     extracted.add(statement(ann_id, 2, 2, 2))
 
         # Statements are saved to a param_str attribute
-        setattr(self, param_str, {'extracted': extracted})
-        self.toMongo()
+        if len(extracted) > 0:
+            setattr(self, param_str, {'extracted': extracted})
+            try: self.toMongo()
+            except pymongo.errors.InvalidDocument:
+                print "!!Document too large, deleting responses"
+                for s in self.content:
+                    for key in s.keys():
+                        if "resp" in key:
+                            del s[key]
+                            print key, "deleted"
 
 class UnequalIDsException(pymongo.errors.InvalidId):
     pass
@@ -209,16 +233,23 @@ class UnequalIDsException(pymongo.errors.InvalidId):
 class LinkedInProfile(Document):
     """
     Makes statements from underlying annotations.
-    For now only extracted statements, from all runs.
+    For now only extracted statements.
     """
-    def makeStatements(self, param_str):
+    def makeStatements(self, param_str, del_resp=False):
         extracted = StatementDict()
         for s in self.content:
             all_ann_ids = set()
-            for key in s.keys(): # Here I add all annotations; later filter!
+            for key in s.keys():
                 if key[:7] == "txt_ann" or key[:5] == "h_ann":
-                    if param_str in key:
+                    if param_str == "dev_truth":
                         all_ann_ids.update(s[key])
+                    elif param_str in key:
+                        all_ann_ids.update(s[key])
+                        if del_resp: # mainly for use with devParamSweep()
+                            try:
+                                del s[key.replace("ann", "resp")] # del response
+                            except KeyError:
+                                pass
             all_ann_ids.difference_update(ignored_ann_ids)
             for ann_id in all_ann_ids:
                 if "." in ann_id: # replacement hack for forbidden Mongo char
@@ -257,8 +288,16 @@ class LinkedInProfile(Document):
                 print "! Header %s not recognized !" % s['header']
 
         # Statements are saved to a param_str attribute
-        setattr(self, param_str, {'extracted': extracted})
-        self.toMongo()
+        if len(extracted) > 0:
+            setattr(self, param_str, {'extracted': extracted})
+            try: self.toMongo()
+            except pymongo.errors.InvalidDocument:
+                print "!!Document too large, deleting responses"
+                for s in self.content:
+                    for key in s.keys():
+                        if "resp" in key:
+                            del s[key]
+                            print key, "deleted"
 
 def statement(ann_id, skill=0, knowledge=0, interest=0):
     lvl_dict = {'skill': skill, 'knowledge': knowledge, 'interest':interest}
@@ -452,6 +491,34 @@ def associateWebsitesWithProfiles(websites_dir):
                 else: profile.website = [doc_id]
                 print profile.toMongo(), profile.signup['website'], profile.website
 
+# Do a parameter sweep on docs with dev_truth
+def devParamSweep(dev_docs, misc_str):
+    dev_runs = []
+    for i in range(0, 10):
+        conf = float(i)/10
+        supp = 20*(i**2)
+        # Single (conf, 0), (0.0, supp), (conf, supp)
+        prm_str = initializeParameters("single", misc_str, conf, 0)
+        dev_runs.append(prm_str)
+        for doc in dev_docs: doc.annotate(mongo = False)
+        prm_str = initializeParameters("single", misc_str, 0.0, supp)
+        dev_runs.append(prm_str)
+        for doc in dev_docs: doc.annotate(mongo = False)
+        prm_str = initializeParameters("single", misc_str, conf, supp)
+        dev_runs.append(prm_str)
+        for doc in dev_docs: doc.annotate(mongo = False)
+        # Multi (conf, 0), (0.0, supp), (conf, supp)
+        prm_str = initializeParameters("multi", misc_str, conf, 0)
+        dev_runs.append(prm_str)
+        for doc in dev_docs: doc.annotate(mongo = False)
+        prm_str = initializeParameters("multi", misc_str, 0.0, supp)
+        dev_runs.append(prm_str)
+        for doc in dev_docs: doc.annotate(mongo = False)
+        prm_str = initializeParameters("multi", misc_str, conf, supp)
+        dev_runs.append(prm_str)
+        for doc in dev_docs: doc.annotate(mongo = False)
+    return dev_runs
+
 if __name__ == '__main__' :
     signup_path = "../Phase B/connector/app/db"
     portfolios_path = "../Phase B/sw_portfolios"
@@ -466,7 +533,7 @@ if __name__ == '__main__' :
         testdocnl.content.append({'text':"kunt u met een joint gitaarspelen Griekse glastuinbouw R&D operationeel onderzoek"})
         testdocen = Document(title='EN', _id='en_test')
         testdocen.content.append({'text':"risky business BoP participatory design contextual analysis of multi-agent system"})
-        testdocnl.annotate()
+        #testdocnl.annotate()
         testdocen.annotate()
     finally:
         # disconnect from mongo
