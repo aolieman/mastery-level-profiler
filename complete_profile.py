@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import pymongo, os, json
+import nltk.tokenize, nltk.stem
 import compare, tudelft, shareworks
 
 # set up annotation functions
@@ -59,6 +60,30 @@ class Profile(object):
 
     def toMongo(self):
         return db.profile.save(self.__dict__)
+
+    def addStatements(self, param_str): # TODO: differing param_str per language
+        # Initialize empty StatementDicts
+        all_ext, tu_ext = StatementDict(), StatementDict()
+        sw_ext, ws_ext = StatementDict(), StatementDict()
+        # Get LinkedIn StatementDict, if available
+        try:
+            li_doc = LinkedInProfile(**db.document.find_one({"_id": self.linkedin}))
+        except AttributeError:
+            print "!! %s has not connected LinkedIn" % self.signup['email']
+            li_ext = StatementDict()
+        else:
+            try:
+                li_ext = StatementDict(getattr(li_doc, param_str)['extracted'])
+                all_ext.update(li_ext)
+            except AttributeError:
+                print "!! %s has no statements for %s" % (li_doc.title, param_str)
+                li_ext = StatementDict()
+        self.statements = {'linkedin': {'extracted': li_ext, 'inferred': []},
+                           'tudelft': {'extracted': tu_ext, 'inferred': []},
+                           'shareworks': {'extracted': sw_ext, 'inferred': []},
+                           'website': {'extracted': ws_ext, 'inferred': []},
+                           'ALL': {'extracted': all_ext, 'inferred': []}}
+
 
     def updateLinkedInDoc(self):
         if hasattr(self, 'linkedin') and db.document.find_one({"_id": self.linkedin}):
@@ -176,6 +201,7 @@ class Document(object):
     def makeStatements(self, param_str, del_resp=False):
         extracted = StatementDict()
         # TODO: Title annotations
+        ## Add annotations for all sections to all_ann_ids
         for s in self.content:
             all_ann_ids = set()
             for key in s.keys():
@@ -192,6 +218,7 @@ class Document(object):
                             except KeyError:
                                 pass
             all_ann_ids.difference_update(ignored_ann_ids)
+            ## Mongo escape and translate abbreviations
             for ann_id in all_ann_ids:
                 if "." in ann_id: # replacement hack for forbidden Mongo char
                     mongo_escaped = ann_id.replace(".", "~")
@@ -201,19 +228,32 @@ class Document(object):
                 if ann_id in ide_abbr: # Domain-specific abbreviations
                     all_ann_ids.remove(ann_id)
                     all_ann_ids.add(ide_abbr[ann_id])
+            ## Look for qualifying terms and compute fractions
+            know_terms, skill_terms = qualifyingTerms(s['text'], self.language)
+            if len(know_terms) == len(skill_terms): fK = 0.5
+            elif len(know_terms) > 0:
+                fK = len(know_terms) / float(len(know_terms) + len(skill_terms))
+            else: fK = 0.0
+            fS = 1.0 - fK
+            if fS > 0.5: fK += fS/3 #skill implies some knowledge
+            print fK, know_terms
+            print fS, skill_terms
+            ## Process statements per origin
             if self.origin == 'tudelft':
                 # TODO: incorporate course grades for lvl
                 all_ann_ids.difference_update(ignored_tudelft)
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 2, 2, 0))
+                    extracted.add(statement(ann_id, fS*4, fK*4, 0.0))
             elif self.origin == 'shareworks':
+                # TODO: incorporate doc_type for lvl?
                 all_ann_ids.difference_update(ignored_shw_web)
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 1, 1, 1))
+                    extracted.add(statement(ann_id, fS*2, fK*2, 1.0))
             elif self.origin == 'website':
+                # TODO: incorporate doc_type for lvl?
                 all_ann_ids.difference_update(ignored_shw_web)
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 2, 2, 2))
+                    extracted.add(statement(ann_id, fS*4, fK*4, 2.0))
 
         # Statements are saved to a param_str attribute
         if len(extracted) > 0:
@@ -229,6 +269,34 @@ class Document(object):
 
 class UnequalIDsException(pymongo.errors.InvalidId):
     pass
+
+def qualifyingTerms(string, lang_str):
+    know_terms, skill_terms = set(), set()
+    if lang_str == "en":
+        stemmer = nltk.stem.snowball.EnglishStemmer(ignore_stopwords=True)
+        know_stems = {u'analysi', u'analyz', u'debat', u'discuss', u'explain',
+                      u'know', u'knowledg', u'literatur', u'method',
+                      u'methodolog', u'theoret', u'theori', u'understand'}
+        skill_stems = {u'abil', u'appli', u'applic', u'compet', u'develop',
+                       u'execut', u'practic', u'project', u'skill', u'train'}
+    else:
+        stemmer = nltk.stem.snowball.DutchStemmer(ignore_stopwords=True)
+        know_stems = {u'analys', u'analyser', u'bediscussier', u'begrijp',
+                      u'begrijpt', u'begrip', u'kenn', u'kennis', u'kent',
+                      u'literatur', u'methodes', u'methodologie',
+                      u'theoretisch', u'theorie', u'uitleg', u'uitlegg', u'wet'}
+        skill_stems = {u'competentie', u'competenties', u'getraind', 'kan',
+                       'kunnen', u'ontwikkel', u'ontwikkeld', u'opdracht',
+                       u'practica', u'practicum', u'project', u'toegepast',
+                       u'toepass', u'train', u'training', u'uitvoer', u'vaardig'}
+    tokzd = nltk.tokenize.wordpunct_tokenize(string)
+    for tok in tokzd:
+        stem = stemmer.stem(tok)
+        if stem in know_stems:
+            know_terms.add(stem) # or add token instead?
+        elif stem in skill_stems:
+            skill_terms.add(stem)
+    return know_terms, skill_terms
 
 class LinkedInProfile(Document):
     """
@@ -268,7 +336,7 @@ class LinkedInProfile(Document):
                     extracted.add(statement(ann_id, 2, 1, 0))
             elif s['header'] == "Interests":
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 0, 0, 2))
+                    extracted.add(statement(ann_id, 0, 1, 3))
             elif s['header'] == "Volunteer Experience":
                 for ann_id in all_ann_ids:
                     extracted.add(statement(ann_id, 1, 1, 2))
@@ -313,6 +381,10 @@ class StatementDict(dict):
             self[ann_id]['interest'] += lvl_dict['interest']
         else:
             self[ann_id] = lvl_dict
+
+    def update(self, statement_dict):
+        for statement in statement_dict.iteritems():
+            self.add(statement)
 
 """
 Takes candidate lists (as provided by compare.throughSpotlight)
@@ -519,6 +591,15 @@ def devParamSweep(dev_docs, misc_str, start=0):
         for doc in dev_docs: doc.annotate(mongo = False)
     return dev_runs
 
+def spotterTests():
+    ## spotter test
+    testdocnl = Document(language='nl', title='NL', _id='nl_test')
+    testdocnl.content.append({'text':"kunt u met een joint gitaarspelen Griekse glastuinbouw R&D operationeel onderzoek"})
+    testdocen = Document(title='EN', _id='en_test')
+    testdocen.content.append({'text':"risky business BoP participatory design contextual analysis of multi-agent system"})
+    testdocnl.annotate()
+    testdocen.annotate()
+
 if __name__ == '__main__' :
     signup_path = "../Phase B/connector/app/db"
     portfolios_path = "../Phase B/sw_portfolios"
@@ -528,13 +609,13 @@ if __name__ == '__main__' :
         #readSignups(signup_path)
         profiles = loadProfiles()
 
-        ## spotter test
-        testdocnl = Document(language='nl', title='NL', _id='nl_test')
-        testdocnl.content.append({'text':"kunt u met een joint gitaarspelen Griekse glastuinbouw R&D operationeel onderzoek"})
-        testdocen = Document(title='EN', _id='en_test')
-        testdocen.content.append({'text':"risky business BoP participatory design contextual analysis of multi-agent system"})
-        #testdocnl.annotate()
-        testdocen.annotate()
+        #spotterTests()
+
+        dev_tuswws = loadDocuments({'dev_truth': {'$exists': 1},
+                                    'origin': {'$ne': 'linkedin'}})
+        dev_li = loadDocuments({'dev_truth': {'$exists': 1},
+                                    'origin': 'linkedin'}, LinkedInProfile)
+
     finally:
         # disconnect from mongo
         db.connection.disconnect()
