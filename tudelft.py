@@ -64,7 +64,7 @@ def courseDoc(course_id, year):
         course_description_oid = course_doc.toMongo()
         return course_doc
 
-# Old solution for circular import (new solution untested!)
+# Old solution for circular import
 #from complete_profile import Document
 
 if __name__ == '__main__' :

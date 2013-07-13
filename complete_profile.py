@@ -492,9 +492,9 @@ def associateWebsitesWithProfiles(websites_dir):
                 print profile.toMongo(), profile.signup['website'], profile.website
 
 # Do a parameter sweep on docs with dev_truth
-def devParamSweep(dev_docs, misc_str):
+def devParamSweep(dev_docs, misc_str, start=0):
     dev_runs = []
-    for i in range(0, 10):
+    for i in range(start, 10):
         conf = float(i)/10
         supp = 20*(i**2)
         # Single (conf, 0), (0.0, supp), (conf, supp)

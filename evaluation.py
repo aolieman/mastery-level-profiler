@@ -2,7 +2,7 @@
 import complete_profile as cpr
 import dev_format as ft
 import compare
-import nltk, heapq, numpy
+import nltk, heapq, numpy, csv
 from msvcrt import getch #Only runs in Win, and only in cmd.exe
 
 # Load the en_uri -> topic_name translation dict
@@ -278,14 +278,15 @@ def devStatements(dev_docs, dev_runs, verbose=0):
             if verbose > 0:
                 print "\nStatements for doc %s, run %s:" % (doc._id, run_str)
             doc.makeStatements(run_str, del_resp=True)
-            run_stmts = getattr(doc, run_str)
+            run_stmts = getattr(doc, run_str, None)
+            if not run_stmts: continue
             if verbose > 1: print run_stmts['extracted'].keys()
     return dev_docs, dev_runs
 
 # Precision: fraction of correct generated statements
 # Recall: fraction of statements in truth that have been generated
 # inputs: statements produced by run, statements in truth
-def performance(generated, truth):
+def performance(generated, truth, beta=1):
     correct = set(truth).intersection(set(generated))
     incorrect = set(generated).difference(set(truth))
     missing = set(truth).difference(set(generated))
@@ -295,14 +296,23 @@ def performance(generated, truth):
     except ZeroDivisionError:
         precision = 0 # no statments were generated in this run
     recall = len(correct) / float(len(truth))
+    f_beta, f_str = f_score(precision, recall, beta)
 
     results = {'correct': correct,
                'incorrect': incorrect,
                'missing': missing,
                'precision': precision,
-               'recall': recall}
+               'recall': recall,
+               f_str: f_beta}
     
     return results
+
+def f_score(precision, recall, beta):
+    if not precision and not recall:
+        score = 0
+    else:
+        score = (1+beta**2)*(precision*recall)/((beta**2*precision)+recall)
+    return score, "F%s" % beta
 
 def docRunEvalTable(dev_docs, dev_runs):
     # Print table of performance per document / run
@@ -311,7 +321,8 @@ def docRunEvalTable(dev_docs, dev_runs):
     for doc in dev_docs:
         row = [doc._id, doc.language]
         for runstr in dev_runs:
-            run = getattr(doc, runstr)
+            run = getattr(doc, runstr, None) # not tested yet
+            if not run: continue
             extracted = run['extracted']
             truth = doc.dev_truth['extracted']
             res = performance(extracted, truth)
@@ -320,10 +331,7 @@ def docRunEvalTable(dev_docs, dev_runs):
         rows.append(row)
     print ft.matrix_to_string(rows, header)
 
-def runLangEvalTable(dev_docs, dev_runs):
-    # Print table of performance per run / language
-    rows = []
-    header = ["Run", "Dutch", "English"]
+def truthPerLanguage(dev_docs):
     nl_truth, en_truth = set(), set()
     nl_docs, en_docs = [], []
     for doc in dev_docs:
@@ -333,15 +341,29 @@ def runLangEvalTable(dev_docs, dev_runs):
         elif doc.language == 'en':
             en_truth.update(doc.dev_truth['extracted'])
             en_docs.append(doc)
+    return (nl_truth, en_truth), (nl_docs, en_docs)
+
+def extractedPerLanguage(nl_docs, en_docs, runstr):
+    extracted_nl, extracted_en = set(), set()
+    for doc in nl_docs:
+        run = getattr(doc, runstr, None)
+        if not run: continue
+        extracted_nl.update(run['extracted'])
+    for doc in en_docs:
+        run = getattr(doc, runstr, None)
+        if not run: continue
+        extracted_en.update(run['extracted'])
+    return extracted_nl, extracted_en
+
+def runLangEvalTable(dev_docs, dev_runs):
+    # Print table of performance per run / language
+    rows = []
+    header = ["Run", "Dutch", "English"]
+    (nl_truth, en_truth), (nl_docs, en_docs) = truthPerLanguage(dev_docs)
     for runstr in dev_runs:
         row = [runstr]
-        extracted_nl, extracted_en = set(), set()
-        for doc in nl_docs:
-            run = getattr(doc, runstr)
-            extracted_nl.update(run['extracted'])
-        for doc in en_docs:
-            run = getattr(doc, runstr)
-            extracted_en.update(run['extracted'])
+        extracted_nl, extracted_en = extractedPerLanguage(nl_docs, en_docs,
+                                                          runstr)
         if len(nl_truth) > 0:
             nl_res = performance(extracted_nl, nl_truth)
             row.append("p %.2f, r %.2f" % (nl_res['precision'], nl_res['recall']))
@@ -352,7 +374,51 @@ def runLangEvalTable(dev_docs, dev_runs):
         else: row.append("none")
         rows.append(row)
     print ft.matrix_to_string(rows, header)
-    
+
+def csvEvalTable(dev_docs, dev_runs):
+    # Save a CSV table of performance at different runs
+    beta = 0.5
+    f_str = "F%s" % beta
+    header = ["Run", "Precision", "Recall", f_str, "Lang", "Cand"]
+    with open('csv_output/EvalTable.tab', 'wb') as tsvfile:
+        wr = csv.writer(tsvfile, delimiter="\t")
+        wr.writerow(header)
+        (nl_truth, en_truth), (nl_docs, en_docs) = truthPerLanguage(dev_docs)
+        for runstr in dev_runs:
+            if "multi" in runstr:
+                cand = "multi"
+            else: cand = "single"
+            extracted_nl, extracted_en = extractedPerLanguage(nl_docs, en_docs,
+                                                              runstr)
+            if len(nl_truth) > 0:
+                nl_res = performance(extracted_nl, nl_truth, beta)
+                perf_nl = [nl_res['precision'], nl_res['recall'], nl_res[f_str]]
+                wr.writerow([runstr] + perf_nl + ["nl", cand])
+            if len(en_truth) > 0:
+                en_res = performance(extracted_en, en_truth, beta)
+                perf_en = [en_res['precision'], en_res['recall'], en_res[f_str]]
+                wr.writerow([runstr] + perf_en + ["en", cand])
+
+def allParamStrings(misc_strings, end=10):
+    param_strings = []
+    for i in range(0, end):
+        conf = float(i)/10
+        supp = 20*(i**2)
+        for mstr in misc_strings:
+            single_str = '%s_%s_c%s_s%s' % ("single", mstr, conf, supp)
+            param_strings.append(single_str.replace(".", "_"))
+            single_str = '%s_%s_c%s_s%s' % ("single", mstr, 0.0, supp)
+            param_strings.append(single_str.replace(".", "_"))
+            single_str = '%s_%s_c%s_s%s' % ("single", mstr, conf, 0)
+            param_strings.append(single_str.replace(".", "_"))
+            multi_str = '%s_%s_c%s_s%s' % ("multi", mstr, conf, supp)
+            param_strings.append(multi_str.replace(".", "_"))
+            multi_str = '%s_%s_c%s_s%s' % ("multi", mstr, 0.0, supp)
+            param_strings.append(multi_str.replace(".", "_"))
+            multi_str = '%s_%s_c%s_s%s' % ("multi", mstr, conf, 0)
+            param_strings.append(multi_str.replace(".", "_"))
+    return param_strings
+
 def loadDevDocs():
     #read dev_truth docs from Mongo
     dev_docs_en = cpr.loadDocuments(
@@ -377,13 +443,15 @@ if __name__ == '__main__' :
     #judgeWebsites()
 
     dev_docs_en, dev_docs_nl = loadDevDocs()
-    
-    new_runs = cpr.devParamSweep(dev_docs_nl, "p8")
-    old_runs = ["multi_szt_p4_c0_0_s0", "multi_t10_nl_c0_0_s0", "t10p4_c0_0_s0"]
-    
-    print "\n\n", new_runs    
-    devStatements(dev_docs_nl, new_runs, verbose=1)
-
-    runs = new_runs + old_runs
-    dev_docs = dev_docs_nl + dev_docs_en
-    runLangEvalTable(dev_docs, runs)
+##    
+##    new_runs = cpr.devParamSweep(dev_docs_en, "szt")
+##    print "\n\n", new_runs 
+##    old_runs = ["multi_szt_p4_c0_0_s0", "multi_t10_nl_c0_0_s0", "t10p4_c0_0_s0"]
+##       
+##    devStatements(dev_docs_en, new_runs, verbose=1)
+##    sweeps = allParamStrings(["p8", "p6", "p4", "dbp", "szt"])
+##
+##    runs = sweeps + old_runs
+##    dev_docs = dev_docs_nl + dev_docs_en
+##    runLangEvalTable(dev_docs, runs)
+##    csvEvalTable(dev_docs, runs)
