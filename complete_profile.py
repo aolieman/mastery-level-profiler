@@ -78,11 +78,42 @@ class Profile(object):
             except AttributeError:
                 print "!! %s has no statements for %s" % (li_doc.title, param_str)
                 li_ext = StatementDict()
+                li_doc.makeStatements(param_str)
+        # Get statements for each course description
+        for course_doc in self.iterTUDocs():
+            try:
+                doc_ext = StatementDict(getattr(course_doc, param_str)['extracted'])
+                tu_ext.update(doc_ext)
+                all_ext.update(doc_ext)
+            except AttributeError:
+                print "!! %s has no statements for %s" % (course_doc.title, param_str)
+                course_doc.makeStatements(param_str)
+        # Get statements for each portfolio document
+        for sw_doc in self.iterPortfolioDocs():
+            try:
+                doc_ext = StatementDict(getattr(sw_doc, param_str)['extracted'])
+                sw_ext.update(doc_ext)
+                all_ext.update(doc_ext)
+            except AttributeError:
+                print "!! %s has no statements for %s" % (sw_doc._id, param_str)
+                sw_doc.makeStatements(param_str)
+        # Get statements for each website document
+        for webpage in self.iterWebsiteDocs():
+            try:
+                doc_ext = StatementDict(getattr(webpage, param_str)['extracted'])
+                ws_ext.update(doc_ext)
+                all_ext.update(doc_ext)
+            except AttributeError:
+                print "!! %s has no statements for %s" % (webpage.title, param_str)
+                webpage.makeStatements(param_str)
+            
         self.statements = {'linkedin': {'extracted': li_ext, 'inferred': []},
                            'tudelft': {'extracted': tu_ext, 'inferred': []},
                            'shareworks': {'extracted': sw_ext, 'inferred': []},
                            'website': {'extracted': ws_ext, 'inferred': []},
                            'ALL': {'extracted': all_ext, 'inferred': []}}
+
+        # TODO: Save profile to Mongo
 
 
     def updateLinkedInDoc(self):
@@ -95,10 +126,12 @@ class Profile(object):
         elif 'linkedin' in self.signup:
             self.linkedin = linkedinToDoc(self.signup['linkedin'])
             self.toMongo() # save new doc_id
-        else: print "!! "+self.signup['email']+" has not connected LinkedIn"
+        else: print "!! %s has not connected LinkedIn" % self.signup['email']
 
     def annotateDocs(self):
+        ## Depends on global parameters for annotation checks
         print "\n\n", self.signup['email']
+        # Annotate LinkedIn profile
         if hasattr(self, 'linkedin'):
             li_profile = LinkedInProfile(**db.document.find_one({"_id": self.linkedin}))
             # check if the document has been annotated
@@ -106,34 +139,55 @@ class Profile(object):
                 li_profile.annotate()
             else: print li_profile.title, "has already been annotated"
         else: print "!! "+self.signup['email']+" has not connected LinkedIn"
+        # Annotate course documents
+        for course_doc in self.iterTUDocs():
+            # check if the document has been annotated
+            if text_ann not in course_doc.content[0]:
+                course_doc.annotate(title=True)
+            else: print course_doc.title, "has already been annotated"
+        # Annotate webpage documents
+        for webpage in self.iterWebsiteDocs():
+            # check if the document has been annotated
+            if text_ann not in page.content[0]:
+                page.annotate()
+            else: print page.title, "has already been annotated"
+        # Annotate project portfolio
+        for sw_doc in self.iterPortfolioDocs():
+            # check if the document has been annotated
+            if text_ann not in doc.content[0]:
+                doc.annotate()
+            else: print doc._id, "has already been annotated"
+
+        print "Annotations for "+self.signup['email']+" are done"
+
+    def iterTUDocs(self):
+        # Generator function that yields course documents from Mongo
         if self.tudelft == None:
             print "!! %s has not connected TU Delft" % (self.signup['email'], )
+            raise StopIteration
         else:
             for course in self.tudelft:
                 course_doc = tudelft.courseDoc(course['cursusid'], course['collegejaar'])
                 if course_doc == None: continue
-                # check if the document has been annotated
-                if text_ann not in course_doc.content[0]:
-                    course_doc.annotate(title=True)
-                else: print course_doc.title, "has already been annotated"
+                yield course_doc
+
+    def iterWebsiteDocs(self):
+        # Generator function that yields webpage documents from Mongo
         if hasattr(self, 'website'):
             for webpage in self.website:
-                page = Document(**db.document.find_one({"_id": webpage}))
-                # check if the document has been annotated
-                if text_ann not in page.content[0]:
-                    page.annotate()
-                else: print page.title, "has already been annotated"
-        else: print "!! "+self.signup['email']+" doesn't have a website"
+                yield Document(**db.document.find_one({"_id": webpage}))
+        else:
+            print "!! %s doesn't have a website" % (self.signup['email'], )
+            raise StopIteration
+
+    def iterPortfolioDocs(self):
+        # Generator function that yields portfolio documents from Mongo
         if hasattr(self, 'portfolio'):
             for sw_doc in self.portfolio:
-                doc = Document(**db.document.find_one({"_id": sw_doc}))
-                # check if the document has been annotated
-                if text_ann not in doc.content[0]:
-                    doc.annotate()
-                else: print doc._id, "has already been annotated"
-        else: print "!! "+self.signup['email']+" doesn't have a portfolio"
-
-        print "Annotations for "+self.signup['email']+" are done"
+                yield Document(**db.document.find_one({"_id": sw_doc}))
+        else:
+            print "!! %s doesn't have a portfolio" % (self.signup['email'], )
+            raise StopIteration
 
 class Document(object):
     def __init__(self, **entries):
@@ -330,28 +384,28 @@ class LinkedInProfile(Document):
                     all_ann_ids.add(ide_abbr[ann_id])
             if s['header'] in {"Headline", "Summary", "Specialties"}:
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 2, 1, 1))
+                    extracted.add(statement(ann_id, 2.0, 1.0, 1.0))
             elif s['header'] in {"Honors", "Certifications"}:
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 2, 1, 0))
+                    extracted.add(statement(ann_id, 2.0, 1.0, 0.0))
             elif s['header'] == "Interests":
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 0, 1, 3))
+                    extracted.add(statement(ann_id, 0.0, 1.0, 3.0))
             elif s['header'] == "Volunteer Experience":
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 1, 1, 2))
+                    extracted.add(statement(ann_id, 1.0, 1.0, 2.0))
             elif s['header'] in {"Volunteer Causes", "Volunteer Support"}:
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 0, 1, 2))
+                    extracted.add(statement(ann_id, 0.0, 1.0, 2.0))
             elif s['header'] in {"Education", "Courses"}:
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 1, 2, 0))
+                    extracted.add(statement(ann_id, 1.0, 2.0, 0.0))
             elif s['header'] == "Position":
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 2, 1, 0))
+                    extracted.add(statement(ann_id, 2.0, 1.0, 0.0))
             elif s['header'] == "Recommendation":
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, 2, 1, 1))
+                    extracted.add(statement(ann_id, 2.0, 1.0, 1.0))
             else:
                 print "! Header %s not recognized !" % s['header']
 
@@ -367,14 +421,14 @@ class LinkedInProfile(Document):
                             del s[key]
                             print key, "deleted"
 
-def statement(ann_id, skill=0, knowledge=0, interest=0):
+def statement(ann_id, skill=0.0, knowledge=0.0, interest=0.0):
     lvl_dict = {'skill': skill, 'knowledge': knowledge, 'interest':interest}
     return (ann_id, lvl_dict)
 
 class StatementDict(dict):
     def add(self, statement):
         ann_id = statement[0]
-        lvl_dict = statement[1]
+        lvl_dict = statement[1].copy()
         if ann_id in self:
             self[ann_id]['skill'] += lvl_dict['skill']
             self[ann_id]['knowledge'] += lvl_dict['knowledge']
