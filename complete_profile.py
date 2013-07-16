@@ -34,25 +34,25 @@ db = pymongo.Connection('localhost', 27017)['mastery_level_profiler']
 
 # set of ann_ids that are too general and are thus ignored
 # "Prostitution" was added because it can be offensive
-ignored_ann_ids = {"Academic_term", "Code", "Consideration", "Course_(education)",
-                   "College", "Diploma", "Further_education", "Hobby", "Home",
-                   "Human", "Job_(role)", "Life", "Laborer", "Privately_held_company",
+ignored_ann_ids = {"Academic_term", "Author", "Code", "Conducting", "Consideration", "Course_(education)",
+                   "College", "Diploma", "Faculty_(division)", "Further_education", "Hobby", "Home",
+                   "Graduate_school", "Graduation", "Human", "Job_(role)", "Life", "Laborer", "Privately_held_company",
                    "Printing", "Professor", "Safe", "School", "Prostitution",
                    "Secondary_education", "Solution", "Student", "Supervisor",
                    "Theory", "Tutorial", "University", "Van", "Vocational_education"}
 # set of ann_ids that occur in course descriptions, but don't say much about the course
-ignored_tudelft = {"Blackboard_Learning_System", "Education", "Blackboard_Inc~",
-                   "Deliverable", "Demand_(economics)", "Epistemology", "Feedback",
+ignored_tudelft = {"Blackboard_Learning_System", "Book", "Bookselling", "Education", "Blackboard_Inc~",
+                   "Curriculum", "Deliverable", "Demand_(economics)", "Epistemology", "Feedback",
                    "Higher_education", "Lecture", "Literature", "Material",
-                   "Master_class", "Print_on_demand", "Reference", "Summary",
+                   "Master_class", "Mass", "Print_on_demand", "Reference", "Summary",
                    "Email", "Homework", "Training", "Symposium", "Engineer"}
 # set of ann_ids that occur in portfolios/websites, but don't say much about the project/student
 ignored_shw_web = {"Deliverable", "Education", "Female", "Graduation",
                    "Image", "Male", "Output", "Project", "Woman"}
 
 # Translation dict (ann_id->ann_id) for domain-specific abbreviations
-ide_abbr = {"Integrated_development_environment": "Product_design",
-            "Very_Important_Person": "Vision_in_Product_Design"}
+ide_abbr = {"Integrated_development_environment": u'Product_design',
+            "Very_Important_Person": u'Vision_in_Product_Design'}
 
 class Profile(object):
     def __init__(self, **entries):
@@ -61,7 +61,8 @@ class Profile(object):
     def toMongo(self):
         return db.profile.save(self.__dict__)
 
-    def addStatements(self, param_str): # TODO: differing param_str per language
+    def addStatements(self, param_str, new_statements=True):
+        # TODO: differing param_str per language
         # Initialize empty StatementDicts
         all_ext, tu_ext = StatementDict(), StatementDict()
         sw_ext, ws_ext = StatementDict(), StatementDict()
@@ -73,39 +74,40 @@ class Profile(object):
             li_ext = StatementDict()
         else:
             try:
+                if new_statements: li_doc.makeStatements(param_str)
                 li_ext = StatementDict(getattr(li_doc, param_str)['extracted'])
                 all_ext.update(li_ext)
             except AttributeError:
                 print "!! %s has no statements for %s" % (li_doc.title, param_str)
                 li_ext = StatementDict()
-                li_doc.makeStatements(param_str)
-        # Get statements for each course description
-        for course_doc in self.iterTUDocs():
+        # Get statements for each course description; weight by grade
+        for course_doc, weight in self.iterTUDocs():
             try:
+                if new_statements: course_doc.makeStatements(param_str)
                 doc_ext = StatementDict(getattr(course_doc, param_str)['extracted'])
+                doc_ext.weightStmts(weight)
                 tu_ext.update(doc_ext)
                 all_ext.update(doc_ext)
             except AttributeError:
                 print "!! %s has no statements for %s" % (course_doc.title, param_str)
-                course_doc.makeStatements(param_str)
         # Get statements for each portfolio document
         for sw_doc in self.iterPortfolioDocs():
             try:
+                if new_statements: sw_doc.makeStatements(param_str)
                 doc_ext = StatementDict(getattr(sw_doc, param_str)['extracted'])
                 sw_ext.update(doc_ext)
                 all_ext.update(doc_ext)
             except AttributeError:
                 print "!! %s has no statements for %s" % (sw_doc._id, param_str)
-                sw_doc.makeStatements(param_str)
         # Get statements for each website document
         for webpage in self.iterWebsiteDocs():
             try:
+                if new_statements: webpage.makeStatements(param_str)
                 doc_ext = StatementDict(getattr(webpage, param_str)['extracted'])
                 ws_ext.update(doc_ext)
                 all_ext.update(doc_ext)
             except AttributeError:
                 print "!! %s has no statements for %s" % (webpage.title, param_str)
-                webpage.makeStatements(param_str)
             
         self.statements = {'linkedin': {'extracted': li_ext, 'inferred': []},
                            'tudelft': {'extracted': tu_ext, 'inferred': []},
@@ -113,7 +115,8 @@ class Profile(object):
                            'website': {'extracted': ws_ext, 'inferred': []},
                            'ALL': {'extracted': all_ext, 'inferred': []}}
 
-        # TODO: Save profile to Mongo
+        # Save profile to Mongo
+        self.toMongo()
 
 
     def updateLinkedInDoc(self):
@@ -140,7 +143,7 @@ class Profile(object):
             else: print li_profile.title, "has already been annotated"
         else: print "!! "+self.signup['email']+" has not connected LinkedIn"
         # Annotate course documents
-        for course_doc in self.iterTUDocs():
+        for course_doc, weight in self.iterTUDocs():
             # check if the document has been annotated
             if text_ann not in course_doc.content[0]:
                 course_doc.annotate(title=True)
@@ -167,9 +170,14 @@ class Profile(object):
             raise StopIteration
         else:
             for course in self.tudelft:
+                if course['voldoende'] == "false": continue
+                grade_str = course['resultaat'].replace(',', '.')
+                if grade_str == "V": grade_str = "7.0"
+                weight = ((2 + float(course['ectspunten'])/2)
+                          /(11 - float(grade_str)))
                 course_doc = tudelft.courseDoc(course['cursusid'], course['collegejaar'])
                 if course_doc == None: continue
-                yield course_doc
+                yield course_doc, weight
 
     def iterWebsiteDocs(self):
         # Generator function that yields webpage documents from Mongo
@@ -252,7 +260,7 @@ class Document(object):
         # if the mongo boolean is set, save to MongoDB
         if mongo: self.toMongo()
 
-    def makeStatements(self, param_str, del_resp=False):
+    def makeStatements(self, param_str, del_resp=False, verbose=0):
         extracted = StatementDict()
         # TODO: Title annotations
         ## Add annotations for all sections to all_ann_ids
@@ -278,7 +286,8 @@ class Document(object):
                     mongo_escaped = ann_id.replace(".", "~")
                     all_ann_ids.remove(ann_id)
                     all_ann_ids.add(mongo_escaped)
-                    print "%s was replaced with %s" % (ann_id, mongo_escaped)
+                    if verbose > 0:
+                        print "%s was replaced with %s" % (ann_id, mongo_escaped)
                 if ann_id in ide_abbr: # Domain-specific abbreviations
                     all_ann_ids.remove(ann_id)
                     all_ann_ids.add(ide_abbr[ann_id])
@@ -290,8 +299,8 @@ class Document(object):
             else: fK = 0.0
             fS = 1.0 - fK
             if fS > 0.5: fK += fS/3 #skill implies some knowledge
-            print fK, know_terms
-            print fS, skill_terms
+            if verbose > 0: print "Knowledge", fK, know_terms
+            if verbose > 0: print "Skill", fS, skill_terms
             ## Process statements per origin
             if self.origin == 'tudelft':
                 # TODO: incorporate course grades for lvl
@@ -421,11 +430,29 @@ class LinkedInProfile(Document):
                             del s[key]
                             print key, "deleted"
 
-def statement(ann_id, skill=0.0, knowledge=0.0, interest=0.0):
-    lvl_dict = {'skill': skill, 'knowledge': knowledge, 'interest':interest}
+def statement(ann_id, skill=0, knowledge=0, interest=0):
+    lvl_dict = {'skill': float(skill),
+                'knowledge': float(knowledge),
+                'interest': float(interest)}
     return (ann_id, lvl_dict)
 
+def prfloats(lvl_dict):
+    fmt_dict = {}
+    fmt_dict['skill'] = "{0:0.2f}".format(lvl_dict['skill'])
+    fmt_dict['knowledge'] = "{0:0.2f}".format(lvl_dict['knowledge'])
+    fmt_dict['interest'] = "{0:0.2f}".format(lvl_dict['interest'])
+    return fmt_dict
+
 class StatementDict(dict):
+    def __str__(self):
+        str_out = str()
+        value_sort = sorted(self.iteritems(), reverse=True,
+                            key=lambda t: sum(t[1].values()))
+        for ann_id, lvl_dict in value_sort:
+            fmt_dict = prfloats(lvl_dict)
+            str_out += "\n"+(repr(ann_id)+": ").ljust(20)+str(fmt_dict)
+        return str_out
+            
     def add(self, statement):
         ann_id = statement[0]
         lvl_dict = statement[1].copy()
@@ -439,6 +466,15 @@ class StatementDict(dict):
     def update(self, statement_dict):
         for statement in statement_dict.iteritems():
             self.add(statement)
+
+    def weightStmts(self, weight, verbose=0):
+        for ann_id in self:
+            if verbose: print("{0:0.2f} x".format(weight),
+                              ann_id, prfloats(self[ann_id]))
+            self[ann_id]['skill'] *= weight
+            self[ann_id]['knowledge'] *= weight
+            self[ann_id]['interest'] *= weight
+            if verbose: print "Done :", ann_id, prfloats(self[ann_id])
 
 """
 Takes candidate lists (as provided by compare.throughSpotlight)

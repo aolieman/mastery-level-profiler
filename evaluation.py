@@ -434,6 +434,23 @@ def loadDevDocs():
     print "NL:", [doc._id for doc in dev_docs_nl]
 
     return dev_docs_en, dev_docs_nl
+
+def csvStatementDict(profile):
+    # Save a CSV table of all statements in a Profile
+    header = ["Origin", "Ann_ID", "Skill", "Knowledge", "Interest"]
+    liames = profile.signup['email'].split("@")[0].replace(".", "_")[::-1]
+    with open('csv_output/%s.tab' % liames, 'wb') as tsvfile:
+        wr = csv.writer(tsvfile, delimiter="\t")
+        wr.writerow(header)
+        for orig, ext_inf in profile.statements.iteritems():
+            for statement in ext_inf['extracted'].iteritems():
+                ann_id = statement[0]
+                lvl_dict = statement[1].copy()
+                skill_lvl = lvl_dict['skill']
+                knowl_lvl = lvl_dict['knowledge']
+                inter_lvl = lvl_dict['interest']
+                wr.writerow((orig, ann_id, skill_lvl, knowl_lvl, inter_lvl))
+            
             
 if __name__ == '__main__' :
 
@@ -442,7 +459,8 @@ if __name__ == '__main__' :
     #judgeShareworksPortfolio()
     #judgeWebsites()
 
-    dev_docs_en, dev_docs_nl = loadDevDocs()
+##    # Evaluate Parameter Sweeps
+##    dev_docs_en, dev_docs_nl = loadDevDocs()
 ##    
 ##    new_runs = cpr.devParamSweep(dev_docs_en, "szt")
 ##    print "\n\n", new_runs 
@@ -455,3 +473,6 @@ if __name__ == '__main__' :
 ##    dev_docs = dev_docs_nl + dev_docs_en
 ##    runLangEvalTable(dev_docs, runs)
 ##    csvEvalTable(dev_docs, runs)
+
+    # Evaluate Mastery Levels
+    profiles = cpr.loadProfiles()
