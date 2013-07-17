@@ -2,6 +2,7 @@
 import pymongo, os, json
 import nltk.tokenize, nltk.stem
 import compare, tudelft, shareworks
+from math import log10
 
 # set up annotation functions
 vocabulary = compare.readVocabulary('vocabulary_man.json')
@@ -67,11 +68,11 @@ class Profile(object):
         all_ext, tu_ext = StatementDict(), StatementDict()
         sw_ext, ws_ext = StatementDict(), StatementDict()
         # Get LinkedIn StatementDict, if available
+        li_ext = StatementDict()
         try:
             li_doc = LinkedInProfile(**db.document.find_one({"_id": self.linkedin}))
         except AttributeError:
             print "!! %s has not connected LinkedIn" % self.signup['email']
-            li_ext = StatementDict()
         else:
             try:
                 if new_statements: li_doc.makeStatements(param_str)
@@ -79,7 +80,6 @@ class Profile(object):
                 all_ext.update(li_ext)
             except AttributeError:
                 print "!! %s has no statements for %s" % (li_doc.title, param_str)
-                li_ext = StatementDict()
         # Get statements for each course description; weight by grade
         for course_doc, weight in self.iterTUDocs():
             try:
@@ -108,6 +108,14 @@ class Profile(object):
                 all_ext.update(doc_ext)
             except AttributeError:
                 print "!! %s has no statements for %s" % (webpage.title, param_str)
+
+        # Scale StatementDicts and assign to attribute
+        # TODO: calculate all_ext as mean? of other dicts
+        max_ski_dict = maxPerOrigin(all_profiles)
+        li_ext.scaleDomain(max_ski_dict['linkedin'])
+        tu_ext.scaleDomain(max_ski_dict['tudelft'])
+        sw_ext.scaleDomain(max_ski_dict['shareworks'])
+        ws_ext.scaleDomain(max_ski_dict['website'])
             
         self.statements = {'linkedin': {'extracted': li_ext, 'inferred': []},
                            'tudelft': {'extracted': tu_ext, 'inferred': []},
@@ -437,6 +445,7 @@ def statement(ann_id, skill=0, knowledge=0, interest=0):
     return (ann_id, lvl_dict)
 
 def prfloats(lvl_dict):
+    # Pretty printing for floats in lvl_dict
     fmt_dict = {}
     fmt_dict['skill'] = "{0:0.2f}".format(lvl_dict['skill'])
     fmt_dict['knowledge'] = "{0:0.2f}".format(lvl_dict['knowledge'])
@@ -467,6 +476,22 @@ class StatementDict(dict):
         for statement in statement_dict.iteritems():
             self.add(statement)
 
+    def getMaxSKI(self):
+        if len(self) == 0: return 0, 0, 0
+        # Compute max skill, knowledge, interest
+        skill_max = max(self.itervalues(), key=lambda ld: ld['skill'])
+        knowl_max = max(self.itervalues(), key=lambda ld: ld['knowledge'])
+        inter_max = max(self.itervalues(), key=lambda ld: ld['interest'])
+        return skill_max['skill'], knowl_max['knowledge'], inter_max['interest']
+
+    def scaleDomain(self, max_ski):
+        # Scale min and max values for each statement (overwrite)
+        # Log transformation and linear scale 0-100
+        for lvls in self.itervalues():
+            lvls['skill'] = 100 * log10(lvls['skill']+1) / log10(max_ski[0]+1)
+            lvls['knowledge'] = 100 * log10(lvls['knowledge']+1) / log10(max_ski[1]+1)
+            lvls['interest'] = 100 * log10(lvls['interest']+1) / log10(max_ski[2]+1)
+
     def weightStmts(self, weight, verbose=0):
         for ann_id in self:
             if verbose: print("{0:0.2f} x".format(weight),
@@ -475,6 +500,37 @@ class StatementDict(dict):
             self[ann_id]['knowledge'] *= weight
             self[ann_id]['interest'] *= weight
             if verbose: print "Done :", ann_id, prfloats(self[ann_id])
+
+def maxPerOrigin(all_profiles):
+    li_max_tuples, tu_max_tuples = [], [(0,0,1)] #hack for max(tu_int) = 0
+    sw_max_tuples, ws_max_tuples = [], []
+    # Get max S,K,I per profile per origin
+    for pr in all_profiles:
+        li_max_tuples.append(StatementDict(pr.statements['linkedin']
+                                           ['extracted']).getMaxSKI())
+        tu_max_tuples.append(StatementDict(pr.statements['tudelft']
+                                           ['extracted']).getMaxSKI())
+        sw_max_tuples.append(StatementDict(pr.statements['shareworks']
+                                           ['extracted']).getMaxSKI())
+        ws_max_tuples.append(StatementDict(pr.statements['website']
+                                           ['extracted']).getMaxSKI())
+    # Get the maximums across all profiles
+    li_max = (max(li_max_tuples, key=lambda t: t[0])[0],
+              max(li_max_tuples, key=lambda t: t[1])[1],
+              max(li_max_tuples, key=lambda t: t[2])[2])
+    tu_max = (max(tu_max_tuples, key=lambda t: t[0])[0],
+              max(tu_max_tuples, key=lambda t: t[1])[1],
+              max(tu_max_tuples, key=lambda t: t[2])[2])
+    sw_max = (max(sw_max_tuples, key=lambda t: t[0])[0],
+              max(sw_max_tuples, key=lambda t: t[1])[1],
+              max(sw_max_tuples, key=lambda t: t[2])[2])
+    ws_max = (max(ws_max_tuples, key=lambda t: t[0])[0],
+              max(ws_max_tuples, key=lambda t: t[1])[1],
+              max(ws_max_tuples, key=lambda t: t[2])[2])
+    # Return max S,K,I per origin in dict
+    max_ski_dict = {'linkedin': li_max, 'tudelft': tu_max,
+                'shareworks': sw_max, 'website': ws_max}
+    return max_ski_dict
 
 """
 Takes candidate lists (as provided by compare.throughSpotlight)
@@ -690,6 +746,9 @@ def spotterTests():
     testdocnl.annotate()
     testdocen.annotate()
 
+# Always load all profiles (dependency in Profile.addStatements on maxPerOrigin)
+all_profiles = loadProfiles()
+
 if __name__ == '__main__' :
     signup_path = "../Phase B/connector/app/db"
     portfolios_path = "../Phase B/sw_portfolios"
@@ -697,7 +756,6 @@ if __name__ == '__main__' :
 
     try:
         #readSignups(signup_path)
-        profiles = loadProfiles()
 
         #spotterTests()
 

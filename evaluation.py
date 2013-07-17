@@ -450,7 +450,7 @@ def csvStatementDict(profile):
                 knowl_lvl = lvl_dict['knowledge']
                 inter_lvl = lvl_dict['interest']
                 wr.writerow((orig, ann_id, skill_lvl, knowl_lvl, inter_lvl))
-            
+  
             
 if __name__ == '__main__' :
 
@@ -475,4 +475,4 @@ if __name__ == '__main__' :
 ##    csvEvalTable(dev_docs, runs)
 
     # Evaluate Mastery Levels
-    profiles = cpr.loadProfiles()
+    profiles = cpr.all_profiles
