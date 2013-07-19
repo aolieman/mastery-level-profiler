@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-import pymongo, os, json
+import pymongo, os, json, scipy
 import nltk.tokenize, nltk.stem
 import compare, tudelft, shareworks
-from math import log10
+from math import log10, isnan
 
 # set up annotation functions
 vocabulary = compare.readVocabulary('vocabulary_man.json')
@@ -53,6 +53,7 @@ ignored_shw_web = {"Deliverable", "Education", "Female", "Graduation",
 
 # Translation dict (ann_id->ann_id) for domain-specific abbreviations
 ide_abbr = {"Integrated_development_environment": u'Product_design',
+            "Internally_displaced_person": u'New_product_development',
             "Very_Important_Person": u'Vision_in_Product_Design'}
 
 class Profile(object):
@@ -62,41 +63,42 @@ class Profile(object):
     def toMongo(self):
         return db.profile.save(self.__dict__)
 
-    def addStatements(self, param_str, new_statements=True):
-        # TODO: differing param_str per language
+    def addStatements(self, param_str_en, param_str_nl, new_statements=True):
         # Initialize empty StatementDicts
-        all_ext, tu_ext = StatementDict(), StatementDict()
+        li_ext, tu_ext = StatementDict(), StatementDict()
         sw_ext, ws_ext = StatementDict(), StatementDict()
         # Get LinkedIn StatementDict, if available
-        li_ext = StatementDict()
         try:
             li_doc = LinkedInProfile(**db.document.find_one({"_id": self.linkedin}))
         except AttributeError:
             print "!! %s has not connected LinkedIn" % self.signup['email']
         else:
             try:
-                if new_statements: li_doc.makeStatements(param_str)
-                li_ext = StatementDict(getattr(li_doc, param_str)['extracted'])
-                all_ext.update(li_ext)
+                if new_statements: li_doc.makeStatements(param_str_en)
+                li_ext = StatementDict(getattr(li_doc, param_str_en)['extracted'])
             except AttributeError:
                 print "!! %s has no statements for %s" % (li_doc.title, param_str)
         # Get statements for each course description; weight by grade
         for course_doc, weight in self.iterTUDocs():
+            if course_doc.language == "en": param_str = param_str_en
+            elif course_doc.language == "nl": param_str = param_str_nl
+            else: raise Exception("Unknown language: %s" % course_doc.language)
             try:
                 if new_statements: course_doc.makeStatements(param_str)
                 doc_ext = StatementDict(getattr(course_doc, param_str)['extracted'])
                 doc_ext.weightStmts(weight)
                 tu_ext.update(doc_ext)
-                all_ext.update(doc_ext)
             except AttributeError:
                 print "!! %s has no statements for %s" % (course_doc.title, param_str)
         # Get statements for each portfolio document
         for sw_doc in self.iterPortfolioDocs():
+            if sw_doc.language == "en": param_str = param_str_en
+            elif sw_doc.language == "nl": param_str = param_str_nl
+            else: raise Exception("Unknown language: %s" % sw_doc.language)
             try:
                 if new_statements: sw_doc.makeStatements(param_str)
                 doc_ext = StatementDict(getattr(sw_doc, param_str)['extracted'])
                 sw_ext.update(doc_ext)
-                all_ext.update(doc_ext)
             except AttributeError:
                 print "!! %s has no statements for %s" % (sw_doc._id, param_str)
         # Get statements for each website document
@@ -105,27 +107,39 @@ class Profile(object):
                 if new_statements: webpage.makeStatements(param_str)
                 doc_ext = StatementDict(getattr(webpage, param_str)['extracted'])
                 ws_ext.update(doc_ext)
-                all_ext.update(doc_ext)
             except AttributeError:
                 print "!! %s has no statements for %s" % (webpage.title, param_str)
-
-        # Scale StatementDicts and assign to attribute
-        # TODO: calculate all_ext as mean? of other dicts
-        max_ski_dict = maxPerOrigin(all_profiles)
-        li_ext.scaleDomain(max_ski_dict['linkedin'])
-        tu_ext.scaleDomain(max_ski_dict['tudelft'])
-        sw_ext.scaleDomain(max_ski_dict['shareworks'])
-        ws_ext.scaleDomain(max_ski_dict['website'])
-            
+           
         self.statements = {'linkedin': {'extracted': li_ext, 'inferred': []},
                            'tudelft': {'extracted': tu_ext, 'inferred': []},
                            'shareworks': {'extracted': sw_ext, 'inferred': []},
-                           'website': {'extracted': ws_ext, 'inferred': []},
-                           'ALL': {'extracted': all_ext, 'inferred': []}}
+                           'website': {'extracted': ws_ext, 'inferred': []}}
 
         # Save profile to Mongo
         self.toMongo()
 
+    def scaleStatements(self, max_ski_dict):
+        all_ext = StatementDict()
+        for origin in self.statements:
+            extracted = self.statements[origin]['extracted']
+            # Scale StatementDicts and assign to attribute
+            extracted.scaleDomain(max_ski_dict[origin])
+            # Use the sum of statements (scaled per origin) as all_dict
+            all_ext.update(extracted)
+            
+        # Add 'ALL' as origin
+        self.statements['ALL'] = {'extracted': all_ext, 'inferred': []}
+        # Save profile to Mongo
+        self.toMongo()
+
+    def transformStatements(self, master_lvls_dict):
+        # Transform scaled values to percentiles
+        for origin in self.statements:
+            extracted = self.statements[origin]['extracted']
+            extracted.toPercentiles(master_lvls_dict[origin])
+
+        # Save profile to Mongo
+        self.toMongo()
 
     def updateLinkedInDoc(self):
         if hasattr(self, 'linkedin') and db.document.find_one({"_id": self.linkedin}):
@@ -160,7 +174,7 @@ class Profile(object):
         for webpage in self.iterWebsiteDocs():
             # check if the document has been annotated
             if text_ann not in page.content[0]:
-                page.annotate()
+                page.annotate(title=True)
             else: print page.title, "has already been annotated"
         # Annotate project portfolio
         for sw_doc in self.iterPortfolioDocs():
@@ -319,7 +333,7 @@ class Document(object):
                 # TODO: incorporate doc_type for lvl?
                 all_ann_ids.difference_update(ignored_shw_web)
                 for ann_id in all_ann_ids:
-                    extracted.add(statement(ann_id, fS*2, fK*2, 1.0))
+                    extracted.add(statement(ann_id, fS*2, fK*2, 0.5))
             elif self.origin == 'website':
                 # TODO: incorporate doc_type for lvl?
                 all_ann_ids.difference_update(ignored_shw_web)
@@ -453,6 +467,7 @@ def prfloats(lvl_dict):
     return fmt_dict
 
 class StatementDict(dict):
+    # Container for single S,K,I values per ann_id
     def __str__(self):
         str_out = str()
         value_sort = sorted(self.iteritems(), reverse=True,
@@ -461,7 +476,7 @@ class StatementDict(dict):
             fmt_dict = prfloats(lvl_dict)
             str_out += "\n"+(repr(ann_id)+": ").ljust(20)+str(fmt_dict)
         return str_out
-            
+        
     def add(self, statement):
         ann_id = statement[0]
         lvl_dict = statement[1].copy()
@@ -492,6 +507,15 @@ class StatementDict(dict):
             lvls['knowledge'] = 100 * log10(lvls['knowledge']+1) / log10(max_ski[1]+1)
             lvls['interest'] = 100 * log10(lvls['interest']+1) / log10(max_ski[2]+1)
 
+    def toPercentiles(self, lvls_ld):
+        # Transform values for each statement to percentiles (overwrite)
+        val_to_perc = scipy.stats.percentileofscore
+        for ann_id, lvl_dict in self.iteritems():
+            for mastery_type, lvl in lvl_dict.items():
+                if lvl > 0:
+                    lvl = val_to_perc(lvls_ld[ann_id][mastery_type], lvl)
+                    lvl_dict[mastery_type] = lvl        
+
     def weightStmts(self, weight, verbose=0):
         for ann_id in self:
             if verbose: print("{0:0.2f} x".format(weight),
@@ -502,6 +526,7 @@ class StatementDict(dict):
             if verbose: print "Done :", ann_id, prfloats(self[ann_id])
 
 def maxPerOrigin(all_profiles):
+    # TODO: perhaps refactor to use lvlsPerOrigin
     li_max_tuples, tu_max_tuples = [], [(0,0,1)] #hack for max(tu_int) = 0
     sw_max_tuples, ws_max_tuples = [], []
     # Get max S,K,I per profile per origin
@@ -514,6 +539,7 @@ def maxPerOrigin(all_profiles):
                                            ['extracted']).getMaxSKI())
         ws_max_tuples.append(StatementDict(pr.statements['website']
                                            ['extracted']).getMaxSKI())
+
     # Get the maximums across all profiles
     li_max = (max(li_max_tuples, key=lambda t: t[0])[0],
               max(li_max_tuples, key=lambda t: t[1])[1],
@@ -531,6 +557,60 @@ def maxPerOrigin(all_profiles):
     max_ski_dict = {'linkedin': li_max, 'tudelft': tu_max,
                 'shareworks': sw_max, 'website': ws_max}
     return max_ski_dict
+
+class LvlsListDict(dict):
+    # Container for list S,K,I values per ann_id
+    def __str__(self):
+        str_out = str()
+        value_sort = sorted(self.iteritems(), reverse=True,
+                            key=lambda t: sum([len(l) for l in t[1].values()]))
+        for ann_id, lvls_dict in value_sort:
+            str_out += "\n\n"+(repr(ann_id)+": ").ljust(20)+str(lvls_dict)
+        return str_out
+    
+    def append(self, statement):
+        ann_id = statement[0]
+        lvl_dict = statement[1].copy()
+        if ann_id not in self:
+            self[ann_id] = {'skill': [], 'knowledge': [], 'interest': []}
+        for mastery_type, lvl in lvl_dict.iteritems():
+            # lvl of 0.0 means: no S/K/I could be implied, so don't count
+            if lvl > 0:
+                self[ann_id][mastery_type].append(lvl)                
+
+    def updAppend(self, statement_dict):
+        for statement in statement_dict.iteritems():
+            self.append(statement)
+
+    def smoothLists(self, multiplier):
+        # Insert evenly spaced values [0.0 - multiplier*max(lvls_list)]
+        for lvls_dict in self.itervalues():
+            for lvls_list in lvls_dict.itervalues():
+                if len(lvls_list) > 0:
+                    max_lvl = multiplier*max(lvls_list)
+                    insert_lvls = [n_lvl * max_lvl / len(lvls_list)
+                                   for n_lvl in xrange(len(lvls_list)+1)]
+                    lvls_list[:] = sorted(insert_lvls + lvls_list)
+        return self
+                    
+
+def lvlsPerOrigin(all_profiles):
+    li_lvls_dict, tu_lvls_dict = LvlsListDict(), LvlsListDict()
+    sw_lvls_dict, ws_lvls_dict = LvlsListDict(), LvlsListDict()
+    all_lvls_dict = LvlsListDict()
+    # Append the S,K,I values for each ann_id to corresponding lvls_dict
+    for pr in all_profiles:
+        li_lvls_dict.updAppend(pr.statements['linkedin']['extracted'])
+        tu_lvls_dict.updAppend(pr.statements['tudelft']['extracted'])
+        sw_lvls_dict.updAppend(pr.statements['shareworks']['extracted'])
+        ws_lvls_dict.updAppend(pr.statements['website']['extracted'])
+        all_lvls_dict.updAppend(pr.statements['ALL']['extracted'])
+        
+    return {'linkedin': li_lvls_dict.smoothLists(1.5),
+            'tudelft': tu_lvls_dict.smoothLists(1.5),
+            'shareworks': sw_lvls_dict.smoothLists(1.5),
+            'website': ws_lvls_dict.smoothLists(1.5),
+            'ALL': all_lvls_dict.smoothLists(1.5)}
 
 """
 Takes candidate lists (as provided by compare.throughSpotlight)
@@ -746,8 +826,23 @@ def spotterTests():
     testdocnl.annotate()
     testdocen.annotate()
 
-# Always load all profiles (dependency in Profile.addStatements on maxPerOrigin)
-all_profiles = loadProfiles()
+def produceStatements(all_profiles):
+    # N.B. the order in which these operations are performed is essential!
+    # Add 'raw, fresh' statements for all profiles
+    for pr in all_profiles:
+        pr.addStatements("single_dbp_c0_3_s0", "single_p4_c0_2_s0")
+    # Get the max raw S,K,I values
+    max_ski_dict = maxPerOrigin(all_profiles)
+    print "Maximum values per origin:", max_ski_dict
+    # Scale the domain of all statements
+    for pr in all_profiles:
+        pr.scaleStatements(max_ski_dict)
+    # Transform all statements to percentiles
+    master_lvls_dict = lvlsPerOrigin(all_profiles)
+    for pr in all_profiles:
+        print "\n\n", pr.signup['email']
+        pr.transformStatements(master_lvls_dict)
+        print pr.statements["ALL"]['extracted']
 
 if __name__ == '__main__' :
     signup_path = "../Phase B/connector/app/db"
@@ -756,14 +851,21 @@ if __name__ == '__main__' :
 
     try:
         #readSignups(signup_path)
-
         #spotterTests()
 
+        # Load docs with dev_truth
         dev_tuswws = loadDocuments({'dev_truth': {'$exists': 1},
                                     'origin': {'$ne': 'linkedin'}})
         dev_li = loadDocuments({'dev_truth': {'$exists': 1},
                                     'origin': 'linkedin'}, LinkedInProfile)
-
+        
+        # Load profiles and filter them for non-participants
+        all_profiles = loadProfiles()
+        all_profiles[:] = [pr for pr in all_profiles if (pr.signup['email'] not in
+                                                         {"alex@olieman.net",
+                                                          "r.jelierse@student.tudelft.nl"})]
+        produceStatements(all_profiles)
+        
     finally:
         # disconnect from mongo
         db.connection.disconnect()

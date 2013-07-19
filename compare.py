@@ -37,7 +37,7 @@ def throughSpotlight(text, cand_param, conf=0.0, supp=0, lang='en'):
     en_local = 'http://localhost:2222/rest/%s' % cand_uri
     nl_default = 'http://nl.dbpedia.org/spotlight/rest/%s' % cand_uri
     nl_local = 'http://localhost:2223/rest/%s' % cand_uri
-    api = partial(cand_function, en_sztaki,
+    api = partial(cand_function, en_default,
                   confidence=conf, support=supp,
                   spotter='Default')
     if lang == 'nl':
@@ -46,7 +46,10 @@ def throughSpotlight(text, cand_param, conf=0.0, supp=0, lang='en'):
                   spotter='Default')
     try:
         spotlight_response = api(text)
-    except SpotlightException, err:
+    except SpotlightException as err:
+        print err
+        return None
+    except TypeError as err:
         print err
         return None
     annotation_ids = []
