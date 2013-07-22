@@ -475,4 +475,9 @@ if __name__ == '__main__' :
 ##    csvEvalTable(dev_docs, runs)
 
     # Evaluate Mastery Levels
-    profiles = cpr.all_profiles
+    # Load profiles and filter them for non-participants
+    all_profiles = cpr.loadProfiles()
+    all_profiles[:] = [pr for pr in all_profiles if (pr.signup['email'] not in
+                                                     {"alex@olieman.net",
+                                                      "r.jelierse@student.tudelft.nl"})]
+    

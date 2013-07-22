@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" ng-app="reviewApp" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>Profile Review</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="http://documentcloud.github.io/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="slider.js"></script>
+    <script type="text/javascript" src="statement.js"></script>
+    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" media="all" type="text/css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="reviews.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div ng-controller="StatementCtrl" ng-init="initdata()">
+    <h1>Statements for {{participant-name}}</h1>
+    <span>
+        Legend:<i class="icon-wrench"></i> skill <i class="icon-book"></i> knowledge <i class="icon-eye-open"></i> interest
+    </span>
+    <section id="ext-topics" class="">
+        <h2>Remove the topics in which you have absolutely no skill, knowledge, or interest</h2>
+        <div class="top-cont" ng-repeat="(key, value) in extracted">
+            <div class="btn" ng-class="{disabled: !value.correct}" ng-click="toggleCorrect(value)">
+                <span class="topic-name">{{key}}</span>
+                <a class="icon-remove"></a>
+            </div>
+        </div>
+        <span class="stretch"></span>
+    </section>
+
+    <section id="ext-statements" class="">
+        <h2>Correct the skill, knowledge, and interest levels</h2>
+        <div class="st-cont" ng-repeat="(key, value) in filterCorrect(extracted)">
+            <form class="form-horizontal">
+                <span class="topic-name">{{key}}</span>
+                <div class="mastery-rel skill">
+                    <span>Skill <i class="icon-chevron-right"></i> {{value.skill}}% of <i class="icon-user"></i></span>
+                    <div ui-slider="{range:'min'}" ng-model="value.skill"></div>
+                </div>
+                <div class="mastery-rel knowledge">
+                    <span>Knowledge <i class="icon-chevron-right"></i> {{value.knowledge}}% of <i class="icon-user"></i></span>
+                    <div ui-slider="{range:'min'}" ng-model="value.knowledge"></div>
+                </div>
+                <div class="mastery-rel interest">
+                    <span>Interest <i class="icon-chevron-right"></i> {{value.interest}}% of <i class="icon-user"></i></span>
+                    <div ui-slider="{range:'min'}" ng-model="value.interest"></div>
+                </div>
+            </form>
+        </div>
+        <span class="stretch"></span>
+    </section>
+
+    <h2>Remove the (inferred) topics in which you have absolutely no skill, knowledge, or interest</h2>
+
+
+    <h2>Add topics that we have missed</h2>
+
+    <button class="btn-large" ng-click="toConsole()"><i class="icon-play"></i>To Console</button>
+    <h2>Total todos: {{getTotalTodos()}}</h2>
+    <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+    </ul>
+    <form class="form-horizontal">
+        <input type="text" ng-model="formTodoText" ng-model-instant>
+        <button class="btn" ng-click="addTodo()"><i class="icon-plus"></i>Add</button>
+    </form>
+
+    <button class="btn-large" ng-click="clearCompleted()"><i class="icon-trash"></i>Clear Completed</button>
+</div>
+</body>
+</html>

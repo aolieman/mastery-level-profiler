@@ -1,0 +1,81 @@
+#ext-topics{
+    max-width: 1600px;
+    padding: 30px;
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+#ext-statements{
+    max-width: 1600px;
+    padding: 30px;
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+.top-cont{
+    width: 280px;
+    height: 30px;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+}
+
+.btn.disabled {
+    opacity: 0.4;
+}
+
+div.disabled a{
+    display: none;
+}
+
+.st-cont{
+    width: 280px;
+    height: 150px;
+    background: silver;
+    padding: 5px;
+    margin: 10px;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+}
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+.topic-name{
+    margin-right: 5px;
+}
+.mastery-rel{
+    margin-left: 7px;
+}
+.ui-slider{
+    width: 80%;
+    margin: 2%;
+    height: 0.5em;
+}
+.skill .ui-slider-range{
+    background: #df8505;
+}
+.knowledge .ui-slider-range{
+    background: #0480be;
+}
+.interest .ui-slider-range{
+    background: #46a546;
+}
+.ui-slider .ui-slider-handle {
+    width: 1.0em;
+    height: 1.0em;
+    background-image: url("bootstrap/img/glyphicons-halflings.png");
+}
+.skill .ui-slider-handle {
+    background-position: -360px -144px;
+}
+.knowledge .ui-slider-handle {
+    background-position: -48px -48px;
+}
+.interest .ui-slider-handle {
+    background-position: -95px -120px;
+}

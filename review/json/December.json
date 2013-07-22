@@ -1,0 +1,2480 @@
+{
+  "website" : {
+    "extracted" : { },
+    "inferred" : []
+  },
+  "ALL" : {
+    "extracted" : {
+      "Interactivity" : {
+        "skill" : 28.000000000000004,
+        "knowledge" : 36.0,
+        "interest" : 0.0
+      },
+      "Acceleration" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "User_interface" : {
+        "skill" : 29.411764705882355,
+        "knowledge" : 52.0,
+        "interest" : 0.0
+      },
+      "Mass_production" : {
+        "skill" : 47.058823529411761,
+        "knowledge" : 52.941176470588239,
+        "interest" : 0.0
+      },
+      "Display_device" : {
+        "skill" : 54.54545454545454,
+        "knowledge" : 54.54545454545454,
+        "interest" : 0.0
+      },
+      "Task_force" : {
+        "skill" : 27.27272727272727,
+        "knowledge" : 27.27272727272727,
+        "interest" : 28.571428571428569
+      },
+      "Digital_photography" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Array_data_structure" : {
+        "skill" : 0.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Broadcast_programming" : {
+        "skill" : 0.0,
+        "knowledge" : 46.153846153846153,
+        "interest" : 0.0
+      },
+      "Innovation" : {
+        "skill" : 32.0,
+        "knowledge" : 36.0,
+        "interest" : 0.0
+      },
+      "Integrated_circuit" : {
+        "skill" : 30.434782608695656,
+        "knowledge" : 52.173913043478258,
+        "interest" : 0.0
+      },
+      "Document" : {
+        "skill" : 28.000000000000004,
+        "knowledge" : 48.0,
+        "interest" : 0.0
+      },
+      "Cultural_history" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 55.555555555555557,
+        "interest" : 0.0
+      },
+      "Lecturer" : {
+        "skill" : 56.521739130434781,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Designer" : {
+        "skill" : 68.0,
+        "knowledge" : 52.0,
+        "interest" : 50.0
+      },
+      "Opportunity_cost" : {
+        "skill" : 82.6086956521739,
+        "knowledge" : 82.6086956521739,
+        "interest" : 0.0
+      },
+      "Business" : {
+        "skill" : 23.52941176470588,
+        "knowledge" : 47.058823529411761,
+        "interest" : 0.0
+      },
+      "Consumer" : {
+        "skill" : 29.411764705882355,
+        "knowledge" : 35.294117647058826,
+        "interest" : 0.0
+      },
+      "Philosophy" : {
+        "skill" : 54.347826086956516,
+        "knowledge" : 54.347826086956516,
+        "interest" : 0.0
+      },
+      "YouTube" : {
+        "skill" : 68.181818181818173,
+        "knowledge" : 68.181818181818173,
+        "interest" : 0.0
+      },
+      "Computer_program" : {
+        "skill" : 23.52941176470588,
+        "knowledge" : 47.058823529411761,
+        "interest" : 0.0
+      },
+      "Guide" : {
+        "skill" : 70.0,
+        "knowledge" : 70.0,
+        "interest" : 0.0
+      },
+      "Sustainability" : {
+        "skill" : 64.0,
+        "knowledge" : 48.0,
+        "interest" : 0.0
+      },
+      "Cognitive_science" : {
+        "skill" : 82.6086956521739,
+        "knowledge" : 82.6086956521739,
+        "interest" : 0.0
+      },
+      "Craft" : {
+        "skill" : 0.0,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      },
+      "Diary" : {
+        "skill" : 71.428571428571431,
+        "knowledge" : 78.571428571428569,
+        "interest" : 0.0
+      },
+      "Physical_exercise" : {
+        "skill" : 68.421052631578945,
+        "knowledge" : 63.1578947368421,
+        "interest" : 0.0
+      },
+      "Statistical_hypothesis_testing" : {
+        "skill" : 0.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Translation" : {
+        "skill" : 32.0,
+        "knowledge" : 26.0,
+        "interest" : 0.0
+      },
+      "Turning" : {
+        "skill" : 26.0,
+        "knowledge" : 26.0,
+        "interest" : 0.0
+      },
+      "Quality_(business)" : {
+        "skill" : 76.470588235294116,
+        "knowledge" : 76.470588235294116,
+        "interest" : 0.0
+      },
+      "Sound" : {
+        "skill" : 0.0,
+        "knowledge" : 68.0,
+        "interest" : 34.615384615384613
+      },
+      "Peer_review" : {
+        "skill" : 22.222222222222221,
+        "knowledge" : 44.444444444444443,
+        "interest" : 0.0
+      },
+      "Regular_expression" : {
+        "skill" : 82.35294117647058,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Cognition" : {
+        "skill" : 0.0,
+        "knowledge" : 30.0,
+        "interest" : 0.0
+      },
+      "Typeface" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      },
+      "Iteration" : {
+        "skill" : 22.0,
+        "knowledge" : 22.0,
+        "interest" : 0.0
+      },
+      "Requirement" : {
+        "skill" : 28.000000000000004,
+        "knowledge" : 36.0,
+        "interest" : 0.0
+      },
+      "Analysis" : {
+        "skill" : 60.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Simulation" : {
+        "skill" : 56.521739130434781,
+        "knowledge" : 52.173913043478258,
+        "interest" : 0.0
+      },
+      "Project" : {
+        "skill" : 28.000000000000004,
+        "knowledge" : 32.0,
+        "interest" : 0.0
+      },
+      "Conversation" : {
+        "skill" : 0.0,
+        "knowledge" : 80.769230769230774,
+        "interest" : 0.0
+      },
+      "New_product_development" : {
+        "skill" : 52.173913043478258,
+        "knowledge" : 52.173913043478258,
+        "interest" : 0.0
+      },
+      "Visual_system" : {
+        "skill" : 63.1578947368421,
+        "knowledge" : 68.0,
+        "interest" : 0.0
+      },
+      "Documentation" : {
+        "skill" : 33.333333333333329,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Mechanical_engineering" : {
+        "skill" : 64.705882352941174,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Organization" : {
+        "skill" : 68.0,
+        "knowledge" : 52.0,
+        "interest" : 0.0
+      },
+      "Usability" : {
+        "skill" : 34.782608695652172,
+        "knowledge" : 30.434782608695656,
+        "interest" : 0.0
+      },
+      "Mechanics" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 41.17647058823529,
+        "interest" : 0.0
+      },
+      "Fashion" : {
+        "skill" : 0.0,
+        "knowledge" : 55.555555555555557,
+        "interest" : 0.0
+      },
+      "Local_government" : {
+        "skill" : 22.0,
+        "knowledge" : 26.0,
+        "interest" : 0.0
+      },
+      "Laptop" : {
+        "skill" : 80.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Integral" : {
+        "skill" : 58.82352941176471,
+        "knowledge" : 58.82352941176471,
+        "interest" : 0.0
+      },
+      "Telephone" : {
+        "skill" : 53.333333333333336,
+        "knowledge" : 46.666666666666664,
+        "interest" : 0.0
+      },
+      "Planning" : {
+        "skill" : 60.869565217391312,
+        "knowledge" : 60.869565217391312,
+        "interest" : 27.27272727272727
+      },
+      "COBOL" : {
+        "skill" : 26.086956521739129,
+        "knowledge" : 52.173913043478258,
+        "interest" : 0.0
+      },
+      "Index_(publishing)" : {
+        "skill" : 80.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Process_control" : {
+        "skill" : 57.894736842105267,
+        "knowledge" : 47.368421052631575,
+        "interest" : 0.0
+      },
+      "Personalization" : {
+        "skill" : 44.444444444444443,
+        "knowledge" : 55.555555555555557,
+        "interest" : 0.0
+      },
+      "Search_and_seizure" : {
+        "skill" : 0.0,
+        "knowledge" : 85.714285714285708,
+        "interest" : 0.0
+      },
+      "Case_study" : {
+        "skill" : 72.0,
+        "knowledge" : 68.0,
+        "interest" : 0.0
+      },
+      "Debate" : {
+        "skill" : 76.0,
+        "knowledge" : 76.0,
+        "interest" : 0.0
+      },
+      "Mathematical_analysis" : {
+        "skill" : 76.470588235294116,
+        "knowledge" : 73.68421052631578,
+        "interest" : 0.0
+      },
+      "Customer" : {
+        "skill" : 47.368421052631575,
+        "knowledge" : 48.0,
+        "interest" : 0.0
+      },
+      "Statistics" : {
+        "skill" : 33.333333333333329,
+        "knowledge" : 33.333333333333329,
+        "interest" : 0.0
+      },
+      "Wealth" : {
+        "skill" : 78.571428571428569,
+        "knowledge" : 78.571428571428569,
+        "interest" : 66.666666666666657
+      },
+      "Clock" : {
+        "skill" : 0.0,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      },
+      "Broadband" : {
+        "skill" : 64.0,
+        "knowledge" : 64.0,
+        "interest" : 0.0
+      },
+      "Product_design" : {
+        "skill" : 28.000000000000004,
+        "knowledge" : 32.0,
+        "interest" : 0.0
+      },
+      "System" : {
+        "skill" : 28.000000000000004,
+        "knowledge" : 32.0,
+        "interest" : 0.0
+      },
+      "Physical_examination" : {
+        "skill" : 0.0,
+        "knowledge" : 70.0,
+        "interest" : 70.0
+      },
+      "Human_nature" : {
+        "skill" : 56.000000000000007,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "User_experience" : {
+        "skill" : 28.571428571428569,
+        "knowledge" : 28.571428571428569,
+        "interest" : 0.0
+      },
+      "Performance" : {
+        "skill" : 60.0,
+        "knowledge" : 56.000000000000007,
+        "interest" : 0.0
+      },
+      "Autodidacticism" : {
+        "skill" : 29.411764705882355,
+        "knowledge" : 29.411764705882355,
+        "interest" : 0.0
+      },
+      "Safety" : {
+        "skill" : 0.0,
+        "knowledge" : 56.000000000000007,
+        "interest" : 0.0
+      },
+      "Streaming_media" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Economy" : {
+        "skill" : 77.777777777777786,
+        "knowledge" : 77.777777777777786,
+        "interest" : 0.0
+      },
+      "Power_(physics)" : {
+        "skill" : 82.35294117647058,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Prototype" : {
+        "skill" : 20.0,
+        "knowledge" : 32.0,
+        "interest" : 24.0
+      },
+      "Risk" : {
+        "skill" : 0.0,
+        "knowledge" : 62.0,
+        "interest" : 0.0
+      },
+      "Programming_tool" : {
+        "skill" : 52.631578947368418,
+        "knowledge" : 31.578947368421051,
+        "interest" : 0.0
+      },
+      "Evaluation" : {
+        "skill" : 40.0,
+        "knowledge" : 44.0,
+        "interest" : 0.0
+      },
+      "Tool" : {
+        "skill" : 32.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Prior_art" : {
+        "skill" : 0.0,
+        "knowledge" : 82.35294117647058,
+        "interest" : 0.0
+      },
+      "Game" : {
+        "skill" : 52.631578947368418,
+        "knowledge" : 14.285714285714285,
+        "interest" : 28.947368421052634
+      },
+      "Construction" : {
+        "skill" : 0.0,
+        "knowledge" : 45.454545454545453,
+        "interest" : 0.0
+      },
+      "Facebook" : {
+        "skill" : 35.714285714285715,
+        "knowledge" : 35.714285714285715,
+        "interest" : 64.285714285714292
+      },
+      "Consultant" : {
+        "skill" : 58.82352941176471,
+        "knowledge" : 58.82352941176471,
+        "interest" : 0.0
+      },
+      "Report" : {
+        "skill" : 56.000000000000007,
+        "knowledge" : 68.0,
+        "interest" : 0.0
+      },
+      "E-learning" : {
+        "skill" : 33.333333333333329,
+        "knowledge" : 33.333333333333329,
+        "interest" : 0.0
+      },
+      "Marketing_mix" : {
+        "skill" : 82.35294117647058,
+        "knowledge" : 82.35294117647058,
+        "interest" : 0.0
+      },
+      "Software_design" : {
+        "skill" : 28.000000000000004,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Blueprint" : {
+        "skill" : 0.0,
+        "knowledge" : 30.0,
+        "interest" : 0.0
+      },
+      "Electronic_component" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 47.058823529411761,
+        "interest" : 0.0
+      },
+      "Interaction" : {
+        "skill" : 20.0,
+        "knowledge" : 20.0,
+        "interest" : 0.0
+      },
+      "Observation" : {
+        "skill" : 42.105263157894733,
+        "knowledge" : 36.84210526315789,
+        "interest" : 0.0
+      },
+      "Concept" : {
+        "skill" : 24.0,
+        "knowledge" : 28.000000000000004,
+        "interest" : 0.0
+      },
+      "Differential_equation" : {
+        "skill" : 56.000000000000007,
+        "knowledge" : 56.000000000000007,
+        "interest" : 0.0
+      },
+      "Built_environment" : {
+        "skill" : 64.705882352941174,
+        "knowledge" : 64.705882352941174,
+        "interest" : 0.0
+      },
+      "Attitude_(psychology)" : {
+        "skill" : 73.529411764705884,
+        "knowledge" : 73.529411764705884,
+        "interest" : 0.0
+      },
+      "Computer_programming" : {
+        "skill" : 77.272727272727266,
+        "knowledge" : 34.615384615384613,
+        "interest" : 61.53846153846154
+      },
+      "Systems_analysis" : {
+        "skill" : 73.529411764705884,
+        "knowledge" : 73.529411764705884,
+        "interest" : 0.0
+      },
+      "Short_film" : {
+        "skill" : 28.571428571428569,
+        "knowledge" : 28.571428571428569,
+        "interest" : 0.0
+      },
+      "Unix-like" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      },
+      "Commercial_law" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 72.222222222222214,
+        "interest" : 0.0
+      },
+      "Data_storage_device" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 47.058823529411761,
+        "interest" : 0.0
+      },
+      "Philosophy_of_science" : {
+        "skill" : 82.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Drawing" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 64.705882352941174,
+        "interest" : 44.444444444444443
+      },
+      "Emotion" : {
+        "skill" : 40.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Motivation" : {
+        "skill" : 47.368421052631575,
+        "knowledge" : 42.857142857142854,
+        "interest" : 0.0
+      },
+      "Selection" : {
+        "skill" : 73.91304347826086,
+        "knowledge" : 82.0,
+        "interest" : 0.0
+      },
+      "Chemical_kinetics" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Group_dynamics" : {
+        "skill" : 57.142857142857139,
+        "knowledge" : 65.217391304347828,
+        "interest" : 0.0
+      },
+      "Image" : {
+        "skill" : 21.739130434782609,
+        "knowledge" : 52.0,
+        "interest" : 0.0
+      },
+      "Nature" : {
+        "skill" : 44.0,
+        "knowledge" : 48.0,
+        "interest" : 0.0
+      },
+      "Shape" : {
+        "skill" : 64.705882352941174,
+        "knowledge" : 64.705882352941174,
+        "interest" : 33.333333333333329
+      },
+      "Adobe_Photoshop" : {
+        "skill" : 81.818181818181827,
+        "knowledge" : 81.818181818181827,
+        "interest" : 0.0
+      },
+      "Design" : {
+        "skill" : 20.0,
+        "knowledge" : 32.0,
+        "interest" : 26.0
+      },
+      "Injection_molding" : {
+        "skill" : 52.941176470588239,
+        "knowledge" : 52.941176470588239,
+        "interest" : 0.0
+      },
+      "Content_analysis" : {
+        "skill" : 60.0,
+        "knowledge" : 64.0,
+        "interest" : 0.0
+      },
+      "Message" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      },
+      "Technology" : {
+        "skill" : 16.0,
+        "knowledge" : 12.0,
+        "interest" : 0.0
+      },
+      "Structured_programming" : {
+        "skill" : 76.0,
+        "knowledge" : 82.0,
+        "interest" : 0.0
+      },
+      "Creative_writing" : {
+        "skill" : 0.0,
+        "knowledge" : 85.714285714285708,
+        "interest" : 0.0
+      },
+      "Pastel" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Problem_solving" : {
+        "skill" : 0.0,
+        "knowledge" : 82.0,
+        "interest" : 0.0
+      },
+      "Metal" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 35.294117647058826,
+        "interest" : 0.0
+      },
+      "Psychology" : {
+        "skill" : 64.705882352941174,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Market_research" : {
+        "skill" : 81.578947368421055,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Humanities" : {
+        "skill" : 32.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Electricity" : {
+        "skill" : 47.058823529411761,
+        "knowledge" : 52.941176470588239,
+        "interest" : 0.0
+      },
+      "CD-ROM" : {
+        "skill" : 80.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Writing" : {
+        "skill" : 24.0,
+        "knowledge" : 44.0,
+        "interest" : 0.0
+      },
+      "Tutor" : {
+        "skill" : 26.0,
+        "knowledge" : 26.0,
+        "interest" : 0.0
+      },
+      "Pragmatism" : {
+        "skill" : 76.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Support_group" : {
+        "skill" : 38.461538461538467,
+        "knowledge" : 53.846153846153847,
+        "interest" : 0.0
+      },
+      "Human_factors_and_ergonomics" : {
+        "skill" : 50.0,
+        "knowledge" : 50.0,
+        "interest" : 0.0
+      },
+      "Application_software" : {
+        "skill" : 39.130434782608695,
+        "knowledge" : 30.434782608695656,
+        "interest" : 0.0
+      },
+      "Group_theory" : {
+        "skill" : 0.0,
+        "knowledge" : 41.17647058823529,
+        "interest" : 0.0
+      },
+      "Meeting" : {
+        "skill" : 72.0,
+        "knowledge" : 76.0,
+        "interest" : 73.333333333333329
+      },
+      "20th_century" : {
+        "skill" : 80.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Awareness" : {
+        "skill" : 52.941176470588239,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Website" : {
+        "skill" : 48.0,
+        "knowledge" : 48.0,
+        "interest" : 0.0
+      },
+      "Web_2~0" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 72.222222222222214,
+        "interest" : 0.0
+      },
+      "Statics" : {
+        "skill" : 35.294117647058826,
+        "knowledge" : 35.294117647058826,
+        "interest" : 0.0
+      },
+      "Perception" : {
+        "skill" : 56.000000000000007,
+        "knowledge" : 56.000000000000007,
+        "interest" : 0.0
+      },
+      "Academic_conference" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 58.82352941176471,
+        "interest" : 0.0
+      },
+      "Industrial_design" : {
+        "skill" : 26.086956521739129,
+        "knowledge" : 26.086956521739129,
+        "interest" : 0.0
+      },
+      "Software_development_process" : {
+        "skill" : 78.94736842105263,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Team_building" : {
+        "skill" : 42.857142857142854,
+        "knowledge" : 42.857142857142854,
+        "interest" : 0.0
+      },
+      "Implementation" : {
+        "skill" : 52.380952380952387,
+        "knowledge" : 52.380952380952387,
+        "interest" : 0.0
+      },
+      "Accompaniment" : {
+        "skill" : 72.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Plan" : {
+        "skill" : 36.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Studio" : {
+        "skill" : 50.0,
+        "knowledge" : 55.26315789473685,
+        "interest" : 0.0
+      },
+      "Experiential_learning" : {
+        "skill" : 0.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Process_management" : {
+        "skill" : 52.631578947368418,
+        "knowledge" : 57.894736842105267,
+        "interest" : 0.0
+      },
+      "Universe" : {
+        "skill" : 36.666666666666664,
+        "knowledge" : 36.666666666666664,
+        "interest" : 0.0
+      },
+      "Dutch_language" : {
+        "skill" : 44.444444444444443,
+        "knowledge" : 55.555555555555557,
+        "interest" : 0.0
+      },
+      "Conflict_resolution" : {
+        "skill" : 52.631578947368418,
+        "knowledge" : 42.105263157894733,
+        "interest" : 0.0
+      },
+      "Network_theory" : {
+        "skill" : 77.272727272727266,
+        "knowledge" : 59.090909090909093,
+        "interest" : 0.0
+      },
+      "Language" : {
+        "skill" : 38.095238095238095,
+        "knowledge" : 38.095238095238095,
+        "interest" : 0.0
+      },
+      "Geometry" : {
+        "skill" : 50.0,
+        "knowledge" : 50.0,
+        "interest" : 0.0
+      },
+      "Science" : {
+        "skill" : 21.052631578947366,
+        "knowledge" : 26.315789473684209,
+        "interest" : 0.0
+      },
+      "Forecasting" : {
+        "skill" : 52.941176470588239,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Creative_industries" : {
+        "skill" : 80.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Empirical_research" : {
+        "skill" : 33.333333333333329,
+        "knowledge" : 33.333333333333329,
+        "interest" : 0.0
+      },
+      "Aesthetics" : {
+        "skill" : 64.705882352941174,
+        "knowledge" : 68.0,
+        "interest" : 0.0
+      },
+      "Academic_publishing" : {
+        "skill" : 33.333333333333329,
+        "knowledge" : 19.047619047619047,
+        "interest" : 0.0
+      },
+      "Future" : {
+        "skill" : 16.0,
+        "knowledge" : 24.0,
+        "interest" : 0.0
+      },
+      "Web_design" : {
+        "skill" : 72.727272727272734,
+        "knowledge" : 77.272727272727266,
+        "interest" : 0.0
+      },
+      "Navigation" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 72.222222222222214,
+        "interest" : 0.0
+      },
+      "Ethics" : {
+        "skill" : 60.869565217391312,
+        "knowledge" : 60.869565217391312,
+        "interest" : 0.0
+      },
+      "Terminology" : {
+        "skill" : 26.0,
+        "knowledge" : 30.0,
+        "interest" : 0.0
+      },
+      "Access_control" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 42.105263157894733,
+        "interest" : 0.0
+      },
+      "Consumer_behaviour" : {
+        "skill" : 60.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Rapid_prototyping" : {
+        "skill" : 53.333333333333336,
+        "knowledge" : 53.333333333333336,
+        "interest" : 0.0
+      },
+      "Heat_transfer" : {
+        "skill" : 67.64705882352942,
+        "knowledge" : 67.64705882352942,
+        "interest" : 0.0
+      },
+      "Social_psychology" : {
+        "skill" : 60.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "SolidWorks" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Methodology" : {
+        "skill" : 40.0,
+        "knowledge" : 44.0,
+        "interest" : 0.0
+      },
+      "Culture" : {
+        "skill" : 36.0,
+        "knowledge" : 28.000000000000004,
+        "interest" : 0.0
+      },
+      "Engineering" : {
+        "skill" : 40.476190476190474,
+        "knowledge" : 30.952380952380953,
+        "interest" : 0.0
+      },
+      "Mass_media" : {
+        "skill" : 36.363636363636367,
+        "knowledge" : 54.54545454545454,
+        "interest" : 0.0
+      },
+      "Video" : {
+        "skill" : 80.0,
+        "knowledge" : 76.666666666666671,
+        "interest" : 80.0
+      },
+      "Teamwork" : {
+        "skill" : 26.315789473684209,
+        "knowledge" : 17.391304347826086,
+        "interest" : 0.0
+      },
+      "Film_editing" : {
+        "skill" : 73.529411764705884,
+        "knowledge" : 73.529411764705884,
+        "interest" : 0.0
+      },
+      "Vimeo" : {
+        "skill" : 64.285714285714292,
+        "knowledge" : 64.285714285714292,
+        "interest" : 64.285714285714292
+      },
+      "Visual_Basic" : {
+        "skill" : 52.631578947368418,
+        "knowledge" : 68.421052631578945,
+        "interest" : 0.0
+      },
+      "Interaction_design" : {
+        "skill" : 26.086956521739129,
+        "knowledge" : 26.086956521739129,
+        "interest" : 0.0
+      },
+      "Space" : {
+        "skill" : 72.727272727272734,
+        "knowledge" : 77.272727272727266,
+        "interest" : 0.0
+      },
+      "Creativity" : {
+        "skill" : 60.0,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Strategy" : {
+        "skill" : 39.130434782608695,
+        "knowledge" : 39.130434782608695,
+        "interest" : 0.0
+      },
+      "Blog" : {
+        "skill" : 52.631578947368418,
+        "knowledge" : 36.84210526315789,
+        "interest" : 0.0
+      },
+      "Globalization" : {
+        "skill" : 0.0,
+        "knowledge" : 60.869565217391312,
+        "interest" : 0.0
+      },
+      "Kinematics" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Digital" : {
+        "skill" : 73.68421052631578,
+        "knowledge" : 76.19047619047619,
+        "interest" : 0.0
+      },
+      "Interview" : {
+        "skill" : 0.0,
+        "knowledge" : 36.0,
+        "interest" : 0.0
+      },
+      "Mathematics" : {
+        "skill" : 46.666666666666664,
+        "knowledge" : 46.666666666666664,
+        "interest" : 0.0
+      },
+      "Electronics" : {
+        "skill" : 26.315789473684209,
+        "knowledge" : 28.571428571428569,
+        "interest" : 0.0
+      },
+      "Computer-aided_design" : {
+        "skill" : 78.94736842105263,
+        "knowledge" : 52.631578947368418,
+        "interest" : 0.0
+      },
+      "Presentation" : {
+        "skill" : 44.0,
+        "knowledge" : 48.0,
+        "interest" : 33.333333333333329
+      },
+      "Set_theory" : {
+        "skill" : 53.333333333333336,
+        "knowledge" : 53.333333333333336,
+        "interest" : 0.0
+      },
+      "Image_editing" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Multinational_corporation" : {
+        "skill" : 76.666666666666671,
+        "knowledge" : 76.666666666666671,
+        "interest" : 0.0
+      },
+      "Explosion" : {
+        "skill" : 58.82352941176471,
+        "knowledge" : 58.82352941176471,
+        "interest" : 0.0
+      },
+      "Computer" : {
+        "skill" : 44.0,
+        "knowledge" : 20.0,
+        "interest" : 0.0
+      },
+      "Parallel_computing" : {
+        "skill" : 54.0,
+        "knowledge" : 54.0,
+        "interest" : 0.0
+      },
+      "Chart" : {
+        "skill" : 53.333333333333336,
+        "knowledge" : 53.333333333333336,
+        "interest" : 0.0
+      },
+      "Quality_of_life" : {
+        "skill" : 21.052631578947366,
+        "knowledge" : 42.105263157894733,
+        "interest" : 0.0
+      },
+      "Paper" : {
+        "skill" : 64.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Electric_motor" : {
+        "skill" : 68.421052631578945,
+        "knowledge" : 68.421052631578945,
+        "interest" : 0.0
+      },
+      "Input_device" : {
+        "skill" : 52.941176470588239,
+        "knowledge" : 52.941176470588239,
+        "interest" : 0.0
+      },
+      "User_interface_design" : {
+        "skill" : 23.52941176470588,
+        "knowledge" : 23.52941176470588,
+        "interest" : 0.0
+      },
+      "Software_framework" : {
+        "skill" : 44.0,
+        "knowledge" : 64.0,
+        "interest" : 0.0
+      },
+      "Ableton_Live" : {
+        "skill" : 0.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Poster" : {
+        "skill" : 30.952380952380953,
+        "knowledge" : 40.476190476190474,
+        "interest" : 63.636363636363633
+      },
+      "Mind_map" : {
+        "skill" : 30.0,
+        "knowledge" : 30.0,
+        "interest" : 0.0
+      },
+      "Mission_statement" : {
+        "skill" : 52.631578947368418,
+        "knowledge" : 73.68421052631578,
+        "interest" : 0.0
+      },
+      "Data_analysis" : {
+        "skill" : 23.52941176470588,
+        "knowledge" : 41.17647058823529,
+        "interest" : 0.0
+      },
+      "Product_lifecycle_management" : {
+        "skill" : 63.1578947368421,
+        "knowledge" : 73.68421052631578,
+        "interest" : 0.0
+      },
+      "Persona" : {
+        "skill" : 63.04347826086957,
+        "knowledge" : 41.304347826086953,
+        "interest" : 0.0
+      },
+      "Materials_science" : {
+        "skill" : 52.941176470588239,
+        "knowledge" : 52.941176470588239,
+        "interest" : 0.0
+      },
+      "Laboratory" : {
+        "skill" : 35.294117647058826,
+        "knowledge" : 36.84210526315789,
+        "interest" : 0.0
+      },
+      "Output" : {
+        "skill" : 36.84210526315789,
+        "knowledge" : 52.631578947368418,
+        "interest" : 0.0
+      },
+      "Development_studies" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 72.222222222222214,
+        "interest" : 0.0
+      },
+      "Physics" : {
+        "skill" : 40.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Programmer" : {
+        "skill" : 50.0,
+        "knowledge" : 71.428571428571431,
+        "interest" : 64.285714285714292
+      },
+      "Essay" : {
+        "skill" : 61.904761904761905,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Visual_perception" : {
+        "skill" : 44.0,
+        "knowledge" : 48.0,
+        "interest" : 0.0
+      },
+      "Behavioural_sciences" : {
+        "skill" : 32.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Torque" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Switch" : {
+        "skill" : 36.363636363636367,
+        "knowledge" : 30.76923076923077,
+        "interest" : 0.0
+      },
+      "Textbook" : {
+        "skill" : 42.857142857142854,
+        "knowledge" : 33.333333333333329,
+        "interest" : 0.0
+      },
+      "Weight" : {
+        "skill" : 64.285714285714292,
+        "knowledge" : 78.571428571428569,
+        "interest" : 78.571428571428569
+      },
+      "Life-cycle_assessment" : {
+        "skill" : 36.666666666666664,
+        "knowledge" : 36.666666666666664,
+        "interest" : 0.0
+      },
+      "Academia" : {
+        "skill" : 0.0,
+        "knowledge" : 47.368421052631575,
+        "interest" : 0.0
+      },
+      "WordPress" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 61.111111111111114,
+        "interest" : 0.0
+      },
+      "Development_economics" : {
+        "skill" : 78.94736842105263,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Source_code" : {
+        "skill" : 52.631578947368418,
+        "knowledge" : 52.380952380952387,
+        "interest" : 0.0
+      },
+      "Creative_Commons" : {
+        "skill" : 0.0,
+        "knowledge" : 85.714285714285708,
+        "interest" : 0.0
+      }
+    },
+    "inferred" : []
+  },
+  "tudelft" : {
+    "extracted" : {
+      "Interactivity" : {
+        "skill" : 52.0,
+        "knowledge" : 56.000000000000007,
+        "interest" : 0.0
+      },
+      "Acceleration" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "User_interface" : {
+        "skill" : 29.411764705882355,
+        "knowledge" : 52.0,
+        "interest" : 0.0
+      },
+      "Commercial_law" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 72.222222222222214,
+        "interest" : 0.0
+      },
+      "Mass_production" : {
+        "skill" : 47.058823529411761,
+        "knowledge" : 52.941176470588239,
+        "interest" : 0.0
+      },
+      "Adobe_Photoshop" : {
+        "skill" : 81.818181818181827,
+        "knowledge" : 81.818181818181827,
+        "interest" : 0.0
+      },
+      "Display_device" : {
+        "skill" : 54.54545454545454,
+        "knowledge" : 54.54545454545454,
+        "interest" : 0.0
+      },
+      "Prior_art" : {
+        "skill" : 0.0,
+        "knowledge" : 82.35294117647058,
+        "interest" : 0.0
+      },
+      "Array_data_structure" : {
+        "skill" : 0.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Support_group" : {
+        "skill" : 72.727272727272734,
+        "knowledge" : 72.727272727272734,
+        "interest" : 0.0
+      },
+      "Innovation" : {
+        "skill" : 44.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Integrated_circuit" : {
+        "skill" : 39.130434782608695,
+        "knowledge" : 60.869565217391312,
+        "interest" : 0.0
+      },
+      "Document" : {
+        "skill" : 36.0,
+        "knowledge" : 56.000000000000007,
+        "interest" : 0.0
+      },
+      "Cultural_history" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 55.555555555555557,
+        "interest" : 0.0
+      },
+      "Lecturer" : {
+        "skill" : 56.521739130434781,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Designer" : {
+        "skill" : 56.000000000000007,
+        "knowledge" : 56.000000000000007,
+        "interest" : 0.0
+      },
+      "Opportunity_cost" : {
+        "skill" : 82.6086956521739,
+        "knowledge" : 82.6086956521739,
+        "interest" : 0.0
+      },
+      "Business" : {
+        "skill" : 23.52941176470588,
+        "knowledge" : 58.82352941176471,
+        "interest" : 0.0
+      },
+      "Navigation" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 72.222222222222214,
+        "interest" : 0.0
+      },
+      "Philosophy" : {
+        "skill" : 54.347826086956516,
+        "knowledge" : 54.347826086956516,
+        "interest" : 0.0
+      },
+      "YouTube" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 61.111111111111114,
+        "interest" : 0.0
+      },
+      "Computer_program" : {
+        "skill" : 33.333333333333329,
+        "knowledge" : 53.333333333333336,
+        "interest" : 0.0
+      },
+      "Sustainability" : {
+        "skill" : 82.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Cognitive_science" : {
+        "skill" : 82.6086956521739,
+        "knowledge" : 82.6086956521739,
+        "interest" : 0.0
+      },
+      "Diary" : {
+        "skill" : 80.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Physical_exercise" : {
+        "skill" : 80.0,
+        "knowledge" : 82.35294117647058,
+        "interest" : 0.0
+      },
+      "Statistical_hypothesis_testing" : {
+        "skill" : 0.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Translation" : {
+        "skill" : 32.0,
+        "knowledge" : 34.0,
+        "interest" : 0.0
+      },
+      "Usability" : {
+        "skill" : 42.857142857142854,
+        "knowledge" : 42.857142857142854,
+        "interest" : 0.0
+      },
+      "Quality_(business)" : {
+        "skill" : 76.470588235294116,
+        "knowledge" : 76.470588235294116,
+        "interest" : 0.0
+      },
+      "Sound" : {
+        "skill" : 0.0,
+        "knowledge" : 57.999999999999993,
+        "interest" : 0.0
+      },
+      "Customer" : {
+        "skill" : 63.1578947368421,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Autodidacticism" : {
+        "skill" : 29.411764705882355,
+        "knowledge" : 29.411764705882355,
+        "interest" : 0.0
+      },
+      "Regular_expression" : {
+        "skill" : 82.35294117647058,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Cognition" : {
+        "skill" : 0.0,
+        "knowledge" : 52.0,
+        "interest" : 0.0
+      },
+      "Iteration" : {
+        "skill" : 46.0,
+        "knowledge" : 57.999999999999993,
+        "interest" : 0.0
+      },
+      "Consumer_behaviour" : {
+        "skill" : 60.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Analysis" : {
+        "skill" : 72.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Simulation" : {
+        "skill" : 69.565217391304344,
+        "knowledge" : 69.565217391304344,
+        "interest" : 0.0
+      },
+      "Project" : {
+        "skill" : 48.0,
+        "knowledge" : 56.000000000000007,
+        "interest" : 0.0
+      },
+      "Conversation" : {
+        "skill" : 0.0,
+        "knowledge" : 81.818181818181827,
+        "interest" : 0.0
+      },
+      "New_product_development" : {
+        "skill" : 60.869565217391312,
+        "knowledge" : 60.869565217391312,
+        "interest" : 0.0
+      },
+      "Visual_system" : {
+        "skill" : 68.421052631578945,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Mechanical_engineering" : {
+        "skill" : 64.705882352941174,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Organization" : {
+        "skill" : 68.0,
+        "knowledge" : 52.0,
+        "interest" : 0.0
+      },
+      "Built_environment" : {
+        "skill" : 64.705882352941174,
+        "knowledge" : 64.705882352941174,
+        "interest" : 0.0
+      },
+      "Rapid_prototyping" : {
+        "skill" : 53.333333333333336,
+        "knowledge" : 53.333333333333336,
+        "interest" : 0.0
+      },
+      "Mechanics" : {
+        "skill" : 58.82352941176471,
+        "knowledge" : 58.82352941176471,
+        "interest" : 0.0
+      },
+      "Fashion" : {
+        "skill" : 0.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Selection" : {
+        "skill" : 78.260869565217391,
+        "knowledge" : 82.0,
+        "interest" : 0.0
+      },
+      "Local_government" : {
+        "skill" : 22.0,
+        "knowledge" : 26.0,
+        "interest" : 0.0
+      },
+      "Laptop" : {
+        "skill" : 80.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Product_design" : {
+        "skill" : 47.826086956521742,
+        "knowledge" : 68.0,
+        "interest" : 0.0
+      },
+      "Attitude_(psychology)" : {
+        "skill" : 73.529411764705884,
+        "knowledge" : 73.529411764705884,
+        "interest" : 0.0
+      },
+      "Planning" : {
+        "skill" : 73.91304347826086,
+        "knowledge" : 73.91304347826086,
+        "interest" : 0.0
+      },
+      "COBOL" : {
+        "skill" : 26.086956521739129,
+        "knowledge" : 56.521739130434781,
+        "interest" : 0.0
+      },
+      "Index_(publishing)" : {
+        "skill" : 80.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Process_control" : {
+        "skill" : 57.894736842105267,
+        "knowledge" : 47.368421052631575,
+        "interest" : 0.0
+      },
+      "Personalization" : {
+        "skill" : 44.444444444444443,
+        "knowledge" : 55.555555555555557,
+        "interest" : 0.0
+      },
+      "Search_and_seizure" : {
+        "skill" : 0.0,
+        "knowledge" : 85.714285714285708,
+        "interest" : 0.0
+      },
+      "Case_study" : {
+        "skill" : 82.0,
+        "knowledge" : 82.0,
+        "interest" : 0.0
+      },
+      "Debate" : {
+        "skill" : 76.0,
+        "knowledge" : 76.0,
+        "interest" : 0.0
+      },
+      "Studio" : {
+        "skill" : 55.26315789473685,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Mathematical_analysis" : {
+        "skill" : 76.470588235294116,
+        "knowledge" : 73.68421052631578,
+        "interest" : 0.0
+      },
+      "Ableton_Live" : {
+        "skill" : 0.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Statistics" : {
+        "skill" : 33.333333333333329,
+        "knowledge" : 33.333333333333329,
+        "interest" : 0.0
+      },
+      "Broadcast_programming" : {
+        "skill" : 0.0,
+        "knowledge" : 46.153846153846153,
+        "interest" : 0.0
+      },
+      "Broadband" : {
+        "skill" : 64.0,
+        "knowledge" : 64.0,
+        "interest" : 0.0
+      },
+      "Integral" : {
+        "skill" : 58.82352941176471,
+        "knowledge" : 58.82352941176471,
+        "interest" : 0.0
+      },
+      "System" : {
+        "skill" : 52.0,
+        "knowledge" : 57.999999999999993,
+        "interest" : 0.0
+      },
+      "Telephone" : {
+        "skill" : 73.076923076923066,
+        "knowledge" : 73.076923076923066,
+        "interest" : 0.0
+      },
+      "Digital_photography" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Interaction" : {
+        "skill" : 82.0,
+        "knowledge" : 76.0,
+        "interest" : 0.0
+      },
+      "User_experience" : {
+        "skill" : 38.095238095238095,
+        "knowledge" : 42.857142857142854,
+        "interest" : 0.0
+      },
+      "Performance" : {
+        "skill" : 80.952380952380949,
+        "knowledge" : 80.952380952380949,
+        "interest" : 0.0
+      },
+      "Set_theory" : {
+        "skill" : 53.333333333333336,
+        "knowledge" : 53.333333333333336,
+        "interest" : 0.0
+      },
+      "Streaming_media" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Economy" : {
+        "skill" : 77.777777777777786,
+        "knowledge" : 77.777777777777786,
+        "interest" : 0.0
+      },
+      "Power_(physics)" : {
+        "skill" : 82.35294117647058,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Group_theory" : {
+        "skill" : 0.0,
+        "knowledge" : 41.17647058823529,
+        "interest" : 0.0
+      },
+      "Risk" : {
+        "skill" : 0.0,
+        "knowledge" : 62.0,
+        "interest" : 0.0
+      },
+      "Programming_tool" : {
+        "skill" : 52.631578947368418,
+        "knowledge" : 31.578947368421051,
+        "interest" : 0.0
+      },
+      "Meeting" : {
+        "skill" : 68.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Tool" : {
+        "skill" : 48.0,
+        "knowledge" : 64.0,
+        "interest" : 0.0
+      },
+      "Construction" : {
+        "skill" : 0.0,
+        "knowledge" : 55.555555555555557,
+        "interest" : 0.0
+      },
+      "Mission_statement" : {
+        "skill" : 52.631578947368418,
+        "knowledge" : 73.68421052631578,
+        "interest" : 0.0
+      },
+      "Report" : {
+        "skill" : 56.000000000000007,
+        "knowledge" : 68.0,
+        "interest" : 0.0
+      },
+      "E-learning" : {
+        "skill" : 33.333333333333329,
+        "knowledge" : 33.333333333333329,
+        "interest" : 0.0
+      },
+      "Marketing_mix" : {
+        "skill" : 82.35294117647058,
+        "knowledge" : 82.35294117647058,
+        "interest" : 0.0
+      },
+      "Software_design" : {
+        "skill" : 32.0,
+        "knowledge" : 44.0,
+        "interest" : 0.0
+      },
+      "Website" : {
+        "skill" : 76.0,
+        "knowledge" : 68.0,
+        "interest" : 0.0
+      },
+      "Electronic_component" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 47.058823529411761,
+        "interest" : 0.0
+      },
+      "Human_nature" : {
+        "skill" : 82.0,
+        "knowledge" : 82.0,
+        "interest" : 0.0
+      },
+      "Observation" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Differential_equation" : {
+        "skill" : 72.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Documentation" : {
+        "skill" : 60.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Metal" : {
+        "skill" : 47.058823529411761,
+        "knowledge" : 47.058823529411761,
+        "interest" : 0.0
+      },
+      "Systems_analysis" : {
+        "skill" : 73.529411764705884,
+        "knowledge" : 73.529411764705884,
+        "interest" : 0.0
+      },
+      "Short_film" : {
+        "skill" : 28.571428571428569,
+        "knowledge" : 28.571428571428569,
+        "interest" : 0.0
+      },
+      "Content_analysis" : {
+        "skill" : 60.0,
+        "knowledge" : 64.0,
+        "interest" : 0.0
+      },
+      "Data_storage_device" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 47.058823529411761,
+        "interest" : 0.0
+      },
+      "Philosophy_of_science" : {
+        "skill" : 82.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Drawing" : {
+        "skill" : 46.153846153846153,
+        "knowledge" : 61.53846153846154,
+        "interest" : 0.0
+      },
+      "Emotion" : {
+        "skill" : 68.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Motivation" : {
+        "skill" : 81.578947368421055,
+        "knowledge" : 76.19047619047619,
+        "interest" : 0.0
+      },
+      "Aesthetics" : {
+        "skill" : 64.705882352941174,
+        "knowledge" : 68.0,
+        "interest" : 0.0
+      },
+      "Chemical_kinetics" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Group_dynamics" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 73.91304347826086,
+        "interest" : 0.0
+      },
+      "Image" : {
+        "skill" : 26.086956521739129,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Industrial_design" : {
+        "skill" : 52.173913043478258,
+        "knowledge" : 56.521739130434781,
+        "interest" : 0.0
+      },
+      "Shape" : {
+        "skill" : 73.333333333333329,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Paper" : {
+        "skill" : 84.0,
+        "knowledge" : 82.0,
+        "interest" : 0.0
+      },
+      "Design" : {
+        "skill" : 64.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Injection_molding" : {
+        "skill" : 52.941176470588239,
+        "knowledge" : 52.941176470588239,
+        "interest" : 0.0
+      },
+      "Laboratory" : {
+        "skill" : 35.294117647058826,
+        "knowledge" : 36.84210526315789,
+        "interest" : 0.0
+      },
+      "Technology" : {
+        "skill" : 32.0,
+        "knowledge" : 20.0,
+        "interest" : 0.0
+      },
+      "Structured_programming" : {
+        "skill" : 76.0,
+        "knowledge" : 82.0,
+        "interest" : 0.0
+      },
+      "Creative_writing" : {
+        "skill" : 0.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Space" : {
+        "skill" : 72.727272727272734,
+        "knowledge" : 77.272727272727266,
+        "interest" : 0.0
+      },
+      "Pastel" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Software_development_process" : {
+        "skill" : 78.94736842105263,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Psychology" : {
+        "skill" : 64.705882352941174,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Market_research" : {
+        "skill" : 81.578947368421055,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Humanities" : {
+        "skill" : 32.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Electricity" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "CD-ROM" : {
+        "skill" : 80.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Writing" : {
+        "skill" : 32.0,
+        "knowledge" : 52.0,
+        "interest" : 0.0
+      },
+      "Tutor" : {
+        "skill" : 34.0,
+        "knowledge" : 34.0,
+        "interest" : 0.0
+      },
+      "Pragmatism" : {
+        "skill" : 76.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Safety" : {
+        "skill" : 0.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Output" : {
+        "skill" : 36.84210526315789,
+        "knowledge" : 52.631578947368418,
+        "interest" : 0.0
+      },
+      "Application_software" : {
+        "skill" : 47.826086956521742,
+        "knowledge" : 30.434782608695656,
+        "interest" : 0.0
+      },
+      "Prototype" : {
+        "skill" : 40.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Evaluation" : {
+        "skill" : 48.0,
+        "knowledge" : 52.0,
+        "interest" : 0.0
+      },
+      "Multinational_corporation" : {
+        "skill" : 76.666666666666671,
+        "knowledge" : 76.666666666666671,
+        "interest" : 0.0
+      },
+      "Awareness" : {
+        "skill" : 80.0,
+        "knowledge" : 64.0,
+        "interest" : 0.0
+      },
+      "Blueprint" : {
+        "skill" : 0.0,
+        "knowledge" : 30.0,
+        "interest" : 0.0
+      },
+      "Web_2~0" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 72.222222222222214,
+        "interest" : 0.0
+      },
+      "Statics" : {
+        "skill" : 52.941176470588239,
+        "knowledge" : 47.058823529411761,
+        "interest" : 0.0
+      },
+      "Perception" : {
+        "skill" : 72.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Academic_conference" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 58.82352941176471,
+        "interest" : 0.0
+      },
+      "Nature" : {
+        "skill" : 38.095238095238095,
+        "knowledge" : 47.619047619047613,
+        "interest" : 0.0
+      },
+      "Problem_solving" : {
+        "skill" : 0.0,
+        "knowledge" : 82.0,
+        "interest" : 0.0
+      },
+      "Team_building" : {
+        "skill" : 60.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "Implementation" : {
+        "skill" : 71.428571428571431,
+        "knowledge" : 71.428571428571431,
+        "interest" : 0.0
+      },
+      "Accompaniment" : {
+        "skill" : 72.0,
+        "knowledge" : 72.0,
+        "interest" : 0.0
+      },
+      "Plan" : {
+        "skill" : 69.565217391304344,
+        "knowledge" : 69.565217391304344,
+        "interest" : 0.0
+      },
+      "Conflict_resolution" : {
+        "skill" : 63.1578947368421,
+        "knowledge" : 57.894736842105267,
+        "interest" : 0.0
+      },
+      "Experiential_learning" : {
+        "skill" : 0.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Explosion" : {
+        "skill" : 58.82352941176471,
+        "knowledge" : 58.82352941176471,
+        "interest" : 0.0
+      },
+      "Process_management" : {
+        "skill" : 63.1578947368421,
+        "knowledge" : 68.421052631578945,
+        "interest" : 0.0
+      },
+      "Dutch_language" : {
+        "skill" : 61.111111111111114,
+        "knowledge" : 72.222222222222214,
+        "interest" : 0.0
+      },
+      "Ethics" : {
+        "skill" : 60.869565217391312,
+        "knowledge" : 60.869565217391312,
+        "interest" : 0.0
+      },
+      "Network_theory" : {
+        "skill" : 77.272727272727266,
+        "knowledge" : 59.090909090909093,
+        "interest" : 0.0
+      },
+      "Language" : {
+        "skill" : 47.368421052631575,
+        "knowledge" : 57.894736842105267,
+        "interest" : 0.0
+      },
+      "Geometry" : {
+        "skill" : 50.0,
+        "knowledge" : 50.0,
+        "interest" : 0.0
+      },
+      "Science" : {
+        "skill" : 21.052631578947366,
+        "knowledge" : 26.315789473684209,
+        "interest" : 0.0
+      },
+      "Forecasting" : {
+        "skill" : 52.941176470588239,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Creative_industries" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Empirical_research" : {
+        "skill" : 33.333333333333329,
+        "knowledge" : 33.333333333333329,
+        "interest" : 0.0
+      },
+      "Concept" : {
+        "skill" : 68.0,
+        "knowledge" : 76.0,
+        "interest" : 0.0
+      },
+      "Academic_publishing" : {
+        "skill" : 33.333333333333329,
+        "knowledge" : 19.047619047619047,
+        "interest" : 0.0
+      },
+      "Web_design" : {
+        "skill" : 72.727272727272734,
+        "knowledge" : 77.272727272727266,
+        "interest" : 0.0
+      },
+      "Consumer" : {
+        "skill" : 40.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Guide" : {
+        "skill" : 70.0,
+        "knowledge" : 70.0,
+        "interest" : 0.0
+      },
+      "Terminology" : {
+        "skill" : 26.0,
+        "knowledge" : 30.0,
+        "interest" : 0.0
+      },
+      "Access_control" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 47.058823529411761,
+        "interest" : 0.0
+      },
+      "Requirement" : {
+        "skill" : 32.0,
+        "knowledge" : 48.0,
+        "interest" : 0.0
+      },
+      "Electric_motor" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Heat_transfer" : {
+        "skill" : 67.64705882352942,
+        "knowledge" : 67.64705882352942,
+        "interest" : 0.0
+      },
+      "Social_psychology" : {
+        "skill" : 60.0,
+        "knowledge" : 60.0,
+        "interest" : 0.0
+      },
+      "SolidWorks" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Globalization" : {
+        "skill" : 0.0,
+        "knowledge" : 60.869565217391312,
+        "interest" : 0.0
+      },
+      "Culture" : {
+        "skill" : 56.000000000000007,
+        "knowledge" : 48.0,
+        "interest" : 0.0
+      },
+      "Engineering" : {
+        "skill" : 45.238095238095241,
+        "knowledge" : 40.476190476190474,
+        "interest" : 0.0
+      },
+      "Mass_media" : {
+        "skill" : 36.363636363636367,
+        "knowledge" : 54.54545454545454,
+        "interest" : 0.0
+      },
+      "Kinematics" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Film_editing" : {
+        "skill" : 73.529411764705884,
+        "knowledge" : 73.529411764705884,
+        "interest" : 0.0
+      },
+      "Visual_Basic" : {
+        "skill" : 47.058823529411761,
+        "knowledge" : 64.705882352941174,
+        "interest" : 0.0
+      },
+      "Persona" : {
+        "skill" : 63.04347826086957,
+        "knowledge" : 41.304347826086953,
+        "interest" : 0.0
+      },
+      "Interaction_design" : {
+        "skill" : 39.130434782608695,
+        "knowledge" : 52.173913043478258,
+        "interest" : 0.0
+      },
+      "Digital" : {
+        "skill" : 73.68421052631578,
+        "knowledge" : 73.68421052631578,
+        "interest" : 0.0
+      },
+      "Creativity" : {
+        "skill" : 53.846153846153847,
+        "knowledge" : 61.53846153846154,
+        "interest" : 0.0
+      },
+      "Strategy" : {
+        "skill" : 56.521739130434781,
+        "knowledge" : 56.521739130434781,
+        "interest" : 0.0
+      },
+      "Blog" : {
+        "skill" : 64.705882352941174,
+        "knowledge" : 41.17647058823529,
+        "interest" : 0.0
+      },
+      "Methodology" : {
+        "skill" : 60.0,
+        "knowledge" : 68.0,
+        "interest" : 0.0
+      },
+      "Teamwork" : {
+        "skill" : 31.578947368421051,
+        "knowledge" : 17.391304347826086,
+        "interest" : 0.0
+      },
+      "Mathematics" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Interview" : {
+        "skill" : 0.0,
+        "knowledge" : 64.0,
+        "interest" : 0.0
+      },
+      "Peer_review" : {
+        "skill" : 22.222222222222221,
+        "knowledge" : 44.444444444444443,
+        "interest" : 0.0
+      },
+      "Electronics" : {
+        "skill" : 47.368421052631575,
+        "knowledge" : 52.631578947368418,
+        "interest" : 0.0
+      },
+      "Computer-aided_design" : {
+        "skill" : 78.94736842105263,
+        "knowledge" : 76.31578947368422,
+        "interest" : 0.0
+      },
+      "Presentation" : {
+        "skill" : 52.0,
+        "knowledge" : 64.0,
+        "interest" : 0.0
+      },
+      "Quality_of_life" : {
+        "skill" : 26.315789473684209,
+        "knowledge" : 52.631578947368418,
+        "interest" : 0.0
+      },
+      "Image_editing" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "20th_century" : {
+        "skill" : 80.0,
+        "knowledge" : 80.0,
+        "interest" : 0.0
+      },
+      "Turning" : {
+        "skill" : 26.0,
+        "knowledge" : 26.0,
+        "interest" : 0.0
+      },
+      "Parallel_computing" : {
+        "skill" : 54.0,
+        "knowledge" : 54.0,
+        "interest" : 0.0
+      },
+      "Chart" : {
+        "skill" : 53.333333333333336,
+        "knowledge" : 53.333333333333336,
+        "interest" : 0.0
+      },
+      "Life-cycle_assessment" : {
+        "skill" : 36.666666666666664,
+        "knowledge" : 36.666666666666664,
+        "interest" : 0.0
+      },
+      "Computer" : {
+        "skill" : 60.0,
+        "knowledge" : 28.000000000000004,
+        "interest" : 0.0
+      },
+      "Universe" : {
+        "skill" : 36.666666666666664,
+        "knowledge" : 36.666666666666664,
+        "interest" : 0.0
+      },
+      "Input_device" : {
+        "skill" : 54.54545454545454,
+        "knowledge" : 54.54545454545454,
+        "interest" : 0.0
+      },
+      "User_interface_design" : {
+        "skill" : 41.17647058823529,
+        "knowledge" : 41.17647058823529,
+        "interest" : 0.0
+      },
+      "Software_framework" : {
+        "skill" : 44.0,
+        "knowledge" : 64.0,
+        "interest" : 0.0
+      },
+      "Behavioural_sciences" : {
+        "skill" : 32.0,
+        "knowledge" : 40.0,
+        "interest" : 0.0
+      },
+      "Mind_map" : {
+        "skill" : 30.0,
+        "knowledge" : 30.0,
+        "interest" : 0.0
+      },
+      "Consultant" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Data_analysis" : {
+        "skill" : 23.52941176470588,
+        "knowledge" : 41.17647058823529,
+        "interest" : 0.0
+      },
+      "Product_lifecycle_management" : {
+        "skill" : 63.1578947368421,
+        "knowledge" : 73.68421052631578,
+        "interest" : 0.0
+      },
+      "Future" : {
+        "skill" : 18.0,
+        "knowledge" : 26.0,
+        "interest" : 0.0
+      },
+      "Materials_science" : {
+        "skill" : 52.941176470588239,
+        "knowledge" : 52.941176470588239,
+        "interest" : 0.0
+      },
+      "Human_factors_and_ergonomics" : {
+        "skill" : 50.0,
+        "knowledge" : 50.0,
+        "interest" : 0.0
+      },
+      "Development_studies" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 72.222222222222214,
+        "interest" : 0.0
+      },
+      "Physics" : {
+        "skill" : 52.0,
+        "knowledge" : 52.0,
+        "interest" : 0.0
+      },
+      "Essay" : {
+        "skill" : 61.904761904761905,
+        "knowledge" : 66.666666666666657,
+        "interest" : 0.0
+      },
+      "Visual_perception" : {
+        "skill" : 72.0,
+        "knowledge" : 76.0,
+        "interest" : 0.0
+      },
+      "Torque" : {
+        "skill" : 70.588235294117652,
+        "knowledge" : 70.588235294117652,
+        "interest" : 0.0
+      },
+      "Switch" : {
+        "skill" : 54.54545454545454,
+        "knowledge" : 54.54545454545454,
+        "interest" : 0.0
+      },
+      "Textbook" : {
+        "skill" : 42.857142857142854,
+        "knowledge" : 33.333333333333329,
+        "interest" : 0.0
+      },
+      "Academia" : {
+        "skill" : 0.0,
+        "knowledge" : 47.058823529411761,
+        "interest" : 0.0
+      },
+      "WordPress" : {
+        "skill" : 72.222222222222214,
+        "knowledge" : 61.111111111111114,
+        "interest" : 0.0
+      },
+      "Development_economics" : {
+        "skill" : 78.94736842105263,
+        "knowledge" : 81.578947368421055,
+        "interest" : 0.0
+      },
+      "Source_code" : {
+        "skill" : 81.578947368421055,
+        "knowledge" : 76.19047619047619,
+        "interest" : 0.0
+      },
+      "Creative_Commons" : {
+        "skill" : 0.0,
+        "knowledge" : 85.714285714285708,
+        "interest" : 0.0
+      }
+    },
+    "inferred" : []
+  },
+  "linkedin" : {
+    "extracted" : { },
+    "inferred" : []
+  },
+  "shareworks" : {
+    "extracted" : {
+      "Programmer" : {
+        "skill" : 50.0,
+        "knowledge" : 71.428571428571431,
+        "interest" : 64.285714285714292
+      },
+      "Wealth" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      },
+      "Clock" : {
+        "skill" : 0.0,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      },
+      "Presentation" : {
+        "skill" : 30.0,
+        "knowledge" : 36.666666666666664,
+        "interest" : 33.333333333333329
+      },
+      "Prototype" : {
+        "skill" : 18.0,
+        "knowledge" : 32.0,
+        "interest" : 24.0
+      },
+      "Meeting" : {
+        "skill" : 73.333333333333329,
+        "knowledge" : 60.0,
+        "interest" : 73.333333333333329
+      },
+      "Designer" : {
+        "skill" : 57.142857142857139,
+        "knowledge" : 72.222222222222214,
+        "interest" : 72.222222222222214
+      },
+      "Poster" : {
+        "skill" : 50.0,
+        "knowledge" : 59.090909090909093,
+        "interest" : 63.636363636363633
+      },
+      "Task_force" : {
+        "skill" : 28.571428571428569,
+        "knowledge" : 28.571428571428569,
+        "interest" : 28.571428571428569
+      },
+      "Game" : {
+        "skill" : 52.941176470588239,
+        "knowledge" : 15.789473684210526,
+        "interest" : 28.947368421052634
+      },
+      "Craft" : {
+        "skill" : 0.0,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      },
+      "Facebook" : {
+        "skill" : 64.285714285714292,
+        "knowledge" : 64.285714285714292,
+        "interest" : 64.285714285714292
+      },
+      "Video" : {
+        "skill" : 80.0,
+        "knowledge" : 76.666666666666671,
+        "interest" : 80.0
+      },
+      "Sound" : {
+        "skill" : 0.0,
+        "knowledge" : 53.846153846153847,
+        "interest" : 34.615384615384613
+      },
+      "Vimeo" : {
+        "skill" : 64.285714285714292,
+        "knowledge" : 64.285714285714292,
+        "interest" : 64.285714285714292
+      },
+      "Typeface" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      },
+      "Computer_programming" : {
+        "skill" : 77.272727272727266,
+        "knowledge" : 34.615384615384613,
+        "interest" : 61.53846153846154
+      },
+      "Unix-like" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      },
+      "Drawing" : {
+        "skill" : 44.444444444444443,
+        "knowledge" : 44.444444444444443,
+        "interest" : 44.444444444444443
+      },
+      "Weight" : {
+        "skill" : 64.285714285714292,
+        "knowledge" : 78.571428571428569,
+        "interest" : 78.571428571428569
+      },
+      "Physical_examination" : {
+        "skill" : 0.0,
+        "knowledge" : 70.0,
+        "interest" : 70.0
+      },
+      "Shape" : {
+        "skill" : 35.714285714285715,
+        "knowledge" : 38.888888888888893,
+        "interest" : 33.333333333333329
+      },
+      "Planning" : {
+        "skill" : 45.454545454545453,
+        "knowledge" : 27.27272727272727,
+        "interest" : 27.27272727272727
+      },
+      "Design" : {
+        "skill" : 30.0,
+        "knowledge" : 56.000000000000007,
+        "interest" : 42.0
+      },
+      "Message" : {
+        "skill" : 66.666666666666657,
+        "knowledge" : 66.666666666666657,
+        "interest" : 66.666666666666657
+      }
+    },
+    "inferred" : []
+  }
+}
