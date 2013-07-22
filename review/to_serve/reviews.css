@@ -68,7 +68,7 @@ div.disabled a{
 .ui-slider .ui-slider-handle {
     width: 1.0em;
     height: 1.0em;
-    background-image: url("bootstrap/img/glyphicons-halflings.png");
+    background-image: url("http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/img/glyphicons-halflings.png");
 }
 .skill .ui-slider-handle {
     background-position: -360px -144px;

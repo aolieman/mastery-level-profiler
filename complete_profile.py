@@ -6,7 +6,7 @@ from math import log10, isnan
 
 # set up annotation functions
 vocabulary = compare.readVocabulary('vocabulary_man.json')
-term_ids, nl_dict, en_dict = compare.getTermIDs(vocabulary)
+term_ids, nl_dict, en_dict, en_summary = compare.getTermIDs(vocabulary)
 
 def initializeParameters(cand, misc, con, sup):
     global candidate_param, confidence, support
@@ -140,6 +140,28 @@ class Profile(object):
 
         # Save profile to Mongo
         self.toMongo()
+
+    def statementsToJSON(self):
+        # Serialize 'ALL' statements to JSON file
+        all_stmts = self.statements['ALL'].copy() #still affects self.statements
+        ext_dict = StatementDict(map(lambda (k,v): (k, roundLvls(v)),
+                       all_stmts['extracted'].iteritems()))
+        for ann_id, lvl_dict in ext_dict.iteritems():
+            try:
+                lvl_dict['name'] = en_dict[ann_id.replace("~", ".")]
+                lvl_dict['summary'] = en_summary[ann_id.replace("~", ".")]
+                if not lvl_dict['summary']:
+                    lvl_dict['summary'] = "Sorry, no description is available."
+            except KeyError:
+                lvl_dict['name'] = ann_id.replace("~", ".")
+                lvl_dict['summary'] = "Sorry, no description is available."
+        inf_list = [] # TODO
+        secret = str(self._id)[-5:]
+        to_file = {'pseudo': self.pseudo,
+                   'extracted': ext_dict, 'inferred': inf_list}
+        with open("review/json/%s.json" % self.pseudo, "wb") as ofile:
+            json.dump(to_file, ofile, indent=4, sort_keys=True)
+        return (self.pseudo, secret)
 
     def updateLinkedInDoc(self):
         if hasattr(self, 'linkedin') and db.document.find_one({"_id": self.linkedin}):
@@ -458,6 +480,12 @@ def statement(ann_id, skill=0, knowledge=0, interest=0):
                 'interest': float(interest)}
     return (ann_id, lvl_dict)
 
+def roundLvls(lvl_dict):
+    # Round values to nearest integer
+    for m_type, lvl in lvl_dict.iteritems():
+        lvl_dict[m_type] = int(round(lvl))
+    return lvl_dict
+
 def prfloats(lvl_dict):
     # Pretty printing for floats in lvl_dict
     fmt_dict = {}
@@ -524,6 +552,7 @@ class StatementDict(dict):
             self[ann_id]['knowledge'] *= weight
             self[ann_id]['interest'] *= weight
             if verbose: print "Done :", ann_id, prfloats(self[ann_id])
+
 
 def maxPerOrigin(all_profiles):
     # TODO: perhaps refactor to use lvlsPerOrigin
@@ -843,6 +872,12 @@ def produceStatements(all_profiles):
         print "\n\n", pr.signup['email']
         pr.transformStatements(master_lvls_dict)
         print pr.statements["ALL"]['extracted']
+    # Serialize statements to JSON
+    PS = []
+    for pr in all_profiles:
+        p_s = pr.statementsToJSON()
+        PS.append(p_s)
+    print "Put in pseudosecret.py:", dict(PS)
 
 if __name__ == '__main__' :
     signup_path = "../Phase B/connector/app/db"
@@ -864,7 +899,7 @@ if __name__ == '__main__' :
         all_profiles[:] = [pr for pr in all_profiles if (pr.signup['email'] not in
                                                          {"alex@olieman.net",
                                                           "r.jelierse@student.tudelft.nl"})]
-        produceStatements(all_profiles)
+        #produceStatements(all_profiles)
         
     finally:
         # disconnect from mongo

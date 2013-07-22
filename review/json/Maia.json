@@ -1,0 +1,1420 @@
+{
+    "extracted": {
+        "AOL_Instant_Messenger": {
+            "interest": 0, 
+            "knowledge": 70, 
+            "name": "AIM", 
+            "skill": 70, 
+            "summary": "AOL Instant Messenger (AIM) is an instant messaging and presence computer program which uses the proprietary OSCAR instant messaging protocol and the TOC protocol to allow registered users to communicate in real time. It was released by AOL in May 1997. Stand-alone official AIM client software includes advertisements and is available for Microsoft Windows , Windows Mobile , Mac OS ,"
+        }, 
+        "Academia": {
+            "interest": 0, 
+            "knowledge": 26, 
+            "name": "Academia", 
+            "skill": 27, 
+            "summary": "Academia is the community of students and scholars engaged in higher education and research . More on 'Academia' at Wikipedia \u00bb"
+        }, 
+        "Academic_publishing": {
+            "interest": 0, 
+            "knowledge": 52, 
+            "name": "Academic Publishing", 
+            "skill": 57, 
+            "summary": "Academic publishing describes the subfield of publishing which distributes academic research and scholarship . Most academic work is published in journal article, book or thesis form. The part of academic written output that is not formally published but merely printed up or posted on the Internet is often called the \"grey literature\". Most scientific and scholarly journals, and many"
+        }, 
+        "Accompaniment": {
+            "interest": 0, 
+            "knowledge": 28, 
+            "name": "Accompaniment", 
+            "skill": 32, 
+            "summary": "In music , accompaniment is the art of playing along with an instrumental or vocal solo ist or ensemble, often known as the lead, in a supporting manner. The accompaniment can be performed by a single performer \u2014 a pianist, organist, or guitarist \u2014 or it can be played by an entire ensemble, such as a symphony orchestra or string quartet (in the classical"
+        }, 
+        "Actuator": {
+            "interest": 70, 
+            "knowledge": 70, 
+            "name": "Actuators", 
+            "skill": 70, 
+            "summary": "An actuator is a type of motor for moving or controlling a mechanism or system. It is operated by a source of energy, usually in the form of an electric current, hydraulic fluid pressure or pneumatic pressure, and converts that energy into some kind of motion. An actuator is the mechanism by which an agent acts upon an environment. The agent can be"
+        }, 
+        "Ad_hoc": {
+            "interest": 0, 
+            "knowledge": 54, 
+            "name": "Ad Hoc Reporting", 
+            "skill": 54, 
+            "summary": "Ad hoc is a Latin phrase meaning \"for this\". It generally signifies a solution designed for a specific problem or task, non-generalizable, and not intended to be able to be adapted to other purposes (compare A priori). Common examples are organizations, committees, and commissions created at the national or international level for a specific task. In other fields the term may refer, for example, to"
+        }, 
+        "Aesthetics": {
+            "interest": 0, 
+            "knowledge": 44, 
+            "name": "Aesthetics", 
+            "skill": 0, 
+            "summary": "Aesthetics (also spelled \u00e6sthetics) is a branch of philosophy dealing with the nature of art , beauty , and taste , with the creation and appreciation of beauty. It is more scientifically defined as the study of sensory or sensori-emotional values, sometimes called judgment s of sentiment and taste. More broadly, scholars in the field define aesthetics as \"critical reflection on art, culture"
+        }, 
+        "Algorithm": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Algorithms", 
+            "skill": 0, 
+            "summary": "In mathematics and computer science , an algorithm (originating from al-Khw\u0101rizm\u012b, the famous Persian mathematician Mu\u1e25ammad ibn M\u016bs\u0101 al-Khw\u0101rizm\u012b) is a step-by-step procedure for calculations. Algorithms are used for calculation , data processing , and automated reasoning . More precisely, an algorithm is an effective method expressed as a finite list of well-defined instructions for calculating a function . Starting from an initial state"
+        }, 
+        "Analysis": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Analysis", 
+            "skill": 24, 
+            "summary": "(Thank for using this website if you cannot find what you are looking please tell us) Analysis is the process of breaking a complex topic or substance into smaller parts to gain a better understanding of it. The technique has been applied in the study of mathematics and logic since before Aristotle (384\u2013322 B.C.), though analysis as a formal concept is a relatively"
+        }, 
+        "Application_software": {
+            "interest": 0, 
+            "knowledge": 22, 
+            "name": "Applications", 
+            "skill": 17, 
+            "summary": "Application software, also known as an application or an app, is computer software designed to help the user to perform specific tasks. Examples include enterprise software , accounting software , office suite s, graphics software and media player s. Many application programs deal principally with documents. Apps may be bundled with the computer and its system software, or may be published separately. In"
+        }, 
+        "Architect": {
+            "interest": 0, 
+            "knowledge": 57, 
+            "name": "Architects", 
+            "skill": 57, 
+            "summary": "An architect is a person trained in the planning, design and oversight/supervision of the construction of buildings. To practice architecture means to offer or render services in connection with the design and construction of a building, or group of buildings and the space within the site surrounding the buildings, that have as their principal purpose human occupancy or use. Etymologically, architect derives from the Latin"
+        }, 
+        "Argument": {
+            "interest": 0, 
+            "knowledge": 50, 
+            "name": "Arguments", 
+            "skill": 43, 
+            "summary": "In logic and philosophy , an argument is an attempt to persuade someone of something, by giving reasons or evidence for accepting a particular conclusion. The general structure of an argument in a natural language is that of premises (typically in the form of proposition s, statement s or sentences) in support of a claim: the conclusion. Many arguments can also be formulated"
+        }, 
+        "Artist": {
+            "interest": 0, 
+            "knowledge": 57, 
+            "name": "Artists", 
+            "skill": 57, 
+            "summary": "An artist is a person engaged in one or more of any of a broad spectrum of activities related to creating art , practicing the arts and/or demonstrating an art. The common usage in both everyday speech and academic discourse is a practitioner in the visual art s only. The term is often used in the entertainment business, especially in a"
+        }, 
+        "Awareness": {
+            "interest": 0, 
+            "knowledge": 56, 
+            "name": "Awareness", 
+            "skill": 0, 
+            "summary": "Awareness is the state or ability to perceive, to feel, or to be conscious of events, objects , or sensory pattern s. In this level of consciousness, sense data can be confirmed by an observer without necessarily implying understanding. More broadly, it is the state or quality of being aware of something. In biological psychology, awareness is defined as a human's or an animal's "
+        }, 
+        "Ball": {
+            "interest": 44, 
+            "knowledge": 44, 
+            "name": "Balls", 
+            "skill": 44, 
+            "summary": "A ball is a round, usually spherical but sometimes ovoid, object with various uses. It is used in ball games, where the play of the game follows the state of the ball as it is hit, kicked or thrown by players. Balls can also be used for simpler activities, such as catch, marbles and juggling . Balls made from hard-wearing materials are used in "
+        }, 
+        "Behavioural_sciences": {
+            "interest": 0, 
+            "knowledge": 68, 
+            "name": "Behavioral Science", 
+            "skill": 68, 
+            "summary": "The term behavioural sciences encompasses all the disciplines that explore the activities of and interactions among organisms in the natural world. It involves the systematic analysis and investigation of human and animal behaviour through controlled and naturalistic observation, and disciplined scientific experimentation. It attempts to accomplish legitimate, objective conclusions through rigorous formulations and observation. Examples of behavioural sciences include psychology , psychobiology, and "
+        }, 
+        "Black_box": {
+            "interest": 70, 
+            "knowledge": 70, 
+            "name": "Black-box", 
+            "skill": 70, 
+            "summary": "In science and engineering, a black box is a device, system or object which can be viewed solely in terms of its input, output and transfer characteristics without any knowledge of its internal workings, that is, its implementation is \"opaque\" (black). Almost anything might be referred to as a black box: a transistor, an algorithm , or the human mind. The opposite of a black"
+        }, 
+        "Blog": {
+            "interest": 0, 
+            "knowledge": 58, 
+            "name": "Blogging", 
+            "skill": 42, 
+            "summary": "A blog (a portmanteau of the term web log) is a discussion or informational site published on the World Wide Web and consisting of discrete entries (\"posts\") typically displayed in reverse chronological order (the most recent post appears first). Until 2009 blogs were usually the work of a single individual, occasionally of a small group, and often were themed on a single subject. More recently"
+        }, 
+        "Blueprint": {
+            "interest": 0, 
+            "knowledge": 82, 
+            "name": "Blueprint Reading", 
+            "skill": 0, 
+            "summary": "A blueprint is a reproduction of a technical drawing , documenting an architecture or an engineering design, using a contact print process on light-sensitive sheets. Invented in the 19th century, the process allowed rapid and accurate reproduction of documents used in construction and industry. The blue-print process was characterized by light colored lines on a blue background, a negative of the original."
+        }, 
+        "Board_game": {
+            "interest": 61, 
+            "knowledge": 50, 
+            "name": "Board Games", 
+            "skill": 59, 
+            "summary": "A board game is a game that involves counters or pieces moved or placed on a pre-marked surface or \"board\", according to a set of rules. Games can be based on pure strategy , chance (e.g. rolling dice ) or a mixture of the two, and usually have a goal which a player aims to achieve. Early board games represented a battle between two armies,"
+        }, 
+        "Broadband": {
+            "interest": 0, 
+            "knowledge": 36, 
+            "name": "Broadband", 
+            "skill": 36, 
+            "summary": "The term broadband refers to a telecommunications signal or device of greater bandwidth , in some sense, than another standard or usual signal or device (and the broader the band, the greater the capacity for traffic). Prior to the invention of home broadband, dial-up internet was the only means by which one could download songs, movies, e-mails, etc. It would take up to 10\u201330 minutes"
+        }, 
+        "COBOL": {
+            "interest": 0, 
+            "knowledge": 26, 
+            "name": "COBOL", 
+            "skill": 48, 
+            "summary": "COBOL is one of the oldest programming language s. Its name is an acronym for COmmon Business-Oriented Language, defining its primary domain in business , finance, and administrative systems for companies and governments. The COBOL 2002 standard includes support for object-oriented programming and other modern language features. More on 'COBOL' at Wikipedia \u00bb"
+        }, 
+        "Case_study": {
+            "interest": 0, 
+            "knowledge": 20, 
+            "name": "Case Studies", 
+            "skill": 16, 
+            "summary": "A case study (also known as a case report) is an intensive analysis of an individual unit (e.g., a person, group, or event) stressing developmental factors in relation to context. The case study is common in social sciences and life sciences . Case studies may be descriptive or explanatory. The latter type is used to explore causation in order to find underlying principles. They"
+        }, 
+        "Child": {
+            "interest": 0, 
+            "knowledge": 15, 
+            "name": "Children", 
+            "skill": 23, 
+            "summary": "Biologically a child (plural: children) is generally a human between the stages of birth and puberty. Some vernacular definitions of a child include the fetus, as being an unborn child. The legal definition of \"child\" generally refers to a minor, otherwise known as a person younger than the age of majority. \"Child\" may also describe a relationship with a parent (such as sons and"
+        }, 
+        "Cognition": {
+            "interest": 0, 
+            "knowledge": 40, 
+            "name": "Cognition", 
+            "skill": 23, 
+            "summary": "In science , cognition is a group of mental processes that includes attention, memory , producing and understanding language, solving problems, and making decisions. Cognition is studied in various disciplines such as psychology, philosophy, linguistics, science and computer science. The term's usage varies in different disciplines; for example in psychology and cognitive science , it usually refers to an information processing view"
+        }, 
+        "Cognitive_science": {
+            "interest": 0, 
+            "knowledge": 33, 
+            "name": "Cognitive Science", 
+            "skill": 33, 
+            "summary": "Cognitive science is the interdisciplinary scientific study of the mind and its processes. It examines what cognition is, what it does and how it works. It includes research on intelligence and behavior, especially focusing on how information is represented, processed, and transformed (in faculties such as perception, language, memory, reasoning, and emotion) within nervous systems (human or other animal) and machines (e.g. computers). Cognitive"
+        }, 
+        "Collaboration": {
+            "interest": 70, 
+            "knowledge": 59, 
+            "name": "Collaboration", 
+            "skill": 65, 
+            "summary": "Collaboration is working together to achieve a goal. It is a recursive process where two or more people or organization s work together to realize shared goals, (this is more than the intersection of common goals seen in co-operative ventures, but a deep, collective, determination to reach an identical objective) \u2014 for example, an intriguing endeavor that is creative in nature\u2014by sharing knowledge, learning and"
+        }, 
+        "Competition": {
+            "interest": 0, 
+            "knowledge": 50, 
+            "name": "Competition", 
+            "skill": 57, 
+            "summary": "Competition in biology , ecology , and sociology , is a contest between organisms, animals, individuals, groups, etc., for territory , a niche, or a location of resources, for resources and goods, for prestige, recognition, awards, mates, or group or social status, for leadership; it is the opposite of cooperation . It arises whenever at least two parties strive for a goal which cannot"
+        }, 
+        "Computer": {
+            "interest": 0, 
+            "knowledge": 26, 
+            "name": "Computers", 
+            "skill": 18, 
+            "summary": "A computer is a general purpose device that can be programmed to carry out a finite set of arithmetic or logical operations. Since a sequence of operations can be readily changed, the computer can solve more than one kind of problem. Conventionally, a computer consists of at least one processing element and some form of memory . The processing element carries out arithmetic and logic"
+        }, 
+        "Computer_program": {
+            "interest": 0, 
+            "knowledge": 38, 
+            "name": "Computer Program", 
+            "skill": 44, 
+            "summary": "A computer program (also software , or just a program) is a sequence of instructions written to perform a specified task with a computer . A computer requires programs to function, typically executing the program's instructions in a central processor. The program has an executable form that the computer can use directly to execute the instructions. The same program in its human-readable source code form,"
+        }, 
+        "Concept": {
+            "interest": 53, 
+            "knowledge": 48, 
+            "name": "Concepts", 
+            "skill": 52, 
+            "summary": "A concept is a general idea, or something conceived in the mind. More on 'Concepts' at Wikipedia \u00bb"
+        }, 
+        "Concrete": {
+            "interest": 0, 
+            "knowledge": 80, 
+            "name": "Concrete", 
+            "skill": 0, 
+            "summary": "Concrete is a composite construction material composed primarily of aggregate , cement , and water . There are many formulations, which provide varied properties. The aggregate is generally a coarse gravel or crushed rocks such as limestone , or granite , along with a fine aggregate such as sand . The cement, commonly Portland cement, and other cementitious materials such as fly ash and"
+        }, 
+        "Conflict_resolution": {
+            "interest": 0, 
+            "knowledge": 29, 
+            "name": "Conflict Resolution", 
+            "skill": 39, 
+            "summary": "Conflict resolution is conceptualized as the methods and processes involved in facilitating the peaceful ending of social conflict. Often, committed group members attempt to resolve group conflicts by actively communicating information about their conflicting motives or ideologies to the rest of the group (e.g., intentions; reasons for holding certain beliefs), and by engaging in collective negotiation . Ultimately, a wide range of methods and procedures"
+        }, 
+        "Construction": {
+            "interest": 0, 
+            "knowledge": 64, 
+            "name": "Construction", 
+            "skill": 0, 
+            "summary": "In the fields of architecture and civil engineering , construction is a process that consists of the building or assembling of infrastructure . Far from being a single activity, large scale construction is a feat of human multitasking. Normally, the job is managed by a project manager, and supervised by a construction manager, design engineer, construction engineer or project architect. For the successful execution"
+        }, 
+        "Content_analysis": {
+            "interest": 0, 
+            "knowledge": 48, 
+            "name": "Media Analysis", 
+            "skill": 14, 
+            "summary": "Content analysis or textual analysis is a methodology in the social sciences for studying the content of communication . Earl Babbie defines it as \"the study of recorded human communications, such as book s, website s, painting s and law s.\" According to Dr. Farooq Joubish, content analysis is considered a scholarly methodology in the humanities by which texts are studied"
+        }, 
+        "Cooking": {
+            "interest": 67, 
+            "knowledge": 67, 
+            "name": "Cooking", 
+            "skill": 0, 
+            "summary": "Cooking is the process of preparing food , often with the use of heat. Cooking techniques and ingredients vary widely across the world, reflecting unique environmental, economic, and cultural traditions. Cooks themselves also vary widely in skill and training. Cooking can also occur through chemical reactions without the presence of heat, most notably as in Ceviche, a traditional South American dish where fish is cooked"
+        }, 
+        "Cooperation": {
+            "interest": 0, 
+            "knowledge": 31, 
+            "name": "Cooperation", 
+            "skill": 38, 
+            "summary": "Cooperation or co-operation is the process of working or acting together. In its simplest form it involves things working in harmony, while in its more complicated forms, it can involve something as complex as the inner workings of a human being or even the social patterns of a nation. It is the opposite of working separately in competition. Cooperation can also be accomplished by computers,"
+        }, 
+        "Corporation": {
+            "interest": 0, 
+            "knowledge": 47, 
+            "name": "Corporations", 
+            "skill": 41, 
+            "summary": "An incorporated entity is a separate legal entity that has been incorporated through a legislative or registration process established through legislation. Incorporated entities have legal rights and liabilities that are distinct from its shareholders . and may conduct business for either profit -seeking business or not for profit purposes. Early incorporated entities were established by charter (i.e. by an ad hoc act"
+        }, 
+        "Country": {
+            "interest": 0, 
+            "knowledge": 70, 
+            "name": "Country Property", 
+            "skill": 70, 
+            "summary": "A country is a region legally identified as a distinct entity in political geography . A country may be an independent sovereign state or one that is occupied by another state, as a non- sovereign or formerly sovereign political division, or a geographic region associated with sets of previously independent or differently associated peoples with distinct political characteristics. Regardless of the physical geography, in the"
+        }, 
+        "Cultural_identity": {
+            "interest": 0, 
+            "knowledge": 42, 
+            "name": "Cultural Identity", 
+            "skill": 42, 
+            "summary": "Cultural identity is the identity of a group or culture , or of an individual as far as one is influenced by one's belonging to a group or culture. Cultural identity is similar to and has overlaps with, but is not synonymous with, identity politics . More on 'Cultural Identity' at Wikipedia \u00bb"
+        }, 
+        "Culture": {
+            "interest": 0, 
+            "knowledge": 44, 
+            "name": "Culture", 
+            "skill": 44, 
+            "summary": "Culture (, lit. \"cultivation\") is a modern concept based on a term first used in classical antiquity by the Roman orator , Cicero: \"cultura animi\". The term \"culture\" appeared first in its current sense in Europe in the 18th and 19th centuries, to connote a process of cultivation or improvement, as in agriculture or horticulture . In the 19th century, the term developed to"
+        }, 
+        "Customer": {
+            "interest": 0, 
+            "knowledge": 56, 
+            "name": "Customer Information", 
+            "skill": 0, 
+            "summary": "A customer (also known as a client, buyer, or purchaser) is the recipient of a good, service , product, or idea, obtained from a seller, vendor , or supplier for a monetary or other valuable consideration. Customers are generally categorized into two types: * An intermediate customer or trade customer (more informally: \"the trade\") who is a dealer that purchases goods for re-sale. *"
+        }, 
+        "Debate": {
+            "interest": 0, 
+            "knowledge": 26, 
+            "name": "Debate", 
+            "skill": 14, 
+            "summary": "Debate is contention in argument ; dispute, controversy; discussion ; esp. the discussion of questions of public interest in Parliament or in any assembly . Debate is a method of interactive and representational argument. Debate is a broader form of argument than deductive reasoning , which only examines whether a conclusion is a consequence of premisses, and factual argument, which only examines what is"
+        }, 
+        "Design": {
+            "interest": 34, 
+            "knowledge": 36, 
+            "name": "Design", 
+            "skill": 40, 
+            "summary": "Design is the creation of a plan or convention for the construction of an object or a system (as in architectural blueprints, engineering drawing , business process , circuit diagrams and sewing patterns). Design has different connotations in different fields (see design disciplines below). In some cases the direct construction of an object (as in pottery , engineering , management , cowboy coding and"
+        }, 
+        "Designer": {
+            "interest": 0, 
+            "knowledge": 20, 
+            "name": "Designers", 
+            "skill": 20, 
+            "summary": "A designer is a person who design s. More formally, a designer is an agent that \"specifies the structural properties of a design object \". In practice, anyone who creates tangible or intangible objects, such as consumer products, processes, laws, games and graphics, is referred to as a designer. Classically, the main areas of design were only painting , sculpture and architecture , which"
+        }, 
+        "Developmental_psychology": {
+            "interest": 0, 
+            "knowledge": 20, 
+            "name": "Developmental Psychology", 
+            "skill": 27, 
+            "summary": "Developmental psychology is the scientific study of changes that occur in human beings over the course of their life span. Originally concerned with infants and child ren, the field has expanded to include adolescence , adult development , aging , and the entire life span. This field examines change across a broad range of topics including motor skills and other psycho-physiological processes; cognitive"
+        }, 
+        "Differential_equation": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Differential Equations", 
+            "skill": 24, 
+            "summary": "A differential equation is a mathematical equation for an unknown function of one or several variables that relates the values of the function itself and its derivative s of various orders. Differential equations play a prominent role in engineering , physics , economics , and other disciplines. Differential equations arise in many areas of science and technology, specifically whenever a deterministic"
+        }, 
+        "Digital_signage": {
+            "interest": 0, 
+            "knowledge": 77, 
+            "name": "Digital Signage", 
+            "skill": 77, 
+            "summary": "Digital signage is a form of electronic display that shows television programming, menus, information, advertising and other messages. Digital signs (frequently utilizing technologies such as LCD , LED, plasma displays , or projected images to display content) can be found in both public and private environments, including retail stores, hotels, restaurants, and corporate buildings, amongst other locations. Digital signage displays are most commonly controlled"
+        }, 
+        "Discipline": {
+            "interest": 0, 
+            "knowledge": 53, 
+            "name": "Discipline", 
+            "skill": 60, 
+            "summary": "In its original sense, discipline is systematic instruction given to disciples to train them as students in a craft or trade, or any other activity which they are supposed to perform, or to follow a particular code of conduct or \" order \". Often, the phrase \"to discipline\" carries a negative connotation. This is because enforcement of order \u2013 that is, ensuring instructions are carried"
+        }, 
+        "Document": {
+            "interest": 0, 
+            "knowledge": 44, 
+            "name": "Document Preparation", 
+            "skill": 48, 
+            "summary": "The term document has multiple meanings in ordinary language and in scholarship. WordNet 3.1. lists four meanings (October 2011): * document, written document, papers (writing that provides information (especially information of an official nature)) * document (anything serving as a representation of a person's thinking by means of symbolic marks) * document (a written account of ownership or obligation) * text file, document ((computer"
+        }, 
+        "Embedded_system": {
+            "interest": 0, 
+            "knowledge": 77, 
+            "name": "Embedded Systems", 
+            "skill": 77, 
+            "summary": "An embedded system is a computer system designed for specific control functions within a larger system, often with real-time computing constraints. It is embedded as part of a complete device often including hardware and mechanical parts. By contrast, a general-purpose computer, such as a personal computer (PC), is designed to be flexible and to meet a wide range of end-user needs. Embedded"
+        }, 
+        "Emotion": {
+            "interest": 0, 
+            "knowledge": 32, 
+            "name": "Emotions", 
+            "skill": 16, 
+            "summary": "In psychology , philosophy , and their many subsets, emotion is the generic term for subjective, conscious experience that is characterized primarily by psychophysiological expressions , biological reactions, and mental states. Emotion is often associated and considered reciprocally influential with mood , temperament , personality , disposition , and motivation , as well as influenced by hormones and neurotransmitters such as dopamine, noradrenaline, serotonin, oxytocin"
+        }, 
+        "Engineering": {
+            "interest": 0, 
+            "knowledge": 40, 
+            "name": "Engineering", 
+            "skill": 31, 
+            "summary": "Engineering is the science, skill, and profession of acquiring and applying scientific , economic , social, and practical knowledge, in order to design and also build structures, machines, devices, systems, materials and processes . The American Engineers' Council for Professional Development (ECPD, the predecessor of ABET) has defined \"engineering\" as: The creative application of scientific principles to design or develop structures, machines, apparatus, or"
+        }, 
+        "Environmentalism": {
+            "interest": 0, 
+            "knowledge": 22, 
+            "name": "Environmental Awareness", 
+            "skill": 56, 
+            "summary": "Environmentalism is a broad philosophy, ideology and social movement regarding concerns for environmental conservation and improvement of the health of the environment , particularly as the measure for this health seeks to incorporate the concerns of non-human elements. Environmentalism advocates the preservation, restoration and/or improvement of the natural environment, and may be referred to as a movement to control pollution . For this reason,"
+        }, 
+        "Essay": {
+            "interest": 0, 
+            "knowledge": 21, 
+            "name": "Essays", 
+            "skill": 26, 
+            "summary": "An essay is a piece of writing which is often written from an author's personal point of view. Essays can consist of a number of elements, including: literary criticism , political manifestos, learned arguments , observations of daily life, recollections, and reflections of the author. The definition of an essay is vague, overlapping with those of an article and a short story . Almost all"
+        }, 
+        "Ethics": {
+            "interest": 0, 
+            "knowledge": 41, 
+            "name": "Ethics", 
+            "skill": 41, 
+            "summary": "Ethics, also known as moral philosophy, is a branch of philosophy that involves systematizing, defending, and recommending concepts of right and wrong behavior. It comes from the Greek word ethos, which means \"character\". Major areas of study in ethics may be divided into 3 operational areas: * Meta-ethics, about the theoretical meaning and reference of moral propositions and how their truth values (if any)"
+        }, 
+        "Evaluation": {
+            "interest": 0, 
+            "knowledge": 28, 
+            "name": "Evaluation", 
+            "skill": 32, 
+            "summary": "Evaluation is a systematic determination of a subject's merit, worth and significance, using criteria governed by a set of standards. It can assist an organization to assess any aim, realisable concept or proposal, or any alternative, to help in decision-making; or to ascertain the degree of achievement or value in regard to the aim and objectives and results of any such action that"
+        }, 
+        "Fair_trade": {
+            "interest": 0, 
+            "knowledge": 70, 
+            "name": "Fair Trade", 
+            "skill": 70, 
+            "summary": "Fair trade is an organized social movement and market-based approach that aims to help producers in developing countries to make better trading conditions and promote sustainability . The movement (known as 'fair trade' two words as distinct from 'Fairtrade' indicating the certification) advocates the payment of a higher price to exporters as well as higher social and environmental standards. It focuses in particular on exports"
+        }, 
+        "Future": {
+            "interest": 0, 
+            "knowledge": 64, 
+            "name": "Future Trends", 
+            "skill": 52, 
+            "summary": "The future is the indefinite time period after the present. Its arrival is considered inevitable due to the existence of time and the laws of physics. Due to the nature of reality and the unavoidability of the future, everything that currently exists and will exist can be categorized as either permanent, meaning that it will exist for the whole of the future or"
+        }, 
+        "Game": {
+            "interest": 71, 
+            "knowledge": 69, 
+            "name": "Games", 
+            "skill": 79, 
+            "summary": "A game is structured playing, usually undertaken for enjoyment and sometimes used as an education al tool. Games are distinct from work, which is usually carried out for remuneration , and from art , which is more often an expression of aesthetic or ideological elements. However, the distinction is not clear-cut, and many games are also considered to be work (such as professional players of"
+        }, 
+        "Gameplay": {
+            "interest": 70, 
+            "knowledge": 70, 
+            "name": "Gameplay Systems", 
+            "skill": 70, 
+            "summary": "Gameplay is the specific way in which players interact with a game, and in particular with video game s. Gameplay is the pattern defined through the game rules, connection between player and the game, challenges and overcoming them, plot and player's connection with it. Video game gameplay is distinct from graphics, and audio elements. More on 'Gameplay Systems' at Wikipedia \u00bb"
+        }, 
+        "Globalization": {
+            "interest": 0, 
+            "knowledge": 37, 
+            "name": "Globalization", 
+            "skill": 59, 
+            "summary": "Globalization is the process of international integration arising from the interchange of world views, products, ideas, and other aspects of culture . In particular, advances in transportation and telecommunication s infrastructure, including the rise of the Internet, are major factors in globalization and precipitate further interdependence of economic and cultural activities. Though several scholars situate the origins of globalization in modernity, others map its"
+        }, 
+        "Grammar": {
+            "interest": 0, 
+            "knowledge": 45, 
+            "name": "Grammar", 
+            "skill": 82, 
+            "summary": "In linguistics , grammar is the set of structural rules that govern the composition of clauses, phrases, and words in any given natural language . The term refers also to the study of such rules, and this field includes morphology , syntax , and phonology , often complemented by phonetics , semantics, and pragmatics . Linguists do not normally use the term to refer"
+        }, 
+        "Graphic_designer": {
+            "interest": 0, 
+            "knowledge": 57, 
+            "name": "Graphic Designers", 
+            "skill": 57, 
+            "summary": "A graphic designer is a professional within the graphic design and graphic arts industry who assembles together images, typography or motion graphics to create a piece of design. A graphic designer creates the graphics primarily for published , printed or electronic media , such as brochure s (sometimes) and advertising . They are also sometimes responsible for typesetting , illustration ,"
+        }, 
+        "Group_dynamics": {
+            "interest": 0, 
+            "knowledge": 52, 
+            "name": "Group Dynamics", 
+            "skill": 31, 
+            "summary": "Group dynamics refers to a system of behaviors and psychological processes occurring within a social group (intragroup dynamics), or between social groups (intergroup dynamics). The study of group dynamics can be useful in understanding decision-making behavior, tracking the spread of diseases in society, creating effective therapy techniques, and following the emergence and popularity of new ideas and technologies. Group dynamics are at the core of"
+        }, 
+        "Group_theory": {
+            "interest": 0, 
+            "knowledge": 29, 
+            "name": "Group Theory", 
+            "skill": 80, 
+            "summary": "In mathematics and abstract algebra , group theory studies the algebraic structures known as groups . The concept of a group is central to abstract algebra: other well-known algebraic structures, such as rings , fields, and vector spaces can all be seen as groups endowed with additional operations and axioms. Groups recur throughout mathematics, and the methods of group theory have strongly influenced many"
+        }, 
+        "Guide": {
+            "interest": 0, 
+            "knowledge": 36, 
+            "name": "Guides", 
+            "skill": 40, 
+            "summary": "A guide is a person who leads anyone through unknown or unmapped country. This includes a guide of the real world (such as someone who conducts travellers and tourists through a place of interest), as well as a person who leads someone to more abstract places (such as to knowledge or wisdom). More on 'Guides' at Wikipedia \u00bb"
+        }, 
+        "Gun": {
+            "interest": 70, 
+            "knowledge": 70, 
+            "name": "Guns", 
+            "skill": 0, 
+            "summary": "A gun is a muzzle or breech-loaded projectile-firing weapon . There are various definitions depending on the nation and branch of service. A \"gun\" may be distinguished from other firearms in being a crew-served weapon such as a howitzer or mortar , as opposed to a small arm like a rifle or pistol , but there are exceptions, such as the U.S. Air Force's"
+        }, 
+        "Hardware": {
+            "interest": 0, 
+            "knowledge": 55, 
+            "name": "Hardware", 
+            "skill": 66, 
+            "summary": "Hardware may refer to: * Household hardware, equipment such as keys, locks, hinges, latches, handles, wire, chains, plumbing, tools, utensils, and machine parts, typically sold in hardware stores * Hardware store, a business which sells household hardware * Builders' hardware, for doors, cabinets, windows, bathrooms, etc. * Drum hardware, the parts of a drum or drum kit that are used to tension, position, and otherwise"
+        }, 
+        "Holism": {
+            "interest": 0, 
+            "knowledge": 43, 
+            "name": "Holistic Medicine", 
+            "skill": 43, 
+            "summary": "For the suffix, see holism. Holism (from holos, a Greek word meaning all, whole, entire, total), is the idea that natural systems (physical, biological, chemical, social, economic, mental, linguistic , etc.) and their properties, should be viewed as wholes, not as collections of parts. This often includes the view that systems somehow function as wholes and that their functioning cannot be fully understood solely"
+        }, 
+        "Human_nature": {
+            "interest": 0, 
+            "knowledge": 32, 
+            "name": "Human Nature", 
+            "skill": 14, 
+            "summary": "Human nature refers to the distinguishing characteristics, including ways of thinking, feeling and acting , that humans tend to have naturally, i.e. independently of the influence of culture . The questions of what these characteristics are, what causes them, and how fixed human nature is, are amongst the oldest and most important questions in western philosophy. These questions have particularly important implications in"
+        }, 
+        "Humanities": {
+            "interest": 0, 
+            "knowledge": 68, 
+            "name": "Humanities", 
+            "skill": 68, 
+            "summary": "The humanities are academic disciplines that study the human condition, using methods that are primarily analytical , critical, or speculative, as distinguished from the mainly empirical approaches of the natural sciences . The humanities include ancient and modern languages, literature , history , philosophy , religion , and visual and performing arts such as music and theatre . The humanities that"
+        }, 
+        "Ice_hockey": {
+            "interest": 70, 
+            "knowledge": 70, 
+            "name": "Ice Hockey", 
+            "skill": 70, 
+            "summary": "Ice hockey is a team sport played on ice, in which skaters use wooden or composite sticks to shoot a hard rubber puck into their opponent's net. In some countries, where the sport is very popular, it is known simply as \"hockey\"; however, the name ice hockey is used in countries in which the word hockey is generally reserved for another form of hockey,"
+        }, 
+        "Image": {
+            "interest": 0, 
+            "knowledge": 36, 
+            "name": "Image", 
+            "skill": 30, 
+            "summary": "An image (from ) is an artifact that depicts or records visual perception, for example a two-dimensional picture, that has a similar appearance to some subject\u2013usually a physical object or a person, thus providing a depiction of it. More on 'Image' at Wikipedia \u00bb"
+        }, 
+        "Industrial_design": {
+            "interest": 0, 
+            "knowledge": 48, 
+            "name": "Industrial Design", 
+            "skill": 57, 
+            "summary": "Industrial design is the use of a combination of applied art and applied science to improve the aesthetics , ergonomics , and usability of a product, but it may also be used to improve the product's marketability and production. The role of an industrial designer is to create and execute design solutions for problems of form, usability, physical ergonomics, marketing, brand development, and sales. More on 'Industrial Design' at Wikipedia \u00bb"
+        }, 
+        "Industry": {
+            "interest": 0, 
+            "knowledge": 40, 
+            "name": "Industrial Sector", 
+            "skill": 40, 
+            "summary": "Industry is the production of an economic good or service within an economy . More on 'Industrial Sector' at Wikipedia \u00bb"
+        }, 
+        "Initiation": {
+            "interest": 0, 
+            "knowledge": 41, 
+            "name": "Initiation", 
+            "skill": 41, 
+            "summary": "Initiation is a rite of passage ceremony marking entrance or acceptance into a group or society. It could also be a formal admission to adulthood in a community or one of its formal components. In an extended sense it can also signify a transformation in which the initiate is 'reborn' into a new role. Examples of initiation ceremonies might include Hindu diksha, Christian "
+        }, 
+        "Innovation": {
+            "interest": 0, 
+            "knowledge": 32, 
+            "name": "Innovation", 
+            "skill": 36, 
+            "summary": "Innovation is the development of new customer value through solutions that meet new needs, unarticulated needs, or old customer and market needs in new ways. This is accomplished through different or more effective products, processes , service s, technologies, or ideas that are readily available to markets, government s, and society. Innovation differs from invention in that innovation refers to the use of a"
+        }, 
+        "Input_device": {
+            "interest": 50, 
+            "knowledge": 32, 
+            "name": "Input Devices", 
+            "skill": 32, 
+            "summary": "In computing , an input device is any peripheral (piece of computer hardware equipment) used to provide data and control signals to an information processing system such as a computer or other information appliance. Input and output devices make up the hardware interface between a computer and a scanner or 6DOF controller. Many input devices can be classified according to: More on 'Input Devices' at Wikipedia \u00bb"
+        }, 
+        "Installation_art": {
+            "interest": 64, 
+            "knowledge": 64, 
+            "name": "Field Installation", 
+            "skill": 64, 
+            "summary": "Installation art describes an artistic genre of three-dimensional works that are often site-specific and designed to transform the perception of a space. Generally, the term is applied to interior spaces, whereas exterior interventions are often called Land art ; however, the boundaries between these terms overlap. More on 'Field Installation' at Wikipedia \u00bb"
+        }, 
+        "Integrated_circuit": {
+            "interest": 0, 
+            "knowledge": 17, 
+            "name": "IC", 
+            "skill": 43, 
+            "summary": "An integrated circuit or monolithic integrated circuit (also referred to as IC, chip, or microchip) is an electronic circuit manufactured by lithography , or the patterned diffusion of trace elements into the surface of a thin substrate of semiconductor material. Additional materials are deposited and patterned to form interconnections between semiconductor devices. Integrated circuits are used in virtually all electronic equipment today and have"
+        }, 
+        "Interaction": {
+            "interest": 29, 
+            "knowledge": 32, 
+            "name": "Interaction", 
+            "skill": 44, 
+            "summary": "Interaction is a kind of action that occurs as two or more objects have an effect upon one another. The idea of a two-way effect is essential in the concept of interaction, as opposed to a one-way causal effect. A closely related term is interconnectivity, which deals with the interactions of interactions within systems: combinations of many simple interactions can lead to surprising emergent phenomena."
+        }, 
+        "Interaction_design": {
+            "interest": 0, 
+            "knowledge": 22, 
+            "name": "Interaction Design", 
+            "skill": 30, 
+            "summary": "Sorry, no description is available."
+        }, 
+        "Interactivity": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "User Interaction", 
+            "skill": 32, 
+            "summary": "In the fields of information science , communication , and industrial design , there is debate over the meaning of interactivity. In the \"contingency view\" of interactivity, there are three levels: #Noninteractive, when a message is not related to previous messages; #Reactive, when a message is related only to one immediately previous message; and #Interactive, when a message is related to a number of previous"
+        }, 
+        "International": {
+            "interest": 0, 
+            "knowledge": 50, 
+            "name": "International Experience", 
+            "skill": 50, 
+            "summary": "International mostly means something (a company , language or organization ) involving more than one country. The term international as a word means involvement of, interaction between or encompassing more than one nation, or generally beyond national boundaries. For example, international law , which is applied by more than one country and usually everywhere on Earth, and international language which is a language spoken by"
+        }, 
+        "International_student": {
+            "interest": 0, 
+            "knowledge": 35, 
+            "name": "International Students", 
+            "skill": 41, 
+            "summary": "According to Organization of Economic Cooperation and Development (OECD), international students are those who travel to a country different from their own for the purpose of tertiary study. Despite that, the definition of international students varies in each country in accordance to their own national education system. Below are several definitions of international students; :Australia :\u2018International Students\u2019 are defined as those studying onshore only with"
+        }, 
+        "Internationalization": {
+            "interest": 0, 
+            "knowledge": 70, 
+            "name": "Internationalization", 
+            "skill": 70, 
+            "summary": "In economics, internationalization has been viewed as a process of increasing involvement of enterprises in international markets, although there is no agreed definition of internationalization or international entrepreneurship. There are several internationalization theories which try to explain why there are international activities. More on 'Internationalization' at Wikipedia \u00bb"
+        }, 
+        "Internship": {
+            "interest": 0, 
+            "knowledge": 50, 
+            "name": "Internships", 
+            "skill": 71, 
+            "summary": "Internship is a system of on-the-job training for white-collar and professional careers. Internships for professional careers are similar to apprenticeships for trade and vocational jobs. Although interns are typically college or university students, they can also be high school students or post-graduate adults. On occasion, they are middle school or even elementary students. Generally, the internship works as an exchange of services for experience"
+        }, 
+        "Interview": {
+            "interest": 0, 
+            "knowledge": 20, 
+            "name": "Interviews", 
+            "skill": 0, 
+            "summary": "An interview is a conversation between two people (the interviewer and the interviewee) where questions are asked by the interviewer to obtain information from the interviewee. More on 'Interviews' at Wikipedia \u00bb"
+        }, 
+        "Invoice": {
+            "interest": 0, 
+            "knowledge": 70, 
+            "name": "Bill Payment", 
+            "skill": 70, 
+            "summary": "An invoice or bill is a commercial document issued by a seller to the buyer, indicating the products, quantities, and agreed price s for products or service s the seller has provided the buyer. An invoice indicates the sale transaction only. Payment terms are independent of the invoice and are negotiated by the buyer and the seller. Payment terms are usually included on"
+        }, 
+        "Iteration": {
+            "interest": 59, 
+            "knowledge": 60, 
+            "name": "Iteration", 
+            "skill": 72, 
+            "summary": "Iteration means the act of repeating a process usually with the aim of approaching a desired goal or target or result. Each repetition of the process is also called an \"iteration,\" and the results of one iteration are used as the starting point for the next iteration. More on 'Iteration' at Wikipedia \u00bb"
+        }, 
+        "Joiner": {
+            "interest": 70, 
+            "knowledge": 50, 
+            "name": "Joinery", 
+            "skill": 50, 
+            "summary": "In the building trades, a joiner is a type of a carpenter that cuts and fits joints in wood without the use of nails , screws , or other metal fasteners. Joiners usually work in a workshop, because the formation of various joints usually requires non-portable machinery; in contrast, most other kinds of carpenter usually work on site. A \"joiner\" usually produces items"
+        }, 
+        "Justice": {
+            "interest": 0, 
+            "knowledge": 41, 
+            "name": "Justice", 
+            "skill": 41, 
+            "summary": "Justice is a concept of moral rightness based on ethics , rationality, law , natural law, religion , or equity . It is also the act of being just and/or fair. More on 'Justice' at Wikipedia \u00bb"
+        }, 
+        "Knowledge_transfer": {
+            "interest": 0, 
+            "knowledge": 57, 
+            "name": "Knowledge Transfer", 
+            "skill": 57, 
+            "summary": "Knowledge transfer in the fields of organizational development and organizational learning is the practical problem of transferring knowledge from one part of the organization to another (or all other) part(s) of the organization. Like knowledge management , knowledge transfer seeks to organize, create, capture or distribute knowledge and ensure its availability for future users. It is considered to be more than just a"
+        }, 
+        "Laboratory": {
+            "interest": 0, 
+            "knowledge": 26, 
+            "name": "Laboratory", 
+            "skill": 0, 
+            "summary": "A laboratory ( or ; informally, lab) is a facility that provides controlled conditions in which scientific research , experiment s, and measurement may be performed. The title of laboratory is also used for certain other facilities where the processes or equipment used are similar to those in scientific laboratories. These notably include: * film laboratory or darkroom * computer lab *"
+        }, 
+        "Language_acquisition": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Language Learning", 
+            "skill": 67, 
+            "summary": "Language acquisition is the process by which humans acquire the capacity to perceive and comprehend language, as well as to produce and use word s and sentences to communicate. Language acquisition usually refers to first-language acquisition, which studies infants' acquisition of their native language. This is distinguished from second-language acquisition, which deals with the acquisition (in both children and adults) of additional languages. The capacity"
+        }, 
+        "Lecturer": {
+            "interest": 0, 
+            "knowledge": 36, 
+            "name": "Guest Lecturing", 
+            "skill": 52, 
+            "summary": "A lecturer is, in the broadest sense, a person who gives lectures or other public speeches . However, this article concerns lecturer as an academic rank. In the United Kingdom a lecturer is usually the holder of a permanent position at a university or similar institution, often an academic in an early career stage, who teaches and also leads or oversees research groups. However"
+        }, 
+        "Lever": {
+            "interest": 70, 
+            "knowledge": 70, 
+            "name": "Lever", 
+            "skill": 70, 
+            "summary": "Sorry, no description is available."
+        }, 
+        "Local_government": {
+            "interest": 0, 
+            "knowledge": 82, 
+            "name": "Local Government", 
+            "skill": 82, 
+            "summary": "Local government is a form of public administration which in a majority of contexts, exists as the lowest tier of administration within a given state. The term is used to contrast with offices at state level, which are referred to as the central government , national government, or (where appropriate) federal government . Local governments generally act within powers delegated to them by"
+        }, 
+        "MATLAB": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Matlab", 
+            "skill": 0, 
+            "summary": "MATLAB (matrix laboratory) is a numerical computing environment and fourth-generation programming language. Developed by MathWorks , MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithm s, creation of user interface s, and interfacing with programs written in other languages, including C , C++ , Java , and Fortran . Although MATLAB is intended primarily for numerical computing, an optional toolbox"
+        }, 
+        "Making-of": {
+            "interest": 0, 
+            "knowledge": 44, 
+            "name": "Behind the Scenes", 
+            "skill": 44, 
+            "summary": "In cinema , a making-of, also known as behind-the-scenes, is a documentary film that features the production of a film or television program. This is often referred to as the EPK (electronic press kit) video, due to its main usage as a promotional tool, either concurrent with theatrical release or as a bonus feature for the film's DVD . Feature length documentaries on the"
+        }, 
+        "Measurement": {
+            "interest": 39, 
+            "knowledge": 71, 
+            "name": "Measurements", 
+            "skill": 71, 
+            "summary": "Measurement is the process or the result of determining the ratio of a physical quantity, such as a length, time, temperature etc., to a unit of measurement, such as the meter, second or degree Celsius. The science of measurement is called metrology . The English word measurement originates from the Latin ' and the verb ' through the Middle French '. More on 'Measurements' at Wikipedia \u00bb"
+        }, 
+        "Medical_equipment": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Medical Equipment", 
+            "skill": 67, 
+            "summary": "Medical equipment (also known as armamentarium) is designed to aid in the diagnosis , monitoring or treatment of medical conditions. More on 'Medical Equipment' at Wikipedia \u00bb"
+        }, 
+        "Meeting": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Meeting", 
+            "skill": 20, 
+            "summary": "For multi-event athletic competitions see Track and Field Competitions, section \"Meetings\". In a meeting, two or more people come together to discuss one or more topics, often in a formal setting. More on 'Meeting' at Wikipedia \u00bb"
+        }, 
+        "Menopause": {
+            "interest": 0, 
+            "knowledge": 23, 
+            "name": "Menopause", 
+            "skill": 27, 
+            "summary": "Menopause is the permanent cessation of the primary functions of the human ovaries: the ripening and release of ova and the release of hormones that cause both the creation of the uterine lining and the subsequent shedding of the uterine lining (a.k.a. the menses or the period). Menopause typically (but not always) occurs in women in midlife, during their late 40s or early 50s, and"
+        }, 
+        "Methodology": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Methodology", 
+            "skill": 28, 
+            "summary": "A methodology is usually a guideline system for solving a problem, with specific components such as phases, tasks, methods, techniques and tools. It can be defined also as follows: # \"the analysis of the principles of methods, rules, and postulates employed by a discipline\"; # \"the systematic study of methods that are, can be, or have been applied within a discipline\"; # \"the study"
+        }, 
+        "Mind_map": {
+            "interest": 0, 
+            "knowledge": 82, 
+            "name": "Mind Mapping", 
+            "skill": 82, 
+            "summary": "A mind map is a diagram used to visually outline information. A mind map is often created around a single word or text, placed in the center, to which associated ideas, words and concepts are added. Major categories radiate from a central node, and lesser categories are sub-branches of larger branches. Categories can represent words, ideas, tasks, or other items related to a central key"
+        }, 
+        "Motivation": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Motivation", 
+            "skill": 0, 
+            "summary": "Motivation is the psychological feature that arouses an organism to action toward a desired goal and elicits, controls, and sustains certain goal directed behaviors. For instance: An individual has not eaten, he or she feels hungry, and as a response he or she eats and diminishes feelings of hunger. There are many approaches to motivation: physiological, behavioural, cognitive, and social. Motivation may be rooted in"
+        }, 
+        "Musical_instrument": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Musical Instruments", 
+            "skill": 0, 
+            "summary": "A musical instrument is a device created or adapted for the purpose of making musical sounds. In principle, any object that produces sound can serve as a musical instrument\u2014it is through purpose that the object becomes a musical instrument. The history of musical instruments dates back to the beginnings of human culture. The purpose of early musical instruments was ritual: a hunter might use"
+        }, 
+        "Nature": {
+            "interest": 0, 
+            "knowledge": 60, 
+            "name": "Nature", 
+            "skill": 72, 
+            "summary": "\"Natural\" and \"Natural World\" redirect here. For other uses, see Nature (disambiguation) and Natural (disambiguation). Nature, in the broadest sense, is equivalent to the natural world, physical world, or material world. \"Nature\" refers to the phenomena of the physical world, and also to life in general. It ranges in scale from the subatomic to the cosmic. The word nature is derived from the Latin "
+        }, 
+        "New_product_development": {
+            "interest": 0, 
+            "knowledge": 30, 
+            "name": "Product Development", 
+            "skill": 35, 
+            "summary": "In business and engineering , new product development (NPD) is the complete process of bringing a new product to market. A product is a set of benefits offered for exchange and can be tangible (that is, something physical you can touch) or intangible (like a service, experience, or belief). There are two parallel paths involved in the NPD process: one involves the idea generation,"
+        }, 
+        "Opportunity_cost": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Opportunity Cost", 
+            "skill": 15, 
+            "summary": "Opportunity cost is the cost of any activity measured in terms of the value of the next best alternative forgone (that is not chosen). It is the sacrifice related to the second best choice available to someone, or group, who has picked among several mutually exclusive choices. The opportunity cost is also the \"cost\" (as a lost benefit) of the forgone products after making a"
+        }, 
+        "Organization": {
+            "interest": 0, 
+            "knowledge": 44, 
+            "name": "Organization", 
+            "skill": 44, 
+            "summary": "An organization (or organisation\u00a0\u2013 see spelling differences) is a social entity that has a collective goal and is linked to an external environment. The word is derived from the Greek word organon, itself derived from the better-known word ergon which means \"organ\"\u00a0\u2013 a compartment for a particular task. There are a variety of legal types of organizations, including corporations, government s, non-governmental organizations, international "
+        }, 
+        "Outsourcing": {
+            "interest": 0, 
+            "knowledge": 70, 
+            "name": "Co-sourcing", 
+            "skill": 70, 
+            "summary": "Outsourcing is the contract ing out of a business process , which an organization may have previously performed internally or has a new need for, to an independent organization from which the process is purchased back as a service. Though the practice of purchasing a business function\u2014instead of providing it internally\u2014is a common feature of any modern economy, the term outsourcing became popular in America"
+        }, 
+        "Packaging_and_labeling": {
+            "interest": 0, 
+            "knowledge": 40, 
+            "name": "Packaging", 
+            "skill": 60, 
+            "summary": "Packaging is the science, art, and technology of enclosing or protecting products for distribution, storage, sale, and use. Packaging also refers to the process of design, evaluation, and production of packages. Packaging can be described as a coordinated system of preparing goods for transport, warehousing, logistics, sale, and end use. Packaging contains, protects, preserves, transports, informs, and sells. In many countries it is fully integrated"
+        }, 
+        "Paper": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Paper", 
+            "skill": 20, 
+            "summary": "Paper is a thin material mainly used for writing upon, printing upon, drawing or for packaging . It is produced by pressing together moist fiber s, typically cellulose pulp derived from wood , rags or grass es, and drying them into flexible sheets. Paper is a versatile material with many uses. Whilst the most common is for writing and printing upon,"
+        }, 
+        "Parallel_computing": {
+            "interest": 0, 
+            "knowledge": 32, 
+            "name": "Parallel Computing", 
+            "skill": 32, 
+            "summary": "Parallel computing is a form of computation in which many calculations are carried out simultaneously, operating on the principle that large problems can often be divided into smaller ones, which are then solved concurrently (\"in parallel\"). There are several different forms of parallel computing: bit-level, instruction level, data , and task parallelism. Parallelism has been employed for many years, mainly in high-performance computing ,"
+        }, 
+        "Parameter": {
+            "interest": 0, 
+            "knowledge": 40, 
+            "name": "Parameter Estimation", 
+            "skill": 53, 
+            "summary": "Parameter (from Ancient Greek \u03c0\u03b1\u03c1\u03ac also \u201cpara\u201d meaning \u201cbeside, subsidiary\u201d and \u03bc\u03ad\u03c4\u03c1\u03bf\u03bd also \u201cmetron\u201d meaning \u201cmeasure\u201d) can be interpreted in mathematics , logic , linguistics , environmental science and other disciplines. In its common meaning, the term is used to identify a characteristic, a feature, a measurable factor that can help in defining a particular system. A Parameter is an important element to"
+        }, 
+        "Password": {
+            "interest": 70, 
+            "knowledge": 70, 
+            "name": "Password Resets", 
+            "skill": 70, 
+            "summary": "A password is a secret word or string of characters that is used for authentication , to prove identity or gain access to a resource (example: an access code is a type of password). The password should be kept secret from those not allowed access. The use of passwords is known to be ancient. Sentries would challenge those wishing to"
+        }, 
+        "Patent_application": {
+            "interest": 0, 
+            "knowledge": 43, 
+            "name": "Patent Applications", 
+            "skill": 43, 
+            "summary": "A patent application is a request pending at a patent office for the grant of a patent for the invention described and claimed by that application. An application consists of a description of the invention (the patent specification), together with official forms and correspondence relating to the application. The term patent application is also used to refer to the process of applying for"
+        }, 
+        "Perception": {
+            "interest": 0, 
+            "knowledge": 76, 
+            "name": "Perception", 
+            "skill": 24, 
+            "summary": "Perception (from the Latin perceptio, percipio) is the organization, identification and interpretation of sensory information in order to represent and understand the environment. All perception involves signals in the nervous system , which in turn result from physical stimulation of the sense organs. For example, vision involves light striking the retinas of the eyes, smell is mediated by odor molecules and hearing involves"
+        }, 
+        "Performance": {
+            "interest": 46, 
+            "knowledge": 18, 
+            "name": "Performing", 
+            "skill": 14, 
+            "summary": "A performance, in performing arts , generally comprises an event in which a performer or group of performers behave in a particular way for another group of people, the audience . Choral music and ballet are examples. Usually the performers participate in rehearsal s beforehand. Afterwards audience members often applaud. The means of expressing appreciation can vary by culture. Chinese performers will clap"
+        }, 
+        "Persona": {
+            "interest": 0, 
+            "knowledge": 70, 
+            "name": "Persona", 
+            "skill": 43, 
+            "summary": "A persona (plural personae or personas), in the word's everyday usage, is a social role or a character played by an actor. The word is derived from Latin, where it originally referred to a theatrical mask . The Latin word probably derived from the Etruscan word \"phersu\", with the same meaning, and that from the Greek \u03c0\u03c1\u03cc\u03c3\u03c9\u03c0\u03bf\u03bd (pros\u014dpon). Its meaning in the latter Roman"
+        }, 
+        "Philosophy": {
+            "interest": 0, 
+            "knowledge": 35, 
+            "name": "Philosophy", 
+            "skill": 35, 
+            "summary": "Philosophy is the study of general and fundamental problems, such as those connected with reality , existence, knowledge, values , reason , mind, and language. Philosophy is distinguished from other ways of addressing such problems by its critical, generally systematic approach and its reliance on rational argument. The word \"philosophy\" comes from the Greek \u03c6\u03b9\u03bb\u03bf\u03c3\u03bf\u03c6\u03af\u03b1 (philosophia), which literally means \"love of wisdom\". More on 'Philosophy' at Wikipedia \u00bb"
+        }, 
+        "Philosophy_of_science": {
+            "interest": 0, 
+            "knowledge": 34, 
+            "name": "Philosophy Of Science", 
+            "skill": 30, 
+            "summary": "The philosophy of science is concerned with the assumptions, foundations, methods, and implications of science . It is also concerned with the use and merit of science and sometimes overlaps metaphysics and epistemology by exploring whether scientific results are actually a study of truth. In addition to these central problems of science as a whole, many philosophers of science also consider problems that"
+        }, 
+        "Photocopier": {
+            "interest": 0, 
+            "knowledge": 70, 
+            "name": "Photocopier", 
+            "skill": 70, 
+            "summary": "A photocopier (also known as a copier or copy machine) is a machine that makes paper copies of documents and other visual images quickly and cheaply. Most current photocopiers use a technology called xerography, a dry process using heat. (Copiers can also use other technologies such as ink jet , but xerography is standard for office copying.) Xerographic office photocopying was introduced by"
+        }, 
+        "Physics": {
+            "interest": 0, 
+            "knowledge": 56, 
+            "name": "Physics", 
+            "skill": 56, 
+            "summary": "Physics (from ) is a natural science that involves the study of matter and its motion through space and time, along with related concepts such as energy and force . More broadly, it is the general analysis of nature , conducted in order to understand how the universe behaves. Physics is one of the oldest academic disciplines, perhaps the oldest through its"
+        }, 
+        "Plan": {
+            "interest": 0, 
+            "knowledge": 12, 
+            "name": "Plans", 
+            "skill": 16, 
+            "summary": "A plan is typically any diagram or list of steps with timing and resources, used to achieve an objective . See also strategy . It is commonly understood as a temporal set of intended actions through which one expects to achieve a goal . For spatial or planar topologic or topographic sets see map . Plans can be formal or informal: * Structured"
+        }, 
+        "Planning": {
+            "interest": 0, 
+            "knowledge": 17, 
+            "name": "Plannning", 
+            "skill": 17, 
+            "summary": "Planning (also called forethought) is the process of thinking about and organizing the activities required to achieve a desired goal. Planning involves the creation and maintenance of a plan. As such, planning is a fundamental property of intelligent behavior. This thought process is essential to the creation and refinement of a plan, or integration of it with other plans; that is, it combines forecasting "
+        }, 
+        "Policy": {
+            "interest": 0, 
+            "knowledge": 74, 
+            "name": "Policy Writing", 
+            "skill": 74, 
+            "summary": "A policy is typically described as a principle or rule to guide decisions and achieve rational outcomes. The term is not normally used to denote what is actually done, this is normally referred to as either procedure or protocol. Policies are generally adopted by the Board of or senior governance body within an organization whereas procedures or protocols would be developed and adopted by senior"
+        }, 
+        "Postcard": {
+            "interest": 70, 
+            "knowledge": 70, 
+            "name": "Postcards", 
+            "skill": 70, 
+            "summary": "A postcard or post card is a rectangular piece of thick paper or thin cardboard intended for writing and mailing without an envelope . In some places, it is possible to send them for a lower fee than for a letter . Stamp collectors distinguish between postcards (which require a stamp ) and postal cards (which have the postage pre-printed on them). While"
+        }, 
+        "Poster": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Posters", 
+            "skill": 14, 
+            "summary": "A poster is any piece of printed paper designed to be attached to a wall or vertical surface. Typically posters include both textual and graphic elements, although a poster may be either wholly graphical or wholly text. Posters are designed to be both eye-catching and informative. Posters may be used for many purposes. They are a frequent tool of advertisers (particularly"
+        }, 
+        "Pragmatism": {
+            "interest": 0, 
+            "knowledge": 68, 
+            "name": "Pragmatic", 
+            "skill": 60, 
+            "summary": "Pragmatism is a philosophical tradition centered on the linking of practice and theory. It describes a process where theory is extracted from practice, and applied back to practice to form what is called intelligent practice. Important positions characteristic of pragmatism include instrumentalism, radical empiricism, verificationism, conceptual relativity, and fallibilism. There is general consensus among pragmatists that philosophy should take the methods and insights of modern"
+        }, 
+        "Presentation": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Presentations", 
+            "skill": 24, 
+            "summary": "Presentation is the practice of showing and explaining the content of a topic to an audience or learner . Presentations come in nearly as many forms as there are life situations. In the business world, there are sales presentations, informational and motivational presentations, first encounters, interviews, briefings, status reports, image-building, and training sessions. More on 'Presentations' at Wikipedia \u00bb"
+        }, 
+        "Problem_solving": {
+            "interest": 0, 
+            "knowledge": 34, 
+            "name": "Problem Solving", 
+            "skill": 0, 
+            "summary": "Problem solving consists in using generic or ad hoc methods, in an orderly manner, for finding solutions to specific problems. Some of the problem-solving techniques developed and used in artificial intelligence , computer science , engineering , mathematics , medicine , etc. are related to mental problem-solving techniques studied in psychology . More on 'Problem Solving' at Wikipedia \u00bb"
+        }, 
+        "Product_design": {
+            "interest": 43, 
+            "knowledge": 40, 
+            "name": "Product Design", 
+            "skill": 48, 
+            "summary": "Product design is the process of creating a new product to be sold by a business to its customers. It is the efficient and effective generation and development of ideas through a process that leads to new products. In a systematic approach, product designers conceptualize and evaluate ideas, turning them into tangible products. The product designer's role is to combine art, science, and technology"
+        }, 
+        "Project": {
+            "interest": 64, 
+            "knowledge": 52, 
+            "name": "Projects", 
+            "skill": 56, 
+            "summary": "A project in business and science is typically defined as a collaborative enterprise, frequently involving research or design, that is carefully planned to achieve a particular aim. Projects can be further defined as temporary rather than permanent social systems that are constituted by teams within or across organizations to accomplish particular tasks under time constraints. More on 'Projects' at Wikipedia \u00bb"
+        }, 
+        "Projection_screen": {
+            "interest": 70, 
+            "knowledge": 70, 
+            "name": "Projection Screens", 
+            "skill": 70, 
+            "summary": "A projection screen is an installation consisting of a surface and a support structure used for displaying a projected image for the view of an audience. Projection screens may be permanently installed, as in a movie theater; painted on the wall; or semi-permanent or mobile, as in a conference room or other non-dedicated viewing space such as an outdoor movie screening (open air"
+        }, 
+        "Pronunciation": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Pronunciation", 
+            "skill": 67, 
+            "summary": "Pronunciation refers to the ability to use the correct stress, rhythm and intonation of a word in a spoken language. A word can be spoken in different ways by various individuals or groups, depending on many factors, such as: the area in which they grew up, the area in which they now live, if they have a speech or voice disorder, their ethnic group,"
+        }, 
+        "Prototype": {
+            "interest": 24, 
+            "knowledge": 40, 
+            "name": "Prototype", 
+            "skill": 52, 
+            "summary": "A prototype is an early sample or model built to test a concept or process or to act as a thing to be replicated or learned from. It is a term used in a variety of contexts, including semantics, design , electronics , and software programming . A prototype is designed to test and trial a new design to enhance precision by system analysts and"
+        }, 
+        "Public": {
+            "interest": 0, 
+            "knowledge": 43, 
+            "name": "General Public", 
+            "skill": 50, 
+            "summary": "In public relations and communication science, publics are groups of individuals, and the public (a.k.a. the general public) is the totality of such groupings. This is a different concept to the sociological concept of the \u00d6ffentlichkeit or public sphere. The concept of a public has also been defined in political science , psychology , marketing , and advertising . In public relations and communication"
+        }, 
+        "Publishing": {
+            "interest": 0, 
+            "knowledge": 50, 
+            "name": "Publishing", 
+            "skill": 70, 
+            "summary": "Publishing is the process of production and dissemination of literature , music , or information \u2014 the activity of making information available to general public. In some cases, authors may be their own publishers, meaning: originators and developers of content also provide media to deliver and display the content for the same. Traditionally, the term refers to the distribution of printed works"
+        }, 
+        "Punctuation": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Punctuation", 
+            "skill": 67, 
+            "summary": "Punctuation marks are symbols that indicate the structure and organization of written language, as well as intonation and pauses to be observed when reading aloud. In written English , punctuation is vital to disambiguate the meaning of sentences. For example, \"woman, without her man, is nothing\" (emphasizing the importance of men) and \"woman: without her, man is nothing\" (emphasizing the importance of women) have"
+        }, 
+        "Qualitative_research": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Qualitative Research", 
+            "skill": 29, 
+            "summary": "Qualitative research is a method of inquiry employed in many different academic disciplines, traditionally in the social sciences , but also in market research and further contexts. Qualitative researchers aim to gather an in-depth understanding of human behavior and the reason s that govern such behavior. The qualitative method investigates the why and how of decision making , not just what, where, when."
+        }, 
+        "Quality_of_life": {
+            "interest": 0, 
+            "knowledge": 26, 
+            "name": "Wellbeing", 
+            "skill": 42, 
+            "summary": "The term quality of life (QOL) references the general well-being of individuals and societies. The term is used in a wide range of contexts, including the fields of international development , healthcare, and politics. Quality of life should not be confused with the concept of standard of living, which is based primarily on income. Instead, standard indicators of the quality of life include not only"
+        }, 
+        "Quantitative_research": {
+            "interest": 0, 
+            "knowledge": 26, 
+            "name": "Quantitative Research", 
+            "skill": 21, 
+            "summary": "Quantitative research refers to the systematic empirical investigation of social phenomena via statistical, mathematical or computational techniques. The objective of quantitative research is to develop and employ mathematical models, theories and/or hypotheses pertaining to phenomena. The process of measurement is central to quantitative research because it provides the fundamental connection between empirical observation and mathematical expression of quantitative relationships. Quantitative data is"
+        }, 
+        "Record_producer": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Music Production", 
+            "skill": 0, 
+            "summary": "A record producer is an individual working within the music industry , whose job is to oversee and manage the recording (i.e. \"production\") of an artist's music . A producer has many roles that may include, but are not limited to, gathering ideas for the project, selecting songs and/or musicians, coaching the artist and musicians in the studio, controlling the recording sessions, and supervising the"
+        }, 
+        "Recording": {
+            "interest": 0, 
+            "knowledge": 80, 
+            "name": "Recording", 
+            "skill": 0, 
+            "summary": "Recording is the process of capturing data or translating information to a recording format stored on some storage medium, which is often referred to as a record or, if an auditory medium, a recording. More on 'Recording' at Wikipedia \u00bb"
+        }, 
+        "Registered_nurse": {
+            "interest": 0, 
+            "knowledge": 78, 
+            "name": "Registered Nurses", 
+            "skill": 78, 
+            "summary": "A registered nurse (RN) is a nurse who has graduated from a nursing program at a college or university and has passed a national licensing exam. Registered nurses help individuals, families, and groups to achieve health and prevent disease. They care for the sick and injured in hospitals and other health care facilities, physicians' offices, private homes, public health agencies, schools, camps, and industry. Some"
+        }, 
+        "Regular_expression": {
+            "interest": 0, 
+            "knowledge": 63, 
+            "name": "Regular Expressions", 
+            "skill": 0, 
+            "summary": "In computing, a regular expression provides a concise and flexible means to \"match\" (specify and recognize) strings of text, such as particular characters, words, or patterns of characters. Common abbreviations for \"regular expression\" include regex and regexp. The concept of regular expressions was first popularized by utilities provided by Unix distributions, in particular the editor ed and the filter grep . A"
+        }, 
+        "Report": {
+            "interest": 0, 
+            "knowledge": 36, 
+            "name": "Reports", 
+            "skill": 32, 
+            "summary": "A report is a textual work (usually of writing, speech, television, or film) made with the specific intention of relaying information or recounting certain events in a widely presentable form. Written reports are documents which present focused, salient content to a specific audience. Reports are often used to display the result of an experiment, investigation, or inquiry. The audience may be public or private, an"
+        }, 
+        "Requirement": {
+            "interest": 64, 
+            "knowledge": 72, 
+            "name": "Technical Requirements", 
+            "skill": 76, 
+            "summary": "In engineering , a requirement is a singular documented physical and functional need that a particular product or service must be or perform. It is most commonly used in a formal sense in systems engineering , software engineering , or enterprise engineering . It is a statement that identifies a necessary attribute, capability, characteristic, or quality of a system for it to have value and"
+        }, 
+        "Risk": {
+            "interest": 0, 
+            "knowledge": 42, 
+            "name": "@Risk", 
+            "skill": 0, 
+            "summary": "Risk is the potential that a chosen action or activity (including the choice of inaction) will lead to a loss (an undesirable outcome). The notion implies that a choice having an influence on the outcome exists (or existed). Potential losses themselves may also be called \"risks\". Almost any human endeavor carries some risk, but some are much more risky than others. More on '@Risk' at Wikipedia \u00bb"
+        }, 
+        "Rope": {
+            "interest": 64, 
+            "knowledge": 64, 
+            "name": "High Ropes", 
+            "skill": 64, 
+            "summary": "A rope is a linear collection of plies, yarn s or strands which are twisted or braided together in order to combine them into a larger and stronger form. Ropes have tensile strength and so can be used for dragging and lifting, but are far too flexible to provide compressive strength. As a result, they cannot be used for pushing or similar compressive applications. Rope"
+        }, 
+        "Safety": {
+            "interest": 0, 
+            "knowledge": 30, 
+            "name": "Safety", 
+            "skill": 0, 
+            "summary": "Safety is the state of being \"safe\" (from French sauf), the condition of being protected against physical, social, spiritual, financial, political, emotional, occupational, psychological, educational or other types or consequences of failure, damage, error, accident s, harm or any other event which could be considered non-desirable. Safety can also be defined to be the control of recognized hazards to achieve an acceptable level of"
+        }, 
+        "Scientific_modelling": {
+            "interest": 0, 
+            "knowledge": 31, 
+            "name": "Scientific Modelling", 
+            "skill": 36, 
+            "summary": "Scientific modelling is the process of generating abstract, conceptual , graphical or mathematical models. Science offers a growing collection of methods, techniques and theory about all kinds of specialized scientific modelling. A scientific model can provide a way to read elements easily which have been broken down to a simpler form. Modelling is an essential and inseparable part of all scientific activity,"
+        }, 
+        "Selection": {
+            "interest": 0, 
+            "knowledge": 36, 
+            "name": "Selection", 
+            "skill": 0, 
+            "summary": "In the context of evolution , certain traits or alleles of genes segregating within a population may be subject to selection. Under selection, individuals with advantages or \"adaptive\" traits tend to be more successful than their peers reproductively\u2014meaning they contribute more offspring to the succeeding generation than others do. When these traits have a genetic basis, selection can increase the prevalence of those traits, because"
+        }, 
+        "Seminar": {
+            "interest": 0, 
+            "knowledge": 43, 
+            "name": "Seminars", 
+            "skill": 37, 
+            "summary": "A seminar is, generally, a form of academic instruction, either at an academic institution or offered by a commercial or professional organization. It has the function of bringing together small groups for recurring meetings, focusing each time on some particular subject, in which everyone present is requested to actively participate. This is often accomplished through an ongoing Socratic dialogue with a seminar leader or"
+        }, 
+        "Sense": {
+            "interest": 79, 
+            "knowledge": 43, 
+            "name": "Sensory", 
+            "skill": 80, 
+            "summary": "Senses are physiological capacities of organisms that provide data for perception . The senses and their operation, classification, and theory are overlapping topics studied by a variety of fields, most notably neuroscience , cognitive psychology (or cognitive science ), and philosophy of perception. The nervous system has a specific sensory system or organ, dedicated to each sense. Human beings have a multitude"
+        }, 
+        "Sheet_music": {
+            "interest": 0, 
+            "knowledge": 60, 
+            "name": "Sheet Music", 
+            "skill": 60, 
+            "summary": "Sheet music is a handwritten or printed form of music notation that uses modern musical symbols; like its analogs \u2014 books, pamphlets, etc. \u2014 the medium of sheet music typically is paper (or, in earlier times, parchment), although the access to musical notation in recent years includes also presentation on computer screens. Use of the term \"sheet\" is intended to differentiate written music from"
+        }, 
+        "Short_film": {
+            "interest": 0, 
+            "knowledge": 57, 
+            "name": "Short Films", 
+            "skill": 62, 
+            "summary": "A short film is any film not long enough to be considered a feature film . No consensus exists as to where that boundary is drawn: the Academy of Motion Picture Arts and Sciences defines a short film as \"an original motion picture that has a running time of 40 minutes or less, including all credits\". The term featurette originally applied to a film longer"
+        }, 
+        "Signal_processing": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Signal Processing", 
+            "skill": 0, 
+            "summary": "Signal processing is an area of systems engineering , electrical engineering and applied mathematics that deals with operations on or analysis of signals , or measurements of time-varying or spatially varying physical quantities. Signals of interest can include sound , images , and sensor data, for example biological data such as electrocardiograms, control system signals, telecommunication transmission signals, and many"
+        }, 
+        "Simulation": {
+            "interest": 0, 
+            "knowledge": 17, 
+            "name": "Simulations", 
+            "skill": 22, 
+            "summary": "Simulation is the imitation of the operation of a real-world process or system over time. The act of simulating something first requires that a model be developed; this model represents the key characteristics or behaviors of the selected physical or abstract system or process. The model represents the system itself, whereas the simulation represents the operation of the system over time. Simulation is used in"
+        }, 
+        "Software_design": {
+            "interest": 0, 
+            "knowledge": 76, 
+            "name": "Software Design", 
+            "skill": 80, 
+            "summary": "Software design is a process of problem solving and planning for a software solution. After the purpose and specifications of software are determined, software developers will design or employ designers to develop a plan for a solution. It includes low-level component and algorithm implementation issues as well as the architectural view. More on 'Software Design' at Wikipedia \u00bb"
+        }, 
+        "Software_framework": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Frameworks", 
+            "skill": 12, 
+            "summary": "In computer programming , a software framework is an abstraction in which software providing generic functionality can be selectively changed by user code, thus providing application specific software. A software framework is a universal, reusable software platform used to develop applications, products and solutions. Software frameworks include support programs, compilers, code libraries, an application programming interface (API) and tool sets that bring together all"
+        }, 
+        "Sound": {
+            "interest": 0, 
+            "knowledge": 44, 
+            "name": "Sound", 
+            "skill": 0, 
+            "summary": "Sound is a mechanical wave that is an oscillation of pressure transmitted through a solid , liquid , or gas , composed of frequencies within the range of hearing. Sound also travels through plasma . More on 'Sound' at Wikipedia \u00bb"
+        }, 
+        "Sound_design": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Sound Design", 
+            "skill": 0, 
+            "summary": "Sound design is the process of specifying, acquiring, manipulating or generating audio elements. It is employed in a variety of disciplines including filmmaking , television production , theatre , sound recording and reproduction, live performance , sound art , post-production and video game software development. Sound design most commonly involves the manipulation of previously composed or recorded audio, such as music and sound"
+        }, 
+        "Sound_recording_and_reproduction": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Audio System Design", 
+            "skill": 0, 
+            "summary": "Sorry, no description is available."
+        }, 
+        "Speech_synthesis": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Speech Synthesis", 
+            "skill": 0, 
+            "summary": "Speech synthesis is the artificial production of human speech . A computer system used for this purpose is called a speech synthesizer, and can be implemented in software or hardware . A text-to-speech (TTS) system converts normal language text into speech; other systems render symbolic linguistic representations like phonetic transcriptions into speech. Synthesized speech can be created by concatenating pieces of recorded speech that"
+        }, 
+        "Sport": {
+            "interest": 80, 
+            "knowledge": 40, 
+            "name": "Sports", 
+            "skill": 0, 
+            "summary": "Sport (or, in the United States, sports) is all forms of competitive physical activity which, through casual or organised participation, aim to use, maintain or improve physical ability and provide entertainment to participants. Hundreds of sports exist, from those requiring only two participants, through to those with hundreds of simultaneous participants, either in teams or competing as individuals. Sport is generally recognised"
+        }, 
+        "Stimulation": {
+            "interest": 0, 
+            "knowledge": 32, 
+            "name": "Stimulation", 
+            "skill": 26, 
+            "summary": "Stimulation is the action of various agents (stimuli) on nerves, muscle s, or a sensory end organ, by which activity is evoked; especially, the nervous impulse produced by various agents on nerves, or a sensory end organ, by which the part connected with the nerve is thrown into a state of activity. The word is also often used metaphorically. For example, an interesting or"
+        }, 
+        "Strategy": {
+            "interest": 0, 
+            "knowledge": 22, 
+            "name": "Strategy", 
+            "skill": 17, 
+            "summary": "A strategy is a plan of action designed to achieve a specific goal. Strategy is all about gaining (or being prepared to gain) a position of advantage over adversaries or best exploiting emerging possibilities. As there is always an element of uncertainty about future, strategy is more about a set of options (\"strategic choices\") than a fixed plan. It derives from the Greek \"\u03c3\u03c4\u03c1\u03b1\u03c4\u03b7\u03b3\u03af\u03b1\""
+        }, 
+        "Structured_programming": {
+            "interest": 0, 
+            "knowledge": 30, 
+            "name": "Structured Programming", 
+            "skill": 18, 
+            "summary": "Structured programming is a programming paradigm aimed on improving the clarity, quality, and development time of a computer program by making extensive use of subroutines, block structures and for and while loops \u2013 in contrast to using simple tests and jumps such as the goto statement which could lead to \"spaghetti code\" which is both difficult to follow and to maintain. It emerged in"
+        }, 
+        "Studio": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Studio", 
+            "skill": 39, 
+            "summary": "A studio is an artist's or worker's workroom, or the catchall term for an artist and his or her employees who work within that studio. This can be for the purpose of architecture , painting , pottery ( ceramic s), sculpture , scrapbooking , photography , graphic design , filmmaking , animation , radio or television production broadcasting or the making of"
+        }, 
+        "Style_guide": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Style Guides", 
+            "skill": 67, 
+            "summary": "A style guide or style manual is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization or field. The implementation of a style guide provides uniformity in style and formatting within a document and across multiple documents. A set of standards for a specific organization is often known as \"house style\". Style guides"
+        }, 
+        "Sustainability": {
+            "interest": 0, 
+            "knowledge": 20, 
+            "name": "Sustainability", 
+            "skill": 28, 
+            "summary": "Sustainability is the capacity to endure. For humans, sustainability is the long-term maintenance of responsibility, which has environmental, economic, and social dimensions, and encompasses the concept of stewardship , the responsible management of resource use. In ecology , sustainability describes how biological systems remain diverse and productive over time, a necessary precondition for the well-being of humans and other organisms. Long-lived and healthy "
+        }, 
+        "Sustainable_design": {
+            "interest": 0, 
+            "knowledge": 44, 
+            "name": "Sustainable Design", 
+            "skill": 22, 
+            "summary": "Sustainable design (also called environmental design , environmentally sustainable design, environmentally conscious design, etc.) is the philosophy of designing physical objects, the built environment, and services to comply with the principles of social , economic , and ecological sustainability . More on 'Sustainable Design' at Wikipedia \u00bb"
+        }, 
+        "System": {
+            "interest": 0, 
+            "knowledge": 20, 
+            "name": "Systems", 
+            "skill": 16, 
+            "summary": "A system is a set of interacting or interdependent components forming an integrated whole or a set of elements (often called 'components' ) and relationship s which are different from relationships of the set or its elements to other elements or sets. Fields that study the general properties of systems include systems theory , cybernetics , dynamical systems , thermodynamics , and complex systems ."
+        }, 
+        "Target_audience": {
+            "interest": 0, 
+            "knowledge": 50, 
+            "name": "Target Audience", 
+            "skill": 56, 
+            "summary": "In marketing and advertising , a target audience, is a specific group of people within the target market at which a product or the marketing message of a product is aimed at. (Kotler 2000)... For example, if a company sells new diet programs for men with heart disease problems (target market) the communication may be aimed at the spouse (target audience) who"
+        }, 
+        "Tea": {
+            "interest": 0, 
+            "knowledge": 67, 
+            "name": "Tea", 
+            "skill": 67, 
+            "summary": "Tea is an aromatic beverage commonly prepared by pouring boiling hot water over cured leaves of the Camellia sinensis plant. The term also refers to the plant itself. After water , tea is the most widely consumed beverage in the world. It has a cooling, slightly bitter, astringent flavour which many people enjoy. Consumption of tea (especially green) is beneficial to health and longevity"
+        }, 
+        "Teamwork": {
+            "interest": 0, 
+            "knowledge": 65, 
+            "name": "Teamwork", 
+            "skill": 50, 
+            "summary": "Teamwork is \"work done by several associates with each doing a part but all subordinating personal prominence to the efficiency of the whole\". In a business setting accounting techniques may be used to provide financial measures of the benefits of teamwork which are useful for justifying the concept. Teamwork is increasingly advocated by health care policy makers as a means of assuring quality and"
+        }, 
+        "Technology": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Technology", 
+            "skill": 24, 
+            "summary": "Technology is the making, modification, usage, and knowledge of tool s, machine s, techniques, craft s, systems, methods of organization, in order to solve a problem, improve a preexisting solution to a problem, achieve a goal or perform a specific function. It can also refer to the collection of such tools, machinery, modifications, arrangements and procedures. Technologies significantly affect human as well as other animal"
+        }, 
+        "Terminology": {
+            "interest": 0, 
+            "knowledge": 82, 
+            "name": "Terminology", 
+            "skill": 72, 
+            "summary": "Terminology is the study of terms and their use. Terms are word s and compound words that in specific contexts are given specific meanings, meanings that may deviate from the meaning the same words have in other contexts and in everyday language. The discipline Terminology studies among other things how such terms of art come to be and their interrelationships within a culture. Terminology differs"
+        }, 
+        "Textbook": {
+            "interest": 0, 
+            "knowledge": 78, 
+            "name": "Textbooks", 
+            "skill": 0, 
+            "summary": "A textbook or coursebook is a manual of instruction in any branch of study. Textbooks are produced according to the demands of educational institutions. Although most textbooks are only published in printed format, many are now available as online electronic books and increasingly, although illegally, in scanned format in P2P networks. More on 'Textbooks' at Wikipedia \u00bb"
+        }, 
+        "Tool": {
+            "interest": 0, 
+            "knowledge": 24, 
+            "name": "Tools", 
+            "skill": 48, 
+            "summary": "For the American rock band, see Tool (band). For other uses, see Tool (disambiguation). Further information: Equipment (disambiguation). A tool is any physical item that can be used to achieve a goal , especially if the item is not consumed in the process. Informally the word is also used to describe a procedure or process with a specific purpose. Tool use by humans dates"
+        }, 
+        "Translation": {
+            "interest": 0, 
+            "knowledge": 68, 
+            "name": "Translation", 
+            "skill": 68, 
+            "summary": "Translation is the communication of the meaning of a source-language text by means of an equivalent target-language text. Whereas interpreting undoubtedly antedates writing , translation began only after the appearance of written literature ; there exist partial translations of the Sumerian Epic of Gilgamesh (ca. 2000 BCE) into Southwest Asian languages of the second millennium BCE. Translators always risk inappropriate spill-over of source-language"
+        }, 
+        "Travel": {
+            "interest": 71, 
+            "knowledge": 39, 
+            "name": "Travel", 
+            "skill": 0, 
+            "summary": "Travel is the movement of people or objects (such as airplanes , boat s, trains and other conveyances) between relatively distant geographical locations. More on 'Travel' at Wikipedia \u00bb"
+        }, 
+        "Turning": {
+            "interest": 0, 
+            "knowledge": 76, 
+            "name": "Turning Around", 
+            "skill": 76, 
+            "summary": "Turning is a machining process in which a cutting tool, typically a non-rotary tool bit, describes a helical toolpath by moving more or less linearly while the workpiece rotates. The tool's axes of movement may be literally a straight line, or they may be along some set of curves or angles, but they are essentially linear (in the nonmathematical sense). Usually the term \"turning\""
+        }, 
+        "Tutor": {
+            "interest": 0, 
+            "knowledge": 44, 
+            "name": "Tutoring", 
+            "skill": 44, 
+            "summary": "A tutor is a person employed in the education of others, either individually or in groups. To tutor (as a verb) is to perform the functions of a tutor. Shadow education is another name for private supplementary tutoring that is offered outside the mainstream education system. Private tutoring can help high achievers reach new levels. It can also help slow learners keep up with"
+        }, 
+        "Usability": {
+            "interest": 0, 
+            "knowledge": 43, 
+            "name": "Usability", 
+            "skill": 48, 
+            "summary": "Usability is the ease of use and learnability of a human-made object. The object of use can be a software application , website, book, tool , machine , process, or anything a human interacts with. A usability study may be conducted as a primary job function by a usability analyst or as a secondary job function by designers, technical writers, marketing personnel, and others. It"
+        }, 
+        "User_experience": {
+            "interest": 0, 
+            "knowledge": 38, 
+            "name": "User Experience", 
+            "skill": 43, 
+            "summary": "User experience (UX) is the way a person feels about using a product, system or service. User experience highlights the experiential, affective, meaningful and valuable aspects of human-computer interaction and product ownership, but it also includes a person\u2019s perceptions of the practical aspects such as utility, ease of use and efficiency of the system. User experience is subjective in nature, because it is about"
+        }, 
+        "User_interface": {
+            "interest": 0, 
+            "knowledge": 44, 
+            "name": "User Interface", 
+            "skill": 0, 
+            "summary": "The user interface, in the industrial design field of human\u2013machine interaction, is the space where interaction between humans and machines occurs. The goal of interaction between a human and a machine at the user interface is effective operation and control of the machine, and feedback from the machine which aids the operator in making operational decisions. Examples of this broad concept of user interfaces"
+        }, 
+        "Video": {
+            "interest": 53, 
+            "knowledge": 50, 
+            "name": "Video", 
+            "skill": 57, 
+            "summary": "Video is the technology of electronically capturing, recording , processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion. More on 'Video' at Wikipedia \u00bb"
+        }, 
+        "Vimeo": {
+            "interest": 64, 
+            "knowledge": 64, 
+            "name": "Vimeo", 
+            "skill": 64, 
+            "summary": "Vimeo is a U.S.-based video-sharing website on which users can upload, share and view videos. It was founded by Jake Lodwick and Zach Klein in November 2004. They left the company in 2007 and 2008 respectively. The name Vimeo was created by Lodwick and is a play on the word video, inserting the word \"me\" as a reference to the site's dedication to user-made"
+        }, 
+        "Visual_perception": {
+            "interest": 0, 
+            "knowledge": 40, 
+            "name": "Visual Perception", 
+            "skill": 20, 
+            "summary": "Visual perception is the ability to interpret the surrounding environment by processing information that is contained in visible light. The resulting perception is also known as eyesight, sight, or vision (adjectival form: visual, optical, or ocular). The various physiological components involved in vision are referred to collectively as the visual system, and are the focus of much research in psychology , cognitive science ,"
+        }, 
+        "Visual_system": {
+            "interest": 0, 
+            "knowledge": 28, 
+            "name": "Visual Systems", 
+            "skill": 0, 
+            "summary": "The visual system is the part of the central nervous system which enables organisms to process visual detail, as well as enabling several non-image forming photoresponse functions. It interprets information from visible light to build a representation of the surrounding world. The visual system accomplishes a number of complex tasks, including the reception of light and the formation of monocular representations; the construction of"
+        }, 
+        "Vocabulary": {
+            "interest": 0, 
+            "knowledge": 57, 
+            "name": "Vocabulary", 
+            "skill": 79, 
+            "summary": "A person's vocabulary is the set of word s within a language that are familiar to that person. A vocabulary usually develops with age, and serves as a useful and fundamental tool for communication and acquiring knowledge. Acquiring an extensive vocabulary is one of the largest challenges in learning a second language . More on 'Vocabulary' at Wikipedia \u00bb"
+        }, 
+        "Weapon": {
+            "interest": 70, 
+            "knowledge": 70, 
+            "name": "Weapons", 
+            "skill": 70, 
+            "summary": "A weapon, arm, or armament is a tool or instrument used in order to inflict damage or harm to living beings\u2014physical or mental\u2014artificial structures, or systems. In human society, weapons are used to increase the efficacy and efficiency of activities such as hunting , crime , law enforcement , and war fare. Weapons are employed individually or collectively. A weapon can be either expressly"
+        }, 
+        "Website": {
+            "interest": 0, 
+            "knowledge": 16, 
+            "name": "Websites", 
+            "skill": 16, 
+            "summary": "A website, also written as Web site, web site, or simply site, is a set of related web page s containing content such as text, image s, video , audio , etc. A website is hosted on at least one web server , accessible via a network such as the Internet or a private local area network through an Internet address known"
+        }, 
+        "Weight": {
+            "interest": 50, 
+            "knowledge": 43, 
+            "name": "Weight", 
+            "skill": 64, 
+            "summary": "In science and engineering, the weight of an object is the force on the object due to gravity . Its magnitude (a scalar quantity), often denoted by an italic letter W, is the product of the mass\u00a0m of the object and the magnitude of the local gravitational acceleration\u00a0g; thus: . When considered a vector, weight is often denoted by a bold letter W. The"
+        }, 
+        "Wood": {
+            "interest": 46, 
+            "knowledge": 38, 
+            "name": "Wood", 
+            "skill": 44, 
+            "summary": "Wood is a hard, fibrous tissue found in many trees. It has been used for hundreds of thousands of years for both fuel and as a construction material. It is an organic material, a natural composite of cellulose fibers (which are strong in tension) embedded in a matrix of lignin which resists compression. Wood is sometimes defined as only the secondary xylem in"
+        }, 
+        "Writing": {
+            "interest": 0, 
+            "knowledge": 32, 
+            "name": "Writing", 
+            "skill": 44, 
+            "summary": "Writing is the representation of language in a textual medium through the use of a set of signs or symbols (known as a writing system). It is distinguished from illustration , such as cave drawing and painting , and non-symbolic preservation of language via non-textual media, such as magnetic tape audio. Writing most likely began as a consequence of political expansion in ancient cultures, which"
+        }
+    }, 
+    "inferred": [], 
+    "pseudo": "Maia"
+}

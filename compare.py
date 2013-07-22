@@ -11,18 +11,21 @@ def getTermIDs(vocabulary):
     term_ids = set()
     nlid_enid = dict()
     enid_name = {None: []} # Dict with None key: empty list
+    enid_summary = {}
     for term in vocabulary:
         if u'more_wiki' in term:
             term_id = term[u'more_wiki'].split('wiki/')[-1]
             term_ids.add(term_id)
             enid_name[term_id] = term[u'name']
+            enid_summary[term_id] = term[u'summary']
         else:
             enid_name[None].append(term[u'name'])
         if u'nl_uri' in term:
             term_nlid = term[u'nl_uri'].split('resource/')[-1]
             term_ids.add(term_nlid)
             nlid_enid[term_nlid] = (term_id, term[u'name'])
-    return term_ids, nlid_enid, enid_name
+    # TODO: some functions won't deal with return of enid_summary
+    return term_ids, nlid_enid, enid_name, enid_summary
 
 def throughSpotlight(text, cand_param, conf=0.0, supp=0, lang='en'):
     if cand_param == "single":
