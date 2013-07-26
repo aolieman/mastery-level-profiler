@@ -45,6 +45,8 @@ div.disabled a{
     font-size: 0;
     line-height: 0;
 }
+
+/* Mastery types and levels */
 .topic-name{
     margin-right: 5px;
 }
@@ -78,4 +80,19 @@ div.disabled a{
 }
 .interest .ui-slider-handle {
     background-position: -95px -120px;
+}
+
+/* Pagination */
+div .btn-group {
+    display: block;
+    margin-left: 35%;
+    margin-right: auto;
+}
+.btn-group > .btn:first-child {
+    border-radius: 15px 0px 0px 15px;
+    width: 150px;
+}
+.btn-group > .btn:last-child {
+    border-radius: 0px 15px 15px 0px;
+    width: 150px;
 }

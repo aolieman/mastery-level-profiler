@@ -9,22 +9,56 @@ Array.prototype.remove = function() {
     return this;
 };
 
-var app = angular.module('reviewApp',['ui.slider', 'ui.bootstrap']);
+var app = angular.module('reviewApp',['ui.slider', 'ui.bootstrap', 'ngStorage']);
 
-app.controller("StatementCtrl", function ($scope, $http) {
+app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage, $sessionStorage) {
     $scope.initdata = function() {
-        $http.get('/statements?December=50bbb').success(function(response){
-            $scope.pseudo = response['pseudo'];
-            $scope.extracted = response['extracted'];
+        $scope.$storage = $localStorage;
+        if ('extracted' in $scope.$storage){
+            // Initialize scope data from local storage
+            $scope.pseudo = $scope.$storage.pseudo;
+            $scope.extracted = $scope.$storage.extracted;
+            $scope.inferred = $scope.$storage.inferred;
+            $scope.missing = $scope.$storage.missing;
+            $scope.currentPage = $scope.$storage.currentPage;
 
-            $scope.inferred = response['inferred'];
-            angular.forEach($scope.extracted, function(value, key){
-                value.correct = true;
+        } else {
+            // Initialize scope data from server
+            $http.get('/statements?December=50bbb').success(function(response){
+                $scope.pseudo = response['pseudo'];
+                $scope.extracted = response['extracted'];
+                $scope.inferred = response['inferred'];
+                $scope.missing = [];
+                $scope.currentPage = 0;
+                angular.forEach($scope.extracted, function(value, key){
+                    value.correct = true;
+                });
             });
-
-
+        }
+        $('#loader').fadeOut(513, function(){
+            $('#loader').remove();
         });
     };
+
+    // Sync data with localStorage
+    $scope.syncCountdown = 20;
+    $scope.syncLocal = function() {
+        $scope.$storage.pseudo = $scope.pseudo;
+        $scope.$storage.extracted = $scope.extracted;
+        $scope.$storage.inferred = $scope.inferred;
+        $scope.$storage.missing = $scope.missing;
+        $scope.$storage.currentPage = $scope.currentPage;
+        $scope.syncCountdown = 10;
+        console.log($scope.syncCountdown);
+        // Keep calling this function every 10 seconds
+        $timeout($scope.syncLocal, 10000);
+    };
+    $timeout($scope.syncLocal, 20000);
+    $timeout(function ctdSecond(){
+        $scope.syncCountdown -= 1;
+        $timeout(ctdSecond, 1000);
+    }, 1000);
+
 
     /* Toggle the correctness of a topic */
     $scope.toggleCorrect = function(value){
@@ -42,10 +76,15 @@ app.controller("StatementCtrl", function ($scope, $http) {
         return out_statements;
     };
     /* Pagination */
-    $scope.currentPage = 0;
-    $scope.pageSize = 12;
+    $scope.pageSize = 9;
     $scope.numberOfPages = function(statements){
         return Math.ceil($scope.filterCorrect(statements).length/$scope.pageSize);
+    };
+    $scope.incr = function(number, constant){
+        $scope[number] += constant;
+    };
+    $scope.decr = function(number, constant){
+        $scope[number] -= constant;
     };
 
     /* Add missing statements */
@@ -54,41 +93,21 @@ app.controller("StatementCtrl", function ($scope, $http) {
             return response.data.resultList;
         });
     };
-    $scope.missing = [];
     $scope.addMissing = function(toadd){
         $scope.missing.push(toadd);
+        $scope.selected = "";
     };
     $scope.delMissing = function(todelete){
         $scope.missing.remove(todelete);
     };
 
     /* Save reviewed statements / topics */
-    $scope.toConsole = function(){
+    $scope.toServer = function(){
         var postjson = {'extracted': $scope.extracted, 'missing': $scope.missing};
         console.log(postjson);
         $http.post('/reviewed.json', postjson).success(function(response){
             console.log("POSTed something")
         });
-    };
-
-    $scope.todos = [
-        {text:'Learn AngularJS', done:false},
-        {text:'Build an app', done:false}
-    ];
-
-    $scope.getTotalTodos = function () {
-        return $scope.todos.length;
-    };
-
-    $scope.clearCompleted = function () {
-        $scope.todos = _.filter($scope.todos, function(todo){
-            return !todo.done;
-        });
-    };
-
-    $scope.addTodo = function () {
-        $scope.todos.push({text:$scope.formTodoText, done:false});
-        $scope.formTodoText = '';
     };
 });
 

@@ -5,18 +5,37 @@
     <title>Profile Review</title>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
     <script src="http://documentcloud.github.io/underscore/underscore-min.js"></script>
     <script type="text/javascript" src="slider.js"></script>
+    <script type="text/javascript" src="ngStorage.js"></script>
     <script type="text/javascript" src="statement.js"></script>
     <script type="text/javascript" src="angular-ui-bootstrap.js"></script>
     <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" media="all" type="text/css" rel="stylesheet">
     <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">-->
-    <link href="reviews.css" rel="stylesheet" media="screen">
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+    <link href="reviews.css" rel="stylesheet" media="screen">
+    <style>
+        #loader {
+            position: fixed;
+            top:0;right:0;bottom:0;left:0;
+            background: rgba(80,130,210,0.666);
+            text-align:center;
+            z-index:999999999999;
+        }
+    </style>
+    <script>
+        jQuery(function($){
+            h = $(window).height();
+            iH = 66;
+            m = (h-iH)/2;
+            $('#ajaxloader').css({marginTop:m});
+        });
+    </script>
 </head>
 <body>
+<div id="loader"><img id="ajaxloader" src="ajax-loader.gif" /></div>
 <div ng-controller="StatementCtrl" ng-init="initdata()">
 
     <h1>Statements for {{pseudo}}</h1>
@@ -54,13 +73,11 @@
             </form>
         </div>
         <span class="stretch"></span>
-        <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
-            Previous
-        </button>
-        {{currentPage+1}}/{{numberOfPages(extracted)}}
-        <button ng-disabled="currentPage >= numberOfPages(extracted) - 1" ng-click="currentPage=currentPage+1">
-            Next
-        </button>
+        <div class="btn-group">
+            <button class="btn btn-info" ng-disabled="currentPage == 0" ng-click="decr('currentPage', 1)">Previous</button>
+            <button class="btn btn-info" disabled>{{currentPage+1}}/{{numberOfPages(extracted)}}</button>
+            <button class="btn btn-info" ng-disabled="currentPage >= numberOfPages(extracted) - 1" ng-click="incr('currentPage', 1)">Next</button>
+        </div>
     </section>
 
     <h2>Remove the (inferred) topics in which you have absolutely no skill, knowledge, or interest</h2>
@@ -81,20 +98,8 @@
         </form>
     </div>
 
-    <button class="btn-large" ng-click="toConsole()"><i class="icon-play"></i>To Console</button>
-    <h2>Total todos: {{getTotalTodos()}}</h2>
-    <ul class="unstyled">
-        <li ng-repeat="todo in todos">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
-        </li>
-    </ul>
-    <form class="form-horizontal">
-        <input type="text" ng-model="formTodoText" ng-model-instant>
-        <button class="btn" ng-click="addTodo()"><i class="icon-plus"></i>Add</button>
-    </form>
-
-    <button class="btn-large" ng-click="clearCompleted()"><i class="icon-trash"></i>Clear Completed</button>
+    <button class="btn-large" ng-click="toServer()"><i class="icon-ok">&nbsp;</i> Send to Server</button>
+    <span>Auto-sync in {{syncCountdown}} seconds.</span>
 </div>
 </body>
 </html>

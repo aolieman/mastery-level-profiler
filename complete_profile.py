@@ -863,10 +863,10 @@ def produceStatements(all_profiles):
     # Get the max raw S,K,I values
     max_ski_dict = maxPerOrigin(all_profiles)
     print "Maximum values per origin:", max_ski_dict
-    # Scale the domain of all statements
+    # Scale the domain of all extracted statements
     for pr in all_profiles:
         pr.scaleStatements(max_ski_dict)
-    # Transform all statements to percentiles
+    # Transform all extracted statements to percentiles
     master_lvls_dict = lvlsPerOrigin(all_profiles)
     for pr in all_profiles:
         print "\n\n", pr.signup['email']

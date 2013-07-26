@@ -38,9 +38,11 @@ class ReviewServer(sise.SimpleHTTPRequestHandler):
             except KeyError as ke:
                 print "KeyError:   ", ke
             except IOError as e:
-                print "ERROR:   ", e           
+                print "ERROR:   ", e
         else:
             # Serve files normally
+            if "%" in self.path:
+                self.path = urllib2.unquote(self.path).decode('utf8')
             sise.SimpleHTTPRequestHandler.do_GET(self)
         return
 
