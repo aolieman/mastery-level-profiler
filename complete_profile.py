@@ -3,6 +3,8 @@ import pymongo, os, json, scipy
 import nltk.tokenize, nltk.stem
 import compare, tudelft, shareworks
 from math import log10, isnan
+# TODO import simplejson as json, use sort_by_key=json.simple_first
+from collections import defaultdict
 
 # set up annotation functions
 vocabulary = compare.readVocabulary('vocabulary_man.json')
@@ -162,6 +164,39 @@ class Profile(object):
         with open("review/json/%s.json" % self.pseudo, "wb") as ofile:
             json.dump(to_file, ofile, indent=4, sort_keys=True)
         return (self.pseudo, secret)
+
+    def getDbpediaInferences(self, inf_topics_dbpedia):
+        ext_topics = set(self.statements['ALL']['extracted'].keys())
+        super_flowdict = defaultdict(float)
+        for ext_id in ext_topics:
+            ext_id = ext_id.replace("~", ".")
+            try:
+                for inf_id, flowct in inf_topics_dbpedia[ext_id].iteritems():
+                    if inf_id in ext_topics: continue
+                    super_flowdict[inf_id] += flowct
+            except KeyError:
+                print "No DBp inferences for %s" % ext_id
+        top_flow = sorted(super_flowdict.items(), key=lambda tup: tup[1],
+                          reverse=True)[:100]
+        # Fill in-vocab and not-in-vocab lists with top-10
+        dbp_infs, dbp_infs_niv = [], []
+        ignore_topics = {'List_of_style_guides', 'Aaron_Marcus',
+                         'List_of_schools_offering_interaction_design_programs'}
+        for inf_id, flowct in top_flow:
+            if inf_id in ignore_topics: continue
+            if inf_id in en_dict:
+                topic_dict = {'enid': inf_id, 'flow': flowct}
+                topic_dict['name'] = en_dict[inf_id.replace("~", ".")]
+                topic_dict['summary'] = en_summary[inf_id.replace("~", ".")]
+                dbp_infs.append(topic_dict)
+            else:
+                dbp_infs_niv.append((inf_id, flowct))
+            if len(dbp_infs) >= 10 and len(dbp_infs_niv) >= 10: break
+        return dbp_infs, dbp_infs_niv          
+        
+
+    def getLinkedinInferences(self, inferred_topics_linkedin):
+        pass
 
     def updateLinkedInDoc(self):
         if hasattr(self, 'linkedin') and db.document.find_one({"_id": self.linkedin}):
@@ -855,6 +890,30 @@ def spotterTests():
     testdocnl.annotate()
     testdocen.annotate()
 
+def loadJsonInferencesDict(json_inf_dir, transf_inferred=None):
+    # this function assumes the indir contains files only
+    filelist = os.listdir(json_inf_dir)
+    print "\nLoading inferred topics per topic from %s" % json_inf_dir
+    inf_per_topic = {}
+    for fpath in filelist:
+        with open(os.path.join(json_inf_dir, fpath), 'rb') as f:
+            inferred_topics = json.load(f)
+            if transf_inferred:
+                inferred_topics = transf_inferred(inferred_topics)
+            inf_per_topic[fpath[:-5]] = inferred_topics
+    return inf_per_topic
+
+def transformVertexIDs(inferred_topics_dict):
+    from urllib2 import unquote as unq
+    transformed_dict = {}
+    max_flow = max(inferred_topics_dict.itervalues())
+    for v_id, flowct in inferred_topics_dict.iteritems():
+        unquoted_id = unq(v_id.split("resource/")[1][:-1])
+        topic_id = unquoted_id.encode('latin1').decode('utf8')
+        transformed_dict[topic_id] = round(flowct/max_flow*100)
+    return transformed_dict
+    
+
 def produceStatements(all_profiles):
     # N.B. the order in which these operations are performed is essential!
     # Add 'raw, fresh' statements for all profiles
@@ -872,6 +931,12 @@ def produceStatements(all_profiles):
         print "\n\n", pr.signup['email']
         pr.transformStatements(master_lvls_dict)
         print pr.statements["ALL"]['extracted']
+    # Load inferred topics from Gremlin JSON output
+    dbp_inferences = loadJsonInferencesDict(inf_dbpedia_path,
+                                            transformVertexIDs)
+
+    # Load inferred topics from LinkedIn related skills
+    
     # Serialize statements to JSON
     PS = []
     for pr in all_profiles:
@@ -883,6 +948,8 @@ if __name__ == '__main__' :
     signup_path = "../Phase B/connector/app/db"
     portfolios_path = "../Phase B/sw_portfolios"
     websites_path = "../Phase B/websites"
+    inf_dbpedia_path = "../Phase D/flowmaps"
+    inf_linkedin_path = "../Phase D/XX"
 
     try:
         #readSignups(signup_path)
