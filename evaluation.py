@@ -7,7 +7,7 @@ from msvcrt import getch #Only runs in Win, and only in cmd.exe
 
 # Load the en_uri -> topic_name translation dict
 vocabulary = compare.readVocabulary('vocabulary_man.json')
-term_ids, nl_dict, en_dict = compare.getTermIDs(vocabulary)
+term_ids, nl_dict, en_dict, en_summary = compare.getTermIDs(vocabulary)
 
 '''Interactive production of development ground truth.
 By taking the union of document annotations for different runs
@@ -438,8 +438,7 @@ def loadDevDocs():
 def csvStatementDict(profile):
     # Save a CSV table of all statements in a Profile
     header = ["Origin", "Ann_ID", "Skill", "Knowledge", "Interest"]
-    liames = profile.signup['email'].split("@")[0].replace(".", "_")[::-1]
-    with open('csv_output/%s.tab' % liames, 'wb') as tsvfile:
+    with open('csv_output/%s.tab' % profile.pseudo, 'wb') as tsvfile:
         wr = csv.writer(tsvfile, delimiter="\t")
         wr.writerow(header)
         for orig, ext_inf in profile.statements.iteritems():

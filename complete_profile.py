@@ -6,10 +6,23 @@ from math import log10, isnan
 # TODO import simplejson as json, use sort_by_key=json.simple_first
 from collections import defaultdict
 
-# set up annotation functions
+# Load vocabulary into several convenient HashMaps (dicts)
+def loadNamesFields(vocabulary):
+    names_fields = {}
+    for t_d in vocabulary:
+        fields_dict = dict(t_d)
+        for field in ('primary_industry', 'growth_rate'):
+            try: del fields_dict['primary_industry']
+            except KeyError: continue
+        names_fields[t_d['name']] = fields_dict
+    return names_fields
+
 vocabulary = compare.readVocabulary('vocabulary_man.json')
 term_ids, nl_dict, en_dict, en_summary = compare.getTermIDs(vocabulary)
+names_fields = loadNamesFields(vocabulary)
+del vocabulary # no need to keep this in RAM
 
+# Set up annotation functions
 def initializeParameters(cand, misc, con, sup):
     global candidate_param, confidence, support
     global parameter_str, title_ann, title_resp
@@ -112,10 +125,10 @@ class Profile(object):
             except AttributeError:
                 print "!! %s has no statements for %s" % (webpage.title, param_str)
            
-        self.statements = {'linkedin': {'extracted': li_ext, 'inferred': []},
-                           'tudelft': {'extracted': tu_ext, 'inferred': []},
-                           'shareworks': {'extracted': sw_ext, 'inferred': []},
-                           'website': {'extracted': ws_ext, 'inferred': []}}
+        self.statements = {'linkedin': {'extracted': li_ext, 'inferred': {}},
+                           'tudelft': {'extracted': tu_ext, 'inferred': {}},
+                           'shareworks': {'extracted': sw_ext, 'inferred': {}},
+                           'website': {'extracted': ws_ext, 'inferred': {}}}
 
         # Save profile to Mongo
         self.toMongo()
@@ -130,7 +143,7 @@ class Profile(object):
             all_ext.update(extracted)
             
         # Add 'ALL' as origin
-        self.statements['ALL'] = {'extracted': all_ext, 'inferred': []}
+        self.statements['ALL'] = {'extracted': all_ext, 'inferred': {}}
         # Save profile to Mongo
         self.toMongo()
 
@@ -145,7 +158,8 @@ class Profile(object):
 
     def statementsToJSON(self):
         # Serialize 'ALL' statements to JSON file
-        all_stmts = self.statements['ALL'].copy() #still affects self.statements
+        all_stmts = self.statements['ALL'].copy() #still affects self.statements, use dict()?
+        # Extracted statements
         ext_dict = StatementDict(map(lambda (k,v): (k, roundLvls(v)),
                        all_stmts['extracted'].iteritems()))
         for ann_id, lvl_dict in ext_dict.iteritems():
@@ -157,15 +171,19 @@ class Profile(object):
             except KeyError:
                 lvl_dict['name'] = ann_id.replace("~", ".")
                 lvl_dict['summary'] = "Sorry, no description is available."
-        inf_list = [] # TODO
+        # Inferred statements
+        for key in all_stmts['inferred']:
+            all_stmts['inferred'][key] = all_stmts['inferred'][key][:10]
+        inf_dict = all_stmts['inferred']
+        # Write to file
         secret = str(self._id)[-5:]
         to_file = {'pseudo': self.pseudo,
-                   'extracted': ext_dict, 'inferred': inf_list}
+                   'extracted': ext_dict, 'inferred': inf_dict}
         with open("review/json/%s.json" % self.pseudo, "wb") as ofile:
             json.dump(to_file, ofile, indent=4, sort_keys=True)
         return (self.pseudo, secret)
 
-    def getDbpediaInferences(self, inf_topics_dbpedia):
+    def getDbpediaInferences(self, inf_topics_dbpedia, fields_dbp):
         ext_topics = set(self.statements['ALL']['extracted'].keys())
         super_flowdict = defaultdict(float)
         for ext_id in ext_topics:
@@ -184,14 +202,23 @@ class Profile(object):
                          'List_of_schools_offering_interaction_design_programs'}
         for inf_id, flowct in top_flow:
             if inf_id in ignore_topics: continue
+            topic_dict = {'enid': inf_id, 'flow': flowct}
             if inf_id in en_dict:
-                topic_dict = {'enid': inf_id, 'flow': flowct}
-                topic_dict['name'] = en_dict[inf_id.replace("~", ".")]
-                topic_dict['summary'] = en_summary[inf_id.replace("~", ".")]
+                topic_dict['name'] = en_dict[inf_id]
+                topic_dict['summary'] = en_summary[inf_id]
                 dbp_infs.append(topic_dict)
             else:
-                dbp_infs_niv.append((inf_id, flowct))
+                try:
+                    topic_dict['name'] = fields_dbp[inf_id]['label']
+                    topic_dict['summary'] = fields_dbp[inf_id]['summary']
+                    dbp_infs_niv.append(topic_dict)
+                except KeyError:
+                    print "No DBp fields found for %s" % inf_id
             if len(dbp_infs) >= 10 and len(dbp_infs_niv) >= 10: break
+        # Save in self.statements['ALL']
+        self.statements['ALL']['inferred']['dbp'] = dbp_infs
+        self.statements['ALL']['inferred']['dbp_niv'] = dbp_infs_niv
+        self.toMongo()
         return dbp_infs, dbp_infs_niv          
         
 
@@ -447,6 +474,15 @@ class LinkedInProfile(Document):
     """
     def makeStatements(self, param_str, del_resp=False):
         extracted = StatementDict()
+        try:
+            for name in self.skills:
+                try:
+                    fields = names_fields[name] # Need to search by name
+                    ann_id = fields['more_wiki'].split("wiki/")[1]
+                    extracted.add(statement(ann_id, 3.0, 3.0, 3.0))
+                except KeyError: print "No known URI for skill '%s'" % name 
+        except AttributeError:
+            print "No LI Skills in %s" % self.title
         for s in self.content:
             all_ann_ids = set()
             for key in s.keys():
@@ -574,10 +610,15 @@ class StatementDict(dict):
         # Transform values for each statement to percentiles (overwrite)
         val_to_perc = scipy.stats.percentileofscore
         for ann_id, lvl_dict in self.iteritems():
-            for mastery_type, lvl in lvl_dict.items():
-                if lvl > 0:
-                    lvl = val_to_perc(lvls_ld[ann_id][mastery_type], lvl)
-                    lvl_dict[mastery_type] = lvl        
+            if lvl_dict['skill'] > 0:
+                lvl_dict['skill'] = val_to_perc(lvls_ld[ann_id]['skill'],
+                                                lvl_dict['skill'], "mean")
+            if lvl_dict['knowledge'] > 0:
+                lvl_dict['knowledge'] = val_to_perc(lvls_ld[ann_id]['knowledge'],
+                                                lvl_dict['knowledge'], "mean")
+            if lvl_dict['interest'] > 0:
+                lvl_dict['interest'] = val_to_perc(lvls_ld[ann_id]['interest'],
+                                                lvl_dict['interest'], "rank")        
 
     def weightStmts(self, weight, verbose=0):
         for ann_id in self:
@@ -669,12 +710,12 @@ def lvlsPerOrigin(all_profiles):
         sw_lvls_dict.updAppend(pr.statements['shareworks']['extracted'])
         ws_lvls_dict.updAppend(pr.statements['website']['extracted'])
         all_lvls_dict.updAppend(pr.statements['ALL']['extracted'])
-        
-    return {'linkedin': li_lvls_dict.smoothLists(1.5),
-            'tudelft': tu_lvls_dict.smoothLists(1.5),
-            'shareworks': sw_lvls_dict.smoothLists(1.5),
-            'website': ws_lvls_dict.smoothLists(1.5),
-            'ALL': all_lvls_dict.smoothLists(1.5)}
+    multiplier = 1.5
+    return {'linkedin': li_lvls_dict.smoothLists(multiplier),
+            'tudelft': tu_lvls_dict.smoothLists(multiplier),
+            'shareworks': sw_lvls_dict.smoothLists(multiplier),
+            'website': ws_lvls_dict.smoothLists(multiplier),
+            'ALL': all_lvls_dict.smoothLists(multiplier)}
 
 """
 Takes candidate lists (as provided by compare.throughSpotlight)
@@ -890,7 +931,7 @@ def spotterTests():
     testdocnl.annotate()
     testdocen.annotate()
 
-def loadJsonInferencesDict(json_inf_dir, transf_inferred=None):
+def loadJsonInferencesDicts(json_inf_dir, fields_path, transf_inferred=None):
     # this function assumes the indir contains files only
     filelist = os.listdir(json_inf_dir)
     print "\nLoading inferred topics per topic from %s" % json_inf_dir
@@ -901,7 +942,9 @@ def loadJsonInferencesDict(json_inf_dir, transf_inferred=None):
             if transf_inferred:
                 inferred_topics = transf_inferred(inferred_topics)
             inf_per_topic[fpath[:-5]] = inferred_topics
-    return inf_per_topic
+    with open(fields_path, 'rb') as f:
+        inf_topic_fields = json.load(f)
+    return inf_per_topic, inf_topic_fields
 
 def transformVertexIDs(inferred_topics_dict):
     from urllib2 import unquote as unq
@@ -913,7 +956,6 @@ def transformVertexIDs(inferred_topics_dict):
         transformed_dict[topic_id] = round(flowct/max_flow*100)
     return transformed_dict
     
-
 def produceStatements(all_profiles):
     # N.B. the order in which these operations are performed is essential!
     # Add 'raw, fresh' statements for all profiles
@@ -932,8 +974,15 @@ def produceStatements(all_profiles):
         pr.transformStatements(master_lvls_dict)
         print pr.statements["ALL"]['extracted']
     # Load inferred topics from Gremlin JSON output
-    dbp_inferences = loadJsonInferencesDict(inf_dbpedia_path,
-                                            transformVertexIDs)
+    dbp_inferences, fields_dbp = loadJsonInferencesDicts(inf_dbpedia_path,
+                                                         fields_dbp_path,
+                                                         transformVertexIDs)
+    for pr in all_profiles:
+        iv, niv = pr.getDbpediaInferences(dbp_inferences, fields_dbp)
+        print "\nInferred DBp In-Vocabulary:"
+        for t in iv: print t['name'], t['enid'], t['flow']
+        print "\nInferred DBp NOT-In-Vocabulary:"
+        for t in niv: print t['name'], t['enid'], t['flow']
 
     # Load inferred topics from LinkedIn related skills
     
@@ -949,7 +998,7 @@ if __name__ == '__main__' :
     portfolios_path = "../Phase B/sw_portfolios"
     websites_path = "../Phase B/websites"
     inf_dbpedia_path = "../Phase D/flowmaps"
-    inf_linkedin_path = "../Phase D/XX"
+    fields_dbp_path = "../Phase D/niv_fields.json"
 
     try:
         #readSignups(signup_path)
@@ -966,7 +1015,7 @@ if __name__ == '__main__' :
         all_profiles[:] = [pr for pr in all_profiles if (pr.signup['email'] not in
                                                          {"alex@olieman.net",
                                                           "r.jelierse@student.tudelft.nl"})]
-        #produceStatements(all_profiles)
+        produceStatements(all_profiles)
         
     finally:
         # disconnect from mongo
