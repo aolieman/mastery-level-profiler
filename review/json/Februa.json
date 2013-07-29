@@ -1364,24 +1364,6 @@
                 "flow": 631.0, 
                 "name": "Projection Design", 
                 "summary": "Video design or projection design is a creative field of stagecraft. It is concerned with the creation and integration of film and motion graphics into the fields of theatre , opera , dance , fashion shows , concerts and other live events. Video design has only recently gained recognition as a separate creative field. Prior to this, the responsibilities of video design would often"
-            }, 
-            {
-                "enid": "Linguistics", 
-                "flow": 608.0, 
-                "name": "Linguistics", 
-                "summary": "Linguistics is the scientific study of human language. Linguistics can be broadly broken into three categories or subfields of study: language form, language meaning, and language in context. The earliest known activities in descriptive linguistics have been attributed to Panini around 500 BCE, with his analysis of Sanskrit in Ashtadhyayi. The first subfield of linguistics is the study of language structure, or "
-            }, 
-            {
-                "enid": "Motion_graphic_design", 
-                "flow": 605.0, 
-                "name": "Motion Graphic Design", 
-                "summary": "Motion Design is a subset of graphic design in that it uses graphic design principles in a filmmaking or video production context (or other temporally evolving visual medium) through the use of animation or filmic techniques. Examples include the kinetic typography and graphics you see as the titles for a film, or opening sequences for television or the spinning, web-based"
-            }, 
-            {
-                "enid": "User_experience_design", 
-                "flow": 594.0, 
-                "name": "User Experience Design", 
-                "summary": "User Experience Design (UXD or UED) is a broad term used to explain all aspects of a person\u2019s experience with the system including the interface, graphics, industrial design, physical interaction, and the manual. It also refers to the application of user-centered design practices to generate cohesive, predictive and desirable designs based on holistic consideration of users\u2019 experience. In most cases, User Experience design fully encompasses"
             }
         ], 
         "dbp_niv": [
@@ -1444,6 +1426,120 @@
                 "flow": 570.0, 
                 "name": "Process-centered design", 
                 "summary": "Process-centered design (PCD) is a design methodology, which proposes a business centric approach for designing user interfaces. Because of the multi-stage business analysis steps involved right from the beginning of the PCD life cycle, it is believed to achieve the highest levels of business-IT alignment that is possible through UI."
+            }
+        ], 
+        "li": [
+            {
+                "count": 40, 
+                "enid": "Engineering", 
+                "name": "Engineering", 
+                "summary": "Engineering is the science, skill, and profession of acquiring and applying scientific , economic , social, and practical knowledge, in order to design and also build structures, machines, devices, systems, materials and processes . The American Engineers' Council for Professional Development (ECPD, the predecessor of ABET) has defined \"engineering\" as: The creative application of scientific principles to design or develop structures, machines, apparatus, or"
+            }, 
+            {
+                "count": 25, 
+                "enid": "Philosophy", 
+                "name": "Philosophy", 
+                "summary": "Philosophy is the study of general and fundamental problems, such as those connected with reality , existence, knowledge, values , reason , mind, and language. Philosophy is distinguished from other ways of addressing such problems by its critical, generally systematic approach and its reliance on rational argument. The word \"philosophy\" comes from the Greek \u03c6\u03b9\u03bb\u03bf\u03c3\u03bf\u03c6\u03af\u03b1 (philosophia), which literally means \"love of wisdom\". More on 'Philosophy' at Wikipedia \u00bb"
+            }, 
+            {
+                "count": 24, 
+                "enid": "Painting", 
+                "name": "Painting", 
+                "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
+            }, 
+            {
+                "count": 24, 
+                "enid": "Mathematics", 
+                "name": "Mathematics", 
+                "summary": "Mathematics (from Greek \u03bc\u03ac\u03b8\u03b7\u03bc\u03b1 m\u00e1th\u0113ma, \u201cknowledge, study, learning\u201d) is the abstract study of topics encompassing quantity, structure, space, change, and others; it has no generally accepted definition . Mathematicians seek out patterns and formulate new conjectures. Mathematicians resolve the truth or falsity of conjectures by mathematical proof. The research required to solve mathematical problems can take years or even centuries of sustained inquiry."
+            }, 
+            {
+                "count": 24, 
+                "enid": "Science", 
+                "name": "Science", 
+                "summary": "Science is a systematic enterprise that builds and organizes knowledge in the form of testable explanations and predictions about the universe. In an older and closely related meaning (found, for example, in Aristotle), \"science\" refers to the body of reliable knowledge itself, of the type that can be logically and rationally explained (see History and philosophy below). Since classical antiquity science as a type"
+            }, 
+            {
+                "count": 23, 
+                "enid": "Art", 
+                "name": "Art", 
+                "summary": "Art is a term that describes a diverse range of human activities and the products of those activities, but here refers to the visual arts , which cover the creation of images or objects in fields including painting , sculpture , printmaking , photography , and other visual media. Architecture is often included as one of the visual arts; however, like the decorative "
+            }, 
+            {
+                "count": 22, 
+                "enid": "Programming_tool", 
+                "name": "Development Tools", 
+                "summary": "A programming tool or software development tool is a program or application that software developers use to create, debug, maintain, or otherwise support other programs and applications. The term usually refers to relatively simple programs that can be combined together to accomplish a task, much as one might use multiple hand tool s to fix a physical object. Programming tool or programming software"
+            }, 
+            {
+                "count": 21, 
+                "enid": "Software_architecture", 
+                "name": "Architecture", 
+                "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
+            }, 
+            {
+                "count": 18, 
+                "enid": "Latin", 
+                "name": "Latin", 
+                "summary": "Latin (; Latin: ; ) is an Italic language originally spoken in Latium and Ancient Rome. Along with most European languages , it is a descendant of the ancient Proto-Indo-European language. It originated in the Italian peninsula. Although it is considered a dead language, many students, scholars, and members of the Christian clergy speak it fluently, and it is still taught in some primary and"
+            }, 
+            {
+                "count": 18, 
+                "enid": "Industrial_design", 
+                "name": "Industrial Design", 
+                "summary": "Industrial design is the use of a combination of applied art and applied science to improve the aesthetics , ergonomics , and usability of a product, but it may also be used to improve the product's marketability and production. The role of an industrial designer is to create and execute design solutions for problems of form, usability, physical ergonomics, marketing, brand development, and sales. More on 'Industrial Design' at Wikipedia \u00bb"
+            }
+        ], 
+        "li_niv": [
+            {
+                "count": 27, 
+                "name": "Communication", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 18, 
+                "name": "Music", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 16, 
+                "name": "Education", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 15, 
+                "name": "Machinery", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 11, 
+                "name": "Manufacturing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 10, 
+                "name": "Management", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 8, 
+                "name": "Spatial Databases", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 8, 
+                "name": "High Performance Computing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 8, 
+                "name": "Information Systems", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 8, 
+                "name": "Federal Government", 
+                "summary": "Sorry, no description is available."
             }
         ]
     }, 

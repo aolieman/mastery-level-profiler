@@ -2239,6 +2239,120 @@
                 "name": "Design comics", 
                 "summary": "Design comics are a type of storyboarding used in product and web site design. Design comics include product consumers or other characters in an illustrated story that shows how the users interact with the product. This method of storytelling is closely related to basic storyboarding, but because design comics include one or more characters in the story, many designers find them to be a better medium to communicate user experiences."
             }
+        ], 
+        "li": [
+            {
+                "count": 81, 
+                "enid": "Psychology", 
+                "name": "Psychology", 
+                "summary": "Psychology is an academic and applied discipline that involves the scientific study of mental functions and behavior s. Psychology has the immediate goal of understanding individuals and groups by both establishing general principles and researching specific cases, and by many accounts it ultimately aims to benefit society. In this field, a professional practitioner or researcher is called a psychologist, and can be classified as"
+            }, 
+            {
+                "count": 70, 
+                "enid": "Mathematics", 
+                "name": "Mathematics", 
+                "summary": "Mathematics (from Greek \u03bc\u03ac\u03b8\u03b7\u03bc\u03b1 m\u00e1th\u0113ma, \u201cknowledge, study, learning\u201d) is the abstract study of topics encompassing quantity, structure, space, change, and others; it has no generally accepted definition . Mathematicians seek out patterns and formulate new conjectures. Mathematicians resolve the truth or falsity of conjectures by mathematical proof. The research required to solve mathematical problems can take years or even centuries of sustained inquiry."
+            }, 
+            {
+                "count": 57, 
+                "enid": "Film", 
+                "name": "Film", 
+                "summary": "A film, also called a movie or motion picture, is a series of still or moving images. It is produced by recording photographic images with camera s, or by creating images using animation techniques or visual effects . The process of filmmaking has developed into an art form and industry. Films are cultural artifacts created by specific culture s, which reflect"
+            }, 
+            {
+                "count": 51, 
+                "enid": "Painting", 
+                "name": "Painting", 
+                "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
+            }, 
+            {
+                "count": 49, 
+                "enid": "Software_architecture", 
+                "name": "Architecture", 
+                "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
+            }, 
+            {
+                "count": 39, 
+                "enid": "Greek_language", 
+                "name": "Greek", 
+                "summary": "Greek ( ell\u012bnika or ) ell\u012bnik\u012b gl\u014dssa is an independent branch of the Indo-European family of languages. Native to the southern Balkans Western Asia Minor and the Aegean, it has the longest documented history of any Indo-European language, spanning 34\u00a0centuries of written records. Its writing system has been the Greek alphabet for the majority of its history; other systems, such as Linear B and"
+            }, 
+            {
+                "count": 38, 
+                "enid": "Economics", 
+                "name": "Economics", 
+                "summary": "Economics is the social science that analyzes the production, distribution, and consumption of goods and services. The term economics comes from the Ancient Greek (', \"management of a household, administration\") from (', \"house\") + (', \"custom\" or \"law\"), hence \"rules of the house(hold)\". Political economy was the earlier name for the subject, but economists in the latter 19th century suggested 'economics'"
+            }, 
+            {
+                "count": 37, 
+                "enid": "Marketing", 
+                "name": "Marketing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 34, 
+                "enid": "Algorithm", 
+                "name": "Algorithms", 
+                "summary": "In mathematics and computer science , an algorithm (originating from al-Khw\u0101rizm\u012b, the famous Persian mathematician Mu\u1e25ammad ibn M\u016bs\u0101 al-Khw\u0101rizm\u012b) is a step-by-step procedure for calculations. Algorithms are used for calculation , data processing , and automated reasoning . More precisely, an algorithm is an effective method expressed as a finite list of well-defined instructions for calculating a function . Starting from an initial state"
+            }, 
+            {
+                "count": 34, 
+                "enid": "Social_science", 
+                "name": "Social Sciences", 
+                "summary": "Social science includes the academic disciplines concerned with society and human behavior. \"Social science\" is commonly used as an umbrella term to refer to anthropology , archaeology , criminology , economics , education , history , linguistics , communication studies, political science and international relations , sociology , geography , law , social work and psychology . The term may however be used"
+            }
+        ], 
+        "li_niv": [
+            {
+                "count": 40, 
+                "name": "Communication", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 34, 
+                "name": "Machinery", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 33, 
+                "name": "Manufacturing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 29, 
+                "name": "Music", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 24, 
+                "name": "Information Systems", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 23, 
+                "name": "Technical Drawing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 22, 
+                "name": "Management", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 20, 
+                "name": "Print", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 20, 
+                "name": "Reason", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 19, 
+                "name": "Film Production", 
+                "summary": "Sorry, no description is available."
+            }
         ]
     }, 
     "pseudo": "December"

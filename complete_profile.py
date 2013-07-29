@@ -12,7 +12,7 @@ def loadNamesFields(vocabulary):
     for t_d in vocabulary:
         fields_dict = dict(t_d)
         for field in ('primary_industry', 'growth_rate'):
-            try: del fields_dict['primary_industry']
+            try: del fields_dict[field]
             except KeyError: continue
         names_fields[t_d['name']] = fields_dict
     return names_fields
@@ -190,7 +190,7 @@ class Profile(object):
             ext_id = ext_id.replace("~", ".")
             try:
                 for inf_id, flowct in inf_topics_dbpedia[ext_id].iteritems():
-                    if inf_id in ext_topics: continue
+                    if inf_id in ext_topics: continue # TODO: check Mongo escape
                     super_flowdict[inf_id] += flowct
             except KeyError:
                 print "No DBp inferences for %s" % ext_id
@@ -222,8 +222,52 @@ class Profile(object):
         return dbp_infs, dbp_infs_niv          
         
 
-    def getLinkedinInferences(self, inferred_topics_linkedin):
-        pass
+    def getLinkedinInferences(self, names_fields):
+        ext_topics = set(self.statements['ALL']['extracted'].keys())
+        count_rel = defaultdict(int)
+        for ext_id in ext_topics:
+            ext_id = ext_id.replace("~", ".")
+            try:
+                ext_name = en_dict[ext_id]
+            except KeyError: print "\n!! %s not a recognized ann_id\n" % ext_id
+            rels = []
+            if 'related_skills' in names_fields[ext_name]:
+                rels = names_fields[ext_name]['related_skills']
+            if 'skill_links' in names_fields[ext_name]:
+                rels += [sl[14:] for sl in names_fields[ext_name]['skill_links'] if sl]
+            for rel in rels:
+                inf_name = rel.replace("_", " ")
+                count_rel[inf_name] += 1
+            if len(rels) == 0: print "No LI related topics for %s" % ext_id
+        top_flow = sorted(count_rel.items(), key=lambda tup: tup[1],
+                          reverse=True)
+        # Fill in-vocab (URI) and not-in-vocab (no URI) lists with top-10
+        from get_vocabulary import manually_corrected # names not changed in rel_skills
+        li_infs, li_infs_niv = [], []
+        for inf_name, count in top_flow:
+            if inf_name in manually_corrected:
+                inf_name = manually_corrected[inf_name][0]
+            try:
+                fields = names_fields[inf_name]
+            except KeyError:
+                print "\n!! %s not a recognized skill name\n" % inf_name
+                continue
+            topic_dict = {'name': inf_name, 'count': count}
+            topic_dict['summary'] = "Sorry, no description is available."
+            if 'summary' in fields and fields['summary']:
+                topic_dict['summary'] = fields['summary']
+            if 'more_wiki' in fields:
+                inf_id = fields['more_wiki'].split("wiki/")[1]
+                topic_dict['enid'] = inf_id
+                if inf_id in ext_topics: continue
+                li_infs.append(topic_dict)
+            else: li_infs_niv.append(topic_dict)
+            if len(li_infs) >= 10 and len(li_infs_niv) >= 10: break
+        # Save in self.statements['ALL']
+        self.statements['ALL']['inferred']['li'] = li_infs
+        self.statements['ALL']['inferred']['li_niv'] = li_infs_niv
+        self.toMongo()
+        return li_infs, li_infs_niv
 
     def updateLinkedInDoc(self):
         if hasattr(self, 'linkedin') and db.document.find_one({"_id": self.linkedin}):
@@ -978,14 +1022,18 @@ def produceStatements(all_profiles):
                                                          fields_dbp_path,
                                                          transformVertexIDs)
     for pr in all_profiles:
-        iv, niv = pr.getDbpediaInferences(dbp_inferences, fields_dbp)
+        # DBpedia inferences
+        div, dniv = pr.getDbpediaInferences(dbp_inferences, fields_dbp)
         print "\nInferred DBp In-Vocabulary:"
-        for t in iv: print t['name'], t['enid'], t['flow']
+        for t in div: print t['name'], t['enid'], t['flow']
         print "\nInferred DBp NOT-In-Vocabulary:"
-        for t in niv: print t['name'], t['enid'], t['flow']
-
-    # Load inferred topics from LinkedIn related skills
-    
+        for t in dniv: print t['name'], t['enid'], t['flow']
+        # LinkedIn inferences
+        liv, lniv = pr.getLinkedinInferences(names_fields)
+        print "\nInferred LI In-Vocabulary:"
+        for t in liv: print t['name'], t['enid'], t['count']
+        print "\nInferred LI NOT-In-Vocabulary:"
+        for t in lniv: print t['name'], None, t['count']
     # Serialize statements to JSON
     PS = []
     for pr in all_profiles:

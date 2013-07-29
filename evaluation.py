@@ -443,7 +443,7 @@ def csvStatementDict(profile):
         wr.writerow(header)
         for orig, ext_inf in profile.statements.iteritems():
             for statement in ext_inf['extracted'].iteritems():
-                ann_id = statement[0]
+                ann_id = statement[0].encode('ascii', 'replace')
                 lvl_dict = statement[1].copy()
                 skill_lvl = lvl_dict['skill']
                 knowl_lvl = lvl_dict['knowledge']

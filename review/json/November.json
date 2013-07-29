@@ -2414,30 +2414,6 @@
                 "flow": 788.0, 
                 "name": "Style Guides", 
                 "summary": "A style guide or style manual is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization or field. The implementation of a style guide provides uniformity in style and formatting within a document and across multiple documents. A set of standards for a specific organization is often known as \"house style\". Style guides"
-            }, 
-            {
-                "enid": "Regenerative_design", 
-                "flow": 787.0, 
-                "name": "Regenerative Design", 
-                "summary": "Regenerative design (sometimes referred to as cradle-to-cradle design) is a process-oriented systems theory based approach to design. The term \"regenerative\" describes processes that restore, renew or revitalize their own sources of energy and materials, creating sustainable systems that integrate the needs of society with the integrity of nature. The basis is derived from systems ecology with a closed loop input\u2013output model or a model"
-            }, 
-            {
-                "enid": "3D_printing", 
-                "flow": 784.0, 
-                "name": "Additive Manufacturing", 
-                "summary": "Additive manufacturing or 3D printing is a process of making three dimensional solid objects from a digital model. 3D printing is achieved using additive processes, where an object is created by laying down successive layers of material. 3D printing is considered distinct from traditional machining techniques (subtractive processes) which mostly rely on the removal of material by drilling, cutting etc. 3D printing is usually"
-            }, 
-            {
-                "enid": "Integrated_project_delivery", 
-                "flow": 777.0, 
-                "name": "Integrated Project Delivery", 
-                "summary": "Integrated project delivery (IPD), is a collaborative alliance of people, systems, business structures and practices into a process that harnesses the talents and insights of all participants to optimize project results, increase value to the owner, reduce waste, and maximize efficiency through all phases of design, fabrication, and construction. There are eight main sequential phases to the integrated project delivery method: *conceptualization phase *criteria design"
-            }, 
-            {
-                "enid": "Diffusion_of_innovations", 
-                "flow": 774.0, 
-                "name": "Diffusion Of Innovation", 
-                "summary": "Diffusion of Innovations is a theory that seeks to explain how, why, and at what rate new ideas and technology spread through culture s. Everett Rogers, a professor of rural sociology, popularized the theory in his 1962 book Diffusion of Innovations. He said diffusion is the process by which an innovation is communicated through certain channels over time among the members of a social"
             }
         ], 
         "dbp_niv": [
@@ -2500,6 +2476,120 @@
                 "flow": 735.0, 
                 "name": "Knowledge Spillover", 
                 "summary": "Knowledge spillover is an exchange of ideas among individuals. In knowledge management economics, a knowledge spillover is a non-rival knowledge market externality that has a spillover effect of stimulating technological improvements in a neighbor through one's own innovation. Such innovations often come from specialization within an industry."
+            }
+        ], 
+        "li": [
+            {
+                "count": 23, 
+                "enid": "Software", 
+                "name": "Software", 
+                "summary": "Computer software, or just software, is a collection of computer program s and related data that provides the instructions for telling a computer what to do and how to do it. Software refers to one or more computer programs and data held in the storage of the computer for some reasons. In other words, software is a set of programs, procedures, algorithms and"
+            }, 
+            {
+                "count": 23, 
+                "enid": "Greek_language", 
+                "name": "Greek", 
+                "summary": "Greek ( ell\u012bnika or ) ell\u012bnik\u012b gl\u014dssa is an independent branch of the Indo-European family of languages. Native to the southern Balkans Western Asia Minor and the Aegean, it has the longest documented history of any Indo-European language, spanning 34\u00a0centuries of written records. Its writing system has been the Greek alphabet for the majority of its history; other systems, such as Linear B and"
+            }, 
+            {
+                "count": 21, 
+                "enid": "Film", 
+                "name": "Film", 
+                "summary": "A film, also called a movie or motion picture, is a series of still or moving images. It is produced by recording photographic images with camera s, or by creating images using animation techniques or visual effects . The process of filmmaking has developed into an art form and industry. Films are cultural artifacts created by specific culture s, which reflect"
+            }, 
+            {
+                "count": 21, 
+                "enid": "Software_architecture", 
+                "name": "Architecture", 
+                "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
+            }, 
+            {
+                "count": 17, 
+                "enid": "Painting", 
+                "name": "Painting", 
+                "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
+            }, 
+            {
+                "count": 15, 
+                "enid": "Social_science", 
+                "name": "Social Sciences", 
+                "summary": "Social science includes the academic disciplines concerned with society and human behavior. \"Social science\" is commonly used as an umbrella term to refer to anthropology , archaeology , criminology , economics , education , history , linguistics , communication studies, political science and international relations , sociology , geography , law , social work and psychology . The term may however be used"
+            }, 
+            {
+                "count": 12, 
+                "enid": "Algorithm", 
+                "name": "Algorithms", 
+                "summary": "In mathematics and computer science , an algorithm (originating from al-Khw\u0101rizm\u012b, the famous Persian mathematician Mu\u1e25ammad ibn M\u016bs\u0101 al-Khw\u0101rizm\u012b) is a step-by-step procedure for calculations. Algorithms are used for calculation , data processing , and automated reasoning . More precisely, an algorithm is an effective method expressed as a finite list of well-defined instructions for calculating a function . Starting from an initial state"
+            }, 
+            {
+                "count": 12, 
+                "enid": "Invention", 
+                "name": "Invention", 
+                "summary": "An invention is a unique or novel device, method, composition or process. It may be an improvement upon a machine or product, or a new process for creating an object or a result. An invention that achieves a completely unique function or result may be a radical breakthrough. Such works are novel and not obvious to others skilled in the same field. Some inventions can"
+            }, 
+            {
+                "count": 11, 
+                "enid": "Natural_science", 
+                "name": "Natural Sciences", 
+                "summary": "The natural sciences are branches of science that seek to elucidate the rules that govern the natural world by using scientific method s. The term \"natural science\" is used to distinguish the subject matter from the social sciences , which apply the scientific method to study human behavior and social patterns ; the humanities , which use a critical or "
+            }, 
+            {
+                "count": 11, 
+                "enid": "Research", 
+                "name": "Research", 
+                "summary": "Sorry, no description is available."
+            }
+        ], 
+        "li_niv": [
+            {
+                "count": 16, 
+                "name": "Manufacturing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 13, 
+                "name": "Communication", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 11, 
+                "name": "Radio", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 10, 
+                "name": "User Flows", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 10, 
+                "name": "Music", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 9, 
+                "name": "Machinery", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 9, 
+                "name": "Management", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 8, 
+                "name": "Technical Drawing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 8, 
+                "name": "Film Production", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 8, 
+                "name": "Education", 
+                "summary": "Sorry, no description is available."
             }
         ]
     }, 

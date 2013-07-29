@@ -2064,6 +2064,120 @@
                 "name": "Immersive design", 
                 "summary": "Immersive design describes the activity of a new generation of designers who work inclusively across all story-driven media, from film and interactive media to live audience environments. Immersive designers deal simultaneously with virtual and dimensional environments and who and what they contain; and with time-based narrative and story space."
             }
+        ], 
+        "li": [
+            {
+                "count": 34, 
+                "enid": "Engineering", 
+                "name": "Engineering", 
+                "summary": "Engineering is the science, skill, and profession of acquiring and applying scientific , economic , social, and practical knowledge, in order to design and also build structures, machines, devices, systems, materials and processes . The American Engineers' Council for Professional Development (ECPD, the predecessor of ABET) has defined \"engineering\" as: The creative application of scientific principles to design or develop structures, machines, apparatus, or"
+            }, 
+            {
+                "count": 21, 
+                "enid": "Data", 
+                "name": "Data", 
+                "summary": "Data (,, or ) are values of qualitative or quantitative variables, belonging to a set of items. Data in computing (or data processing ) are often represented by a combination of items organized in rows and multiple variables organized in columns. Data are typically the results of measurements and can be visualised using graph s or image s. Data as an abstract"
+            }, 
+            {
+                "count": 19, 
+                "enid": "Software", 
+                "name": "Software", 
+                "summary": "Computer software, or just software, is a collection of computer program s and related data that provides the instructions for telling a computer what to do and how to do it. Software refers to one or more computer programs and data held in the storage of the computer for some reasons. In other words, software is a set of programs, procedures, algorithms and"
+            }, 
+            {
+                "count": 18, 
+                "enid": "Academia", 
+                "name": "Academia", 
+                "summary": "Academia is the community of students and scholars engaged in higher education and research . More on 'Academia' at Wikipedia \u00bb"
+            }, 
+            {
+                "count": 16, 
+                "enid": "Greek_language", 
+                "name": "Greek", 
+                "summary": "Greek ( ell\u012bnika or ) ell\u012bnik\u012b gl\u014dssa is an independent branch of the Indo-European family of languages. Native to the southern Balkans Western Asia Minor and the Aegean, it has the longest documented history of any Indo-European language, spanning 34\u00a0centuries of written records. Its writing system has been the Greek alphabet for the majority of its history; other systems, such as Linear B and"
+            }, 
+            {
+                "count": 15, 
+                "enid": "Economics", 
+                "name": "Economics", 
+                "summary": "Economics is the social science that analyzes the production, distribution, and consumption of goods and services. The term economics comes from the Ancient Greek (', \"management of a household, administration\") from (', \"house\") + (', \"custom\" or \"law\"), hence \"rules of the house(hold)\". Political economy was the earlier name for the subject, but economists in the latter 19th century suggested 'economics'"
+            }, 
+            {
+                "count": 14, 
+                "enid": "Energy", 
+                "name": "Energy", 
+                "summary": "In physics , energy is an indirectly observed quantity that is often understood as the ability of a physical system to do work on other physical systems. Since work is defined as a force acting through a distance (a length of space), energy is always equivalent to the ability to exert pulls or pushes against the basic forces of nature, along a path of"
+            }, 
+            {
+                "count": 13, 
+                "enid": "Heuristic_evaluation", 
+                "name": "Heuristic Evaluation", 
+                "summary": "A heuristic evaluation is a usability inspection method for computer software that helps to identify usability problems in the user interface (UI) design. It specifically involves evaluators examining the interface and judging its compliance with recognized usability principles (the \"heuristics\"). These evaluation methods are now widely taught and practiced in the New Media sector, where UIs are often designed in a short space"
+            }, 
+            {
+                "count": 13, 
+                "enid": "Film", 
+                "name": "Film", 
+                "summary": "A film, also called a movie or motion picture, is a series of still or moving images. It is produced by recording photographic images with camera s, or by creating images using animation techniques or visual effects . The process of filmmaking has developed into an art form and industry. Films are cultural artifacts created by specific culture s, which reflect"
+            }, 
+            {
+                "count": 13, 
+                "enid": "Heuristic_analysis", 
+                "name": "Heuristic Analysis", 
+                "summary": "Heuristic analysis is a method employed by many computer antivirus programs designed to detect previously unknown computer viruses, as well as new variants of viruses already in the wild. Heuristic analysis is an expert based analysis that determines the susceptibility of a system towards particular threat/risk using various decision rules or weighing methods. MultiCriteria analysis (MCA) is one of the means of weighing."
+            }
+        ], 
+        "li_niv": [
+            {
+                "count": 14, 
+                "name": "User Flows", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 9, 
+                "name": "Machinery", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 9, 
+                "name": "Education", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 9, 
+                "name": "Communication", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 9, 
+                "name": "Manufacturing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 8, 
+                "name": "Contextual Interviews", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 7, 
+                "name": "Music", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 6, 
+                "name": "Interactive Projects", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 6, 
+                "name": "Management", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 6, 
+                "name": "Radio", 
+                "summary": "Sorry, no description is available."
+            }
         ]
     }, 
     "pseudo": "Aphro"

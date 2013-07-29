@@ -1525,12 +1525,6 @@
                 "flow": 624.0, 
                 "name": "Multimedia", 
                 "summary": "Multimedia is media and content that uses a combination of different content forms. The term can be used as a noun (a medium with multiple content forms) or as an adjective describing a medium as having multiple content forms. The term is used in contrast to media which use only rudimentary computer display such as text-only, or traditional forms of printed or hand-produced"
-            }, 
-            {
-                "enid": "Design_for_the_Environment", 
-                "flow": 622.0, 
-                "name": "Design for Environment", 
-                "summary": "Design for the Environment Program (DfE) is a United States Environmental Protection Agency (USEPA) program, created in 1992, that works to prevent pollution, and the risk pollution presents to humans and the environment. The EPA DfE program provides information regarding safer electronics , safer flame retardants , safer chemical formulations, as well as best environmental practices. DfE employs a variety of design approaches that attempt"
             }
         ], 
         "dbp_niv": [
@@ -1593,6 +1587,120 @@
                 "flow": 619.0, 
                 "name": "Form follows function", 
                 "summary": "Form follows function is a principle associated with modern architecture and industrial design in the 20th century. The principle is that the shape of a building or object should be primarily based upon its intended function or purpose."
+            }
+        ], 
+        "li": [
+            {
+                "count": 49, 
+                "enid": "Psychology", 
+                "name": "Psychology", 
+                "summary": "Psychology is an academic and applied discipline that involves the scientific study of mental functions and behavior s. Psychology has the immediate goal of understanding individuals and groups by both establishing general principles and researching specific cases, and by many accounts it ultimately aims to benefit society. In this field, a professional practitioner or researcher is called a psychologist, and can be classified as"
+            }, 
+            {
+                "count": 43, 
+                "enid": "Mathematics", 
+                "name": "Mathematics", 
+                "summary": "Mathematics (from Greek \u03bc\u03ac\u03b8\u03b7\u03bc\u03b1 m\u00e1th\u0113ma, \u201cknowledge, study, learning\u201d) is the abstract study of topics encompassing quantity, structure, space, change, and others; it has no generally accepted definition . Mathematicians seek out patterns and formulate new conjectures. Mathematicians resolve the truth or falsity of conjectures by mathematical proof. The research required to solve mathematical problems can take years or even centuries of sustained inquiry."
+            }, 
+            {
+                "count": 35, 
+                "enid": "Painting", 
+                "name": "Painting", 
+                "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
+            }, 
+            {
+                "count": 32, 
+                "enid": "Software_architecture", 
+                "name": "Architecture", 
+                "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
+            }, 
+            {
+                "count": 29, 
+                "enid": "Business", 
+                "name": "Business", 
+                "summary": "A business (also known as enterprise or firm) is an organization engaged in the trade of goods, services, or both to consumer s. Businesses are predominant in capitalist economies , where most of them are privately owned and administered to earn profit to increase the wealth of their owners. Businesses may also be not-for-profit or state-owned. A business owned by"
+            }, 
+            {
+                "count": 27, 
+                "enid": "Science", 
+                "name": "Science", 
+                "summary": "Science is a systematic enterprise that builds and organizes knowledge in the form of testable explanations and predictions about the universe. In an older and closely related meaning (found, for example, in Aristotle), \"science\" refers to the body of reliable knowledge itself, of the type that can be logically and rationally explained (see History and philosophy below). Since classical antiquity science as a type"
+            }, 
+            {
+                "count": 24, 
+                "enid": "Service_(economics)", 
+                "name": "Business Services", 
+                "summary": "In economics , a service is an intangible commodity . More specifically, services are an intangible equivalent of economic goods. Service provision is often an economic activity where the buyer does not generally, except by exclusive contract, obtain exclusive ownership of the thing purchased. The benefits of such a service, if priced, are held to be self-evident in the buyer's willingness to pay for"
+            }, 
+            {
+                "count": 24, 
+                "enid": "Software", 
+                "name": "Software", 
+                "summary": "Computer software, or just software, is a collection of computer program s and related data that provides the instructions for telling a computer what to do and how to do it. Software refers to one or more computer programs and data held in the storage of the computer for some reasons. In other words, software is a set of programs, procedures, algorithms and"
+            }, 
+            {
+                "count": 23, 
+                "enid": "Advertising", 
+                "name": "Advertising", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 22, 
+                "enid": "Social_science", 
+                "name": "Social Sciences", 
+                "summary": "Social science includes the academic disciplines concerned with society and human behavior. \"Social science\" is commonly used as an umbrella term to refer to anthropology , archaeology , criminology , economics , education , history , linguistics , communication studies, political science and international relations , sociology , geography , law , social work and psychology . The term may however be used"
+            }
+        ], 
+        "li_niv": [
+            {
+                "count": 21, 
+                "name": "Music", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 20, 
+                "name": "Communication", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 19, 
+                "name": "Machinery", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 18, 
+                "name": "Education", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 16, 
+                "name": "Information Systems", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 12, 
+                "name": "Graphics", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 12, 
+                "name": "User Flows", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 12, 
+                "name": "Print", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 12, 
+                "name": "Reason", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "count": 9, 
+                "name": "Internet", 
+                "summary": "Sorry, no description is available."
             }
         ]
     }, 
