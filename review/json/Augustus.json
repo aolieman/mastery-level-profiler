@@ -1936,60 +1936,70 @@
     "inferred": {
         "dbp": [
             {
+                "correct": true, 
                 "enid": "Information_design", 
                 "flow": 935.0, 
                 "name": "Information Design", 
                 "summary": "Information design is the skill and practice of preparing information so people can use it with efficiency and effectiveness. Where the data is complex or unstructured, a visual representation can express its meaning more clearly to the viewer. More on 'Information Design' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
                 "enid": "Communication_design", 
                 "flow": 890.0, 
                 "name": "Communication Design", 
                 "summary": "Communication design is a mixed discipline between design and information-development which is concerned with how media intermission such as printed , craft ed, electronic media or presentations communicate with people. A communication design approach is not only concerned with developing the message aside from the aesthetic s in media, but also with creating new media channels to ensure the message"
             }, 
             {
+                "correct": true, 
                 "enid": "Typography", 
                 "flow": 860.0, 
                 "name": "Typography", 
                 "summary": "Typography (from the Greek words \u03c4\u03cd\u03c0\u03bf\u03c2 (typos) = form and \u03b3\u03c1\u03b1\u03c6\u03ae (graphe) = writing) is the art and technique of arranging type in order to make language visible. The arrangement of type involves the selection of typefaces, point size, line length, leading (line spacing), adjusting the spaces between groups of letters ( tracking ) and adjusting the space between pairs of letters (kerning). Type "
             }, 
             {
+                "correct": true, 
                 "enid": "CTQ_tree", 
                 "flow": 856.0, 
                 "name": "CTQ", 
                 "summary": "A CTQ tree (Critical to Quality tree) is used to decompose broad customer requirements into more easily quantified requirements. CTQ Trees are often used in the Six Sigma methodology. CTQs are derived from customer needs. Customer delight may be an add-on while deriving Critical To Quality parameters. For cost considerations one may remain focused to customer needs at the initial stage. CTQs (Critical to"
             }, 
             {
+                "correct": true, 
                 "enid": "Pilot_experiment", 
                 "flow": 814.0, 
                 "name": "Pilot Projects", 
                 "summary": "A pilot experiment, also called a pilot study, is a small scale preliminary study conducted in order to evaluate feasibility, time, cost, adverse events, and effect size (statistical variability) in an attempt to predict an appropriate sample size and improve upon the study design prior to performance of a full-scale research project. Pilot studies, therefore, may not be appropriate for case studies . More on 'Pilot Projects' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
                 "enid": "Style_guide", 
                 "flow": 791.0, 
                 "name": "Style Guides", 
                 "summary": "A style guide or style manual is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization or field. The implementation of a style guide provides uniformity in style and formatting within a document and across multiple documents. A set of standards for a specific organization is often known as \"house style\". Style guides"
             }, 
             {
+                "correct": true, 
                 "enid": "Diffusion_of_innovations", 
                 "flow": 765.0, 
                 "name": "Diffusion Of Innovation", 
                 "summary": "Diffusion of Innovations is a theory that seeks to explain how, why, and at what rate new ideas and technology spread through culture s. Everett Rogers, a professor of rural sociology, popularized the theory in his 1962 book Diffusion of Innovations. He said diffusion is the process by which an innovation is communicated through certain channels over time among the members of a social"
             }, 
             {
+                "correct": true, 
                 "enid": "Video_design", 
                 "flow": 752.0, 
                 "name": "Projection Design", 
                 "summary": "Video design or projection design is a creative field of stagecraft. It is concerned with the creation and integration of film and motion graphics into the fields of theatre , opera , dance , fashion shows , concerts and other live events. Video design has only recently gained recognition as a separate creative field. Prior to this, the responsibilities of video design would often"
             }, 
             {
+                "correct": true, 
                 "enid": "User-centered_design", 
                 "flow": 732.0, 
                 "name": "User-centered Design", 
                 "summary": "In broad terms, user-centered design (UCD) is a type of user interface design and a process in which the needs, wants, and limitations of end users of a product are given extensive attention at each stage of the design process . User-centered design can be characterized as a multi-stage problem solving process that not only requires designers to analyse and foresee how users are"
             }, 
             {
+                "correct": true, 
                 "enid": "Brand_implementation", 
                 "flow": 719.0, 
                 "name": "Brand Implementation", 
@@ -1998,60 +2008,70 @@
         ], 
         "dbp_niv": [
             {
+                "correct": true, 
                 "enid": "Living_lab", 
                 "flow": 1282.0, 
                 "name": "Living lab", 
                 "summary": "A living lab is a research concept. A living lab is a user-centred, open-innovation ecosystem, often operating in a territorial context (e.g. city, agglomeration, region), integrating concurrent research and innovation processes within a public-private-people partnership. The concept is based on a systematic user co-creation approach integrating research and innovation processes."
             }, 
             {
+                "correct": true, 
                 "enid": "Work_of_art", 
                 "flow": 1001.0, 
                 "name": "Work of art", 
                 "summary": "A work of art, artwork, art piece, or art object is an aesthetic item or artistic creation."
             }, 
             {
+                "correct": true, 
                 "enid": "Urban_acupuncture", 
                 "flow": 915.0, 
                 "name": "Urban Acupuncture", 
                 "summary": "Urban Acupuncture is an urban environmentalism theory which combines urban design with traditional Chinese medical theory of acupuncture. This strategy views cities as living, breathing organisms and pinpoints areas in need of repair. Sustainable projects, then, serve as needles that revitalize the whole by healing the parts."
             }, 
             {
+                "correct": true, 
                 "enid": "Sensory_design", 
                 "flow": 897.0, 
                 "name": "Sensory design", 
                 "summary": "Sensory design aims to establish an overall diagnosis of the sensory perceptions of a product, and define appropriate means to design or redesign it on that basis. It involves an observation of the diverse and varying situations in which a given product or object is used in order to measure the users' overall opinion of the product, its positive and negative aspects in terms of tactility, appearance, sound and so on."
             }, 
             {
+                "correct": true, 
                 "enid": "Critical_to_quality", 
                 "flow": 848.0, 
                 "name": "Critical to Quality", 
                 "summary": "Critical to Quality is an attribute of a part, assembly, sub-assembly, product, or process that is literally critical to quality or more precisely, has a direct and significant impact on its actual or perceived quality."
             }, 
             {
+                "correct": true, 
                 "enid": "Form_follows_function", 
                 "flow": 733.0, 
                 "name": "Form follows function", 
                 "summary": "Form follows function is a principle associated with modern architecture and industrial design in the 20th century. The principle is that the shape of a building or object should be primarily based upon its intended function or purpose."
             }, 
             {
+                "correct": true, 
                 "enid": "Architect-led_design\u2013build", 
                 "flow": 731.0, 
                 "name": "Architect-led design\u2013build", 
                 "summary": "In product manufacturing, the person or company responsible for making the product is usually also its designer. The construction industry is different. In constructing a building or similar structure, the design is usually prepared by an architect, but the construction is usually performed by one or more contractors, who are not affiliated with the architect. It was not always this way."
             }, 
             {
+                "correct": true, 
                 "enid": "Slow_design", 
                 "flow": 719.0, 
                 "name": "Slow design", 
                 "summary": "Slow Design is a branch of the Slow Movement, which began with the concept of Slow Food, a term coined in contrast to fast food. As with every branch of the Slow Movement, the overarching goal of Slow Design is to promote well being for individuals, society, and the natural environment. Slow Design seeks a holistic approach to designing that takes into consideration a wide range of material and social factors as well as the short and long term impacts of the design."
             }, 
             {
+                "correct": true, 
                 "enid": "Lean_integration", 
                 "flow": 718.0, 
                 "name": "Lean integration", 
                 "summary": "Lean integration is a management system that emphasizes creating value for customers, continuous improvement, and eliminating waste as a sustainable data integration and system integration practice. Lean integration has parallels with other lean disciplines such as lean manufacturing, lean IT, and lean software development."
             }, 
             {
+                "correct": true, 
                 "enid": "Process-centered_design", 
                 "flow": 714.0, 
                 "name": "Process-centered design", 
@@ -2060,115 +2080,135 @@
         ], 
         "li": [
             {
-                "count": 50, 
+                "correct": true, 
+                "count": 14, 
                 "enid": "Psychology", 
                 "name": "Psychology", 
                 "summary": "Psychology is an academic and applied discipline that involves the scientific study of mental functions and behavior s. Psychology has the immediate goal of understanding individuals and groups by both establishing general principles and researching specific cases, and by many accounts it ultimately aims to benefit society. In this field, a professional practitioner or researcher is called a psychologist, and can be classified as"
             }, 
             {
-                "count": 41, 
-                "enid": "Data", 
-                "name": "Data", 
-                "summary": "Data (,, or ) are values of qualitative or quantitative variables, belonging to a set of items. Data in computing (or data processing ) are often represented by a combination of items organized in rows and multiple variables organized in columns. Data are typically the results of measurements and can be visualised using graph s or image s. Data as an abstract"
+                "correct": true, 
+                "count": 12, 
+                "enid": "Heuristic_analysis", 
+                "name": "Heuristic Analysis", 
+                "summary": "Heuristic analysis is a method employed by many computer antivirus programs designed to detect previously unknown computer viruses, as well as new variants of viruses already in the wild. Heuristic analysis is an expert based analysis that determines the susceptibility of a system towards particular threat/risk using various decision rules or weighing methods. MultiCriteria analysis (MCA) is one of the means of weighing."
             }, 
             {
-                "count": 33, 
-                "enid": "Greek_language", 
-                "name": "Greek", 
-                "summary": "Greek ( ell\u012bnika or ) ell\u012bnik\u012b gl\u014dssa is an independent branch of the Indo-European family of languages. Native to the southern Balkans Western Asia Minor and the Aegean, it has the longest documented history of any Indo-European language, spanning 34\u00a0centuries of written records. Its writing system has been the Greek alphabet for the majority of its history; other systems, such as Linear B and"
+                "correct": true, 
+                "count": 11, 
+                "enid": "Heuristic_evaluation", 
+                "name": "Heuristic Evaluation", 
+                "summary": "A heuristic evaluation is a usability inspection method for computer software that helps to identify usability problems in the user interface (UI) design. It specifically involves evaluators examining the interface and judging its compliance with recognized usability principles (the \"heuristics\"). These evaluation methods are now widely taught and practiced in the New Media sector, where UIs are often designed in a short space"
             }, 
             {
-                "count": 29, 
+                "correct": true, 
+                "count": 11, 
+                "enid": "Paper_prototyping", 
+                "name": "Paper Prototyping", 
+                "summary": "In human\u2013computer interaction, paper prototyping is a widely used method in the user-centered design process , a process that helps developers to create software that meets the user's expectations and needs - in this case, especially for designing and testing user interface s. It is throwaway prototyping and involves creating rough, even hand-sketched, drawings of an interface to use as prototypes, or models,"
+            }, 
+            {
+                "correct": true, 
+                "count": 10, 
+                "enid": "Interaction_design#Related_disciplines", 
+                "name": "User Research", 
+                "summary": "Industrial design The core principles of industrial design overlap with those of interaction design. Industrial designers use their knowledge of physical form , color, aesthetics , human perception and desire, usability to create a fit of an object with the person using it. ;Human factors and ergonomics :Certain basic principles of ergonomics provide grounding for interaction design. These include anthropometry , "
+            }, 
+            {
+                "correct": true, 
+                "count": 10, 
+                "enid": "Contextual_inquiry", 
+                "name": "Contextual Inquiry", 
+                "summary": "Contextual inquiry (CI) is a user-centered design (UCD) ethnographic research method, part of the methodology. A contextual inquiry interview is usually structured as an approximately two-hour, one-on-one interaction in which the researcher watches the user do their normal activities and discusses what they see with the user. More on 'Contextual Inquiry' at Wikipedia \u00bb"
+            }, 
+            {
+                "correct": true, 
+                "count": 10, 
+                "enid": "Advertising", 
+                "name": "Advertising", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 9, 
                 "enid": "Painting", 
                 "name": "Painting", 
                 "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
             }, 
             {
-                "count": 27, 
-                "enid": "Software_architecture", 
-                "name": "Architecture", 
-                "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
+                "correct": true, 
+                "count": 9, 
+                "enid": "Cognitive_walkthrough", 
+                "name": "Cognitive Walkthrough", 
+                "summary": "The cognitive walkthrough method is a usability inspection method used to identify usability issues in a piece of software or web site, focusing on how easy it is for new users to accomplish tasks with the system. Whereas cognitive walkthrough is task-specific, heuristic evaluation takes a holistic view to catch problems not caught by this and other usability inspection methods. The method is"
             }, 
             {
-                "count": 27, 
-                "enid": "Software", 
-                "name": "Software", 
-                "summary": "Computer software, or just software, is a collection of computer program s and related data that provides the instructions for telling a computer what to do and how to do it. Software refers to one or more computer programs and data held in the storage of the computer for some reasons. In other words, software is a set of programs, procedures, algorithms and"
-            }, 
-            {
-                "count": 27, 
-                "enid": "Economics", 
-                "name": "Economics", 
-                "summary": "Economics is the social science that analyzes the production, distribution, and consumption of goods and services. The term economics comes from the Ancient Greek (', \"management of a household, administration\") from (', \"house\") + (', \"custom\" or \"law\"), hence \"rules of the house(hold)\". Political economy was the earlier name for the subject, but economists in the latter 19th century suggested 'economics'"
-            }, 
-            {
-                "count": 26, 
-                "enid": "Energy", 
-                "name": "Energy", 
-                "summary": "In physics , energy is an indirectly observed quantity that is often understood as the ability of a physical system to do work on other physical systems. Since work is defined as a force acting through a distance (a length of space), energy is always equivalent to the ability to exert pulls or pushes against the basic forces of nature, along a path of"
-            }, 
-            {
-                "count": 25, 
-                "enid": "Film", 
-                "name": "Film", 
-                "summary": "A film, also called a movie or motion picture, is a series of still or moving images. It is produced by recording photographic images with camera s, or by creating images using animation techniques or visual effects . The process of filmmaking has developed into an art form and industry. Films are cultural artifacts created by specific culture s, which reflect"
-            }, 
-            {
-                "count": 21, 
-                "enid": "Marketing", 
-                "name": "Marketing", 
-                "summary": "Sorry, no description is available."
+                "correct": true, 
+                "count": 9, 
+                "enid": "Card_sorting", 
+                "name": "Card Sorting", 
+                "summary": "Card sorting is a simple technique in user experience design where a group of subject experts or \"users\", however inexperienced with design, are guided to generate a category tree or folksonomy . It is a useful approach for designing information architecture , workflows, menu structure, or web site navigation paths. Card sorting has a characteristically low-tech approach. The concepts are first identified and written"
             }
         ], 
         "li_niv": [
             {
-                "count": 20, 
-                "name": "Communication", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 19, 
-                "name": "Machinery", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 19, 
-                "name": "Manufacturing", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 14, 
-                "name": "Education", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 14, 
-                "name": "Music", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 13, 
-                "name": "Information Systems", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 13, 
-                "name": "Management", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
+                "correct": true, 
                 "count": 13, 
                 "name": "User Flows", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 13, 
-                "name": "Technical Drawing", 
+                "correct": true, 
+                "count": 7, 
+                "name": "Machinery", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 13, 
-                "name": "Film Production", 
+                "correct": true, 
+                "count": 6, 
+                "name": "Manufacturing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 6, 
+                "name": "Contextual Interviews", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 5, 
+                "name": "Interactive Projects", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 5, 
+                "name": "Communication", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 5, 
+                "name": "Down to Earth", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 5, 
+                "name": "Visual Solutions", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 5, 
+                "name": "Morae", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 4, 
+                "name": "Trados", 
                 "summary": "Sorry, no description is available."
             }
         ]

@@ -14,6 +14,7 @@ var app = angular.module('reviewApp',['ui.slider', 'ui.bootstrap', 'ngStorage'])
 app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage, $sessionStorage) {
     $scope.initdata = function() {
         $scope.$storage = $localStorage;
+        $scope.location = window.location;
         if ('extracted' in $scope.$storage){
             // Initialize scope data from local storage
             $scope.pseudo = $scope.$storage.pseudo;
@@ -21,10 +22,13 @@ app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage
             $scope.inferred = $scope.$storage.inferred;
             $scope.missing = $scope.$storage.missing;
             $scope.currentPage = $scope.$storage.currentPage;
-
+            $('#loader').fadeOut(513, function(){
+                $('#loader').remove();
+            });
         } else {
             // Initialize scope data from server
-            $http.get('/statements?December=50bbb').success(function(response){
+            console.log(location.search);
+            $http.get('/statements'+location.search).success(function(response){
                 $scope.pseudo = response['pseudo'];
                 $scope.extracted = response['extracted'];
                 $scope.inferred = response['inferred'];
@@ -33,11 +37,13 @@ app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage
                 angular.forEach($scope.extracted, function(value, key){
                     value.correct = true;
                 });
-            });
+                $('#loader').fadeOut(513, function(){
+                    $('#loader').remove();
+                });
+            }).error(function(response, status){
+                    $('#loadmsg').text("Loading Failed: HTTP Status "+status)
+                });
         }
-        $('#loader').fadeOut(513, function(){
-            $('#loader').remove();
-        });
     };
 
     // Sync data with localStorage
@@ -49,7 +55,6 @@ app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage
         $scope.$storage.missing = $scope.missing;
         $scope.$storage.currentPage = $scope.currentPage;
         $scope.syncCountdown = 10;
-        console.log($scope.syncCountdown);
         // Keep calling this function every 10 seconds
         $timeout($scope.syncLocal, 10000);
     };
@@ -102,13 +107,32 @@ app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage
     };
 
     /* Save reviewed statements / topics */
-    $scope.toServer = function(){
-        var postjson = {'extracted': $scope.extracted, 'missing': $scope.missing};
+    $scope.toServer = function(usrsubmit){
+        var postjson = {'last_page': $scope.currentPage, 'pseudo': $scope.pseudo,
+                        'extracted': $scope.extracted, 'inferred': $scope.inferred, 'missing': $scope.missing};
         console.log(postjson);
-        $http.post('/reviewed.json', postjson).success(function(response){
-            console.log("POSTed something")
+        ltime = new Date().getTime();
+        $http.post('/'+$scope.pseudo+ltime, postjson).success(function(response){
+            if ('success' in response && usrsubmit==true){
+                var clear_bool = confirm("Delete the backup in your browser? Recommended on public computers.");
+                if (clear_bool==true){
+                    $scope.syncLocal = function(){
+                        console.log("No more autosaving to localStorage.");
+                    }
+                    $localStorage.$reset();
+                    $timeout($localStorage.$reset, 10000);
+                }
+            }
+        }).error(function(){
+            alert("Saving to the server failed. Please send an email to alex@olieman.net, mentioning the current time.")
         });
     };
+    /* Auto-POST every 7 minutes */
+    $scope.autoPost = function(){
+        $scope.toServer(false);
+        $timeout($scope.autoPost, 420000);
+    }
+    $timeout($scope.autoPost, 420000);
 });
 
 // A startFrom filter

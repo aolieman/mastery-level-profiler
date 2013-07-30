@@ -15,14 +15,18 @@
     <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">-->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-    <link href="reviews.css" rel="stylesheet" media="screen">
+    <link href="app_review.css" rel="stylesheet" media="screen">
     <style>
         #loader {
             position: fixed;
             top:0;right:0;bottom:0;left:0;
-            background: rgba(80,130,210,0.666);
+            background: rgba(80,130,210,0.9);
             text-align:center;
-            z-index:999999999999;
+            z-index:99;
+        }
+        #loadmsg {
+            margin: 25px;
+            font-size: 1.67em;
         }
     </style>
     <script>
@@ -35,7 +39,7 @@
     </script>
 </head>
 <body>
-<div id="loader"><img id="ajaxloader" src="ajax-loader.gif" /></div>
+<div id="loader"><img id="ajaxloader" src="ajax-loader.gif" /><div id="loadmsg">Loading Statements ...</div></div>
 <div ng-controller="StatementCtrl" ng-init="initdata()">
 
     <h1>Statements for {{pseudo}}</h1>
@@ -80,26 +84,55 @@
         </div>
     </section>
 
-    <h2>Remove the (inferred) topics in which you have absolutely no skill, knowledge, or interest</h2>
-
-
-    <h2>Add topics that we have missed</h2>
-    <div class='container-fluid'>
-        <div>
-            <span>Missing: </span>
-            <div class="btn" ng-click="delMissing(tn)" ng-repeat="tn in missing">
-                <span class="topic-name">{{tn}}</span>
-                <i class="icon-remove"></i>
+    <section id="inf-topics" class="">
+        <h2>Remove the (inferred) topics in which you have absolutely no skill, knowledge, or interest</h2>
+        <div class="top-cont" ng-repeat="topic in inferred.dbp">
+            <div class="btn" ng-class="{disabled: !topic.correct}" ng-click="toggleCorrect(topic)">
+                <span class="topic-name" title={{topic.summary}}>{{topic.name}}</span>
+                <a class="icon-remove"></a>
             </div>
         </div>
-        <form class="input-append">
-            <input type="text" ng-model="selected" typeahead="res.displayName for res in getSkills($viewValue)">
-            <button class="btn" ng-click="addMissing(selected)"><i class="icon-plus"></i></button>
-        </form>
-    </div>
+        <div class="top-cont" ng-repeat="topic in inferred.dbp_niv">
+            <div class="btn" ng-class="{disabled: !topic.correct}" ng-click="toggleCorrect(topic)">
+                <span class="topic-name" title={{topic.summary}}>{{topic.name}}</span>
+                <a class="icon-remove"></a>
+            </div>
+        </div>
+        <div class="top-cont" ng-repeat="topic in inferred.li">
+            <div class="btn" ng-class="{disabled: !topic.correct}" ng-click="toggleCorrect(topic)">
+                <span class="topic-name" title={{topic.summary}}>{{topic.name}}</span>
+                <a class="icon-remove"></a>
+            </div>
+        </div>
+        <div class="top-cont" ng-repeat="topic in inferred.li_niv">
+            <div class="btn" ng-class="{disabled: !topic.correct}" ng-click="toggleCorrect(topic)">
+                <span class="topic-name" title={{topic.summary}}>{{topic.name}}</span>
+                <a class="icon-remove"></a>
+            </div>
+        </div>
+        <span class="stretch"></span>
+    </section>
 
-    <button class="btn-large" ng-click="toServer()"><i class="icon-ok">&nbsp;</i> Send to Server</button>
-    <span>Auto-sync in {{syncCountdown}} seconds.</span>
+    <section id="missing-topics" class="">
+        <h2>Add topics that we have missed:</h2>
+        <em>Please add (at least) a few topics in which you have gained skill and knowledge during previous team projects.</em>
+        <div class='container-fluid'>
+            <div id="missing-container">
+                <div class="btn" ng-click="delMissing(tn)" ng-repeat="tn in missing">
+                    <span class="topic-name">{{tn}}</span>
+                    <i class="icon-remove"></i>
+                </div>
+            </div>
+            <form class="input-append">
+                <input type="text" ng-model="selected" typeahead="res.displayName for res in getSkills($viewValue)">
+                <button class="btn" ng-click="addMissing(selected)"><i class="icon-plus"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <button id="btn-toserver" class="btn-large" ng-click="toServer(true)"><i class="icon-ok">&nbsp;</i> Send to Server</button>
+    <div id="autosavemsg">Auto-save in {{syncCountdown}} seconds.</div>
+    <div id="footermsg">Thanks for participating, and the best of luck with all (team) projects the future has in store for you!</div>
 </div>
 </body>
 </html>

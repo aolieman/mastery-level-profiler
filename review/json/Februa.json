@@ -1306,60 +1306,70 @@
     "inferred": {
         "dbp": [
             {
+                "correct": true, 
                 "enid": "Communication_design", 
                 "flow": 769.0, 
                 "name": "Communication Design", 
                 "summary": "Communication design is a mixed discipline between design and information-development which is concerned with how media intermission such as printed , craft ed, electronic media or presentations communicate with people. A communication design approach is not only concerned with developing the message aside from the aesthetic s in media, but also with creating new media channels to ensure the message"
             }, 
             {
+                "correct": true, 
                 "enid": "Creative_problem_solving", 
                 "flow": 760.0, 
                 "name": "Creative Solutions", 
                 "summary": "Creative problem solving is the mental process of creating a solution to a problem. It is a special form of problem solving in which the solution is independently created rather than learned with assistance. Creative problem solving always involves creativity . To qualify as creative problem solving the solution must either have value, clearly solve the stated problem, or be appreciated by someone for"
             }, 
             {
+                "correct": true, 
                 "enid": "Style_guide", 
                 "flow": 744.0, 
                 "name": "Style Guides", 
                 "summary": "A style guide or style manual is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization or field. The implementation of a style guide provides uniformity in style and formatting within a document and across multiple documents. A set of standards for a specific organization is often known as \"house style\". Style guides"
             }, 
             {
+                "correct": true, 
                 "enid": "Typography", 
                 "flow": 741.0, 
                 "name": "Typography", 
                 "summary": "Typography (from the Greek words \u03c4\u03cd\u03c0\u03bf\u03c2 (typos) = form and \u03b3\u03c1\u03b1\u03c6\u03ae (graphe) = writing) is the art and technique of arranging type in order to make language visible. The arrangement of type involves the selection of typefaces, point size, line length, leading (line spacing), adjusting the spaces between groups of letters ( tracking ) and adjusting the space between pairs of letters (kerning). Type "
             }, 
             {
+                "correct": true, 
                 "enid": "Information_design", 
                 "flow": 735.0, 
                 "name": "Information Design", 
                 "summary": "Information design is the skill and practice of preparing information so people can use it with efficiency and effectiveness. Where the data is complex or unstructured, a visual representation can express its meaning more clearly to the viewer. More on 'Information Design' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
                 "enid": "Interaction_design", 
                 "flow": 712.0, 
                 "name": "Interaction Design", 
                 "summary": null
             }, 
             {
+                "correct": true, 
                 "enid": "User-centered_design", 
                 "flow": 696.0, 
                 "name": "User-centered Design", 
                 "summary": "In broad terms, user-centered design (UCD) is a type of user interface design and a process in which the needs, wants, and limitations of end users of a product are given extensive attention at each stage of the design process . User-centered design can be characterized as a multi-stage problem solving process that not only requires designers to analyse and foresee how users are"
             }, 
             {
+                "correct": true, 
                 "enid": "Design_for_the_Environment", 
                 "flow": 639.0, 
                 "name": "Design for Environment", 
                 "summary": "Design for the Environment Program (DfE) is a United States Environmental Protection Agency (USEPA) program, created in 1992, that works to prevent pollution, and the risk pollution presents to humans and the environment. The EPA DfE program provides information regarding safer electronics , safer flame retardants , safer chemical formulations, as well as best environmental practices. DfE employs a variety of design approaches that attempt"
             }, 
             {
+                "correct": true, 
                 "enid": "Regenerative_design", 
                 "flow": 634.0, 
                 "name": "Regenerative Design", 
                 "summary": "Regenerative design (sometimes referred to as cradle-to-cradle design) is a process-oriented systems theory based approach to design. The term \"regenerative\" describes processes that restore, renew or revitalize their own sources of energy and materials, creating sustainable systems that integrate the needs of society with the integrity of nature. The basis is derived from systems ecology with a closed loop input\u2013output model or a model"
             }, 
             {
+                "correct": true, 
                 "enid": "Video_design", 
                 "flow": 631.0, 
                 "name": "Projection Design", 
@@ -1368,60 +1378,70 @@
         ], 
         "dbp_niv": [
             {
+                "correct": true, 
                 "enid": "Living_lab", 
                 "flow": 1107.0, 
                 "name": "Living lab", 
                 "summary": "A living lab is a research concept. A living lab is a user-centred, open-innovation ecosystem, often operating in a territorial context (e.g. city, agglomeration, region), integrating concurrent research and innovation processes within a public-private-people partnership. The concept is based on a systematic user co-creation approach integrating research and innovation processes."
             }, 
             {
+                "correct": true, 
                 "enid": "Work_of_art", 
                 "flow": 857.0, 
                 "name": "Work of art", 
                 "summary": "A work of art, artwork, art piece, or art object is an aesthetic item or artistic creation."
             }, 
             {
+                "correct": true, 
                 "enid": "Epiphany_(feeling)", 
                 "flow": 751.0, 
                 "name": "Epiphany (feeling)", 
                 "summary": "An epiphany (from the ancient Greek \u1f10\u03c0\u03b9\u03c6\u03ac\u03bd\u03b5\u03b9\u03b1, epiphaneia, \"manifestation, striking appearance\") is the sudden realization or comprehension of the (larger) essence or meaning of something. The term is used in either a philosophical or literal sense to signify that the claimant has \"found the last piece of the puzzle and now sees the whole picture,\" or has new information or experience, often insignificant by itself, that illuminates a deeper or numinous foundational frame of reference."
             }, 
             {
+                "correct": true, 
                 "enid": "Sensory_design", 
                 "flow": 686.0, 
                 "name": "Sensory design", 
                 "summary": "Sensory design aims to establish an overall diagnosis of the sensory perceptions of a product, and define appropriate means to design or redesign it on that basis. It involves an observation of the diverse and varying situations in which a given product or object is used in order to measure the users' overall opinion of the product, its positive and negative aspects in terms of tactility, appearance, sound and so on."
             }, 
             {
+                "correct": true, 
                 "enid": "Urban_acupuncture", 
                 "flow": 668.0, 
                 "name": "Urban Acupuncture", 
                 "summary": "Urban Acupuncture is an urban environmentalism theory which combines urban design with traditional Chinese medical theory of acupuncture. This strategy views cities as living, breathing organisms and pinpoints areas in need of repair. Sustainable projects, then, serve as needles that revitalize the whole by healing the parts."
             }, 
             {
+                "correct": true, 
                 "enid": "Intelligence-based_design", 
                 "flow": 604.0, 
                 "name": "Intelligence-based design", 
                 "summary": "Intelligence-Based Design is the purposeful manipulation of the built-environment to effectively engage humans in an essential manner through complex organized information. Intelligence-Based Theory evidences the conterminous relationship between mind and matter, i.e. the direct neurological evaluations of surface, structure, pattern, texture and form."
             }, 
             {
+                "correct": true, 
                 "enid": "New_Wave_(design)", 
                 "flow": 600.0, 
                 "name": "New Wave (design)", 
                 "summary": "In design, New Wave refers to an approach to typography that actively defies strict grid-based arrangement conventions. Characteristics include inconsistent letterspacing, varying typeweights within single words and type set at unusual angles. http://www. aiga. org/content. cfm?contentalias=AprilGreiman Credit for the introduction of New Wave design is given to Wolfgang Weingart. April Greiman is credited for popularizing it in the United States."
             }, 
             {
+                "correct": true, 
                 "enid": "Modern_typography", 
                 "flow": 595.0, 
                 "name": "Modern typography", 
                 "summary": "Modern Typography was a reaction against the perceived decadence of typography and design of the late 19th century. It is mostly associated with the works of Jan Tschichold and Bauhaus typographers Herbert Bayer, Laszlo Moholy-Nagy, El Lissitzky and others."
             }, 
             {
+                "correct": true, 
                 "enid": "Sonic_interaction_design", 
                 "flow": 585.0, 
                 "name": "Sonic interaction design", 
                 "summary": "Sonic interaction design is the study and exploitation of sound as one of the principal channels conveying information, meaning, and aesthetic/emotional qualities in interactive contexts. Sonic interaction design is at the intersection of interaction design and sound and music computing."
             }, 
             {
+                "correct": true, 
                 "enid": "Process-centered_design", 
                 "flow": 570.0, 
                 "name": "Process-centered design", 
@@ -1430,60 +1450,70 @@
         ], 
         "li": [
             {
+                "correct": true, 
                 "count": 40, 
                 "enid": "Engineering", 
                 "name": "Engineering", 
                 "summary": "Engineering is the science, skill, and profession of acquiring and applying scientific , economic , social, and practical knowledge, in order to design and also build structures, machines, devices, systems, materials and processes . The American Engineers' Council for Professional Development (ECPD, the predecessor of ABET) has defined \"engineering\" as: The creative application of scientific principles to design or develop structures, machines, apparatus, or"
             }, 
             {
+                "correct": true, 
                 "count": 25, 
                 "enid": "Philosophy", 
                 "name": "Philosophy", 
                 "summary": "Philosophy is the study of general and fundamental problems, such as those connected with reality , existence, knowledge, values , reason , mind, and language. Philosophy is distinguished from other ways of addressing such problems by its critical, generally systematic approach and its reliance on rational argument. The word \"philosophy\" comes from the Greek \u03c6\u03b9\u03bb\u03bf\u03c3\u03bf\u03c6\u03af\u03b1 (philosophia), which literally means \"love of wisdom\". More on 'Philosophy' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
                 "count": 24, 
                 "enid": "Painting", 
                 "name": "Painting", 
                 "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
             }, 
             {
+                "correct": true, 
                 "count": 24, 
                 "enid": "Mathematics", 
                 "name": "Mathematics", 
                 "summary": "Mathematics (from Greek \u03bc\u03ac\u03b8\u03b7\u03bc\u03b1 m\u00e1th\u0113ma, \u201cknowledge, study, learning\u201d) is the abstract study of topics encompassing quantity, structure, space, change, and others; it has no generally accepted definition . Mathematicians seek out patterns and formulate new conjectures. Mathematicians resolve the truth or falsity of conjectures by mathematical proof. The research required to solve mathematical problems can take years or even centuries of sustained inquiry."
             }, 
             {
+                "correct": true, 
                 "count": 24, 
                 "enid": "Science", 
                 "name": "Science", 
                 "summary": "Science is a systematic enterprise that builds and organizes knowledge in the form of testable explanations and predictions about the universe. In an older and closely related meaning (found, for example, in Aristotle), \"science\" refers to the body of reliable knowledge itself, of the type that can be logically and rationally explained (see History and philosophy below). Since classical antiquity science as a type"
             }, 
             {
+                "correct": true, 
                 "count": 23, 
                 "enid": "Art", 
                 "name": "Art", 
                 "summary": "Art is a term that describes a diverse range of human activities and the products of those activities, but here refers to the visual arts , which cover the creation of images or objects in fields including painting , sculpture , printmaking , photography , and other visual media. Architecture is often included as one of the visual arts; however, like the decorative "
             }, 
             {
-                "count": 22, 
+                "correct": true, 
+                "count": 21, 
                 "enid": "Programming_tool", 
                 "name": "Development Tools", 
                 "summary": "A programming tool or software development tool is a program or application that software developers use to create, debug, maintain, or otherwise support other programs and applications. The term usually refers to relatively simple programs that can be combined together to accomplish a task, much as one might use multiple hand tool s to fix a physical object. Programming tool or programming software"
             }, 
             {
+                "correct": true, 
                 "count": 21, 
                 "enid": "Software_architecture", 
                 "name": "Architecture", 
                 "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
                 "count": 18, 
                 "enid": "Latin", 
                 "name": "Latin", 
                 "summary": "Latin (; Latin: ; ) is an Italic language originally spoken in Latium and Ancient Rome. Along with most European languages , it is a descendant of the ancient Proto-Indo-European language. It originated in the Italian peninsula. Although it is considered a dead language, many students, scholars, and members of the Christian clergy speak it fluently, and it is still taught in some primary and"
             }, 
             {
+                "correct": true, 
                 "count": 18, 
                 "enid": "Industrial_design", 
                 "name": "Industrial Design", 
@@ -1492,51 +1522,61 @@
         ], 
         "li_niv": [
             {
-                "count": 27, 
+                "correct": true, 
+                "count": 25, 
                 "name": "Communication", 
                 "summary": "Sorry, no description is available."
             }, 
             {
+                "correct": true, 
                 "count": 18, 
                 "name": "Music", 
                 "summary": "Sorry, no description is available."
             }, 
             {
+                "correct": true, 
                 "count": 16, 
                 "name": "Education", 
                 "summary": "Sorry, no description is available."
             }, 
             {
+                "correct": true, 
                 "count": 15, 
                 "name": "Machinery", 
                 "summary": "Sorry, no description is available."
             }, 
             {
+                "correct": true, 
                 "count": 11, 
                 "name": "Manufacturing", 
                 "summary": "Sorry, no description is available."
             }, 
             {
+                "correct": true, 
                 "count": 10, 
                 "name": "Management", 
                 "summary": "Sorry, no description is available."
             }, 
             {
+                "correct": true, 
                 "count": 8, 
                 "name": "Spatial Databases", 
                 "summary": "Sorry, no description is available."
             }, 
             {
+                "correct": true, 
                 "count": 8, 
                 "name": "High Performance Computing", 
                 "summary": "Sorry, no description is available."
             }, 
             {
+                "correct": true, 
                 "count": 8, 
-                "name": "Information Systems", 
+                "name": "Web Pages", 
                 "summary": "Sorry, no description is available."
             }, 
             {
+                "correct": true, 
                 "count": 8, 
                 "name": "Federal Government", 
                 "summary": "Sorry, no description is available."

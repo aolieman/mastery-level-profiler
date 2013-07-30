@@ -2027,60 +2027,70 @@
     "inferred": {
         "dbp": [
             {
+                "correct": true, 
                 "enid": "Information_design", 
                 "flow": 1221.0, 
                 "name": "Information Design", 
                 "summary": "Information design is the skill and practice of preparing information so people can use it with efficiency and effectiveness. Where the data is complex or unstructured, a visual representation can express its meaning more clearly to the viewer. More on 'Information Design' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
                 "enid": "Typography", 
                 "flow": 1079.0, 
                 "name": "Typography", 
                 "summary": "Typography (from the Greek words \u03c4\u03cd\u03c0\u03bf\u03c2 (typos) = form and \u03b3\u03c1\u03b1\u03c6\u03ae (graphe) = writing) is the art and technique of arranging type in order to make language visible. The arrangement of type involves the selection of typefaces, point size, line length, leading (line spacing), adjusting the spaces between groups of letters ( tracking ) and adjusting the space between pairs of letters (kerning). Type "
             }, 
             {
+                "correct": true, 
                 "enid": "Communication_design", 
                 "flow": 1066.0, 
                 "name": "Communication Design", 
                 "summary": "Communication design is a mixed discipline between design and information-development which is concerned with how media intermission such as printed , craft ed, electronic media or presentations communicate with people. A communication design approach is not only concerned with developing the message aside from the aesthetic s in media, but also with creating new media channels to ensure the message"
             }, 
             {
+                "correct": true, 
                 "enid": "Style_guide", 
                 "flow": 1049.0, 
                 "name": "Style Guides", 
                 "summary": "A style guide or style manual is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization or field. The implementation of a style guide provides uniformity in style and formatting within a document and across multiple documents. A set of standards for a specific organization is often known as \"house style\". Style guides"
             }, 
             {
+                "correct": true, 
                 "enid": "User_experience_design", 
                 "flow": 1046.0, 
                 "name": "User Experience Design", 
                 "summary": "User Experience Design (UXD or UED) is a broad term used to explain all aspects of a person\u2019s experience with the system including the interface, graphics, industrial design, physical interaction, and the manual. It also refers to the application of user-centered design practices to generate cohesive, predictive and desirable designs based on holistic consideration of users\u2019 experience. In most cases, User Experience design fully encompasses"
             }, 
             {
+                "correct": true, 
                 "enid": "Creative_problem_solving", 
                 "flow": 1020.0, 
                 "name": "Creative Solutions", 
                 "summary": "Creative problem solving is the mental process of creating a solution to a problem. It is a special form of problem solving in which the solution is independently created rather than learned with assistance. Creative problem solving always involves creativity . To qualify as creative problem solving the solution must either have value, clearly solve the stated problem, or be appreciated by someone for"
             }, 
             {
+                "correct": true, 
                 "enid": "CTQ_tree", 
                 "flow": 957.0, 
                 "name": "CTQ", 
                 "summary": "A CTQ tree (Critical to Quality tree) is used to decompose broad customer requirements into more easily quantified requirements. CTQ Trees are often used in the Six Sigma methodology. CTQs are derived from customer needs. Customer delight may be an add-on while deriving Critical To Quality parameters. For cost considerations one may remain focused to customer needs at the initial stage. CTQs (Critical to"
             }, 
             {
+                "correct": true, 
                 "enid": "Motion_graphic_design", 
                 "flow": 952.0, 
                 "name": "Motion Graphic Design", 
                 "summary": "Motion Design is a subset of graphic design in that it uses graphic design principles in a filmmaking or video production context (or other temporally evolving visual medium) through the use of animation or filmic techniques. Examples include the kinetic typography and graphics you see as the titles for a film, or opening sequences for television or the spinning, web-based"
             }, 
             {
+                "correct": true, 
                 "enid": "Pilot_experiment", 
                 "flow": 943.0, 
                 "name": "Pilot Projects", 
                 "summary": "A pilot experiment, also called a pilot study, is a small scale preliminary study conducted in order to evaluate feasibility, time, cost, adverse events, and effect size (statistical variability) in an attempt to predict an appropriate sample size and improve upon the study design prior to performance of a full-scale research project. Pilot studies, therefore, may not be appropriate for case studies . More on 'Pilot Projects' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
                 "enid": "Video_design", 
                 "flow": 922.0, 
                 "name": "Projection Design", 
@@ -2089,60 +2099,70 @@
         ], 
         "dbp_niv": [
             {
+                "correct": true, 
                 "enid": "Living_lab", 
                 "flow": 1631.0, 
                 "name": "Living lab", 
                 "summary": "A living lab is a research concept. A living lab is a user-centred, open-innovation ecosystem, often operating in a territorial context (e.g. city, agglomeration, region), integrating concurrent research and innovation processes within a public-private-people partnership. The concept is based on a systematic user co-creation approach integrating research and innovation processes."
             }, 
             {
+                "correct": true, 
                 "enid": "Process-centered_design", 
                 "flow": 1028.0, 
                 "name": "Process-centered design", 
                 "summary": "Process-centered design (PCD) is a design methodology, which proposes a business centric approach for designing user interfaces. Because of the multi-stage business analysis steps involved right from the beginning of the PCD life cycle, it is believed to achieve the highest levels of business-IT alignment that is possible through UI."
             }, 
             {
+                "correct": true, 
                 "enid": "Work_of_art", 
                 "flow": 1022.0, 
                 "name": "Work of art", 
                 "summary": "A work of art, artwork, art piece, or art object is an aesthetic item or artistic creation."
             }, 
             {
+                "correct": true, 
                 "enid": "Sensory_design", 
                 "flow": 988.0, 
                 "name": "Sensory design", 
                 "summary": "Sensory design aims to establish an overall diagnosis of the sensory perceptions of a product, and define appropriate means to design or redesign it on that basis. It involves an observation of the diverse and varying situations in which a given product or object is used in order to measure the users' overall opinion of the product, its positive and negative aspects in terms of tactility, appearance, sound and so on."
             }, 
             {
+                "correct": true, 
                 "enid": "New_Wave_(design)", 
                 "flow": 950.0, 
                 "name": "New Wave (design)", 
                 "summary": "In design, New Wave refers to an approach to typography that actively defies strict grid-based arrangement conventions. Characteristics include inconsistent letterspacing, varying typeweights within single words and type set at unusual angles. http://www. aiga. org/content. cfm?contentalias=AprilGreiman Credit for the introduction of New Wave design is given to Wolfgang Weingart. April Greiman is credited for popularizing it in the United States."
             }, 
             {
+                "correct": true, 
                 "enid": "Critical_to_quality", 
                 "flow": 949.0, 
                 "name": "Critical to Quality", 
                 "summary": "Critical to Quality is an attribute of a part, assembly, sub-assembly, product, or process that is literally critical to quality or more precisely, has a direct and significant impact on its actual or perceived quality."
             }, 
             {
+                "correct": true, 
                 "enid": "Urban_acupuncture", 
                 "flow": 935.0, 
                 "name": "Urban Acupuncture", 
                 "summary": "Urban Acupuncture is an urban environmentalism theory which combines urban design with traditional Chinese medical theory of acupuncture. This strategy views cities as living, breathing organisms and pinpoints areas in need of repair. Sustainable projects, then, serve as needles that revitalize the whole by healing the parts."
             }, 
             {
+                "correct": true, 
                 "enid": "Modern_typography", 
                 "flow": 926.0, 
                 "name": "Modern typography", 
                 "summary": "Modern Typography was a reaction against the perceived decadence of typography and design of the late 19th century. It is mostly associated with the works of Jan Tschichold and Bauhaus typographers Herbert Bayer, Laszlo Moholy-Nagy, El Lissitzky and others."
             }, 
             {
+                "correct": true, 
                 "enid": "Form_follows_function", 
                 "flow": 894.0, 
                 "name": "Form follows function", 
                 "summary": "Form follows function is a principle associated with modern architecture and industrial design in the 20th century. The principle is that the shape of a building or object should be primarily based upon its intended function or purpose."
             }, 
             {
+                "correct": true, 
                 "enid": "Slow_design", 
                 "flow": 887.0, 
                 "name": "Slow design", 
@@ -2151,115 +2171,135 @@
         ], 
         "li": [
             {
-                "count": 33, 
+                "correct": true, 
+                "count": 35, 
                 "enid": "Data", 
                 "name": "Data", 
                 "summary": "Data (,, or ) are values of qualitative or quantitative variables, belonging to a set of items. Data in computing (or data processing ) are often represented by a combination of items organized in rows and multiple variables organized in columns. Data are typically the results of measurements and can be visualised using graph s or image s. Data as an abstract"
             }, 
             {
-                "count": 28, 
+                "correct": true, 
+                "count": 33, 
                 "enid": "Academia", 
                 "name": "Academia", 
                 "summary": "Academia is the community of students and scholars engaged in higher education and research . More on 'Academia' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
+                "count": 28, 
+                "enid": "Painting", 
+                "name": "Painting", 
+                "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
+            }, 
+            {
+                "correct": true, 
+                "count": 28, 
+                "enid": "Economics", 
+                "name": "Economics", 
+                "summary": "Economics is the social science that analyzes the production, distribution, and consumption of goods and services. The term economics comes from the Ancient Greek (', \"management of a household, administration\") from (', \"house\") + (', \"custom\" or \"law\"), hence \"rules of the house(hold)\". Political economy was the earlier name for the subject, but economists in the latter 19th century suggested 'economics'"
+            }, 
+            {
+                "correct": true, 
+                "count": 28, 
+                "enid": "Software_architecture", 
+                "name": "Architecture", 
+                "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
+            }, 
+            {
+                "correct": true, 
+                "count": 28, 
+                "enid": "Greek_language", 
+                "name": "Greek", 
+                "summary": "Greek ( ell\u012bnika or ) ell\u012bnik\u012b gl\u014dssa is an independent branch of the Indo-European family of languages. Native to the southern Balkans Western Asia Minor and the Aegean, it has the longest documented history of any Indo-European language, spanning 34\u00a0centuries of written records. Its writing system has been the Greek alphabet for the majority of its history; other systems, such as Linear B and"
+            }, 
+            {
+                "correct": true, 
                 "count": 27, 
                 "enid": "Film", 
                 "name": "Film", 
                 "summary": "A film, also called a movie or motion picture, is a series of still or moving images. It is produced by recording photographic images with camera s, or by creating images using animation techniques or visual effects . The process of filmmaking has developed into an art form and industry. Films are cultural artifacts created by specific culture s, which reflect"
             }, 
             {
-                "count": 26, 
-                "enid": "Greek_language", 
-                "name": "Greek", 
-                "summary": "Greek ( ell\u012bnika or ) ell\u012bnik\u012b gl\u014dssa is an independent branch of the Indo-European family of languages. Native to the southern Balkans Western Asia Minor and the Aegean, it has the longest documented history of any Indo-European language, spanning 34\u00a0centuries of written records. Its writing system has been the Greek alphabet for the majority of its history; other systems, such as Linear B and"
-            }, 
-            {
-                "count": 25, 
-                "enid": "Economics", 
-                "name": "Economics", 
-                "summary": "Economics is the social science that analyzes the production, distribution, and consumption of goods and services. The term economics comes from the Ancient Greek (', \"management of a household, administration\") from (', \"house\") + (', \"custom\" or \"law\"), hence \"rules of the house(hold)\". Political economy was the earlier name for the subject, but economists in the latter 19th century suggested 'economics'"
-            }, 
-            {
-                "count": 23, 
-                "enid": "Software_architecture", 
-                "name": "Architecture", 
-                "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
-            }, 
-            {
-                "count": 20, 
-                "enid": "Painting", 
-                "name": "Painting", 
-                "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
-            }, 
-            {
-                "count": 20, 
+                "correct": true, 
+                "count": 24, 
                 "enid": "Software", 
                 "name": "Software", 
                 "summary": "Computer software, or just software, is a collection of computer program s and related data that provides the instructions for telling a computer what to do and how to do it. Software refers to one or more computer programs and data held in the storage of the computer for some reasons. In other words, software is a set of programs, procedures, algorithms and"
             }, 
             {
-                "count": 16, 
-                "enid": "Algorithm", 
-                "name": "Algorithms", 
-                "summary": "In mathematics and computer science , an algorithm (originating from al-Khw\u0101rizm\u012b, the famous Persian mathematician Mu\u1e25ammad ibn M\u016bs\u0101 al-Khw\u0101rizm\u012b) is a step-by-step procedure for calculations. Algorithms are used for calculation , data processing , and automated reasoning . More precisely, an algorithm is an effective method expressed as a finite list of well-defined instructions for calculating a function . Starting from an initial state"
-            }, 
-            {
-                "count": 16, 
+                "correct": true, 
+                "count": 22, 
                 "enid": "Social_science", 
                 "name": "Social Sciences", 
                 "summary": "Social science includes the academic disciplines concerned with society and human behavior. \"Social science\" is commonly used as an umbrella term to refer to anthropology , archaeology , criminology , economics , education , history , linguistics , communication studies, political science and international relations , sociology , geography , law , social work and psychology . The term may however be used"
+            }, 
+            {
+                "correct": true, 
+                "count": 19, 
+                "enid": "Algorithm", 
+                "name": "Algorithms", 
+                "summary": "In mathematics and computer science , an algorithm (originating from al-Khw\u0101rizm\u012b, the famous Persian mathematician Mu\u1e25ammad ibn M\u016bs\u0101 al-Khw\u0101rizm\u012b) is a step-by-step procedure for calculations. Algorithms are used for calculation , data processing , and automated reasoning . More precisely, an algorithm is an effective method expressed as a finite list of well-defined instructions for calculating a function . Starting from an initial state"
             }
         ], 
         "li_niv": [
             {
-                "count": 20, 
+                "correct": true, 
+                "count": 24, 
                 "name": "Communication", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 15, 
-                "name": "Manufacturing", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 14, 
+                "correct": true, 
+                "count": 19, 
                 "name": "Machinery", 
                 "summary": "Sorry, no description is available."
             }, 
             {
+                "correct": true, 
+                "count": 18, 
+                "name": "Manufacturing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 16, 
+                "name": "Music", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 14, 
+                "name": "Management", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 14, 
+                "name": "Education", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 13, 
+                "name": "Information Systems", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
                 "count": 13, 
                 "name": "User Flows", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 13, 
-                "name": "Music", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
+                "correct": true, 
                 "count": 12, 
-                "name": "Management", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 10, 
-                "name": "Education", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 10, 
                 "name": "Technical Drawing", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 10, 
+                "correct": true, 
+                "count": 12, 
                 "name": "Film Production", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 9, 
-                "name": "Information Systems", 
                 "summary": "Sorry, no description is available."
             }
         ]

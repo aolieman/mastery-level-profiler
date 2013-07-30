@@ -202,7 +202,7 @@ class Profile(object):
                          'List_of_schools_offering_interaction_design_programs'}
         for inf_id, flowct in top_flow:
             if inf_id in ignore_topics: continue
-            topic_dict = {'enid': inf_id, 'flow': flowct}
+            topic_dict = {'enid': inf_id, 'flow': flowct, 'correct': True}
             if inf_id in en_dict:
                 topic_dict['name'] = en_dict[inf_id]
                 topic_dict['summary'] = en_summary[inf_id]
@@ -252,7 +252,7 @@ class Profile(object):
             except KeyError:
                 print "\n!! %s not a recognized skill name\n" % inf_name
                 continue
-            topic_dict = {'name': inf_name, 'count': count}
+            topic_dict = {'name': inf_name, 'count': count, 'correct': True}
             topic_dict['summary'] = "Sorry, no description is available."
             if 'summary' in fields and fields['summary']:
                 topic_dict['summary'] = fields['summary']
@@ -1063,7 +1063,7 @@ if __name__ == '__main__' :
         all_profiles[:] = [pr for pr in all_profiles if (pr.signup['email'] not in
                                                          {"alex@olieman.net",
                                                           "r.jelierse@student.tudelft.nl"})]
-        produceStatements(all_profiles)
+        #produceStatements(all_profiles)
         
     finally:
         # disconnect from mongo

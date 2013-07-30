@@ -1467,60 +1467,70 @@
     "inferred": {
         "dbp": [
             {
+                "correct": true, 
                 "enid": "Communication_design", 
                 "flow": 884.0, 
                 "name": "Communication Design", 
                 "summary": "Communication design is a mixed discipline between design and information-development which is concerned with how media intermission such as printed , craft ed, electronic media or presentations communicate with people. A communication design approach is not only concerned with developing the message aside from the aesthetic s in media, but also with creating new media channels to ensure the message"
             }, 
             {
+                "correct": true, 
                 "enid": "Information_design", 
                 "flow": 850.0, 
                 "name": "Information Design", 
                 "summary": "Information design is the skill and practice of preparing information so people can use it with efficiency and effectiveness. Where the data is complex or unstructured, a visual representation can express its meaning more clearly to the viewer. More on 'Information Design' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
                 "enid": "Typography", 
                 "flow": 810.0, 
                 "name": "Typography", 
                 "summary": "Typography (from the Greek words \u03c4\u03cd\u03c0\u03bf\u03c2 (typos) = form and \u03b3\u03c1\u03b1\u03c6\u03ae (graphe) = writing) is the art and technique of arranging type in order to make language visible. The arrangement of type involves the selection of typefaces, point size, line length, leading (line spacing), adjusting the spaces between groups of letters ( tracking ) and adjusting the space between pairs of letters (kerning). Type "
             }, 
             {
+                "correct": true, 
                 "enid": "User-centered_design", 
                 "flow": 804.0, 
                 "name": "User-centered Design", 
                 "summary": "In broad terms, user-centered design (UCD) is a type of user interface design and a process in which the needs, wants, and limitations of end users of a product are given extensive attention at each stage of the design process . User-centered design can be characterized as a multi-stage problem solving process that not only requires designers to analyse and foresee how users are"
             }, 
             {
+                "correct": true, 
                 "enid": "Video_design", 
                 "flow": 757.0, 
                 "name": "Projection Design", 
                 "summary": "Video design or projection design is a creative field of stagecraft. It is concerned with the creation and integration of film and motion graphics into the fields of theatre , opera , dance , fashion shows , concerts and other live events. Video design has only recently gained recognition as a separate creative field. Prior to this, the responsibilities of video design would often"
             }, 
             {
+                "correct": true, 
                 "enid": "User_experience_design", 
                 "flow": 734.0, 
                 "name": "User Experience Design", 
                 "summary": "User Experience Design (UXD or UED) is a broad term used to explain all aspects of a person\u2019s experience with the system including the interface, graphics, industrial design, physical interaction, and the manual. It also refers to the application of user-centered design practices to generate cohesive, predictive and desirable designs based on holistic consideration of users\u2019 experience. In most cases, User Experience design fully encompasses"
             }, 
             {
+                "correct": true, 
                 "enid": "Linguistics", 
                 "flow": 694.0, 
                 "name": "Linguistics", 
                 "summary": "Linguistics is the scientific study of human language. Linguistics can be broadly broken into three categories or subfields of study: language form, language meaning, and language in context. The earliest known activities in descriptive linguistics have been attributed to Panini around 500 BCE, with his analysis of Sanskrit in Ashtadhyayi. The first subfield of linguistics is the study of language structure, or "
             }, 
             {
+                "correct": true, 
                 "enid": "Creative_problem_solving", 
                 "flow": 689.0, 
                 "name": "Creative Solutions", 
                 "summary": "Creative problem solving is the mental process of creating a solution to a problem. It is a special form of problem solving in which the solution is independently created rather than learned with assistance. Creative problem solving always involves creativity . To qualify as creative problem solving the solution must either have value, clearly solve the stated problem, or be appreciated by someone for"
             }, 
             {
+                "correct": true, 
                 "enid": "Motion_graphic_design", 
                 "flow": 650.0, 
                 "name": "Motion Graphic Design", 
                 "summary": "Motion Design is a subset of graphic design in that it uses graphic design principles in a filmmaking or video production context (or other temporally evolving visual medium) through the use of animation or filmic techniques. Examples include the kinetic typography and graphics you see as the titles for a film, or opening sequences for television or the spinning, web-based"
             }, 
             {
+                "correct": true, 
                 "enid": "Multimedia", 
                 "flow": 624.0, 
                 "name": "Multimedia", 
@@ -1529,60 +1539,70 @@
         ], 
         "dbp_niv": [
             {
+                "correct": true, 
                 "enid": "Living_lab", 
                 "flow": 1292.0, 
                 "name": "Living lab", 
                 "summary": "A living lab is a research concept. A living lab is a user-centred, open-innovation ecosystem, often operating in a territorial context (e.g. city, agglomeration, region), integrating concurrent research and innovation processes within a public-private-people partnership. The concept is based on a systematic user co-creation approach integrating research and innovation processes."
             }, 
             {
+                "correct": true, 
                 "enid": "Sensory_design", 
                 "flow": 856.0, 
                 "name": "Sensory design", 
                 "summary": "Sensory design aims to establish an overall diagnosis of the sensory perceptions of a product, and define appropriate means to design or redesign it on that basis. It involves an observation of the diverse and varying situations in which a given product or object is used in order to measure the users' overall opinion of the product, its positive and negative aspects in terms of tactility, appearance, sound and so on."
             }, 
             {
+                "correct": true, 
                 "enid": "Urban_acupuncture", 
                 "flow": 852.0, 
                 "name": "Urban Acupuncture", 
                 "summary": "Urban Acupuncture is an urban environmentalism theory which combines urban design with traditional Chinese medical theory of acupuncture. This strategy views cities as living, breathing organisms and pinpoints areas in need of repair. Sustainable projects, then, serve as needles that revitalize the whole by healing the parts."
             }, 
             {
+                "correct": true, 
                 "enid": "Work_of_art", 
                 "flow": 781.0, 
                 "name": "Work of art", 
                 "summary": "A work of art, artwork, art piece, or art object is an aesthetic item or artistic creation."
             }, 
             {
+                "correct": true, 
                 "enid": "New_Wave_(design)", 
                 "flow": 718.0, 
                 "name": "New Wave (design)", 
                 "summary": "In design, New Wave refers to an approach to typography that actively defies strict grid-based arrangement conventions. Characteristics include inconsistent letterspacing, varying typeweights within single words and type set at unusual angles. http://www. aiga. org/content. cfm?contentalias=AprilGreiman Credit for the introduction of New Wave design is given to Wolfgang Weingart. April Greiman is credited for popularizing it in the United States."
             }, 
             {
+                "correct": true, 
                 "enid": "Modern_typography", 
                 "flow": 702.0, 
                 "name": "Modern typography", 
                 "summary": "Modern Typography was a reaction against the perceived decadence of typography and design of the late 19th century. It is mostly associated with the works of Jan Tschichold and Bauhaus typographers Herbert Bayer, Laszlo Moholy-Nagy, El Lissitzky and others."
             }, 
             {
+                "correct": true, 
                 "enid": "Epiphany_(feeling)", 
                 "flow": 641.0, 
                 "name": "Epiphany (feeling)", 
                 "summary": "An epiphany (from the ancient Greek \u1f10\u03c0\u03b9\u03c6\u03ac\u03bd\u03b5\u03b9\u03b1, epiphaneia, \"manifestation, striking appearance\") is the sudden realization or comprehension of the (larger) essence or meaning of something. The term is used in either a philosophical or literal sense to signify that the claimant has \"found the last piece of the puzzle and now sees the whole picture,\" or has new information or experience, often insignificant by itself, that illuminates a deeper or numinous foundational frame of reference."
             }, 
             {
+                "correct": true, 
                 "enid": "Design_comics", 
                 "flow": 635.0, 
                 "name": "Design comics", 
                 "summary": "Design comics are a type of storyboarding used in product and web site design. Design comics include product consumers or other characters in an illustrated story that shows how the users interact with the product. This method of storytelling is closely related to basic storyboarding, but because design comics include one or more characters in the story, many designers find them to be a better medium to communicate user experiences."
             }, 
             {
+                "correct": true, 
                 "enid": "Immersive_design", 
                 "flow": 630.0, 
                 "name": "Immersive design", 
                 "summary": "Immersive design describes the activity of a new generation of designers who work inclusively across all story-driven media, from film and interactive media to live audience environments. Immersive designers deal simultaneously with virtual and dimensional environments and who and what they contain; and with time-based narrative and story space."
             }, 
             {
+                "correct": true, 
                 "enid": "Form_follows_function", 
                 "flow": 619.0, 
                 "name": "Form follows function", 
@@ -1591,115 +1611,135 @@
         ], 
         "li": [
             {
-                "count": 49, 
-                "enid": "Psychology", 
-                "name": "Psychology", 
-                "summary": "Psychology is an academic and applied discipline that involves the scientific study of mental functions and behavior s. Psychology has the immediate goal of understanding individuals and groups by both establishing general principles and researching specific cases, and by many accounts it ultimately aims to benefit society. In this field, a professional practitioner or researcher is called a psychologist, and can be classified as"
-            }, 
-            {
-                "count": 43, 
+                "correct": true, 
+                "count": 18, 
                 "enid": "Mathematics", 
                 "name": "Mathematics", 
                 "summary": "Mathematics (from Greek \u03bc\u03ac\u03b8\u03b7\u03bc\u03b1 m\u00e1th\u0113ma, \u201cknowledge, study, learning\u201d) is the abstract study of topics encompassing quantity, structure, space, change, and others; it has no generally accepted definition . Mathematicians seek out patterns and formulate new conjectures. Mathematicians resolve the truth or falsity of conjectures by mathematical proof. The research required to solve mathematical problems can take years or even centuries of sustained inquiry."
             }, 
             {
-                "count": 35, 
-                "enid": "Painting", 
-                "name": "Painting", 
-                "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
+                "correct": true, 
+                "count": 18, 
+                "enid": "Psychology", 
+                "name": "Psychology", 
+                "summary": "Psychology is an academic and applied discipline that involves the scientific study of mental functions and behavior s. Psychology has the immediate goal of understanding individuals and groups by both establishing general principles and researching specific cases, and by many accounts it ultimately aims to benefit society. In this field, a professional practitioner or researcher is called a psychologist, and can be classified as"
             }, 
             {
-                "count": 32, 
-                "enid": "Software_architecture", 
-                "name": "Architecture", 
-                "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
-            }, 
-            {
-                "count": 29, 
-                "enid": "Business", 
-                "name": "Business", 
-                "summary": "A business (also known as enterprise or firm) is an organization engaged in the trade of goods, services, or both to consumer s. Businesses are predominant in capitalist economies , where most of them are privately owned and administered to earn profit to increase the wealth of their owners. Businesses may also be not-for-profit or state-owned. A business owned by"
-            }, 
-            {
-                "count": 27, 
-                "enid": "Science", 
-                "name": "Science", 
-                "summary": "Science is a systematic enterprise that builds and organizes knowledge in the form of testable explanations and predictions about the universe. In an older and closely related meaning (found, for example, in Aristotle), \"science\" refers to the body of reliable knowledge itself, of the type that can be logically and rationally explained (see History and philosophy below). Since classical antiquity science as a type"
-            }, 
-            {
-                "count": 24, 
-                "enid": "Service_(economics)", 
-                "name": "Business Services", 
-                "summary": "In economics , a service is an intangible commodity . More specifically, services are an intangible equivalent of economic goods. Service provision is often an economic activity where the buyer does not generally, except by exclusive contract, obtain exclusive ownership of the thing purchased. The benefits of such a service, if priced, are held to be self-evident in the buyer's willingness to pay for"
-            }, 
-            {
-                "count": 24, 
-                "enid": "Software", 
-                "name": "Software", 
-                "summary": "Computer software, or just software, is a collection of computer program s and related data that provides the instructions for telling a computer what to do and how to do it. Software refers to one or more computer programs and data held in the storage of the computer for some reasons. In other words, software is a set of programs, procedures, algorithms and"
-            }, 
-            {
-                "count": 23, 
+                "correct": true, 
+                "count": 15, 
                 "enid": "Advertising", 
                 "name": "Advertising", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 22, 
-                "enid": "Social_science", 
-                "name": "Social Sciences", 
-                "summary": "Social science includes the academic disciplines concerned with society and human behavior. \"Social science\" is commonly used as an umbrella term to refer to anthropology , archaeology , criminology , economics , education , history , linguistics , communication studies, political science and international relations , sociology , geography , law , social work and psychology . The term may however be used"
+                "correct": true, 
+                "count": 12, 
+                "enid": "Painting", 
+                "name": "Painting", 
+                "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
+            }, 
+            {
+                "correct": true, 
+                "count": 12, 
+                "enid": "Business", 
+                "name": "Business", 
+                "summary": "A business (also known as enterprise or firm) is an organization engaged in the trade of goods, services, or both to consumer s. Businesses are predominant in capitalist economies , where most of them are privately owned and administered to earn profit to increase the wealth of their owners. Businesses may also be not-for-profit or state-owned. A business owned by"
+            }, 
+            {
+                "correct": true, 
+                "count": 10, 
+                "enid": "Paper_prototyping", 
+                "name": "Paper Prototyping", 
+                "summary": "In human\u2013computer interaction, paper prototyping is a widely used method in the user-centered design process , a process that helps developers to create software that meets the user's expectations and needs - in this case, especially for designing and testing user interface s. It is throwaway prototyping and involves creating rough, even hand-sketched, drawings of an interface to use as prototypes, or models,"
+            }, 
+            {
+                "correct": true, 
+                "count": 10, 
+                "enid": "Service_(economics)", 
+                "name": "Business Services", 
+                "summary": "In economics , a service is an intangible commodity . More specifically, services are an intangible equivalent of economic goods. Service provision is often an economic activity where the buyer does not generally, except by exclusive contract, obtain exclusive ownership of the thing purchased. The benefits of such a service, if priced, are held to be self-evident in the buyer's willingness to pay for"
+            }, 
+            {
+                "correct": true, 
+                "count": 10, 
+                "enid": "Software_architecture", 
+                "name": "Architecture", 
+                "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
+            }, 
+            {
+                "correct": true, 
+                "count": 10, 
+                "enid": "Heuristic_analysis", 
+                "name": "Heuristic Analysis", 
+                "summary": "Heuristic analysis is a method employed by many computer antivirus programs designed to detect previously unknown computer viruses, as well as new variants of viruses already in the wild. Heuristic analysis is an expert based analysis that determines the susceptibility of a system towards particular threat/risk using various decision rules or weighing methods. MultiCriteria analysis (MCA) is one of the means of weighing."
+            }, 
+            {
+                "correct": true, 
+                "count": 9, 
+                "enid": "Logic", 
+                "name": "Logic", 
+                "summary": "Logic (from the Greek \u03bb\u03bf\u03b3\u03b9\u03ba\u03ae logik\u0113) refers to both the study of modes of reasoning (which are valid and which are fallacious) and the use of valid reasoning. In the latter sense, logic is used in most intellectual activities, including philosophy and science, but in the first sense is studied primarily in the disciplines of philosophy , mathematics , semantics, and computer science ."
             }
         ], 
         "li_niv": [
             {
-                "count": 21, 
-                "name": "Music", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 20, 
-                "name": "Communication", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 19, 
-                "name": "Machinery", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 18, 
-                "name": "Education", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 16, 
-                "name": "Information Systems", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 12, 
-                "name": "Graphics", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
+                "correct": true, 
                 "count": 12, 
                 "name": "User Flows", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 12, 
+                "correct": true, 
+                "count": 9, 
+                "name": "Music", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 8, 
+                "name": "Machinery", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 7, 
+                "name": "Communication", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 6, 
+                "name": "Education", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 6, 
+                "name": "Graphics", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 6, 
+                "name": "Information Systems", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 6, 
+                "name": "Visual Solutions", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 6, 
                 "name": "Print", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 12, 
+                "correct": true, 
+                "count": 6, 
                 "name": "Reason", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "count": 9, 
-                "name": "Internet", 
                 "summary": "Sorry, no description is available."
             }
         ]

@@ -1,6 +1,16 @@
-#ext-topics{
+section {
     max-width: 1600px;
     padding: 30px;
+}
+
+#autosavemsg {
+    position: fixed;
+    top:0;right:0;
+    padding: 10px;
+    background: rgba(80,210,130,0.5);
+}
+
+#ext-topics{
     text-align: justify;
     -ms-text-justify: distribute-all-lines;
     text-justify: distribute-all-lines;
@@ -95,4 +105,19 @@ div .btn-group {
 .btn-group > .btn:last-child {
     border-radius: 0px 15px 15px 0px;
     width: 150px;
+}
+
+/* Missing topics */
+#missing-container {
+    min-height: 80px;
+    margin-top: 10px;
+}
+#btn-toserver {
+    position: absolute;
+    right: 42%;
+}
+#footermsg {
+    height: 133px;
+    margin-top: 67px;
+    text-align: center;
 }

@@ -1964,60 +1964,70 @@
     "inferred": {
         "dbp": [
             {
+                "correct": true, 
                 "enid": "Communication_design", 
                 "flow": 1118.0, 
                 "name": "Communication Design", 
                 "summary": "Communication design is a mixed discipline between design and information-development which is concerned with how media intermission such as printed , craft ed, electronic media or presentations communicate with people. A communication design approach is not only concerned with developing the message aside from the aesthetic s in media, but also with creating new media channels to ensure the message"
             }, 
             {
+                "correct": true, 
                 "enid": "Statistics", 
                 "flow": 1073.0, 
                 "name": "Statistics", 
                 "summary": "Statistics is the study of the collection, organization, analysis, interpretation, and presentation of data . It deals with all aspects of this, including the planning of data collection in terms of the design of survey s and experiments . A statistician is someone who is particularly well versed in the ways of thinking necessary for the successful application of statistical analysis. Such people have often"
             }, 
             {
+                "correct": true, 
                 "enid": "Information_design", 
                 "flow": 1023.0, 
                 "name": "Information Design", 
                 "summary": "Information design is the skill and practice of preparing information so people can use it with efficiency and effectiveness. Where the data is complex or unstructured, a visual representation can express its meaning more clearly to the viewer. More on 'Information Design' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
                 "enid": "Creative_problem_solving", 
                 "flow": 986.0, 
                 "name": "Creative Solutions", 
                 "summary": "Creative problem solving is the mental process of creating a solution to a problem. It is a special form of problem solving in which the solution is independently created rather than learned with assistance. Creative problem solving always involves creativity . To qualify as creative problem solving the solution must either have value, clearly solve the stated problem, or be appreciated by someone for"
             }, 
             {
+                "correct": true, 
                 "enid": "Style_guide", 
                 "flow": 913.0, 
                 "name": "Style Guides", 
                 "summary": "A style guide or style manual is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization or field. The implementation of a style guide provides uniformity in style and formatting within a document and across multiple documents. A set of standards for a specific organization is often known as \"house style\". Style guides"
             }, 
             {
+                "correct": true, 
                 "enid": "Typography", 
                 "flow": 911.0, 
                 "name": "Typography", 
                 "summary": "Typography (from the Greek words \u03c4\u03cd\u03c0\u03bf\u03c2 (typos) = form and \u03b3\u03c1\u03b1\u03c6\u03ae (graphe) = writing) is the art and technique of arranging type in order to make language visible. The arrangement of type involves the selection of typefaces, point size, line length, leading (line spacing), adjusting the spaces between groups of letters ( tracking ) and adjusting the space between pairs of letters (kerning). Type "
             }, 
             {
+                "correct": true, 
                 "enid": "User_experience_design", 
                 "flow": 858.0, 
                 "name": "User Experience Design", 
                 "summary": "User Experience Design (UXD or UED) is a broad term used to explain all aspects of a person\u2019s experience with the system including the interface, graphics, industrial design, physical interaction, and the manual. It also refers to the application of user-centered design practices to generate cohesive, predictive and desirable designs based on holistic consideration of users\u2019 experience. In most cases, User Experience design fully encompasses"
             }, 
             {
+                "correct": true, 
                 "enid": "Pilot_experiment", 
                 "flow": 841.0, 
                 "name": "Pilot Projects", 
                 "summary": "A pilot experiment, also called a pilot study, is a small scale preliminary study conducted in order to evaluate feasibility, time, cost, adverse events, and effect size (statistical variability) in an attempt to predict an appropriate sample size and improve upon the study design prior to performance of a full-scale research project. Pilot studies, therefore, may not be appropriate for case studies . More on 'Pilot Projects' at Wikipedia \u00bb"
             }, 
             {
+                "correct": true, 
                 "enid": "CTQ_tree", 
                 "flow": 837.0, 
                 "name": "CTQ", 
                 "summary": "A CTQ tree (Critical to Quality tree) is used to decompose broad customer requirements into more easily quantified requirements. CTQ Trees are often used in the Six Sigma methodology. CTQs are derived from customer needs. Customer delight may be an add-on while deriving Critical To Quality parameters. For cost considerations one may remain focused to customer needs at the initial stage. CTQs (Critical to"
             }, 
             {
+                "correct": true, 
                 "enid": "Linguistics", 
                 "flow": 832.0, 
                 "name": "Linguistics", 
@@ -2026,60 +2036,70 @@
         ], 
         "dbp_niv": [
             {
+                "correct": true, 
                 "enid": "Living_lab", 
                 "flow": 1549.0, 
                 "name": "Living lab", 
                 "summary": "A living lab is a research concept. A living lab is a user-centred, open-innovation ecosystem, often operating in a territorial context (e.g. city, agglomeration, region), integrating concurrent research and innovation processes within a public-private-people partnership. The concept is based on a systematic user co-creation approach integrating research and innovation processes."
             }, 
             {
+                "correct": true, 
                 "enid": "Work_of_art", 
                 "flow": 1027.0, 
                 "name": "Work of art", 
                 "summary": "A work of art, artwork, art piece, or art object is an aesthetic item or artistic creation."
             }, 
             {
+                "correct": true, 
                 "enid": "Urban_acupuncture", 
                 "flow": 975.0, 
                 "name": "Urban Acupuncture", 
                 "summary": "Urban Acupuncture is an urban environmentalism theory which combines urban design with traditional Chinese medical theory of acupuncture. This strategy views cities as living, breathing organisms and pinpoints areas in need of repair. Sustainable projects, then, serve as needles that revitalize the whole by healing the parts."
             }, 
             {
+                "correct": true, 
                 "enid": "Epiphany_(feeling)", 
                 "flow": 923.0, 
                 "name": "Epiphany (feeling)", 
                 "summary": "An epiphany (from the ancient Greek \u1f10\u03c0\u03b9\u03c6\u03ac\u03bd\u03b5\u03b9\u03b1, epiphaneia, \"manifestation, striking appearance\") is the sudden realization or comprehension of the (larger) essence or meaning of something. The term is used in either a philosophical or literal sense to signify that the claimant has \"found the last piece of the puzzle and now sees the whole picture,\" or has new information or experience, often insignificant by itself, that illuminates a deeper or numinous foundational frame of reference."
             }, 
             {
+                "correct": true, 
                 "enid": "Sensory_design", 
                 "flow": 853.0, 
                 "name": "Sensory design", 
                 "summary": "Sensory design aims to establish an overall diagnosis of the sensory perceptions of a product, and define appropriate means to design or redesign it on that basis. It involves an observation of the diverse and varying situations in which a given product or object is used in order to measure the users' overall opinion of the product, its positive and negative aspects in terms of tactility, appearance, sound and so on."
             }, 
             {
+                "correct": true, 
                 "enid": "Critical_to_quality", 
                 "flow": 821.0, 
                 "name": "Critical to Quality", 
                 "summary": "Critical to Quality is an attribute of a part, assembly, sub-assembly, product, or process that is literally critical to quality or more precisely, has a direct and significant impact on its actual or perceived quality."
             }, 
             {
+                "correct": true, 
                 "enid": "New_Wave_(design)", 
                 "flow": 783.0, 
                 "name": "New Wave (design)", 
                 "summary": "In design, New Wave refers to an approach to typography that actively defies strict grid-based arrangement conventions. Characteristics include inconsistent letterspacing, varying typeweights within single words and type set at unusual angles. http://www. aiga. org/content. cfm?contentalias=AprilGreiman Credit for the introduction of New Wave design is given to Wolfgang Weingart. April Greiman is credited for popularizing it in the United States."
             }, 
             {
+                "correct": true, 
                 "enid": "Modern_typography", 
                 "flow": 773.0, 
                 "name": "Modern typography", 
                 "summary": "Modern Typography was a reaction against the perceived decadence of typography and design of the late 19th century. It is mostly associated with the works of Jan Tschichold and Bauhaus typographers Herbert Bayer, Laszlo Moholy-Nagy, El Lissitzky and others."
             }, 
             {
+                "correct": true, 
                 "enid": "Design_comics", 
                 "flow": 737.0, 
                 "name": "Design comics", 
                 "summary": "Design comics are a type of storyboarding used in product and web site design. Design comics include product consumers or other characters in an illustrated story that shows how the users interact with the product. This method of storytelling is closely related to basic storyboarding, but because design comics include one or more characters in the story, many designers find them to be a better medium to communicate user experiences."
             }, 
             {
+                "correct": true, 
                 "enid": "Immersive_design", 
                 "flow": 737.0, 
                 "name": "Immersive design", 
@@ -2088,115 +2108,135 @@
         ], 
         "li": [
             {
-                "count": 57, 
+                "correct": true, 
+                "count": 52, 
                 "enid": "Mathematics", 
                 "name": "Mathematics", 
                 "summary": "Mathematics (from Greek \u03bc\u03ac\u03b8\u03b7\u03bc\u03b1 m\u00e1th\u0113ma, \u201cknowledge, study, learning\u201d) is the abstract study of topics encompassing quantity, structure, space, change, and others; it has no generally accepted definition . Mathematicians seek out patterns and formulate new conjectures. Mathematicians resolve the truth or falsity of conjectures by mathematical proof. The research required to solve mathematical problems can take years or even centuries of sustained inquiry."
             }, 
             {
-                "count": 39, 
+                "correct": true, 
+                "count": 35, 
                 "enid": "Painting", 
                 "name": "Painting", 
                 "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
             }, 
             {
-                "count": 38, 
+                "correct": true, 
+                "count": 35, 
                 "enid": "Business", 
                 "name": "Business", 
                 "summary": "A business (also known as enterprise or firm) is an organization engaged in the trade of goods, services, or both to consumer s. Businesses are predominant in capitalist economies , where most of them are privately owned and administered to earn profit to increase the wealth of their owners. Businesses may also be not-for-profit or state-owned. A business owned by"
             }, 
             {
-                "count": 36, 
+                "correct": true, 
+                "count": 32, 
                 "enid": "Software_architecture", 
                 "name": "Architecture", 
                 "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
             }, 
             {
-                "count": 28, 
+                "correct": true, 
+                "count": 25, 
                 "enid": "Software", 
                 "name": "Software", 
                 "summary": "Computer software, or just software, is a collection of computer program s and related data that provides the instructions for telling a computer what to do and how to do it. Software refers to one or more computer programs and data held in the storage of the computer for some reasons. In other words, software is a set of programs, procedures, algorithms and"
             }, 
             {
-                "count": 26, 
-                "enid": "Algorithm", 
-                "name": "Algorithms", 
-                "summary": "In mathematics and computer science , an algorithm (originating from al-Khw\u0101rizm\u012b, the famous Persian mathematician Mu\u1e25ammad ibn M\u016bs\u0101 al-Khw\u0101rizm\u012b) is a step-by-step procedure for calculations. Algorithms are used for calculation , data processing , and automated reasoning . More precisely, an algorithm is an effective method expressed as a finite list of well-defined instructions for calculating a function . Starting from an initial state"
-            }, 
-            {
-                "count": 26, 
+                "correct": true, 
+                "count": 24, 
                 "enid": "Social_science", 
                 "name": "Social Sciences", 
                 "summary": "Social science includes the academic disciplines concerned with society and human behavior. \"Social science\" is commonly used as an umbrella term to refer to anthropology , archaeology , criminology , economics , education , history , linguistics , communication studies, political science and international relations , sociology , geography , law , social work and psychology . The term may however be used"
             }, 
             {
-                "count": 25, 
+                "correct": true, 
+                "count": 23, 
+                "enid": "Algorithm", 
+                "name": "Algorithms", 
+                "summary": "In mathematics and computer science , an algorithm (originating from al-Khw\u0101rizm\u012b, the famous Persian mathematician Mu\u1e25ammad ibn M\u016bs\u0101 al-Khw\u0101rizm\u012b) is a step-by-step procedure for calculations. Algorithms are used for calculation , data processing , and automated reasoning . More precisely, an algorithm is an effective method expressed as a finite list of well-defined instructions for calculating a function . Starting from an initial state"
+            }, 
+            {
+                "correct": true, 
+                "count": 23, 
                 "enid": "Service_(economics)", 
                 "name": "Business Services", 
                 "summary": "In economics , a service is an intangible commodity . More specifically, services are an intangible equivalent of economic goods. Service provision is often an economic activity where the buyer does not generally, except by exclusive contract, obtain exclusive ownership of the thing purchased. The benefits of such a service, if priced, are held to be self-evident in the buyer's willingness to pay for"
             }, 
             {
-                "count": 25, 
-                "enid": "Economics", 
-                "name": "Economics", 
-                "summary": "Economics is the social science that analyzes the production, distribution, and consumption of goods and services. The term economics comes from the Ancient Greek (', \"management of a household, administration\") from (', \"house\") + (', \"custom\" or \"law\"), hence \"rules of the house(hold)\". Political economy was the earlier name for the subject, but economists in the latter 19th century suggested 'economics'"
-            }, 
-            {
-                "count": 24, 
+                "correct": true, 
+                "count": 22, 
                 "enid": "Art", 
                 "name": "Art", 
                 "summary": "Art is a term that describes a diverse range of human activities and the products of those activities, but here refers to the visual arts , which cover the creation of images or objects in fields including painting , sculpture , printmaking , photography , and other visual media. Architecture is often included as one of the visual arts; however, like the decorative "
+            }, 
+            {
+                "correct": true, 
+                "count": 22, 
+                "enid": "Economics", 
+                "name": "Economics", 
+                "summary": "Economics is the social science that analyzes the production, distribution, and consumption of goods and services. The term economics comes from the Ancient Greek (', \"management of a household, administration\") from (', \"house\") + (', \"custom\" or \"law\"), hence \"rules of the house(hold)\". Political economy was the earlier name for the subject, but economists in the latter 19th century suggested 'economics'"
             }
         ], 
         "li_niv": [
             {
-                "count": 36, 
+                "correct": true, 
+                "count": 32, 
                 "name": "Communication", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 20, 
+                "correct": true, 
+                "count": 18, 
                 "name": "Machinery", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 20, 
+                "correct": true, 
+                "count": 18, 
                 "name": "Education", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 20, 
+                "correct": true, 
+                "count": 18, 
                 "name": "Music", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 20, 
+                "correct": true, 
+                "count": 18, 
                 "name": "Information Systems", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 18, 
+                "correct": true, 
+                "count": 16, 
                 "name": "Manufacturing", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 17, 
+                "correct": true, 
+                "count": 15, 
                 "name": "Technical Drawing", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 15, 
+                "correct": true, 
+                "count": 14, 
                 "name": "Graphics", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 15, 
+                "correct": true, 
+                "count": 14, 
                 "name": "Reason", 
                 "summary": "Sorry, no description is available."
             }, 
             {
-                "count": 14, 
-                "name": "Radio", 
+                "correct": true, 
+                "count": 13, 
+                "name": "User Flows", 
                 "summary": "Sorry, no description is available."
             }
         ]
