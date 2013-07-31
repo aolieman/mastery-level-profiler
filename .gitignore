@@ -4,4 +4,6 @@
 
 *.pyc
 .idea/
+review/to_serve/bootstrap/
+review/json/posted/
 pseudosecret.py
