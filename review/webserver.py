@@ -8,6 +8,7 @@ from pseudosecret import PS
 PORT = 8080
 rootpath = os.getcwd()
 servepath = os.path.join(os.getcwd(), "to_serve")
+logging.basicConfig(filename='rserv.log',level=logging.INFO)
 
 def get_next_free_port(port):
     s = socket.socket()
@@ -23,11 +24,11 @@ class ReviewServer(sise.SimpleHTTPRequestHandler):
         if self.path.startswith("/skill"):
             # Forward to LinkedIn
             newPath = "http://www.linkedin.com/ta/"+self.path
-            print ('GET remote: ', newPath)
+            logging.info(('GET remote: ', newPath))
             try:
                 self.copyfile(urllib2.urlopen(newPath), self.wfile)
             except IOError as e:
-                print ("ERROR:   ", e)
+                logging.error(("ERROR:   ", e))
         elif self.path.startswith("/review"):
             self.path = "/index.html"
             sise.SimpleHTTPRequestHandler.do_GET(self)
@@ -40,10 +41,10 @@ class ReviewServer(sise.SimpleHTTPRequestHandler):
                                   self.wfile)
                 else: self.send_error(401)
             except KeyError as ke:
-                print "KeyError:   ", ke
+                logging.error(("KeyError:   ", ke))
                 self.send_error(401)
             except IOError as e:
-                print "ERROR:   ", e
+                logging.error(("ERROR:   ", e))
                 self.send_error(404)
         else:
             # Serve files normally
@@ -54,14 +55,14 @@ class ReviewServer(sise.SimpleHTTPRequestHandler):
 
     def do_POST(self):
         try:
-            logging.warning(self.headers)
+            logging.info(self.headers)
             form = cgi.FieldStorage(
                 fp=self.rfile,
                 headers=self.headers,
                 environ={'REQUEST_METHOD':'POST',
                          'CONTENT_TYPE':self.headers['Content-Type'],
                          })
-            print self.path
+            logging.info(self.path)
             json_resp = json.loads(form.value)
             with open("../json/posted/%s.json" % self.path[1:], "wb") as ofile:
                 json.dump(json_resp, ofile, indent=4, sort_keys=True)
@@ -72,8 +73,16 @@ class ReviewServer(sise.SimpleHTTPRequestHandler):
             json.dump({"success": "post saved"}, self.wfile)
         except Exception as e:
             # Send failed response
-            print "Failed POST:", e
+            logging.error(("Failed POST:", e))
             self.send_error(500)
+
+    def log_message(self, format, *args):
+        """Log an arbitrary message.
+        """
+        logging.info("%s - - [%s] %s\n" %
+                         (self.address_string(),
+                          self.log_date_time_string(),
+                          format%args))
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
     pass
@@ -83,10 +92,12 @@ def main():
         os.chdir(servepath)
         next_free_port = get_next_free_port(PORT)
         server = ThreadedTCPServer(('',next_free_port), ReviewServer)
+        logging.info(('server started at port ', next_free_port))
         print ('server started at port ', next_free_port)
         server.serve_forever()
     except KeyboardInterrupt:
         server.socket.close()
+        logging.shutdown()
 
 if __name__=='__main__':
     main()

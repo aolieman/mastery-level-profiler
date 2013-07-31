@@ -2,6 +2,12 @@ section {
     max-width: 1600px;
     padding: 30px;
 }
+h1 {
+    text-align: center;
+}
+p {
+    max-width: 1000px;
+}
 
 #autosavemsg {
     position: fixed;
@@ -25,6 +31,7 @@ section {
 .top-cont{
     width: 280px;
     height: 30px;
+    margin-bottom: 5px;
     vertical-align: top;
     display: inline-block;
     *display: inline;
@@ -57,8 +64,15 @@ div.disabled a{
 }
 
 /* Mastery types and levels */
-.topic-name{
-    margin-right: 5px;
+div.topic-name{
+    padding: 2px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: gray;
+    margin: 0px 10px 5px 10px;
+    border-radius: 7px;
+    text-align: center;
+    font-weight: bold;
 }
 .mastery-rel{
     margin-left: 7px;

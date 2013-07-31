@@ -5,16 +5,13 @@
     <title>Profile Review</title>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
-    <script src="http://documentcloud.github.io/underscore/underscore-min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script type="text/javascript" src="slider.js"></script>
     <script type="text/javascript" src="ngStorage.js"></script>
     <script type="text/javascript" src="statement.js"></script>
     <script type="text/javascript" src="angular-ui-bootstrap.js"></script>
     <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" media="all" type="text/css" rel="stylesheet">
-    <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">-->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link href="app_review.css" rel="stylesheet" media="screen">
     <style>
         #loader {
@@ -43,11 +40,15 @@
 <div ng-controller="StatementCtrl" ng-init="initdata()">
 
     <h1>Statements for {{pseudo}}</h1>
-    <span>
-        Legend:<i class="icon-wrench"></i> skill <i class="icon-book"></i> knowledge <i class="icon-eye-open"></i> interest
-    </span>
     <section id="ext-topics" class="">
-        <h2>Remove the topics in which you have absolutely no skill, knowledge, or interest</h2>
+        <h2>Remove extracted topics</h2>
+        <p>The topics that are listed below have been recognized by our software in the documents that were analyzed.
+        Click on the topics in which you have absolutely no skill, knowledge, or interest. If (at least) one of the three
+        <em>is</em> applicable, you should leave the topic in this list.</p>
+        <p><em>Note: If you hover your mouse pointer above a topic title, a short description from Wikipedia will appear.
+        The topic titles themselves originate from LinkedIn. In case that there is a difference in meaning between
+        the description and the title, base your judgement on the description. However, if the description makes little
+        sense in the context of skill, knowledge, and interest, base your judgement on the title instead.</em></p>
         <div class="top-cont" ng-repeat="(key, value) in extracted">
             <div class="btn" ng-class="{disabled: !value.correct}" ng-click="toggleCorrect(value)">
                 <span class="topic-name" title={{value.summary}}>{{value.name}}</span>
@@ -59,19 +60,40 @@
 
     <section id="ext-statements" class="">
         <h2>Correct the skill, knowledge, and interest levels</h2>
+        <p>In this section you will indicate your level of skill, knowledge, and interest in a selection of topics that you have judged
+        as correct. These levels are expressed relative to your peers (i.e. the other students in the same year of the Design
+        for Interaction program). Using the sliders in the &quot;topic boxes&quot; below, please indicate the percentage of
+        your peers that is less skilled, knowledgeable, and interested in this topic than yourself. In other words: you indicate
+        your own level by stating that you are more skilled, knowledgeable, and interested than a certain percentage of your peers.</p>
+        <p><em>If you have doubts about what skill, knowledge, or interest means in relation to one of the topics,
+        it may help to ask the following questions:</em></p>
+        <dl>
+            <dt>Skill</dt>
+                <dd>For theoretical concepts:  How well can I use this concept in my designs? How well can I make (mathematical) models with this concept?</dd>
+                <dd>For product types:  How well can I design this kind of product? How well can I use this product as a tool?</dd>
+                <dd>For groups of people:  How well can I interact with this kind of person in a professional context? How good am I at designing <em>for</em> these people?</dd>
+            <dt>Knowledge</dt>
+                <dd>How many facts do I remember about this topic? How well do I understand the theories about this topic?</dd>
+            <dt>Interest</dt>
+                <dd>How likely am I to spend time engaged with this topic without being instructed to do so?</dd>
+        </dl>
+        <p><em>Note: For some topics you might find it difficult to estimate your level in comparison to your peers.
+        In most cases, you should set the slider to 50%. However, when you believe that you and your peers don&#39t have
+        any noteworthy skill, knowledge, or interest in a topic, please set the corresponding slider all the way to the left.
+        This will be interpreted as &quot;not applicable&quot; (instead of as 0%).</em></p>
         <div class="st-cont" ng-repeat="value in filterCorrect(extracted) | startFrom:currentPage*pageSize | limitTo:pageSize">
             <form class="form-horizontal">
-                <span class="topic-name" title={{value.summary}}>{{value.name}}</span>
+                <div class="topic-name" title={{value.summary}}>{{value.name}}</div>
                 <div class="mastery-rel skill">
-                    <span><span ng-show="value.skill > 0">Skill <i class="icon-chevron-right"></i> {{value.skill}}% of <i class="icon-user"></i></span>&nbsp;</span>
+                    <span><span ng-show="value.skill > 0">More Skill than {{value.skill}}% of <i class="icon-user"></i></span>&nbsp;</span>
                     <div ui-slider="{range:'min'}" ng-model="value.skill"></div>
                 </div>
                 <div class="mastery-rel knowledge">
-                    <span><span ng-show="value.knowledge > 0">Knowledge <i class="icon-chevron-right"></i> {{value.knowledge}}% of <i class="icon-user"></i></span>&nbsp;</span>
+                    <span><span ng-show="value.knowledge > 0">More Knowledge than {{value.knowledge}}% of <i class="icon-user"></i></span>&nbsp;</span>
                     <div ui-slider="{range:'min'}" ng-model="value.knowledge"></div>
                 </div>
                 <div class="mastery-rel interest">
-                    <span><span ng-show="value.interest > 0">Interest <i class="icon-chevron-right"></i> {{value.interest}}% of <i class="icon-user"></i></span>&nbsp;</span>
+                    <span><span ng-show="value.interest > 0">More Interest than {{value.interest}}% of <i class="icon-user"></i></span>&nbsp;</span>
                     <div ui-slider="{range:'min'}" ng-model="value.interest"></div>
                 </div>
             </form>
@@ -85,7 +107,10 @@
     </section>
 
     <section id="inf-topics" class="">
-        <h2>Remove the (inferred) topics in which you have absolutely no skill, knowledge, or interest</h2>
+        <h2>Remove inferred topics</h2>
+        <p>The following topics were not recognized in your documents, but the software estimates that you have some relation
+        to them based on the topics that were found. Again, please click on the topics in which you have absolutely no skill,
+        knowledge, or interest to remove them.</p>
         <div class="top-cont" ng-repeat="topic in inferred.dbp">
             <div class="btn" ng-class="{disabled: !topic.correct}" ng-click="toggleCorrect(topic)">
                 <span class="topic-name" title={{topic.summary}}>{{topic.name}}</span>
@@ -115,7 +140,7 @@
 
     <section id="missing-topics" class="">
         <h2>Add topics that we have missed:</h2>
-        <em>Please add (at least) a few topics in which you have gained skill and knowledge during previous team projects.</em>
+        <p><em>Please add (at least) a few topics in which you have gained skill and knowledge during the courses that you followed.</em></p>
         <div class='container-fluid'>
             <div id="missing-container">
                 <div class="btn" ng-click="delMissing(tn)" ng-repeat="tn in missing">

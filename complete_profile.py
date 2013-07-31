@@ -156,9 +156,25 @@ class Profile(object):
         # Save profile to Mongo
         self.toMongo()
 
+    def uniqueTopics(self):
+        # Find sets of topics that are unique to origin=tudelft/shareworks
+        li_set = set(self.statements['linkedin']['extracted'])
+        tu_set = set(self.statements['tudelft']['extracted'])
+        sw_set = set(self.statements['shareworks']['extracted'])
+        ws_set = set(self.statements['website']['extracted'])
+        tu_unique = tu_set.difference(li_set, sw_set, ws_set)
+        sw_unique = sw_set.difference(tu_set, li_set, ws_set)
+        # Randomly sample half of each set, return the union
+        import random
+        tu_sample = set(random.sample(tu_unique, len(tu_unique)/2))
+        sw_sample = set(random.sample(sw_unique, len(sw_unique)/2))
+        return tu_sample.union(sw_sample)
+
     def statementsToJSON(self):
         # Serialize 'ALL' statements to JSON file
         all_stmts = self.statements['ALL'].copy() #still affects self.statements, use dict()?
+        # Get half of unique topics, to mark as "don't judge lvls"
+        no_judge_lvl = self.uniqueTopics()
         # Extracted statements
         ext_dict = StatementDict(map(lambda (k,v): (k, roundLvls(v)),
                        all_stmts['extracted'].iteritems()))
@@ -171,6 +187,11 @@ class Profile(object):
             except KeyError:
                 lvl_dict['name'] = ann_id.replace("~", ".")
                 lvl_dict['summary'] = "Sorry, no description is available."
+            finally:
+                lvl_dict['judge_lvl'] = True
+                if ann_id in no_judge_lvl:
+                    lvl_dict['judge_lvl'] = False
+                    print "Don't judge level: %s" % ann_id
         # Inferred statements
         for key in all_stmts['inferred']:
             all_stmts['inferred'][key] = all_stmts['inferred'][key][:10]

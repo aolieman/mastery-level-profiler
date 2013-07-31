@@ -2,6 +2,7 @@
     "extracted": {
         "20th_century": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 47, 
             "name": "20th Century", 
             "skill": 47, 
@@ -9,6 +10,7 @@
         }, 
         "AOL_Instant_Messenger": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 67, 
             "name": "AIM", 
             "skill": 67, 
@@ -16,6 +18,7 @@
         }, 
         "Academia": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 24, 
             "name": "Academia", 
             "skill": 23, 
@@ -23,6 +26,7 @@
         }, 
         "Academic_conference": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 38, 
             "name": "Workshops", 
             "skill": 68, 
@@ -30,6 +34,7 @@
         }, 
         "Academic_publishing": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 74, 
             "name": "Academic Publishing", 
             "skill": 79, 
@@ -37,6 +42,7 @@
         }, 
         "Acceleration": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 26, 
             "name": "Accelerated Growth", 
             "skill": 26, 
@@ -44,13 +50,15 @@
         }, 
         "Access_control": {
             "interest": 0, 
-            "knowledge": 63, 
+            "judge_lvl": true, 
+            "knowledge": 76, 
             "name": "Access Control", 
             "skill": 59, 
             "summary": "Access control refers to exerting control over who can interact with a resource. Often but not always, this involves an authority, who does the controlling. The resource can be a given building, group of buildings, or computer-based information system. But it can also refer to a restroom. Access control is, in reality, an everyday phenomenon. A lock on a car door is essentially a form"
         }, 
         "Accompaniment": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 38, 
             "name": "Accompaniment", 
             "skill": 38, 
@@ -58,13 +66,15 @@
         }, 
         "Actuator": {
             "interest": 70, 
-            "knowledge": 60, 
+            "judge_lvl": true, 
+            "knowledge": 43, 
             "name": "Actuators", 
-            "skill": 60, 
+            "skill": 43, 
             "summary": "An actuator is a type of motor for moving or controlling a mechanism or system. It is operated by a source of energy, usually in the form of an electric current, hydraulic fluid pressure or pneumatic pressure, and converts that energy into some kind of motion. An actuator is the mechanism by which an agent acts upon an environment. The agent can be"
         }, 
         "Ad_hoc": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 69, 
             "name": "Ad Hoc Reporting", 
             "skill": 69, 
@@ -72,6 +82,7 @@
         }, 
         "Aesthetics": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 58, 
             "name": "Aesthetics", 
             "skill": 44, 
@@ -79,6 +90,7 @@
         }, 
         "Analysis": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 38, 
             "name": "Analysis", 
             "skill": 38, 
@@ -86,13 +98,15 @@
         }, 
         "Application_software": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Applications", 
-            "skill": 33, 
+            "skill": 37, 
             "summary": "Application software, also known as an application or an app, is computer software designed to help the user to perform specific tasks. Examples include enterprise software , accounting software , office suite s, graphics software and media player s. Many application programs deal principally with documents. Apps may be bundled with the computer and its system software, or may be published separately. In"
         }, 
         "Architect": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 53, 
             "name": "Architects", 
             "skill": 53, 
@@ -100,6 +114,7 @@
         }, 
         "Architectural_engineering": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Architectural Engineering", 
             "skill": 50, 
@@ -107,6 +122,7 @@
         }, 
         "Architectural_model": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Architectural Modeling", 
             "skill": 50, 
@@ -114,6 +130,7 @@
         }, 
         "Architecture": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 70, 
             "name": "Architectural", 
             "skill": 50, 
@@ -121,6 +138,7 @@
         }, 
         "Argument": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 47, 
             "name": "Arguments", 
             "skill": 40, 
@@ -128,6 +146,7 @@
         }, 
         "Artist": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 53, 
             "name": "Artists", 
             "skill": 53, 
@@ -135,6 +154,7 @@
         }, 
         "Attitude_(psychology)": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 71, 
             "name": "Attitudes", 
             "skill": 71, 
@@ -142,6 +162,7 @@
         }, 
         "Autodidacticism": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 74, 
             "name": "Self-directed Learning", 
             "skill": 62, 
@@ -149,6 +170,7 @@
         }, 
         "Awareness": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 22, 
             "name": "Awareness", 
             "skill": 32, 
@@ -156,6 +178,7 @@
         }, 
         "Ball": {
             "interest": 44, 
+            "judge_lvl": true, 
             "knowledge": 39, 
             "name": "Balls", 
             "skill": 39, 
@@ -163,6 +186,7 @@
         }, 
         "Behavioural_sciences": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 74, 
             "name": "Behavioral Science", 
             "skill": 76, 
@@ -170,6 +194,7 @@
         }, 
         "Black_box": {
             "interest": 70, 
+            "judge_lvl": true, 
             "knowledge": 60, 
             "name": "Black-box", 
             "skill": 60, 
@@ -177,6 +202,7 @@
         }, 
         "Blog": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 26, 
             "name": "Blogging", 
             "skill": 16, 
@@ -184,6 +210,7 @@
         }, 
         "Blueprint": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 52, 
             "name": "Blueprint Reading", 
             "skill": 0, 
@@ -191,6 +218,7 @@
         }, 
         "Board_game": {
             "interest": 61, 
+            "judge_lvl": false, 
             "knowledge": 45, 
             "name": "Board Games", 
             "skill": 55, 
@@ -198,6 +226,7 @@
         }, 
         "Body": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 28, 
             "name": "Body Care", 
             "skill": 36, 
@@ -205,6 +234,7 @@
         }, 
         "Bone": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 30, 
             "name": "Bone", 
             "skill": 30, 
@@ -212,6 +242,7 @@
         }, 
         "Brand_management": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 61, 
             "name": "Brand Management", 
             "skill": 61, 
@@ -219,6 +250,7 @@
         }, 
         "Broadband": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 48, 
             "name": "Broadband", 
             "skill": 48, 
@@ -226,6 +258,7 @@
         }, 
         "Broadcast_programming": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Television Programming", 
             "skill": 0, 
@@ -233,13 +266,15 @@
         }, 
         "Built_environment": {
             "interest": 0, 
-            "knowledge": 38, 
+            "judge_lvl": true, 
+            "knowledge": 71, 
             "name": "Built Environment", 
-            "skill": 26, 
+            "skill": 53, 
             "summary": "The term built environment refers to the human-made surroundings that provide the setting for human activity, ranging in scale from buildings and parks or green space to neighborhoods and cities that can often include their supporting infrastructure, such as water supply, or energy networks. The built environment is a material, spatial and cultural product of human labor that combines physical elements and energy in forms"
         }, 
         "Business": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 21, 
             "name": "Business", 
             "skill": 50, 
@@ -247,6 +282,7 @@
         }, 
         "CD-ROM": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 47, 
             "name": "CD-ROM", 
             "skill": 47, 
@@ -254,13 +290,15 @@
         }, 
         "COBOL": {
             "interest": 0, 
-            "knowledge": 54, 
+            "judge_lvl": true, 
+            "knowledge": 50, 
             "name": "COBOL", 
             "skill": 54, 
             "summary": "COBOL is one of the oldest programming language s. Its name is an acronym for COmmon Business-Oriented Language, defining its primary domain in business , finance, and administrative systems for companies and governments. The COBOL 2002 standard includes support for object-oriented programming and other modern language features. More on 'COBOL' at Wikipedia \u00bb"
         }, 
         "Case_study": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 22, 
             "name": "Case Studies", 
             "skill": 30, 
@@ -268,6 +306,7 @@
         }, 
         "Chair": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Chairs", 
             "skill": 50, 
@@ -275,6 +314,7 @@
         }, 
         "Chart": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 73, 
             "name": "Chart", 
             "skill": 73, 
@@ -282,6 +322,7 @@
         }, 
         "Chemical_kinetics": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 26, 
             "name": "Reaction Kinetics", 
             "skill": 26, 
@@ -289,6 +330,7 @@
         }, 
         "Cognition": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 48, 
             "name": "Cognition", 
             "skill": 42, 
@@ -296,6 +338,7 @@
         }, 
         "Cognitive_science": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 54, 
             "name": "Cognitive Science", 
             "skill": 50, 
@@ -303,6 +346,7 @@
         }, 
         "Collaboration": {
             "interest": 70, 
+            "judge_lvl": true, 
             "knowledge": 44, 
             "name": "Collaboration", 
             "skill": 44, 
@@ -310,6 +354,7 @@
         }, 
         "Committee": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 30, 
             "name": "Committees", 
             "skill": 70, 
@@ -317,6 +362,7 @@
         }, 
         "Community": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 30, 
             "name": "Community", 
             "skill": 30, 
@@ -324,20 +370,15 @@
         }, 
         "Competition": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 17, 
             "name": "Competition", 
             "skill": 43, 
             "summary": "Competition in biology , ecology , and sociology , is a contest between organisms, animals, individuals, groups, etc., for territory , a niche, or a location of resources, for resources and goods, for prestige, recognition, awards, mates, or group or social status, for leadership; it is the opposite of cooperation . It arises whenever at least two parties strive for a goal which cannot"
         }, 
-        "Competitiveness": {
-            "interest": 0, 
-            "knowledge": 21, 
-            "name": "Competitive", 
-            "skill": 21, 
-            "summary": "Competitiveness pertains to the ability and performance of a firm, sub-sector or country to sell and supply goods and services in a given market, in relation to the ability and performance of other firms, sub-sectors or countries in the same market. The term may also be applied to markets, where it is used to refer to the extent to which the market structure may"
-        }, 
         "Computer": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 34, 
             "name": "Computers", 
             "skill": 46, 
@@ -345,6 +386,7 @@
         }, 
         "Computer-aided_design": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 34, 
             "name": "CAD", 
             "skill": 55, 
@@ -352,13 +394,15 @@
         }, 
         "Concept": {
             "interest": 0, 
-            "knowledge": 26, 
+            "judge_lvl": false, 
+            "knowledge": 30, 
             "name": "Concepts", 
             "skill": 26, 
             "summary": "A concept is a general idea, or something conceived in the mind. More on 'Concepts' at Wikipedia \u00bb"
         }, 
         "Confirmation": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Confirmation", 
             "skill": 50, 
@@ -366,27 +410,23 @@
         }, 
         "Conflict_resolution": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 55, 
             "name": "Conflict Resolution", 
             "skill": 18, 
             "summary": "Conflict resolution is conceptualized as the methods and processes involved in facilitating the peaceful ending of social conflict. Often, committed group members attempt to resolve group conflicts by actively communicating information about their conflicting motives or ideologies to the rest of the group (e.g., intentions; reasons for holding certain beliefs), and by engaging in collective negotiation . Ultimately, a wide range of methods and procedures"
         }, 
-        "Consultant": {
-            "interest": 0, 
-            "knowledge": 21, 
-            "name": "Consultants", 
-            "skill": 15, 
-            "summary": "A consultant (from \"to discuss\") is a professional who provides professional or expert advice in a particular area such as security ( electronic or physical ), management , accountancy , law ( tax law , in particular), human resources , marketing (and public relations ), finance , engineering , or any of many other specialized fields. Consulting guru, Peter Block, defines a consultant as"
-        }, 
         "Consumer": {
             "interest": 0, 
-            "knowledge": 41, 
+            "judge_lvl": false, 
+            "knowledge": 44, 
             "name": "Consumer", 
-            "skill": 35, 
+            "skill": 38, 
             "summary": "A consumer is a person or group of people that are the final users of products and or services generated within a social system. A consumer may be a person or group, such as a household . The concept of a consumer may vary significantly by context. More on 'Consumer' at Wikipedia \u00bb"
         }, 
         "Consumer_behaviour": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 40, 
             "name": "Consumer Behaviour", 
             "skill": 47, 
@@ -394,13 +434,23 @@
         }, 
         "Content_analysis": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 30, 
             "name": "Media Analysis", 
             "skill": 30, 
             "summary": "Content analysis or textual analysis is a methodology in the social sciences for studying the content of communication . Earl Babbie defines it as \"the study of recorded human communications, such as book s, website s, painting s and law s.\" According to Dr. Farooq Joubish, content analysis is considered a scholarly methodology in the humanities by which texts are studied"
         }, 
+        "Control_theory": {
+            "interest": 64, 
+            "judge_lvl": false, 
+            "knowledge": 57, 
+            "name": "Control Theory", 
+            "skill": 57, 
+            "summary": "Control theory is an interdisciplinary branch of engineering and mathematics that deals with the behavior of dynamical systems with inputs. The external input of a system is called the reference . When one or more output variables of a system need to follow a certain reference over time, a controller manipulates the inputs to a system to obtain the desired effect on the output"
+        }, 
         "Cooperation": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 58, 
             "name": "Cooperation", 
             "skill": 65, 
@@ -408,6 +458,7 @@
         }, 
         "Corporation": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 21, 
             "name": "Corporations", 
             "skill": 15, 
@@ -415,13 +466,23 @@
         }, 
         "Country": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 30, 
             "name": "Country Property", 
             "skill": 30, 
             "summary": "A country is a region legally identified as a distinct entity in political geography . A country may be an independent sovereign state or one that is occupied by another state, as a non- sovereign or formerly sovereign political division, or a geographic region associated with sets of previously independent or differently associated peoples with distinct political characteristics. Regardless of the physical geography, in the"
         }, 
+        "Creativity": {
+            "interest": 0, 
+            "judge_lvl": true, 
+            "knowledge": 37, 
+            "name": "Creativity", 
+            "skill": 33, 
+            "summary": "Creativity refers to the invention or origination of any new thing (a product, solution, artwork, literary work, joke, etc.) that has value. \"New\" may refer to the individual creator or the society or domain within which novelty occurs. \"Valuable\", similarly, may be defined in a variety of ways. The range of scholarly interest in creativity includes a multitude of definitions and approaches involving several"
+        }, 
         "Cultural_identity": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 18, 
             "name": "Cultural Identity", 
             "skill": 13, 
@@ -429,20 +490,23 @@
         }, 
         "Culture": {
             "interest": 0, 
-            "knowledge": 14, 
+            "judge_lvl": true, 
+            "knowledge": 18, 
             "name": "Culture", 
-            "skill": 22, 
+            "skill": 26, 
             "summary": "Culture (, lit. \"cultivation\") is a modern concept based on a term first used in classical antiquity by the Roman orator , Cicero: \"cultura animi\". The term \"culture\" appeared first in its current sense in Europe in the 18th and 19th centuries, to connote a process of cultivation or improvement, as in agriculture or horticulture . In the 19th century, the term developed to"
         }, 
         "Customer": {
             "interest": 0, 
-            "knowledge": 26, 
+            "judge_lvl": true, 
+            "knowledge": 32, 
             "name": "Customer Information", 
-            "skill": 13, 
+            "skill": 0, 
             "summary": "A customer (also known as a client, buyer, or purchaser) is the recipient of a good, service , product, or idea, obtained from a seller, vendor , or supplier for a monetary or other valuable consideration. Customers are generally categorized into two types: * An intermediate customer or trade customer (more informally: \"the trade\") who is a dealer that purchases goods for re-sale. *"
         }, 
         "Data_analysis": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 44, 
             "name": "Data Analysis", 
             "skill": 26, 
@@ -450,6 +514,7 @@
         }, 
         "Data_storage_device": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 76, 
             "name": "Storage Devices", 
             "skill": 59, 
@@ -457,6 +522,7 @@
         }, 
         "Debate": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 58, 
             "name": "Debate", 
             "skill": 50, 
@@ -464,6 +530,7 @@
         }, 
         "Design": {
             "interest": 16, 
+            "judge_lvl": true, 
             "knowledge": 18, 
             "name": "Design", 
             "skill": 22, 
@@ -471,20 +538,15 @@
         }, 
         "Designer": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 30, 
             "name": "Designers", 
             "skill": 34, 
             "summary": "A designer is a person who design s. More formally, a designer is an agent that \"specifies the structural properties of a design object \". In practice, anyone who creates tangible or intangible objects, such as consumer products, processes, laws, games and graphics, is referred to as a designer. Classically, the main areas of design were only painting , sculpture and architecture , which"
         }, 
-        "Development_economics": {
-            "interest": 0, 
-            "knowledge": 29, 
-            "name": "Development Economics", 
-            "skill": 29, 
-            "summary": "Development economics is a branch of economics which deals with economic aspects of the development process in low-income countries. Its focus is not only on methods of promoting economic growth and structural change but also on improving the potential for the mass of the population, for example, through health and education and workplace conditions, whether through public or private channels. Development economics"
-        }, 
         "Differential_equation": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 44, 
             "name": "Differential Equations", 
             "skill": 48, 
@@ -492,6 +554,7 @@
         }, 
         "Digital": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Digital", 
             "skill": 45, 
@@ -499,6 +562,7 @@
         }, 
         "Digital_signage": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 73, 
             "name": "Digital Signage", 
             "skill": 73, 
@@ -506,6 +570,7 @@
         }, 
         "Discipline": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 77, 
             "name": "Discipline", 
             "skill": 77, 
@@ -513,13 +578,23 @@
         }, 
         "Document": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Document Preparation", 
             "skill": 50, 
             "summary": "The term document has multiple meanings in ordinary language and in scholarship. WordNet 3.1. lists four meanings (October 2011): * document, written document, papers (writing that provides information (especially information of an official nature)) * document (anything serving as a representation of a person's thinking by means of symbolic marks) * document (a written account of ownership or obligation) * text file, document ((computer"
         }, 
+        "Dog": {
+            "interest": 70, 
+            "judge_lvl": true, 
+            "knowledge": 60, 
+            "name": "Dogs", 
+            "skill": 0, 
+            "summary": "The domestic dog (Canis lupus familiaris), is a subspecies of the gray wolf (Canis lupus), a member of the Canidae family of the mammalian order Carnivora. The term \"domestic dog\" is generally used for both domesticated and feral varieties. The dog may have been the first animal to be domesticated, and has been the most widely kept working, hunting , and pet in"
+        }, 
         "E-learning": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 37, 
             "name": "E-Learning", 
             "skill": 37, 
@@ -527,6 +602,7 @@
         }, 
         "Electric_motor": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 34, 
             "name": "Electric Motors", 
             "skill": 24, 
@@ -534,13 +610,15 @@
         }, 
         "Electricity": {
             "interest": 0, 
-            "knowledge": 15, 
+            "judge_lvl": true, 
+            "knowledge": 26, 
             "name": "Electricity", 
-            "skill": 15, 
+            "skill": 21, 
             "summary": "Electricity is the set of physical phenomena associated with the presence and flow of electric charge. Electricity gives a wide variety of well-known effects, such as lightning , static electricity, electromagnetic induction and the flow of electrical current. In addition, electricity permits the creation and reception of electromagnetic radiation such as radio waves. In electricity, charges produce electromagnetic fields which act on other charges. Electricity"
         }, 
         "Electronic_component": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 71, 
             "name": "Discrete", 
             "skill": 59, 
@@ -548,13 +626,15 @@
         }, 
         "Electronics": {
             "interest": 0, 
-            "knowledge": 36, 
+            "judge_lvl": false, 
+            "knowledge": 29, 
             "name": "Electronics", 
             "skill": 34, 
             "summary": "Electronics deals with electrical circuits that involve active electrical components such as vacuum tubes, transistors, diodes and integrated circuits, and associated passive interconnection technologies. The nonlinear behaviour of active components and their ability to control electron flows makes amplification of weak signals possible and electronics is widely used in information processing , telecommunications and signal processing . The ability of electronic devices to"
         }, 
         "Embedded_system": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 73, 
             "name": "Embedded Systems", 
             "skill": 73, 
@@ -562,6 +642,7 @@
         }, 
         "Emotion": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 14, 
             "name": "Emotions", 
             "skill": 26, 
@@ -569,6 +650,7 @@
         }, 
         "Empirical_research": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 37, 
             "name": "Empirical Research", 
             "skill": 37, 
@@ -576,6 +658,7 @@
         }, 
         "Engineering": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 12, 
             "name": "Engineering", 
             "skill": 12, 
@@ -583,6 +666,7 @@
         }, 
         "Environmentalism": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 39, 
             "name": "Environmental Awareness", 
             "skill": 61, 
@@ -590,6 +674,7 @@
         }, 
         "Essay": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 79, 
             "name": "Essays", 
             "skill": 79, 
@@ -597,6 +682,7 @@
         }, 
         "Estimation": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 36, 
             "name": "Estimates", 
             "skill": 36, 
@@ -604,6 +690,7 @@
         }, 
         "Ethics": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 72, 
             "name": "Ethics", 
             "skill": 76, 
@@ -611,13 +698,15 @@
         }, 
         "Evaluation": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 46, 
             "name": "Evaluation", 
-            "skill": 58, 
+            "skill": 54, 
             "summary": "Evaluation is a systematic determination of a subject's merit, worth and significance, using criteria governed by a set of standards. It can assist an organization to assess any aim, realisable concept or proposal, or any alternative, to help in decision-making; or to ascertain the degree of achievement or value in regard to the aim and objectives and results of any such action that"
         }, 
         "Explosion": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 32, 
             "name": "Explosions", 
             "skill": 15, 
@@ -625,6 +714,7 @@
         }, 
         "Fair_trade": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 30, 
             "name": "Fair Trade", 
             "skill": 30, 
@@ -632,6 +722,7 @@
         }, 
         "Feasibility_study": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 41, 
             "name": "Feasibility Studies", 
             "skill": 0, 
@@ -639,6 +730,7 @@
         }, 
         "Fellow": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 30, 
             "name": "Fellowships", 
             "skill": 50, 
@@ -646,13 +738,23 @@
         }, 
         "Film_editing": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 71, 
             "name": "Film Editing", 
             "skill": 71, 
             "summary": "Film editing is part of the creative post-production process of filmmaking . The term film editing is derived from the traditional process of working with film , but now it increasingly involves the use of digital technology. The film editor works with the raw footage, selecting shots and combining them into sequences to create a finished motion picture . Film editing is described"
         }, 
+        "Focus_group": {
+            "interest": 0, 
+            "judge_lvl": true, 
+            "knowledge": 26, 
+            "name": "Focus Groups", 
+            "skill": 32, 
+            "summary": "A focus group is a form of qualitative research in which a group of people are asked about their perceptions, opinions, beliefs, and attitudes towards a product, service, concept, advertisement, idea, or packaging. Questions are asked in an interactive group setting where participants are free to talk with other group members. The first focus groups were created at the Bureau of Applied Social Research"
+        }, 
         "Forecasting": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 32, 
             "name": "Forecasting", 
             "skill": 21, 
@@ -660,27 +762,23 @@
         }, 
         "Future": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 46, 
             "name": "Future Trends", 
             "skill": 58, 
             "summary": "The future is the indefinite time period after the present. Its arrival is considered inevitable due to the existence of time and the laws of physics. Due to the nature of reality and the unavoidability of the future, everything that currently exists and will exist can be categorized as either permanent, meaning that it will exist for the whole of the future or"
         }, 
-        "Futures_contract": {
-            "interest": 0, 
-            "knowledge": 23, 
-            "name": "Futures", 
-            "skill": 30, 
-            "summary": "In finance , a futures contract is a standardized contract between two parties to buy or sell a specified asset of standardized quantity and quality for a price agreed today (the futures price or strike price) with delivery and payment occurring at a specified future date, the delivery date. The contracts are negotiated at a futures exchange, which acts as an intermediary between the"
-        }, 
         "Game": {
-            "interest": 71, 
-            "knowledge": 67, 
+            "interest": 68, 
+            "judge_lvl": false, 
+            "knowledge": 68, 
             "name": "Games", 
-            "skill": 76, 
+            "skill": 74, 
             "summary": "A game is structured playing, usually undertaken for enjoyment and sometimes used as an education al tool. Games are distinct from work, which is usually carried out for remuneration , and from art , which is more often an expression of aesthetic or ideological elements. However, the distinction is not clear-cut, and many games are also considered to be work (such as professional players of"
         }, 
         "Gameplay": {
             "interest": 70, 
+            "judge_lvl": true, 
             "knowledge": 60, 
             "name": "Gameplay Systems", 
             "skill": 60, 
@@ -688,6 +786,7 @@
         }, 
         "Geometry": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 18, 
             "name": "Geometry", 
             "skill": 24, 
@@ -695,6 +794,7 @@
         }, 
         "Globalization": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 67, 
             "name": "Globalization", 
             "skill": 32, 
@@ -702,6 +802,7 @@
         }, 
         "Graphic_designer": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 53, 
             "name": "Graphic Designers", 
             "skill": 53, 
@@ -709,6 +810,7 @@
         }, 
         "Group_dynamics": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 24, 
             "name": "Group Dynamics", 
             "skill": 12, 
@@ -716,6 +818,7 @@
         }, 
         "Group_theory": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 44, 
             "name": "Group Theory", 
             "skill": 0, 
@@ -723,6 +826,7 @@
         }, 
         "Guide": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 48, 
             "name": "Guides", 
             "skill": 52, 
@@ -730,6 +834,7 @@
         }, 
         "Gun": {
             "interest": 70, 
+            "judge_lvl": true, 
             "knowledge": 60, 
             "name": "Guns", 
             "skill": 0, 
@@ -737,6 +842,7 @@
         }, 
         "Hardware": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 53, 
             "name": "Hardware", 
             "skill": 63, 
@@ -744,6 +850,7 @@
         }, 
         "Health_care": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Healthcare", 
             "skill": 50, 
@@ -751,6 +858,7 @@
         }, 
         "Heat_transfer": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 29, 
             "name": "Heat Transfer", 
             "skill": 29, 
@@ -758,6 +866,7 @@
         }, 
         "Holism": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Holistic Medicine", 
             "skill": 50, 
@@ -765,6 +874,7 @@
         }, 
         "Hospital": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Hospitals", 
             "skill": 50, 
@@ -772,6 +882,7 @@
         }, 
         "Human_factors_and_ergonomics": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 41, 
             "name": "Human Factors Engineering", 
             "skill": 41, 
@@ -779,6 +890,7 @@
         }, 
         "Human_nature": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 36, 
             "name": "Human Nature", 
             "skill": 28, 
@@ -786,6 +898,7 @@
         }, 
         "Humanities": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 74, 
             "name": "Humanities", 
             "skill": 76, 
@@ -793,6 +906,7 @@
         }, 
         "Ice_hockey": {
             "interest": 70, 
+            "judge_lvl": false, 
             "knowledge": 60, 
             "name": "Ice Hockey", 
             "skill": 60, 
@@ -800,6 +914,7 @@
         }, 
         "Illustration": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Illustration", 
             "skill": 50, 
@@ -807,20 +922,15 @@
         }, 
         "Image": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 42, 
             "name": "Image", 
             "skill": 33, 
             "summary": "An image (from ) is an artifact that depicts or records visual perception, for example a two-dimensional picture, that has a similar appearance to some subject\u2013usually a physical object or a person, thus providing a depiction of it. More on 'Image' at Wikipedia \u00bb"
         }, 
-        "Implementation": {
-            "interest": 0, 
-            "knowledge": 12, 
-            "name": "Solution Implementation", 
-            "skill": 21, 
-            "summary": "Implementation is the realization of an application, or execution of a plan, idea, model, design , specification , standard, algorithm , or policy . More on 'Solution Implementation' at Wikipedia \u00bb"
-        }, 
         "Index_(publishing)": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 47, 
             "name": "Book Indexing", 
             "skill": 47, 
@@ -828,6 +938,7 @@
         }, 
         "Industrial_design": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 20, 
             "name": "Industrial Design", 
             "skill": 15, 
@@ -835,6 +946,7 @@
         }, 
         "Industry": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 37, 
             "name": "Industrial Sector", 
             "skill": 37, 
@@ -842,6 +954,7 @@
         }, 
         "Information_technology": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 30, 
             "name": "Information Technology", 
             "skill": 50, 
@@ -849,6 +962,7 @@
         }, 
         "Initiation": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 77, 
             "name": "Initiation", 
             "skill": 77, 
@@ -856,6 +970,7 @@
         }, 
         "Injection_molding": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 62, 
             "name": "Injection Molding", 
             "skill": 62, 
@@ -863,20 +978,23 @@
         }, 
         "Innovation": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 46, 
             "name": "Innovation", 
             "skill": 50, 
             "summary": "Innovation is the development of new customer value through solutions that meet new needs, unarticulated needs, or old customer and market needs in new ways. This is accomplished through different or more effective products, processes , service s, technologies, or ideas that are readily available to markets, government s, and society. Innovation differs from invention in that innovation refers to the use of a"
         }, 
         "Input_device": {
-            "interest": 50, 
-            "knowledge": 29, 
+            "interest": 64, 
+            "judge_lvl": true, 
+            "knowledge": 57, 
             "name": "Input Devices", 
-            "skill": 29, 
+            "skill": 57, 
             "summary": "In computing , an input device is any peripheral (piece of computer hardware equipment) used to provide data and control signals to an information processing system such as a computer or other information appliance. Input and output devices make up the hardware interface between a computer and a scanner or 6DOF controller. Many input devices can be classified according to: More on 'Input Devices' at Wikipedia \u00bb"
         }, 
         "Installation_art": {
             "interest": 64, 
+            "judge_lvl": false, 
             "knowledge": 57, 
             "name": "Field Installation", 
             "skill": 57, 
@@ -884,6 +1002,7 @@
         }, 
         "Integral": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 32, 
             "name": "AV Integration", 
             "skill": 44, 
@@ -891,6 +1010,7 @@
         }, 
         "Integrated_circuit": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 63, 
             "name": "IC", 
             "skill": 59, 
@@ -898,6 +1018,7 @@
         }, 
         "Interaction": {
             "interest": 14, 
+            "judge_lvl": true, 
             "knowledge": 34, 
             "name": "Interaction", 
             "skill": 30, 
@@ -905,6 +1026,7 @@
         }, 
         "Interaction_design": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 28, 
             "name": "Interaction Design", 
             "skill": 33, 
@@ -912,6 +1034,7 @@
         }, 
         "Interactivity": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 46, 
             "name": "User Interaction", 
             "skill": 38, 
@@ -919,6 +1042,7 @@
         }, 
         "Interior_design": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Interior Design", 
             "skill": 50, 
@@ -926,6 +1050,7 @@
         }, 
         "International": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 29, 
             "name": "International Experience", 
             "skill": 18, 
@@ -933,6 +1058,7 @@
         }, 
         "International_student": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 58, 
             "name": "International Students", 
             "skill": 0, 
@@ -940,6 +1066,7 @@
         }, 
         "Internationalization": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 30, 
             "name": "Internationalization", 
             "skill": 30, 
@@ -947,27 +1074,23 @@
         }, 
         "Interview": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 28, 
             "name": "Interviews", 
             "skill": 0, 
             "summary": "An interview is a conversation between two people (the interviewer and the interviewee) where questions are asked by the interviewer to obtain information from the interviewee. More on 'Interviews' at Wikipedia \u00bb"
         }, 
-        "Investment": {
-            "interest": 0, 
-            "knowledge": 23, 
-            "name": "Investments", 
-            "skill": 23, 
-            "summary": "Investment has different meanings in finance and economics. Finance investment is putting money into something with the expectation of gain, that upon thorough analysis, has a high degree of security for the principal amount, as well as security of return, within an expected period of time. In contrast putting money into something with an expectation of gain without thorough analysis, without security of principal, and"
-        }, 
         "Iteration": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 26, 
             "name": "Iteration", 
-            "skill": 30, 
+            "skill": 34, 
             "summary": "Iteration means the act of repeating a process usually with the aim of approaching a desired goal or target or result. Each repetition of the process is also called an \"iteration,\" and the results of one iteration are used as the starting point for the next iteration. More on 'Iteration' at Wikipedia \u00bb"
         }, 
         "Joiner": {
             "interest": 70, 
+            "judge_lvl": false, 
             "knowledge": 43, 
             "name": "Joinery", 
             "skill": 43, 
@@ -975,6 +1098,7 @@
         }, 
         "Joint": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 21, 
             "name": "Joints", 
             "skill": 21, 
@@ -982,6 +1106,7 @@
         }, 
         "Justice": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 77, 
             "name": "Justice", 
             "skill": 77, 
@@ -989,6 +1114,7 @@
         }, 
         "Kinematics": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 26, 
             "name": "Kinematics", 
             "skill": 26, 
@@ -996,6 +1122,7 @@
         }, 
         "Knowledge_transfer": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 23, 
             "name": "Knowledge Transfer", 
             "skill": 23, 
@@ -1003,6 +1130,7 @@
         }, 
         "Laboratory": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Laboratory", 
             "skill": 38, 
@@ -1010,20 +1138,23 @@
         }, 
         "Language": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 17, 
             "name": "Languages", 
-            "skill": 26, 
+            "skill": 17, 
             "summary": "Language is the human capacity for acquiring and using complex systems of communication , and a language is any example of such a system of complex communication. The scientific study of language is called linguistics . It is impossible to know precisely how many languages there are in the world, and the number depends on a partly arbitrary distinction between languages and dialects . However,"
         }, 
         "Lecturer": {
             "interest": 0, 
-            "knowledge": 74, 
+            "judge_lvl": false, 
+            "knowledge": 70, 
             "name": "Guest Lecturing", 
-            "skill": 80, 
+            "skill": 70, 
             "summary": "A lecturer is, in the broadest sense, a person who gives lectures or other public speeches . However, this article concerns lecturer as an academic rank. In the United Kingdom a lecturer is usually the holder of a permanent position at a university or similar institution, often an academic in an early career stage, who teaches and also leads or oversees research groups. However"
         }, 
         "Lever": {
             "interest": 70, 
+            "judge_lvl": false, 
             "knowledge": 60, 
             "name": "Lever", 
             "skill": 60, 
@@ -1031,6 +1162,7 @@
         }, 
         "Local_government": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Local Government", 
             "skill": 50, 
@@ -1038,6 +1170,7 @@
         }, 
         "Making-of": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 72, 
             "name": "Behind the Scenes", 
             "skill": 72, 
@@ -1045,13 +1178,23 @@
         }, 
         "Market_research": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 24, 
             "name": "Market Research", 
             "skill": 24, 
             "summary": "Market research is any organized effort to gather information about markets or customers. It is a very important component of business strategy . The term is commonly interchanged with marketing research ; however, expert practitioners may wish to draw a distinction, in that marketing research is concerned specifically about marketing processes, while market research is concerned specifically with markets. Market research is a key factor"
         }, 
+        "Marketing": {
+            "interest": 0, 
+            "judge_lvl": true, 
+            "knowledge": 19, 
+            "name": "Marketing", 
+            "skill": 10, 
+            "summary": "Sorry, no description is available."
+        }, 
         "Marketing_mix": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 26, 
             "name": "Marketing Mix", 
             "skill": 26, 
@@ -1059,6 +1202,7 @@
         }, 
         "Mass_production": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 62, 
             "name": "Mass Production", 
             "skill": 56, 
@@ -1066,6 +1210,7 @@
         }, 
         "Materials_science": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 26, 
             "name": "Materials Science", 
             "skill": 26, 
@@ -1073,6 +1218,7 @@
         }, 
         "Mathematical_analysis": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Mathematical Analysis", 
             "skill": 56, 
@@ -1080,6 +1226,7 @@
         }, 
         "Mathematics": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 57, 
             "name": "Mathematics", 
             "skill": 57, 
@@ -1087,6 +1234,7 @@
         }, 
         "Measurement": {
             "interest": 39, 
+            "judge_lvl": true, 
             "knowledge": 68, 
             "name": "Measurements", 
             "skill": 68, 
@@ -1094,6 +1242,7 @@
         }, 
         "Mechanical_engineering": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 62, 
             "name": "Mechanical Engineering", 
             "skill": 79, 
@@ -1101,6 +1250,7 @@
         }, 
         "Mechanics": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 21, 
             "name": "Mechanics", 
             "skill": 26, 
@@ -1108,13 +1258,15 @@
         }, 
         "Medicine": {
             "interest": 0, 
-            "knowledge": 21, 
+            "judge_lvl": true, 
+            "knowledge": 28, 
             "name": "Medicine", 
-            "skill": 36, 
+            "skill": 28, 
             "summary": "Medicine is the applied science or practice of the diagnosis , treatment, and prevention of disease . It encompasses a variety of health care practices evolved to maintain and restore health by the prevention and treatment of illness in human beings. Contemporary medicine applies health science , biomedical research , and medical technology to diagnose and treat injury and disease,"
         }, 
         "Meeting": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 26, 
             "name": "Meeting", 
             "skill": 26, 
@@ -1122,6 +1274,7 @@
         }, 
         "Metal": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 44, 
             "name": "Metals", 
             "skill": 44, 
@@ -1129,6 +1282,7 @@
         }, 
         "Methodology": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 38, 
             "name": "Methodology", 
             "skill": 46, 
@@ -1136,6 +1290,7 @@
         }, 
         "Mind_map": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 52, 
             "name": "Mind Mapping", 
             "skill": 52, 
@@ -1143,6 +1298,7 @@
         }, 
         "Mission_statement": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 39, 
             "name": "Personal Statements", 
             "skill": 24, 
@@ -1150,6 +1306,7 @@
         }, 
         "Motivation": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 17, 
             "name": "Motivation", 
             "skill": 13, 
@@ -1157,6 +1314,7 @@
         }, 
         "Multinational_corporation": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 53, 
             "name": "Multinational", 
             "skill": 53, 
@@ -1164,6 +1322,7 @@
         }, 
         "Nature": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 40, 
             "name": "Nature", 
             "skill": 58, 
@@ -1171,6 +1330,7 @@
         }, 
         "New_product_development": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 59, 
             "name": "Product Development", 
             "skill": 59, 
@@ -1178,6 +1338,7 @@
         }, 
         "Observation": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 29, 
             "name": "Observation", 
             "skill": 24, 
@@ -1185,20 +1346,23 @@
         }, 
         "Opportunity_cost": {
             "interest": 0, 
-            "knowledge": 43, 
+            "judge_lvl": false, 
+            "knowledge": 35, 
             "name": "Opportunity Cost", 
-            "skill": 39, 
+            "skill": 26, 
             "summary": "Opportunity cost is the cost of any activity measured in terms of the value of the next best alternative forgone (that is not chosen). It is the sacrifice related to the second best choice available to someone, or group, who has picked among several mutually exclusive choices. The opportunity cost is also the \"cost\" (as a lost benefit) of the forgone products after making a"
         }, 
         "Organization": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 74, 
             "name": "Organization", 
-            "skill": 82, 
+            "skill": 74, 
             "summary": "An organization (or organisation\u00a0\u2013 see spelling differences) is a social entity that has a collective goal and is linked to an external environment. The word is derived from the Greek word organon, itself derived from the better-known word ergon which means \"organ\"\u00a0\u2013 a compartment for a particular task. There are a variety of legal types of organizations, including corporations, government s, non-governmental organizations, international "
         }, 
         "Output": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 76, 
             "name": "Output", 
             "skill": 58, 
@@ -1206,6 +1370,7 @@
         }, 
         "Outsourcing": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 30, 
             "name": "Co-sourcing", 
             "skill": 30, 
@@ -1213,6 +1378,7 @@
         }, 
         "Paper": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 30, 
             "name": "Paper", 
             "skill": 30, 
@@ -1220,6 +1386,7 @@
         }, 
         "Parallel_computing": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 30, 
             "name": "Parallel Computing", 
             "skill": 30, 
@@ -1227,6 +1394,7 @@
         }, 
         "Parameter": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 57, 
             "name": "Parameter Estimation", 
             "skill": 70, 
@@ -1234,6 +1402,7 @@
         }, 
         "Password": {
             "interest": 70, 
+            "judge_lvl": false, 
             "knowledge": 60, 
             "name": "Password Resets", 
             "skill": 60, 
@@ -1241,6 +1410,7 @@
         }, 
         "Pathology": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Pathology", 
             "skill": 50, 
@@ -1248,6 +1418,7 @@
         }, 
         "Patient_safety": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Patient Safety", 
             "skill": 50, 
@@ -1255,6 +1426,7 @@
         }, 
         "Perception": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 34, 
             "name": "Perception", 
             "skill": 38, 
@@ -1262,13 +1434,15 @@
         }, 
         "Performance": {
             "interest": 46, 
-            "knowledge": 58, 
+            "judge_lvl": true, 
+            "knowledge": 42, 
             "name": "Performing", 
-            "skill": 42, 
+            "skill": 26, 
             "summary": "A performance, in performing arts , generally comprises an event in which a performer or group of performers behave in a particular way for another group of people, the audience . Choral music and ballet are examples. Usually the performers participate in rehearsal s beforehand. Afterwards audience members often applaud. The means of expressing appreciation can vary by culture. Chinese performers will clap"
         }, 
         "Persona": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 59, 
             "name": "Persona", 
             "skill": 54, 
@@ -1276,6 +1450,7 @@
         }, 
         "Philosophy": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 78, 
             "name": "Philosophy", 
             "skill": 78, 
@@ -1283,6 +1458,7 @@
         }, 
         "Philosophy_of_science": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 48, 
             "name": "Philosophy Of Science", 
             "skill": 50, 
@@ -1290,6 +1466,7 @@
         }, 
         "Photovoltaics": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Photovoltaics", 
             "skill": 0, 
@@ -1297,13 +1474,15 @@
         }, 
         "Physical_exercise": {
             "interest": 0, 
-            "knowledge": 13, 
+            "judge_lvl": false, 
+            "knowledge": 12, 
             "name": "Exercise", 
-            "skill": 29, 
+            "skill": 21, 
             "summary": "Physical exercise is any bodily activity that enhances or maintains physical fitness and overall health and wellness. It is performed for various reasons including strengthening muscle s and the cardiovascular system , honing athletic skills, weight loss or maintenance, as well as for the purpose of enjoyment. Frequent and regular physical exercise boosts the immune system , and helps prevent the"
         }, 
         "Physics": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Physics", 
             "skill": 50, 
@@ -1311,6 +1490,7 @@
         }, 
         "Physiology": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Physiology", 
             "skill": 50, 
@@ -1318,6 +1498,7 @@
         }, 
         "Plan": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 34, 
             "name": "Plans", 
             "skill": 38, 
@@ -1325,6 +1506,7 @@
         }, 
         "Planning": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 33, 
             "name": "Plannning", 
             "skill": 24, 
@@ -1332,6 +1514,7 @@
         }, 
         "Policy": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 32, 
             "name": "Policy Writing", 
             "skill": 38, 
@@ -1339,6 +1522,7 @@
         }, 
         "Postcard": {
             "interest": 70, 
+            "judge_lvl": false, 
             "knowledge": 60, 
             "name": "Postcards", 
             "skill": 60, 
@@ -1346,13 +1530,15 @@
         }, 
         "Poster": {
             "interest": 0, 
-            "knowledge": 31, 
+            "judge_lvl": true, 
+            "knowledge": 28, 
             "name": "Posters", 
-            "skill": 17, 
+            "skill": 20, 
             "summary": "A poster is any piece of printed paper designed to be attached to a wall or vertical surface. Typically posters include both textual and graphic elements, although a poster may be either wholly graphical or wholly text. Posters are designed to be both eye-catching and informative. Posters may be used for many purposes. They are a frequent tool of advertisers (particularly"
         }, 
         "Power_(physics)": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 24, 
             "name": "Power Trading", 
             "skill": 24, 
@@ -1360,13 +1546,15 @@
         }, 
         "Pragmatism": {
             "interest": 0, 
-            "knowledge": 58, 
+            "judge_lvl": true, 
+            "knowledge": 54, 
             "name": "Pragmatic", 
             "skill": 66, 
             "summary": "Pragmatism is a philosophical tradition centered on the linking of practice and theory. It describes a process where theory is extracted from practice, and applied back to practice to form what is called intelligent practice. Important positions characteristic of pragmatism include instrumentalism, radical empiricism, verificationism, conceptual relativity, and fallibilism. There is general consensus among pragmatists that philosophy should take the methods and insights of modern"
         }, 
         "Presentation": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 26, 
             "name": "Presentations", 
             "skill": 26, 
@@ -1374,6 +1562,7 @@
         }, 
         "Prior_art": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 44, 
             "name": "Prior Art Search", 
             "skill": 0, 
@@ -1381,6 +1570,7 @@
         }, 
         "Problem_solving": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 70, 
             "name": "Problem Solving", 
             "skill": 70, 
@@ -1388,13 +1578,15 @@
         }, 
         "Process_control": {
             "interest": 0, 
-            "knowledge": 39, 
+            "judge_lvl": true, 
+            "knowledge": 19, 
             "name": "Process Control", 
-            "skill": 45, 
+            "skill": 42, 
             "summary": "Process control is a statistics and engineering discipline that deals with architecture s, mechanism s and algorithm s for maintaining the output of a specific process within a desired range. See also control theory . More on 'Process Control' at Wikipedia \u00bb"
         }, 
         "Process_management": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 29, 
             "name": "Process Management", 
             "skill": 29, 
@@ -1402,6 +1594,7 @@
         }, 
         "Product_design": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 22, 
             "name": "Product Design", 
             "skill": 30, 
@@ -1409,20 +1602,15 @@
         }, 
         "Product_lifecycle_management": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 39, 
             "name": "Product Lifecycle Management", 
             "skill": 29, 
             "summary": "In industry, product lifecycle management (PLM) is the process of managing the entire lifecycle of a product from its conception, through design and manufacture, to service and disposal. PLM integrates people, data, processes and business systems and provides a product information backbone for companies and their extended enterprise. PLM systems help organizations in coping with the increasing complexity and engineering challenges of developing new products"
         }, 
-        "Programming_tool": {
-            "interest": 0, 
-            "knowledge": 24, 
-            "name": "Development Tools", 
-            "skill": 24, 
-            "summary": "A programming tool or software development tool is a program or application that software developers use to create, debug, maintain, or otherwise support other programs and applications. The term usually refers to relatively simple programs that can be combined together to accomplish a task, much as one might use multiple hand tool s to fix a physical object. Programming tool or programming software"
-        }, 
         "Project": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 42, 
             "name": "Projects", 
             "skill": 42, 
@@ -1430,6 +1618,7 @@
         }, 
         "Projection_screen": {
             "interest": 70, 
+            "judge_lvl": true, 
             "knowledge": 60, 
             "name": "Projection Screens", 
             "skill": 60, 
@@ -1437,20 +1626,31 @@
         }, 
         "Property": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 36, 
             "name": "Property", 
             "skill": 50, 
             "summary": "Property is any physical or intangible entity that is owned by a person or jointly by a group of people or a legal entity like a corporation. Depending on the nature of the property, an owner of property has the right to consume, sell, rent , mortgage , transfer , exchange or destroy it, or to exclude others from doing these things. Important"
         }, 
         "Prototype": {
-            "interest": 24, 
-            "knowledge": 50, 
+            "interest": 32, 
+            "judge_lvl": true, 
+            "knowledge": 58, 
             "name": "Prototype", 
-            "skill": 58, 
+            "skill": 62, 
             "summary": "A prototype is an early sample or model built to test a concept or process or to act as a thing to be replicated or learned from. It is a term used in a variety of contexts, including semantics, design , electronics , and software programming . A prototype is designed to test and trial a new design to enhance precision by system analysts and"
+        }, 
+        "Psychology": {
+            "interest": 0, 
+            "judge_lvl": false, 
+            "knowledge": 34, 
+            "name": "Psychology", 
+            "skill": 28, 
+            "summary": "Psychology is an academic and applied discipline that involves the scientific study of mental functions and behavior s. Psychology has the immediate goal of understanding individuals and groups by both establishing general principles and researching specific cases, and by many accounts it ultimately aims to benefit society. In this field, a professional practitioner or researcher is called a psychologist, and can be classified as"
         }, 
         "Public": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 40, 
             "name": "General Public", 
             "skill": 46, 
@@ -1458,6 +1658,7 @@
         }, 
         "Qualitative_research": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 21, 
             "name": "Qualitative Research", 
             "skill": 26, 
@@ -1465,6 +1666,7 @@
         }, 
         "Quality_(business)": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Product Quality", 
             "skill": 50, 
@@ -1472,6 +1674,7 @@
         }, 
         "Quality_of_life": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 24, 
             "name": "Wellbeing", 
             "skill": 39, 
@@ -1479,6 +1682,7 @@
         }, 
         "Quantitative_research": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 24, 
             "name": "Quantitative Research", 
             "skill": 18, 
@@ -1486,6 +1690,7 @@
         }, 
         "Rapid_prototyping": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 57, 
             "name": "Rapid Prototyping", 
             "skill": 57, 
@@ -1493,6 +1698,7 @@
         }, 
         "Regular_expression": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 39, 
             "name": "Regular Expressions", 
             "skill": 38, 
@@ -1500,6 +1706,7 @@
         }, 
         "Report": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 58, 
             "name": "Reports", 
             "skill": 62, 
@@ -1507,13 +1714,23 @@
         }, 
         "Requirement": {
             "interest": 64, 
-            "knowledge": 78, 
+            "judge_lvl": true, 
+            "knowledge": 80, 
             "name": "Technical Requirements", 
-            "skill": 80, 
+            "skill": 82, 
             "summary": "In engineering , a requirement is a singular documented physical and functional need that a particular product or service must be or perform. It is most commonly used in a formal sense in systems engineering , software engineering , or enterprise engineering . It is a statement that identifies a necessary attribute, capability, characteristic, or quality of a system for it to have value and"
+        }, 
+        "Research": {
+            "interest": 0, 
+            "judge_lvl": false, 
+            "knowledge": 42, 
+            "name": "Research", 
+            "skill": 46, 
+            "summary": "Sorry, no description is available."
         }, 
         "Risk": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 40, 
             "name": "@Risk", 
             "skill": 0, 
@@ -1521,6 +1738,7 @@
         }, 
         "Rope": {
             "interest": 64, 
+            "judge_lvl": true, 
             "knowledge": 57, 
             "name": "High Ropes", 
             "skill": 57, 
@@ -1528,6 +1746,7 @@
         }, 
         "Safety": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 28, 
             "name": "Safety", 
             "skill": 0, 
@@ -1535,6 +1754,7 @@
         }, 
         "Science": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 29, 
             "name": "Science", 
             "skill": 24, 
@@ -1542,6 +1762,7 @@
         }, 
         "Scientific_modelling": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 42, 
             "name": "Scientific Modelling", 
             "skill": 41, 
@@ -1549,6 +1770,7 @@
         }, 
         "Selection": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 46, 
             "name": "Selection", 
             "skill": 24, 
@@ -1556,20 +1778,15 @@
         }, 
         "Seminar": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 40, 
             "name": "Seminars", 
             "skill": 33, 
             "summary": "A seminar is, generally, a form of academic instruction, either at an academic institution or offered by a commercial or professional organization. It has the function of bringing together small groups for recurring meetings, focusing each time on some particular subject, in which everyone present is requested to actively participate. This is often accomplished through an ongoing Socratic dialogue with a seminar leader or"
         }, 
-        "Senior_management": {
-            "interest": 0, 
-            "knowledge": 30, 
-            "name": "Executive Management", 
-            "skill": 30, 
-            "summary": "Senior management, executive management, or management team is generally a team of individuals at the highest level of organizational management who have the day-to-day responsibilities of managing a company or corporation, they hold specific executive powers conferred onto them with and by authority of the board of directors and/or the shareholders. There are most often higher levels of responsibility, such as a board of "
-        }, 
         "Set_theory": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 73, 
             "name": "Set Theory", 
             "skill": 73, 
@@ -1577,6 +1794,7 @@
         }, 
         "Shape": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 15, 
             "name": "Shapes", 
             "skill": 21, 
@@ -1584,6 +1802,7 @@
         }, 
         "Shoe": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 70, 
             "name": "Shoes", 
             "skill": 30, 
@@ -1591,6 +1810,7 @@
         }, 
         "Short_film": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 79, 
             "name": "Short Films", 
             "skill": 79, 
@@ -1598,13 +1818,15 @@
         }, 
         "Simulation": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 37, 
             "name": "Simulations", 
-            "skill": 46, 
+            "skill": 41, 
             "summary": "Simulation is the imitation of the operation of a real-world process or system over time. The act of simulating something first requires that a model be developed; this model represents the key characteristics or behaviors of the selected physical or abstract system or process. The model represents the system itself, whereas the simulation represents the operation of the system over time. Simulation is used in"
         }, 
         "Software_design": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 80, 
             "name": "Software Design", 
             "skill": 74, 
@@ -1612,6 +1834,7 @@
         }, 
         "Software_development_process": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 29, 
             "name": "Software Development Life Cycle", 
             "skill": 29, 
@@ -1619,6 +1842,7 @@
         }, 
         "Software_framework": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 46, 
             "name": "Frameworks", 
             "skill": 60, 
@@ -1626,6 +1850,7 @@
         }, 
         "Solar_cell": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 30, 
             "name": "Solar Cells", 
             "skill": 30, 
@@ -1633,6 +1858,7 @@
         }, 
         "Sound": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 16, 
             "name": "Sound", 
             "skill": 0, 
@@ -1640,6 +1866,7 @@
         }, 
         "Source_code": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 31, 
             "name": "Code", 
             "skill": 13, 
@@ -1647,6 +1874,7 @@
         }, 
         "Statics": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 74, 
             "name": "Statics", 
             "skill": 56, 
@@ -1654,6 +1882,7 @@
         }, 
         "Statistical_hypothesis_testing": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 43, 
             "name": "Hypothesis Testing", 
             "skill": 0, 
@@ -1661,6 +1890,7 @@
         }, 
         "Statistics": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 37, 
             "name": "Statistics", 
             "skill": 37, 
@@ -1668,6 +1898,7 @@
         }, 
         "Stimulation": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Stimulation", 
             "skill": 50, 
@@ -1675,13 +1906,15 @@
         }, 
         "Strategy": {
             "interest": 0, 
-            "knowledge": 46, 
+            "judge_lvl": true, 
+            "knowledge": 41, 
             "name": "Strategy", 
-            "skill": 46, 
+            "skill": 41, 
             "summary": "A strategy is a plan of action designed to achieve a specific goal. Strategy is all about gaining (or being prepared to gain) a position of advantage over adversaries or best exploiting emerging possibilities. As there is always an element of uncertainty about future, strategy is more about a set of options (\"strategic choices\") than a fixed plan. It derives from the Greek \"\u03c3\u03c4\u03c1\u03b1\u03c4\u03b7\u03b3\u03af\u03b1\""
         }, 
         "Structured_programming": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 42, 
             "name": "Structured Programming", 
             "skill": 30, 
@@ -1689,6 +1922,7 @@
         }, 
         "Studio": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 39, 
             "name": "Studio", 
             "skill": 66, 
@@ -1696,6 +1930,7 @@
         }, 
         "Surgery": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 30, 
             "name": "Surgery", 
             "skill": 30, 
@@ -1703,13 +1938,15 @@
         }, 
         "Sustainability": {
             "interest": 0, 
-            "knowledge": 50, 
+            "judge_lvl": false, 
+            "knowledge": 46, 
             "name": "Sustainability", 
-            "skill": 54, 
+            "skill": 50, 
             "summary": "Sustainability is the capacity to endure. For humans, sustainability is the long-term maintenance of responsibility, which has environmental, economic, and social dimensions, and encompasses the concept of stewardship , the responsible management of resource use. In ecology , sustainability describes how biological systems remain diverse and productive over time, a necessary precondition for the well-being of humans and other organisms. Long-lived and healthy "
         }, 
         "Sustainable_design": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 39, 
             "name": "Sustainable Design", 
             "skill": 50, 
@@ -1717,6 +1954,7 @@
         }, 
         "System": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 22, 
             "name": "Systems", 
             "skill": 20, 
@@ -1724,6 +1962,7 @@
         }, 
         "Systems_analysis": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 29, 
             "name": "Systems Analysis", 
             "skill": 29, 
@@ -1731,13 +1970,15 @@
         }, 
         "Target_audience": {
             "interest": 0, 
-            "knowledge": 47, 
+            "judge_lvl": true, 
+            "knowledge": 41, 
             "name": "Target Audience", 
-            "skill": 53, 
+            "skill": 47, 
             "summary": "In marketing and advertising , a target audience, is a specific group of people within the target market at which a product or the marketing message of a product is aimed at. (Kotler 2000)... For example, if a company sells new diet programs for men with heart disease problems (target market) the communication may be aimed at the spouse (target audience) who"
         }, 
         "Teamwork": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 50, 
             "name": "Teamwork", 
             "skill": 0, 
@@ -1745,6 +1986,7 @@
         }, 
         "Technical_analysis": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 70, 
             "name": "Technical Analysis", 
             "skill": 0, 
@@ -1752,13 +1994,15 @@
         }, 
         "Technology": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 26, 
             "name": "Technology", 
-            "skill": 26, 
+            "skill": 30, 
             "summary": "Technology is the making, modification, usage, and knowledge of tool s, machine s, techniques, craft s, systems, methods of organization, in order to solve a problem, improve a preexisting solution to a problem, achieve a goal or perform a specific function. It can also refer to the collection of such tools, machinery, modifications, arrangements and procedures. Technologies significantly affect human as well as other animal"
         }, 
         "Telephone": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 23, 
             "name": "Telephone", 
             "skill": 30, 
@@ -1766,13 +2010,15 @@
         }, 
         "Terminology": {
             "interest": 0, 
-            "knowledge": 62, 
+            "judge_lvl": true, 
+            "knowledge": 48, 
             "name": "Terminology", 
-            "skill": 66, 
+            "skill": 44, 
             "summary": "Terminology is the study of terms and their use. Terms are word s and compound words that in specific contexts are given specific meanings, meanings that may deviate from the meaning the same words have in other contexts and in everyday language. The discipline Terminology studies among other things how such terms of art come to be and their interrelationships within a culture. Terminology differs"
         }, 
         "Therapy": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 60, 
             "name": "Therapists", 
             "skill": 60, 
@@ -1780,13 +2026,15 @@
         }, 
         "Tool": {
             "interest": 0, 
-            "knowledge": 50, 
+            "judge_lvl": false, 
+            "knowledge": 46, 
             "name": "Tools", 
-            "skill": 54, 
+            "skill": 50, 
             "summary": "For the American rock band, see Tool (band). For other uses, see Tool (disambiguation). Further information: Equipment (disambiguation). A tool is any physical item that can be used to achieve a goal , especially if the item is not consumed in the process. Informally the word is also used to describe a procedure or process with a specific purpose. Tool use by humans dates"
         }, 
         "Torque": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 26, 
             "name": "Torque", 
             "skill": 26, 
@@ -1794,13 +2042,15 @@
         }, 
         "Translation": {
             "interest": 0, 
-            "knowledge": 54, 
+            "judge_lvl": false, 
+            "knowledge": 58, 
             "name": "Translation", 
-            "skill": 70, 
+            "skill": 74, 
             "summary": "Translation is the communication of the meaning of a source-language text by means of an equivalent target-language text. Whereas interpreting undoubtedly antedates writing , translation began only after the appearance of written literature ; there exist partial translations of the Sumerian Epic of Gilgamesh (ca. 2000 BCE) into Southwest Asian languages of the second millennium BCE. Translators always risk inappropriate spill-over of source-language"
         }, 
         "Turning": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 80, 
             "name": "Turning Around", 
             "skill": 80, 
@@ -1808,6 +2058,7 @@
         }, 
         "Tutor": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 46, 
             "name": "Tutoring", 
             "skill": 58, 
@@ -1815,6 +2066,7 @@
         }, 
         "Usability": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 54, 
             "name": "Usability", 
             "skill": 59, 
@@ -1822,6 +2074,7 @@
         }, 
         "User_experience": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 36, 
             "name": "User Experience", 
             "skill": 36, 
@@ -1829,6 +2082,7 @@
         }, 
         "User_experience_evaluation": {
             "interest": 67, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "User Experience Testing", 
             "skill": 50, 
@@ -1836,13 +2090,15 @@
         }, 
         "User_interface": {
             "interest": 0, 
-            "knowledge": 68, 
+            "judge_lvl": false, 
+            "knowledge": 56, 
             "name": "User Interface", 
-            "skill": 47, 
+            "skill": 41, 
             "summary": "The user interface, in the industrial design field of human\u2013machine interaction, is the space where interaction between humans and machines occurs. The goal of interaction between a human and a machine at the user interface is effective operation and control of the machine, and feedback from the machine which aids the operator in making operational decisions. Examples of this broad concept of user interfaces"
         }, 
         "User_interface_design": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 41, 
             "name": "User Interface Design", 
             "skill": 41, 
@@ -1850,20 +2106,31 @@
         }, 
         "Venture_capital": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 50, 
             "name": "Venture Capital", 
             "skill": 50, 
             "summary": "Venture capital (VC) is financial capital provided to early-stage, high-potential, high risk, growth startup companies . The venture capital fund makes money by owning equity in the companies it invests in, which usually have a novel technology or business model in high technology industries, such as biotechnology , IT, software , etc. The typical venture capital investment occurs after the seed "
         }, 
+        "Vibration": {
+            "interest": 70, 
+            "judge_lvl": true, 
+            "knowledge": 60, 
+            "name": "Vibration", 
+            "skill": 60, 
+            "summary": "Vibration is a mechanical phenomenon whereby oscillations occur about an equilibrium point. The oscillations may be periodic such as the motion of a pendulum or random such as the movement of a tire on a gravel road. Vibration is occasionally \"desirable\". For example the motion of a tuning fork, the reed in a woodwind instrument or harmonica , or the cone of a loudspeaker is"
+        }, 
         "Video": {
-            "interest": 53, 
-            "knowledge": 47, 
+            "interest": 56, 
+            "judge_lvl": false, 
+            "knowledge": 44, 
             "name": "Video", 
-            "skill": 53, 
+            "skill": 56, 
             "summary": "Video is the technology of electronically capturing, recording , processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion. More on 'Video' at Wikipedia \u00bb"
         }, 
         "Vimeo": {
             "interest": 64, 
+            "judge_lvl": false, 
             "knowledge": 57, 
             "name": "Vimeo", 
             "skill": 57, 
@@ -1871,6 +2138,7 @@
         }, 
         "Vision_in_Product_Design": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 61, 
             "name": "Vision in Product Design", 
             "skill": 61, 
@@ -1878,6 +2146,7 @@
         }, 
         "Visual_Basic": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 39, 
             "name": "Visual Basic", 
             "skill": 39, 
@@ -1885,6 +2154,7 @@
         }, 
         "Visual_perception": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 42, 
             "name": "Visual Perception", 
             "skill": 46, 
@@ -1892,13 +2162,15 @@
         }, 
         "Visual_system": {
             "interest": 0, 
-            "knowledge": 26, 
+            "judge_lvl": true, 
+            "knowledge": 22, 
             "name": "Visual Systems", 
             "skill": 0, 
             "summary": "The visual system is the part of the central nervous system which enables organisms to process visual detail, as well as enabling several non-image forming photoresponse functions. It interprets information from visible light to build a representation of the surrounding world. The visual system accomplishes a number of complex tasks, including the reception of light and the formation of monocular representations; the construction of"
         }, 
         "Weapon": {
             "interest": 70, 
+            "judge_lvl": false, 
             "knowledge": 60, 
             "name": "Weapons", 
             "skill": 60, 
@@ -1906,6 +2178,7 @@
         }, 
         "Website": {
             "interest": 0, 
+            "judge_lvl": false, 
             "knowledge": 20, 
             "name": "Websites", 
             "skill": 20, 
@@ -1913,20 +2186,23 @@
         }, 
         "Weight": {
             "interest": 50, 
+            "judge_lvl": true, 
             "knowledge": 36, 
             "name": "Weight", 
             "skill": 57, 
             "summary": "In science and engineering, the weight of an object is the force on the object due to gravity . Its magnitude (a scalar quantity), often denoted by an italic letter W, is the product of the mass\u00a0m of the object and the magnitude of the local gravitational acceleration\u00a0g; thus: . When considered a vector, weight is often denoted by a bold letter W. The"
         }, 
         "Wood": {
-            "interest": 46, 
-            "knowledge": 35, 
+            "interest": 43, 
+            "judge_lvl": true, 
+            "knowledge": 37, 
             "name": "Wood", 
-            "skill": 39, 
+            "skill": 45, 
             "summary": "Wood is a hard, fibrous tissue found in many trees. It has been used for hundreds of thousands of years for both fuel and as a construction material. It is an organic material, a natural composite of cellulose fibers (which are strong in tension) embedded in a matrix of lignin which resists compression. Wood is sometimes defined as only the secondary xylem in"
         }, 
         "Writing": {
             "interest": 0, 
+            "judge_lvl": true, 
             "knowledge": 46, 
             "name": "Writing", 
             "skill": 46, 
@@ -1937,154 +2213,196 @@
         "dbp": [
             {
                 "correct": true, 
-                "enid": "Information_design", 
-                "flow": 935.0, 
-                "name": "Information Design", 
-                "summary": "Information design is the skill and practice of preparing information so people can use it with efficiency and effectiveness. Where the data is complex or unstructured, a visual representation can express its meaning more clearly to the viewer. More on 'Information Design' at Wikipedia \u00bb"
-            }, 
-            {
-                "correct": true, 
-                "enid": "Communication_design", 
-                "flow": 890.0, 
-                "name": "Communication Design", 
-                "summary": "Communication design is a mixed discipline between design and information-development which is concerned with how media intermission such as printed , craft ed, electronic media or presentations communicate with people. A communication design approach is not only concerned with developing the message aside from the aesthetic s in media, but also with creating new media channels to ensure the message"
-            }, 
-            {
-                "correct": true, 
-                "enid": "Typography", 
-                "flow": 860.0, 
-                "name": "Typography", 
-                "summary": "Typography (from the Greek words \u03c4\u03cd\u03c0\u03bf\u03c2 (typos) = form and \u03b3\u03c1\u03b1\u03c6\u03ae (graphe) = writing) is the art and technique of arranging type in order to make language visible. The arrangement of type involves the selection of typefaces, point size, line length, leading (line spacing), adjusting the spaces between groups of letters ( tracking ) and adjusting the space between pairs of letters (kerning). Type "
-            }, 
-            {
-                "correct": true, 
                 "enid": "CTQ_tree", 
-                "flow": 856.0, 
+                "flow": 888.0, 
                 "name": "CTQ", 
                 "summary": "A CTQ tree (Critical to Quality tree) is used to decompose broad customer requirements into more easily quantified requirements. CTQ Trees are often used in the Six Sigma methodology. CTQs are derived from customer needs. Customer delight may be an add-on while deriving Critical To Quality parameters. For cost considerations one may remain focused to customer needs at the initial stage. CTQs (Critical to"
             }, 
             {
                 "correct": true, 
+                "enid": "Information_design", 
+                "flow": 872.0, 
+                "name": "Information Design", 
+                "summary": "Information design is the skill and practice of preparing information so people can use it with efficiency and effectiveness. Where the data is complex or unstructured, a visual representation can express its meaning more clearly to the viewer. More on 'Information Design' at Wikipedia \u00bb"
+            }, 
+            {
+                "correct": true, 
                 "enid": "Pilot_experiment", 
-                "flow": 814.0, 
+                "flow": 854.0, 
                 "name": "Pilot Projects", 
                 "summary": "A pilot experiment, also called a pilot study, is a small scale preliminary study conducted in order to evaluate feasibility, time, cost, adverse events, and effect size (statistical variability) in an attempt to predict an appropriate sample size and improve upon the study design prior to performance of a full-scale research project. Pilot studies, therefore, may not be appropriate for case studies . More on 'Pilot Projects' at Wikipedia \u00bb"
             }, 
             {
                 "correct": true, 
-                "enid": "Style_guide", 
-                "flow": 791.0, 
-                "name": "Style Guides", 
-                "summary": "A style guide or style manual is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization or field. The implementation of a style guide provides uniformity in style and formatting within a document and across multiple documents. A set of standards for a specific organization is often known as \"house style\". Style guides"
+                "enid": "Communication_design", 
+                "flow": 807.0, 
+                "name": "Communication Design", 
+                "summary": "Communication design is a mixed discipline between design and information-development which is concerned with how media intermission such as printed , craft ed, electronic media or presentations communicate with people. A communication design approach is not only concerned with developing the message aside from the aesthetic s in media, but also with creating new media channels to ensure the message"
             }, 
             {
                 "correct": true, 
                 "enid": "Diffusion_of_innovations", 
-                "flow": 765.0, 
+                "flow": 805.0, 
                 "name": "Diffusion Of Innovation", 
                 "summary": "Diffusion of Innovations is a theory that seeks to explain how, why, and at what rate new ideas and technology spread through culture s. Everett Rogers, a professor of rural sociology, popularized the theory in his 1962 book Diffusion of Innovations. He said diffusion is the process by which an innovation is communicated through certain channels over time among the members of a social"
             }, 
             {
                 "correct": true, 
-                "enid": "Video_design", 
-                "flow": 752.0, 
-                "name": "Projection Design", 
-                "summary": "Video design or projection design is a creative field of stagecraft. It is concerned with the creation and integration of film and motion graphics into the fields of theatre , opera , dance , fashion shows , concerts and other live events. Video design has only recently gained recognition as a separate creative field. Prior to this, the responsibilities of video design would often"
+                "enid": "Typography", 
+                "flow": 777.0, 
+                "name": "Typography", 
+                "summary": "Typography (from the Greek words \u03c4\u03cd\u03c0\u03bf\u03c2 (typos) = form and \u03b3\u03c1\u03b1\u03c6\u03ae (graphe) = writing) is the art and technique of arranging type in order to make language visible. The arrangement of type involves the selection of typefaces, point size, line length, leading (line spacing), adjusting the spaces between groups of letters ( tracking ) and adjusting the space between pairs of letters (kerning). Type "
             }, 
             {
                 "correct": true, 
-                "enid": "User-centered_design", 
-                "flow": 732.0, 
-                "name": "User-centered Design", 
-                "summary": "In broad terms, user-centered design (UCD) is a type of user interface design and a process in which the needs, wants, and limitations of end users of a product are given extensive attention at each stage of the design process . User-centered design can be characterized as a multi-stage problem solving process that not only requires designers to analyse and foresee how users are"
+                "enid": "Factor_analysis", 
+                "flow": 761.0, 
+                "name": "Factor Analysis", 
+                "summary": "Factor analysis is a statistical method used to describe variability among observed, correlated variables in terms of a potentially lower number of unobserved variables called factors. In other words, it is possible, for example, that variations in three or four observed variables mainly reflect the variations in fewer unobserved variables. Factor analysis searches for such joint variations in response to unobserved latent variables."
+            }, 
+            {
+                "correct": true, 
+                "enid": "Consensus_decision-making", 
+                "flow": 715.0, 
+                "name": "Consensus Building", 
+                "summary": "Consensus decision-making is a group decision making process that seeks the consent, not necessarily agreement about the \"favorite\" choice of all participants. Consensus may be defined professionally as an acceptable resolution, one that can be supported, even if not the \"favorite\" of each individual. Consensus is defined by Merriam-Webster as, first, general agreement, and second, group solidarity of belief or sentiment. It has"
             }, 
             {
                 "correct": true, 
                 "enid": "Brand_implementation", 
-                "flow": 719.0, 
+                "flow": 710.0, 
                 "name": "Brand Implementation", 
                 "summary": "Brand implementation refers to the physical representation and consistent application of brand identity across visual and verbal identity carriers. In visual terms, this can include signage , uniforms , liveries, interior design and branded merchandise. Brand implementation encompasses facets of architecture , product design , industrial design , quantity surveying , engineering , procurement , project management and retail design ."
+            }, 
+            {
+                "correct": true, 
+                "enid": "Style_guide", 
+                "flow": 708.0, 
+                "name": "Style Guides", 
+                "summary": "A style guide or style manual is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization or field. The implementation of a style guide provides uniformity in style and formatting within a document and across multiple documents. A set of standards for a specific organization is often known as \"house style\". Style guides"
             }
         ], 
         "dbp_niv": [
             {
                 "correct": true, 
                 "enid": "Living_lab", 
-                "flow": 1282.0, 
+                "flow": 1261.0, 
                 "name": "Living lab", 
                 "summary": "A living lab is a research concept. A living lab is a user-centred, open-innovation ecosystem, often operating in a territorial context (e.g. city, agglomeration, region), integrating concurrent research and innovation processes within a public-private-people partnership. The concept is based on a systematic user co-creation approach integrating research and innovation processes."
             }, 
             {
                 "correct": true, 
                 "enid": "Work_of_art", 
-                "flow": 1001.0, 
+                "flow": 943.0, 
                 "name": "Work of art", 
                 "summary": "A work of art, artwork, art piece, or art object is an aesthetic item or artistic creation."
             }, 
             {
                 "correct": true, 
+                "enid": "Critical_to_quality", 
+                "flow": 880.0, 
+                "name": "Critical to Quality", 
+                "summary": "Critical to Quality is an attribute of a part, assembly, sub-assembly, product, or process that is literally critical to quality or more precisely, has a direct and significant impact on its actual or perceived quality."
+            }, 
+            {
+                "correct": true, 
                 "enid": "Urban_acupuncture", 
-                "flow": 915.0, 
+                "flow": 834.0, 
                 "name": "Urban Acupuncture", 
                 "summary": "Urban Acupuncture is an urban environmentalism theory which combines urban design with traditional Chinese medical theory of acupuncture. This strategy views cities as living, breathing organisms and pinpoints areas in need of repair. Sustainable projects, then, serve as needles that revitalize the whole by healing the parts."
             }, 
             {
                 "correct": true, 
                 "enid": "Sensory_design", 
-                "flow": 897.0, 
+                "flow": 816.0, 
                 "name": "Sensory design", 
                 "summary": "Sensory design aims to establish an overall diagnosis of the sensory perceptions of a product, and define appropriate means to design or redesign it on that basis. It involves an observation of the diverse and varying situations in which a given product or object is used in order to measure the users' overall opinion of the product, its positive and negative aspects in terms of tactility, appearance, sound and so on."
             }, 
             {
                 "correct": true, 
-                "enid": "Critical_to_quality", 
-                "flow": 848.0, 
-                "name": "Critical to Quality", 
-                "summary": "Critical to Quality is an attribute of a part, assembly, sub-assembly, product, or process that is literally critical to quality or more precisely, has a direct and significant impact on its actual or perceived quality."
-            }, 
-            {
-                "correct": true, 
-                "enid": "Form_follows_function", 
-                "flow": 733.0, 
-                "name": "Form follows function", 
-                "summary": "Form follows function is a principle associated with modern architecture and industrial design in the 20th century. The principle is that the shape of a building or object should be primarily based upon its intended function or purpose."
-            }, 
-            {
-                "correct": true, 
-                "enid": "Architect-led_design\u2013build", 
-                "flow": 731.0, 
-                "name": "Architect-led design\u2013build", 
-                "summary": "In product manufacturing, the person or company responsible for making the product is usually also its designer. The construction industry is different. In constructing a building or similar structure, the design is usually prepared by an architect, but the construction is usually performed by one or more contractors, who are not affiliated with the architect. It was not always this way."
-            }, 
-            {
-                "correct": true, 
-                "enid": "Slow_design", 
-                "flow": 719.0, 
-                "name": "Slow design", 
-                "summary": "Slow Design is a branch of the Slow Movement, which began with the concept of Slow Food, a term coined in contrast to fast food. As with every branch of the Slow Movement, the overarching goal of Slow Design is to promote well being for individuals, society, and the natural environment. Slow Design seeks a holistic approach to designing that takes into consideration a wide range of material and social factors as well as the short and long term impacts of the design."
-            }, 
-            {
-                "correct": true, 
                 "enid": "Lean_integration", 
-                "flow": 718.0, 
+                "flow": 750.0, 
                 "name": "Lean integration", 
                 "summary": "Lean integration is a management system that emphasizes creating value for customers, continuous improvement, and eliminating waste as a sustainable data integration and system integration practice. Lean integration has parallels with other lean disciplines such as lean manufacturing, lean IT, and lean software development."
             }, 
             {
                 "correct": true, 
-                "enid": "Process-centered_design", 
-                "flow": 714.0, 
-                "name": "Process-centered design", 
-                "summary": "Process-centered design (PCD) is a design methodology, which proposes a business centric approach for designing user interfaces. Because of the multi-stage business analysis steps involved right from the beginning of the PCD life cycle, it is believed to achieve the highest levels of business-IT alignment that is possible through UI."
+                "enid": "Epiphany_(feeling)", 
+                "flow": 693.0, 
+                "name": "Epiphany (feeling)", 
+                "summary": "An epiphany (from the ancient Greek \u1f10\u03c0\u03b9\u03c6\u03ac\u03bd\u03b5\u03b9\u03b1, epiphaneia, \"manifestation, striking appearance\") is the sudden realization or comprehension of the (larger) essence or meaning of something. The term is used in either a philosophical or literal sense to signify that the claimant has \"found the last piece of the puzzle and now sees the whole picture,\" or has new information or experience, often insignificant by itself, that illuminates a deeper or numinous foundational frame of reference."
+            }, 
+            {
+                "correct": true, 
+                "enid": "Safety_assurance", 
+                "flow": 691.0, 
+                "name": "Safety assurance", 
+                "summary": "Safety assurance is the application of safety engineering practices, intended to minimize the risks of operational hazards."
+            }, 
+            {
+                "correct": true, 
+                "enid": "System_usability_scale", 
+                "flow": 686.0, 
+                "name": "System usability scale", 
+                "summary": "In systems engineering, the system usability scale (SUS) is a simple, ten-item attitude Likert scale giving a global view of subjective assessments of usability. It was developed by John Brooke at Digital Equipment Corporation in the UK in 1986 as a tool to be used in usability engineering of electronic office systems. The usability of a system, as defined by the ISO standard ISO 9241 Part 11, can be measured only by taking into account the context of use of the system \u2014 i.e."
+            }, 
+            {
+                "correct": true, 
+                "enid": "Hypothesis", 
+                "flow": 668.0, 
+                "name": "Hypothesis", 
+                "summary": "A hypothesis (from Greek \u1f51\u03c0\u03cc\u03b8\u03b5\u03c3\u03b9\u03c2; plural hypotheses) is a proposed explanation for a phenomenon. The term derives from the Greek, \u1f51\u03c0\u03bf\u03c4\u03b9\u03b8\u03ad\u03bd\u03b1\u03b9 \u2013 hypotithenai meaning \"to put under\" or \"to suppose\". For a hypothesis to be put forward as a scientific hypothesis, the scientific method requires that one can test it. Scientists generally base scientific hypotheses on previous observations that cannot satisfactorily be explained with the available scientific theories."
             }
         ], 
         "li": [
             {
                 "correct": true, 
+                "count": 17, 
+                "enid": "Painting", 
+                "name": "Painting", 
+                "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
+            }, 
+            {
+                "correct": true, 
+                "count": 16, 
+                "enid": "Data", 
+                "name": "Data", 
+                "summary": "Data (,, or ) are values of qualitative or quantitative variables, belonging to a set of items. Data in computing (or data processing ) are often represented by a combination of items organized in rows and multiple variables organized in columns. Data are typically the results of measurements and can be visualised using graph s or image s. Data as an abstract"
+            }, 
+            {
+                "correct": true, 
+                "count": 16, 
+                "enid": "Advertising", 
+                "name": "Advertising", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
                 "count": 14, 
-                "enid": "Psychology", 
-                "name": "Psychology", 
-                "summary": "Psychology is an academic and applied discipline that involves the scientific study of mental functions and behavior s. Psychology has the immediate goal of understanding individuals and groups by both establishing general principles and researching specific cases, and by many accounts it ultimately aims to benefit society. In this field, a professional practitioner or researcher is called a psychologist, and can be classified as"
+                "enid": "Greek_language", 
+                "name": "Greek", 
+                "summary": "Greek ( ell\u012bnika or ) ell\u012bnik\u012b gl\u014dssa is an independent branch of the Indo-European family of languages. Native to the southern Balkans Western Asia Minor and the Aegean, it has the longest documented history of any Indo-European language, spanning 34\u00a0centuries of written records. Its writing system has been the Greek alphabet for the majority of its history; other systems, such as Linear B and"
+            }, 
+            {
+                "correct": true, 
+                "count": 13, 
+                "enid": "Software_architecture", 
+                "name": "Architecture", 
+                "summary": "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both. The term also refers to documentation of a system's \"software architecture.\" Documenting software architecture facilitates communication between stakeholders , documents early decisions about high-level design , and allows reuse of design components and patterns between projects. More on 'Architecture' at Wikipedia \u00bb"
+            }, 
+            {
+                "correct": true, 
+                "count": 13, 
+                "enid": "Software", 
+                "name": "Software", 
+                "summary": "Computer software, or just software, is a collection of computer program s and related data that provides the instructions for telling a computer what to do and how to do it. Software refers to one or more computer programs and data held in the storage of the computer for some reasons. In other words, software is a set of programs, procedures, algorithms and"
+            }, 
+            {
+                "correct": true, 
+                "count": 12, 
+                "enid": "Programming_tool", 
+                "name": "Development Tools", 
+                "summary": "A programming tool or software development tool is a program or application that software developers use to create, debug, maintain, or otherwise support other programs and applications. The term usually refers to relatively simple programs that can be combined together to accomplish a task, much as one might use multiple hand tool s to fix a physical object. Programming tool or programming software"
             }, 
             {
                 "correct": true, 
@@ -2095,59 +2413,17 @@
             }, 
             {
                 "correct": true, 
-                "count": 11, 
-                "enid": "Heuristic_evaluation", 
-                "name": "Heuristic Evaluation", 
-                "summary": "A heuristic evaluation is a usability inspection method for computer software that helps to identify usability problems in the user interface (UI) design. It specifically involves evaluators examining the interface and judging its compliance with recognized usability principles (the \"heuristics\"). These evaluation methods are now widely taught and practiced in the New Media sector, where UIs are often designed in a short space"
+                "count": 12, 
+                "enid": "Economics", 
+                "name": "Economics", 
+                "summary": "Economics is the social science that analyzes the production, distribution, and consumption of goods and services. The term economics comes from the Ancient Greek (', \"management of a household, administration\") from (', \"house\") + (', \"custom\" or \"law\"), hence \"rules of the house(hold)\". Political economy was the earlier name for the subject, but economists in the latter 19th century suggested 'economics'"
             }, 
             {
                 "correct": true, 
                 "count": 11, 
-                "enid": "Paper_prototyping", 
-                "name": "Paper Prototyping", 
-                "summary": "In human\u2013computer interaction, paper prototyping is a widely used method in the user-centered design process , a process that helps developers to create software that meets the user's expectations and needs - in this case, especially for designing and testing user interface s. It is throwaway prototyping and involves creating rough, even hand-sketched, drawings of an interface to use as prototypes, or models,"
-            }, 
-            {
-                "correct": true, 
-                "count": 10, 
-                "enid": "Interaction_design#Related_disciplines", 
-                "name": "User Research", 
-                "summary": "Industrial design The core principles of industrial design overlap with those of interaction design. Industrial designers use their knowledge of physical form , color, aesthetics , human perception and desire, usability to create a fit of an object with the person using it. ;Human factors and ergonomics :Certain basic principles of ergonomics provide grounding for interaction design. These include anthropometry , "
-            }, 
-            {
-                "correct": true, 
-                "count": 10, 
-                "enid": "Contextual_inquiry", 
-                "name": "Contextual Inquiry", 
-                "summary": "Contextual inquiry (CI) is a user-centered design (UCD) ethnographic research method, part of the methodology. A contextual inquiry interview is usually structured as an approximately two-hour, one-on-one interaction in which the researcher watches the user do their normal activities and discusses what they see with the user. More on 'Contextual Inquiry' at Wikipedia \u00bb"
-            }, 
-            {
-                "correct": true, 
-                "count": 10, 
-                "enid": "Advertising", 
-                "name": "Advertising", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "correct": true, 
-                "count": 9, 
-                "enid": "Painting", 
-                "name": "Painting", 
-                "summary": "Painting is the practice of applying paint , pigment , color or other medium to a surface (support base). The medium is commonly applied to the base with a brush but other objects can be used. In art , the term painting describes both the act and the result of the action. However, painting is also used outside of art as a"
-            }, 
-            {
-                "correct": true, 
-                "count": 9, 
-                "enid": "Cognitive_walkthrough", 
-                "name": "Cognitive Walkthrough", 
-                "summary": "The cognitive walkthrough method is a usability inspection method used to identify usability issues in a piece of software or web site, focusing on how easy it is for new users to accomplish tasks with the system. Whereas cognitive walkthrough is task-specific, heuristic evaluation takes a holistic view to catch problems not caught by this and other usability inspection methods. The method is"
-            }, 
-            {
-                "correct": true, 
-                "count": 9, 
-                "enid": "Card_sorting", 
-                "name": "Card Sorting", 
-                "summary": "Card sorting is a simple technique in user experience design where a group of subject experts or \"users\", however inexperienced with design, are guided to generate a category tree or folksonomy . It is a useful approach for designing information architecture , workflows, menu structure, or web site navigation paths. Card sorting has a characteristically low-tech approach. The concepts are first identified and written"
+                "enid": "Art", 
+                "name": "Art", 
+                "summary": "Art is a term that describes a diverse range of human activities and the products of those activities, but here refers to the visual arts , which cover the creation of images or objects in fields including painting , sculpture , printmaking , photography , and other visual media. Architecture is often included as one of the visual arts; however, like the decorative "
             }
         ], 
         "li_niv": [
@@ -2159,56 +2435,56 @@
             }, 
             {
                 "correct": true, 
-                "count": 7, 
+                "count": 10, 
                 "name": "Machinery", 
                 "summary": "Sorry, no description is available."
             }, 
             {
                 "correct": true, 
-                "count": 6, 
-                "name": "Manufacturing", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "correct": true, 
-                "count": 6, 
-                "name": "Contextual Interviews", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "correct": true, 
-                "count": 5, 
-                "name": "Interactive Projects", 
-                "summary": "Sorry, no description is available."
-            }, 
-            {
-                "correct": true, 
-                "count": 5, 
+                "count": 10, 
                 "name": "Communication", 
                 "summary": "Sorry, no description is available."
             }, 
             {
                 "correct": true, 
-                "count": 5, 
-                "name": "Down to Earth", 
+                "count": 8, 
+                "name": "Education", 
                 "summary": "Sorry, no description is available."
             }, 
             {
                 "correct": true, 
-                "count": 5, 
-                "name": "Visual Solutions", 
+                "count": 8, 
+                "name": "Information Systems", 
                 "summary": "Sorry, no description is available."
             }, 
             {
                 "correct": true, 
-                "count": 5, 
-                "name": "Morae", 
+                "count": 8, 
+                "name": "Music", 
                 "summary": "Sorry, no description is available."
             }, 
             {
                 "correct": true, 
-                "count": 4, 
-                "name": "Trados", 
+                "count": 8, 
+                "name": "Manufacturing", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 7, 
+                "name": "Graphics", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 7, 
+                "name": "Print", 
+                "summary": "Sorry, no description is available."
+            }, 
+            {
+                "correct": true, 
+                "count": 7, 
+                "name": "Reason", 
                 "summary": "Sorry, no description is available."
             }
         ]

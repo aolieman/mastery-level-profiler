@@ -15,7 +15,8 @@ app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage
     $scope.initdata = function() {
         $scope.$storage = $localStorage;
         $scope.location = window.location;
-        if ('extracted' in $scope.$storage){
+        var urlpseudo = $scope.parseQueryString(location.search.substring(1));
+        if ('pseudo' in $scope.$storage && Object.keys(urlpseudo)[0] == $scope.$storage.pseudo){
             // Initialize scope data from local storage
             $scope.pseudo = $scope.$storage.pseudo;
             $scope.extracted = $scope.$storage.extracted;
@@ -27,7 +28,6 @@ app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage
             });
         } else {
             // Initialize scope data from server
-            console.log(location.search);
             $http.get('/statements'+location.search).success(function(response){
                 $scope.pseudo = response['pseudo'];
                 $scope.extracted = response['extracted'];
@@ -45,7 +45,17 @@ app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage
                 });
         }
     };
-
+    $scope.parseQueryString = function( queryString ) {
+        var params = {}, queries, temp, i, l;
+        // Split into key/value pairs
+        queries = queryString.split("&");
+        // Convert the array of strings into an object
+        for ( i = 0, l = queries.length; i < l; i++ ) {
+            temp = queries[i].split('=');
+            params[temp[0]] = temp[1];
+        }
+        return params;
+    };
     // Sync data with localStorage
     $scope.syncCountdown = 20;
     $scope.syncLocal = function() {
@@ -70,18 +80,25 @@ app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage
         value.correct = !value.correct;
     };
 
-    /* Return only correct statements */
+    /* Return only correct statements of which lvls should be judged*/
     $scope.filterCorrect = function(statements){
         var out_statements = [];
         for(obj in statements) {
-            if (statements[obj].correct) {
+            if (statements[obj].correct && statements[obj].judge_lvl) {
                 out_statements.push(statements[obj]);
             }
         }
         return out_statements;
     };
     /* Pagination */
-    $scope.pageSize = 9;
+    $scope.calcPageSize = function() {
+        var width = $(window).width();
+        var pageSize = 9;
+        if (width > 1320){ pageSize = 12; }
+        if (width > 1630){ pageSize = 15; }
+        return pageSize
+    }
+    $scope.pageSize = $scope.calcPageSize();
     $scope.numberOfPages = function(statements){
         return Math.ceil($scope.filterCorrect(statements).length/$scope.pageSize);
     };
@@ -114,7 +131,7 @@ app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage
         ltime = new Date().getTime();
         $http.post('/'+$scope.pseudo+ltime, postjson).success(function(response){
             if ('success' in response && usrsubmit==true){
-                var clear_bool = confirm("Delete the backup in your browser? Recommended on public computers.");
+                var clear_bool = confirm("Sending successful! Delete the backup in your browser? Recommended on public computers.");
                 if (clear_bool==true){
                     $scope.syncLocal = function(){
                         console.log("No more autosaving to localStorage.");
@@ -124,7 +141,9 @@ app.controller("StatementCtrl", function ($scope, $timeout, $http, $localStorage
                 }
             }
         }).error(function(){
-            alert("Saving to the server failed. Please send an email to alex@olieman.net, mentioning the current time.")
+            if (usrsubmit==true){
+                alert("Saving to the server failed. Please send an email to alex@olieman.net, mentioning the current time.");
+            }
         });
     };
     /* Auto-POST every 7 minutes */
