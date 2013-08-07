@@ -5243,3 +5243,29 @@ Cache-Control: no-cache
 INFO:root:/Mars1375281194160
 INFO:root:shareworks.local - - [31/Jul/2013 16:33:14] "POST /Mars1375281194160 HTTP/1.1" 200 -
 
+INFO:root:('server started at port ', 8080)
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] "GET /review?review?November=45ef3 HTTP/1.1" 200 -
+
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] "GET /ngStorage.js HTTP/1.1" 200 -
+
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] "GET /slider.js HTTP/1.1" 200 -
+
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] "GET /statement.js HTTP/1.1" 200 -
+
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] "GET /angular-ui-bootstrap.js HTTP/1.1" 200 -
+
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] "GET /app_review.css HTTP/1.1" 200 -
+
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] "GET /ajax-loader.gif HTTP/1.1" 200 -
+
+ERROR:root:('KeyError:   ', KeyError('review',))
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] code 401, message Unauthorized
+
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] "GET /statements?review?November=45ef3 HTTP/1.1" 401 -
+
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] code 404, message File not found
+
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:18] "GET /favicon.ico HTTP/1.1" 404 -
+
+INFO:root:shareworks.local - - [04/Aug/2013 17:28:24] "GET /review?November=45ef3 HTTP/1.1" 200 -
+

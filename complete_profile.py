@@ -205,90 +205,98 @@ class Profile(object):
         return (self.pseudo, secret)
 
     def getDbpediaInferences(self, inf_topics_dbpedia, fields_dbp):
-        ext_topics = set(self.statements['ALL']['extracted'].keys())
-        super_flowdict = defaultdict(float)
-        for ext_id in ext_topics:
-            ext_id = ext_id.replace("~", ".")
-            try:
-                for inf_id, flowct in inf_topics_dbpedia[ext_id].iteritems():
-                    if inf_id in ext_topics: continue # TODO: check Mongo escape
-                    super_flowdict[inf_id] += flowct
-            except KeyError:
-                print "No DBp inferences for %s" % ext_id
-        top_flow = sorted(super_flowdict.items(), key=lambda tup: tup[1],
-                          reverse=True)[:100]
-        # Fill in-vocab and not-in-vocab lists with top-10
-        dbp_infs, dbp_infs_niv = [], []
-        ignore_topics = {'List_of_style_guides', 'Aaron_Marcus',
-                         'List_of_schools_offering_interaction_design_programs'}
-        for inf_id, flowct in top_flow:
-            if inf_id in ignore_topics: continue
-            topic_dict = {'enid': inf_id, 'flow': flowct, 'correct': True}
-            if inf_id in en_dict:
-                topic_dict['name'] = en_dict[inf_id]
-                topic_dict['summary'] = en_summary[inf_id]
-                dbp_infs.append(topic_dict)
-            else:
+        for origin in self.statements:
+            ext_topics = set(self.statements[origin]['extracted'].keys())
+            super_flowdict = defaultdict(float)
+            for ext_id in ext_topics:
+                ext_id = ext_id.replace("~", ".")
                 try:
-                    topic_dict['name'] = fields_dbp[inf_id]['label']
-                    topic_dict['summary'] = fields_dbp[inf_id]['summary']
-                    dbp_infs_niv.append(topic_dict)
+                    for inf_id, flowct in inf_topics_dbpedia[ext_id].iteritems():
+                        if inf_id in ext_topics: continue # TODO: check Mongo escape
+                        super_flowdict[inf_id] += flowct
                 except KeyError:
-                    print "No DBp fields found for %s" % inf_id
-            if len(dbp_infs) >= 10 and len(dbp_infs_niv) >= 10: break
-        # Save in self.statements['ALL']
-        self.statements['ALL']['inferred']['dbp'] = dbp_infs
-        self.statements['ALL']['inferred']['dbp_niv'] = dbp_infs_niv
+                    print "No DBp inferences for %s" % ext_id
+            top_flow = sorted(super_flowdict.items(), key=lambda tup: tup[1],
+                              reverse=True)[:100]
+            # Fill in-vocab and not-in-vocab lists with top-10
+            dbp_infs, dbp_infs_niv = [], []
+            ignore_topics = {'List_of_style_guides', 'Aaron_Marcus',
+                             'List_of_schools_offering_interaction_design_programs'}
+            for inf_id, flowct in top_flow:
+                if inf_id in ignore_topics: continue
+                topic_dict = {'enid': inf_id, 'flow': flowct, 'correct': True}
+                if inf_id in en_dict:
+                    topic_dict['name'] = en_dict[inf_id]
+                    topic_dict['summary'] = en_summary[inf_id]
+                    dbp_infs.append(topic_dict)
+                else:
+                    try:
+                        topic_dict['name'] = fields_dbp[inf_id]['label']
+                        topic_dict['summary'] = fields_dbp[inf_id]['summary']
+                        dbp_infs_niv.append(topic_dict)
+                    except KeyError:
+                        print "No DBp fields found for %s" % inf_id
+                if len(dbp_infs) >= 10 and len(dbp_infs_niv) >= 10: break
+            # Save in self.statements[origin]
+            self.statements[origin]['inferred']['dbp'] = dbp_infs
+            self.statements[origin]['inferred']['dbp_niv'] = dbp_infs_niv
+            
+        # Save in MongoDB and return inferred topics for ALL
         self.toMongo()
-        return dbp_infs, dbp_infs_niv          
+        inf_all = self.statements['ALL']['inferred']
+        return inf_all['dbp'], inf_all['dbp_niv']          
         
 
     def getLinkedinInferences(self, names_fields):
-        ext_topics = set(self.statements['ALL']['extracted'].keys())
-        count_rel = defaultdict(int)
-        for ext_id in ext_topics:
-            ext_id = ext_id.replace("~", ".")
-            try:
-                ext_name = en_dict[ext_id]
-            except KeyError: print "\n!! %s not a recognized ann_id\n" % ext_id
-            rels = []
-            if 'related_skills' in names_fields[ext_name]:
-                rels = names_fields[ext_name]['related_skills']
-            if 'skill_links' in names_fields[ext_name]:
-                rels += [sl[14:] for sl in names_fields[ext_name]['skill_links'] if sl]
-            for rel in rels:
-                inf_name = rel.replace("_", " ")
-                count_rel[inf_name] += 1
-            if len(rels) == 0: print "No LI related topics for %s" % ext_id
-        top_flow = sorted(count_rel.items(), key=lambda tup: tup[1],
-                          reverse=True)
-        # Fill in-vocab (URI) and not-in-vocab (no URI) lists with top-10
-        from get_vocabulary import manually_corrected # names not changed in rel_skills
-        li_infs, li_infs_niv = [], []
-        for inf_name, count in top_flow:
-            if inf_name in manually_corrected:
-                inf_name = manually_corrected[inf_name][0]
-            try:
-                fields = names_fields[inf_name]
-            except KeyError:
-                print "\n!! %s not a recognized skill name\n" % inf_name
-                continue
-            topic_dict = {'name': inf_name, 'count': count, 'correct': True}
-            topic_dict['summary'] = "Sorry, no description is available."
-            if 'summary' in fields and fields['summary']:
-                topic_dict['summary'] = fields['summary']
-            if 'more_wiki' in fields:
-                inf_id = fields['more_wiki'].split("wiki/")[1]
-                topic_dict['enid'] = inf_id
-                if inf_id in ext_topics: continue
-                li_infs.append(topic_dict)
-            else: li_infs_niv.append(topic_dict)
-            if len(li_infs) >= 10 and len(li_infs_niv) >= 10: break
-        # Save in self.statements['ALL']
-        self.statements['ALL']['inferred']['li'] = li_infs
-        self.statements['ALL']['inferred']['li_niv'] = li_infs_niv
+        for origin in self.statements:
+            ext_topics = set(self.statements[origin]['extracted'].keys())
+            count_rel = defaultdict(int)
+            for ext_id in ext_topics:
+                ext_id = ext_id.replace("~", ".")
+                try:
+                    ext_name = en_dict[ext_id]
+                except KeyError: print "\n!! %s not a recognized ann_id\n" % ext_id
+                rels = []
+                if 'related_skills' in names_fields[ext_name]:
+                    rels = names_fields[ext_name]['related_skills']
+                if 'skill_links' in names_fields[ext_name]:
+                    rels += [sl[14:] for sl in names_fields[ext_name]['skill_links'] if sl]
+                for rel in rels:
+                    inf_name = rel.replace("_", " ")
+                    count_rel[inf_name] += 1
+                if len(rels) == 0: print "No LI related topics for %s" % ext_id
+            top_flow = sorted(count_rel.items(), key=lambda tup: tup[1],
+                              reverse=True)
+            # Fill in-vocab (URI) and not-in-vocab (no URI) lists with top-10
+            from get_vocabulary import manually_corrected # names not changed in rel_skills
+            li_infs, li_infs_niv = [], []
+            for inf_name, count in top_flow:
+                if inf_name in manually_corrected:
+                    inf_name = manually_corrected[inf_name][0]
+                try:
+                    fields = names_fields[inf_name]
+                except KeyError:
+                    print "\n!! %s not a recognized skill name\n" % inf_name
+                    continue
+                topic_dict = {'name': inf_name, 'count': count, 'correct': True}
+                topic_dict['summary'] = "Sorry, no description is available."
+                if 'summary' in fields and fields['summary']:
+                    topic_dict['summary'] = fields['summary']
+                if 'more_wiki' in fields:
+                    inf_id = fields['more_wiki'].split("wiki/")[1]
+                    topic_dict['enid'] = inf_id
+                    if inf_id in ext_topics: continue
+                    li_infs.append(topic_dict)
+                else: li_infs_niv.append(topic_dict)
+                if len(li_infs) >= 10 and len(li_infs_niv) >= 10: break
+            # Save in self.statements[origin]
+            self.statements[origin]['inferred']['li'] = li_infs
+            self.statements[origin]['inferred']['li_niv'] = li_infs_niv
+
+        # Save in MongoDB and return inferred topics for ALL
         self.toMongo()
-        return li_infs, li_infs_niv
+        inf_all = self.statements['ALL']['inferred']
+        return inf_all['li'], inf_all['li_niv']
 
     def updateLinkedInDoc(self):
         if hasattr(self, 'linkedin') and db.document.find_one({"_id": self.linkedin}):
@@ -1084,7 +1092,7 @@ if __name__ == '__main__' :
         all_profiles[:] = [pr for pr in all_profiles if (pr.signup['email'] not in
                                                          {"alex@olieman.net",
                                                           "r.jelierse@student.tudelft.nl"})]
-        #produceStatements(all_profiles)
+        produceStatements(all_profiles)
         
     finally:
         # disconnect from mongo
