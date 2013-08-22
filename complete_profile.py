@@ -482,7 +482,6 @@ class Document(object):
             if verbose > 0: print "Skill", fS, skill_terms
             ## Process statements per origin
             if self.origin == 'tudelft':
-                # TODO: incorporate course grades for lvl
                 all_ann_ids.difference_update(ignored_tudelft)
                 for ann_id in all_ann_ids:
                     extracted.add(statement(ann_id, fS*4, fK*4, 0.0))

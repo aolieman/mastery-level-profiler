@@ -4,6 +4,8 @@ import dev_format as ft
 import compare
 import nltk, heapq, numpy, csv
 from msvcrt import getch #Only runs in Win, and only in cmd.exe
+from collections import defaultdict
+from scipy.stats import pearsonr
 
 # Load the en_uri -> topic_name translation dict
 vocabulary = compare.readVocabulary('vocabulary_man.json')
@@ -101,7 +103,6 @@ def edit_ratioTests():
 def judgeLinkedIn():
     # Load LinkedIn Documents from Mongo
     li_docs = cpr.loadDocuments({'origin': 'linkedin'}, cpr.LinkedInProfile)
-    # TODO: docs need statements in dev_truth['extracted']
     # Select the two docs with most extracted statements and judge them
     two_most = heapq.nlargest(2, li_docs, key=countStatements)
     for sel_doc in two_most:
@@ -449,8 +450,86 @@ def csvStatementDict(profile):
                 knowl_lvl = lvl_dict['knowledge']
                 inter_lvl = lvl_dict['interest']
                 wr.writerow((orig, ann_id, skill_lvl, knowl_lvl, inter_lvl))
-  
-            
+
+def evaluateParamSweeps():
+    # Evaluate Parameter Sweeps
+    dev_docs_en, dev_docs_nl = loadDevDocs()
+    
+    new_runs = cpr.devParamSweep(dev_docs_en, "szt")
+    print "\n\n", new_runs 
+    old_runs = ["multi_szt_p4_c0_0_s0", "multi_t10_nl_c0_0_s0", "t10p4_c0_0_s0"]
+       
+    devStatements(dev_docs_en, new_runs, verbose=1)
+    sweeps = allParamStrings(["p8", "p6", "p4", "dbp", "szt"])
+
+    runs = sweeps + old_runs
+    dev_docs = dev_docs_nl + dev_docs_en
+    runLangEvalTable(dev_docs, runs)
+    csvEvalTable(dev_docs, runs)
+
+def loadReviews(review_dir):    
+    # this function assumes the indir contains review files only
+    filelist = cpr.os.listdir(review_dir)
+    print "\nLoading reviews (JSON) from %s" % review_dir
+    reviews = {}
+    reviewed_profiles = []
+    for fpath in filelist:
+        with open(cpr.os.path.join(review_dir, fpath), 'rb') as f:
+            review = cpr.json.load(f)
+            try:
+                pr = cpr.Profile(**cpr.db.profile.find_one(
+                    {"pseudo": review['pseudo']}))
+                pr.review = review
+                pr.toMongo()
+                reviewed_profiles.append(pr)
+            except AttributeError:
+                print "!! Cannot find profile for %s" % review['pseudo']
+
+    return reviewed_profiles
+    
+def evaluateReview(profile):
+    r = profile.review
+    correct_ext = dict(((t,f) for (t,f) in r['extracted'].iteritems()
+                        if f['correct'] == True))
+    correct_inf = [f['name'] for (o,l) in r['inferred'].iteritems() for f in l
+                        if f['correct'] == True]
+    truth = set(correct_ext).union(set(r['missing']), set(correct_inf))
+
+    # Measure performance of extracted per origin
+    origin_perf = {}
+    for origin in profile.statements:
+        extracted = profile.statements[origin]['extracted']
+        results = performance(extracted, truth, 0.5)
+        lvl_comparisons = []
+        for (t,f) in correct_ext.iteritems():
+            if r['last_page'] > 0 and f['judge_lvl'] == True:
+                if t in extracted:
+                    comp = {'topic': t,
+                            'skill': (extracted[t]['skill'], f['skill']),
+                            'knowledge': (extracted[t]['knowledge'], f['knowledge']),
+                            'interest': (extracted[t]['interest'], f['interest'])}
+                    lvl_comparisons.append(comp)
+        results['lvl_comparisons'] = lvl_comparisons
+        origin_perf[origin] = results
+    # Measure Pr@10 of inferred per origin/type
+    for (o,l) in r['inferred'].iteritems():
+        n_corr = len([f for f in l if f['correct'] == True])
+        pr_at_k = float(n_corr) / len(l)
+        res = {'k': len(l), 'ncor': n_corr, 'Pr@%i'%len(l): pr_at_k}
+        origin_perf[o] = res
+
+    return origin_perf
+
+def topicFrequencies(evaluation_dict):
+    freq_dict = {}
+    for jcat, topic_list in evaluation_dict.iteritems():
+        frequencies = defaultdict(int)
+        for topic in topic_list:
+            frequencies[topic] += 1
+        alphasort = sorted(frequencies.iteritems())
+        freq_dict[jcat] = sorted(alphasort, key=lambda t: t[1], reverse=True)
+    return freq_dict
+
 if __name__ == '__main__' :
 
     #judgeLinkedIn()
@@ -458,25 +537,57 @@ if __name__ == '__main__' :
     #judgeShareworksPortfolio()
     #judgeWebsites()
 
-##    # Evaluate Parameter Sweeps
-##    dev_docs_en, dev_docs_nl = loadDevDocs()
-##    
-##    new_runs = cpr.devParamSweep(dev_docs_en, "szt")
-##    print "\n\n", new_runs 
-##    old_runs = ["multi_szt_p4_c0_0_s0", "multi_t10_nl_c0_0_s0", "t10p4_c0_0_s0"]
-##       
-##    devStatements(dev_docs_en, new_runs, verbose=1)
-##    sweeps = allParamStrings(["p8", "p6", "p4", "dbp", "szt"])
-##
-##    runs = sweeps + old_runs
-##    dev_docs = dev_docs_nl + dev_docs_en
-##    runLangEvalTable(dev_docs, runs)
-##    csvEvalTable(dev_docs, runs)
+    # Evaluate Reviews
+    profiles = loadReviews("../Phase E/Reviews")
+    totals = lambda: {'correct': [], 'incorrect': [], 'missing': []}
+    extracted_dict = defaultdict(totals)
+    m_tuples = lambda: {'skill': [], 'knowledge': [], 'interest': []}
+    mlvls_dict = defaultdict(m_tuples)
+    counts = lambda: {'k': [], 'ncor': []}
+    inferred_dict = defaultdict(counts)
+    for pr in profiles:        
+        perf = evaluateReview(pr)
+        print "\n\n", pr.pseudo
+        for o,r in perf.iteritems():
+            try: # extracted
+                print o, r['precision'], r['recall'], r['F0.5']
+                extracted_dict[o]['correct'] += r['correct']
+                extracted_dict[o]['incorrect'] += r['incorrect']
+                extracted_dict[o]['missing'] += r['missing']
+                for comp in r['lvl_comparisons']:
+                    mlvls_dict[o]['skill'].append(comp['skill'])
+                    mlvls_dict[o]['knowledge'].append(comp['knowledge'])
+                    mlvls_dict[o]['interest'].append(comp['interest'])
+            except KeyError: # inferred
+                print r
+                inferred_dict[o]['k'].append(r['k'])
+                inferred_dict[o]['ncor'].append(r['ncor'])
+                
+    # Measure performance for extracted topics
+    print "\n\nPerformance of extracted topics (all profiles)"
+    for origin, t in extracted_dict.iteritems():
+        precision = len(t['correct']) / float(len(t['correct']+t['incorrect']))
+        recall = len(t['correct']) / float(len(t['correct']+t['missing']))
+        f_beta, f_str = f_score(precision, recall, 0.5)
+        print origin, "Pr:", precision, "Re:", recall, "%s:"%f_str, f_beta
+    freqs = topicFrequencies(extracted_dict['ALL'])
+    top_k = 10 # controls how many topics are printed
+    for jcat in freqs:
+        print "\nTop-%i %s topics:" % (top_k, jcat)
+        print ", ".join(("%s (%i)" % (t,n) for (t,n) in freqs[jcat][:top_k]))
 
-    # Evaluate Mastery Levels
-    # Load profiles and filter them for non-participants
-    all_profiles = cpr.loadProfiles()
-    all_profiles[:] = [pr for pr in all_profiles if (pr.signup['email'] not in
-                                                     {"alex@olieman.net",
-                                                      "r.jelierse@student.tudelft.nl"})]
+    # Test for correlation between estimated and true mastery levels
+    for origin, mls in mlvls_dict.iteritems():
+        print "\nPearson correlation for %s:" % origin
+        for m_type, comparisons in mls.iteritems():
+            est, truth = zip(*comparisons)
+            r, p = pearsonr(est,truth)
+            print "%s: %.03f (p = %.03f)" % (m_type, r, p)
+        
+    # Measure performance for inferred topics
+    print "\n\nPerformance of inferred topics (all profiles)"
+    for origin, c in inferred_dict.iteritems():
+        kstr = "/".join([str(k) for k in set(c['k'])])
+        pr_at_k = sum(c['ncor']) / float(sum(c['k']))
+        print origin, "Pr@%s:"%kstr, pr_at_k
     
